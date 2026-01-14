@@ -35,17 +35,19 @@ entity scancode_decoder_tb is
 --  No ports
 end scancode_decoder_tb;
 
-architecture Behavioral of scancode_decoder_tb is
-   component decoder
+architecture Behavior of scancode_decoder_tb is
+   component scancode_decoder
         port(
             scancode        : in std_logic_vector (7 downto 0);
             decoded_value   : out std_logic_vector (3 downto 0)
         );
    end component;
+   
    signal test_code :   std_logic_vector (7 downto 0);
    signal test_decode:  std_logic_vector (3 downto 0);
    
    constant test_elements : integer := 10;
+   
    subtype scancode is std_logic_vector(7 downto 0);
    type test_input_vector is array (1 to test_elements) of scancode;
    signal test_input : test_input_vector := (x"45", x"16", x"1E", x"26", x"25", x"2E", x"36", x"3D", x"3E", x"46");
@@ -56,7 +58,7 @@ architecture Behavioral of scancode_decoder_tb is
 
 begin
 
-    uut: decoder
+    uut: scancode_decoder
         port map (
             scancode => test_code,
             decoded_value => test_decode
@@ -65,7 +67,7 @@ begin
     begin
         for i in 1 to test_elements loop
             test_code <= test_input(i);
-            wait for 1 us;
+            wait for 100 ns;
             assert test_decode = test_output(i)
             report "Decode mismatch at index " & integer'image(i)
             severity warning;
@@ -73,4 +75,4 @@ begin
         wait;
     end process;  
 
-end Behavioral;
+end Behavior;
