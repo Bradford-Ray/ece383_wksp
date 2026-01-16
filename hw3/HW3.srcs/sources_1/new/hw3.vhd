@@ -32,13 +32,13 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity hw3 is
-    Port ( d : in STD_LOGIC_VECTOR (7 downto 0);
+    Port ( d : in unsigned(7 downto 0);
            h : out std_logic);
 end hw3;
 
 architecture Behavioral of hw3 is
 
 begin
-    h <= '1' when (TO_INTEGER(unsigned(d)) mod 17 = 0) else '0';
+    h <= '1' when (TO_INTEGER(d) mod 17 = 0) else '0';
 
 end Behavioral;

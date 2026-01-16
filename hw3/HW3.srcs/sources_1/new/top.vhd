@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -41,7 +41,7 @@ architecture Behavioral of top is
 
     component hw3
         Port (
-            d : in std_logic_vector(7 downto 0);
+            d : in unsigned(7 downto 0);
             h : out std_logic
         );
     end component;
@@ -52,10 +52,11 @@ begin
 
     uut : hw3
         port map (
-            d => sw, 
+            d => unsigned(sw), 
             h => leds(0)
         );
 
+leds(7 downto 1) <= (others => '0');
 led <= leds;
 
 end Behavioral;

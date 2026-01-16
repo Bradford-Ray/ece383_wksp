@@ -10,13 +10,13 @@ end hw3_tb;
 architecture Behavioral of hw3_tb is
 
     -- DUT signals
-    signal d : std_logic_vector(7 downto 0);
-    signal h : std_logic;
+    signal d : unsigned(7 downto 0);  -- input
+    signal h : std_logic;             -- output
 
 begin
 
-    -- Instantiate the Device Under Test (DUT)
-    dut : entity work.hw3
+    -- Instantiate the DUT
+    uut : entity work.hw3
         port map (
             d => d,
             h => h
@@ -25,29 +25,28 @@ begin
     -- Stimulus process
     stim_proc : process
     begin
-
-        -- Test 0
-        d <= std_logic_vector(to_unsigned(0, 8));
+        -- Test input 0
+        d <= to_unsigned(0, 8);
         wait for 10 ns;
 
-        -- Test 5
-        d <= std_logic_vector(to_unsigned(5, 8));
+        -- Test input 5
+        d <= to_unsigned(5, 8);
         wait for 10 ns;
         
-        -- Test 21
-        d <= std_logic_vector(to_unsigned(21, 8));
+        -- Test input 21
+        d <= to_unsigned(21, 8);
+        wait for 10 ns;
+        
+        -- Test input 19
+        d <= to_unsigned(19, 8);
         wait for 10 ns;
 
-        -- Test 19
-        d <= std_logic_vector(to_unsigned(19, 8));
+        -- Test input 17
+        d <= to_unsigned(17, 8);
         wait for 10 ns;
 
-        -- Test 17
-        d <= std_logic_vector(to_unsigned(17, 8));
-        wait for 10 ns;
-
-        -- Test 34
-        d <= std_logic_vector(to_unsigned(34, 8));
+        -- Test input 34
+        d <= to_unsigned(34, 8);
         wait for 10 ns;
 
         -- End simulation
