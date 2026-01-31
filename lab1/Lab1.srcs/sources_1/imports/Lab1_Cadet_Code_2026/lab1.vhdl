@@ -34,13 +34,60 @@ architecture structure of lab1 is
 begin
    
 -- Add numeric steppers for time and voltage trigger
-
+   num_step_t : numeric_stepper
+      generic map (
+        num_bits  => 11,
+        max_value => 620,
+        min_value => 20,
+        delta => 10
+      )
+      port map (
+        clk     => clk,
+        reset_n => reset_n,
+        en      => '1',
+        up      => btn(RIGHT),
+        down    => btn(LEFT),
+        q       => time_trigger_value
+      );
+        
+   num_step_v : numeric_stepper
+      generic map (
+        num_bits  => 11,
+        max_value => 420,
+        min_value => 20,
+        delta => 10
+      )
+      port map (
+        clk     => clk,
+        reset_n => reset_n,
+        en      => '1',
+        up      => btn(UP),
+        down    => btn(DOWN),
+        q       => volt_trigger_value
+      );
+      
 -- Assign trigger.t and trigger.v
-       	
+      trigger.t <= UNSIGNED(time_trigger_value);
+      trigger.v <= UNSIGNED(volt_trigger_value);   
+      	
 -- Instantiate video
+    video_1 : video
+        port map(  clk => clk,
+                reset_n => reset_n,
+                tmds => tmds,
+                tmdsb => tmdsb,
+                trigger => trigger,
+                position => pixel.coordinate,
+                ch1 => ch1,
+                ch2 => ch2
+                );
  
--- Determine if ch1 and or ch2 are active
+-- Determine if ch1 and or ch2 are activ
+ch1.active <= '1' when (pixel.coordinate.row = pixel.coordinate.col) else '0';
+ch2.active <= '1' when (440 - pixel.coordinate.row = pixel.coordinate.col) else '0';
 
 -- Connect board hardware to signals
+ch1.en <= sw(0);
+ch2.en <= sw(1);
 	
 end structure;
