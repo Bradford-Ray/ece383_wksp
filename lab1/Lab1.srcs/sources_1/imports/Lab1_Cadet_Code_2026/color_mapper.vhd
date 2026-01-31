@@ -37,7 +37,7 @@ constant num_horizontal_gridblocks : integer := 10;
 constant num_vertical_gridblocks : integer := 8;
 constant center_column : integer := 320;
 constant center_row : integer := 220;
-constant hash_size : integer := 15;
+constant hash_size : integer := 3;
 constant hash_horizontal_spacing : integer := 15;
 constant hash_vertical_spacing : integer := 10;
 
@@ -47,18 +47,18 @@ begin
 is_horizontal_gridline <= (position.row - grid_start_row) mod ((grid_stop_row - grid_start_row) / num_horizontal_gridblocks) = 0;
 is_vertical_gridline <= (position.col - grid_start_col) mod ((grid_stop_col - grid_start_col) / num_vertical_gridblocks) = 0;
 is_within_grid <= (position.row >= grid_start_row) and (position.row <= grid_stop_row) and (position.col >= grid_start_col) and (position.col <= grid_stop_col);
-is_trigger_volt <= (position.row <= (position.col + (grid_start_col + hash_size)) + trigger.v) and (position.row >= trigger.v - (position.col + (grid_start_col + hash_size))) and (position.col >= grid_start_col);
-is_trigger_time <= (position.row <= (position.col + trigger.t) + grid_start_row + hash_size) and (position.row <= grid_start_row + hash_size - (position.col + trigger.t)) and (position.row >= grid_start_row);
-is_ch1_line <= position.row = position.col;
-is_ch2_line <= 480-position.row = position.col;
-is_horizontal_hash <= (position.col >= center_column - hash_size) and (position.col <= center_column + hash_size) and ((position.row - grid_start_row) mod hash_horizontal_spacing = 0);
-is_vertical_hash <= (position.row >= center_row - hash_size) and (position.row <= center_row + hash_size) and ((position.col - grid_start_col) mod hash_vertical_spacing = 0);
+is_trigger_volt <= (0 <= abs(to_integer(position.row) - to_integer(trigger.v))) and (abs(to_integer(position.row) - to_integer(trigger.v)) <= hash_size + hash_size - (position.col - grid_start_col)) and (position.col <= grid_start_col + hash_size + hash_size) and (position.col >= grid_start_col);
+is_trigger_time <= (0 <= abs(to_integer(position.col) - to_integer(trigger.t))) and (abs(to_integer(position.col) - to_integer(trigger.t)) <= hash_size + hash_size - (position.row - grid_start_row)) and (position.row <= grid_start_row + hash_size + hash_size) and (position.row >= grid_start_row);
+is_ch1_line <= (ch1.active = '1') and (ch1.en = '1');
+is_ch2_line <= (ch2.active = '1') and (ch2.en = '1');
+is_vertical_hash <= (position.col >= center_column - hash_size) and (position.col <= center_column + hash_size) and ((position.row - grid_start_row) mod hash_vertical_spacing = 0);
+is_horizontal_hash <= (position.row >= center_row - hash_size) and (position.row <= center_row + hash_size) and ((position.col - grid_start_col) mod hash_horizontal_spacing = 0);
 
 -- Use your booleans to choose the color
 color <=        trigger_color when (is_trigger_time or is_trigger_volt) else -- You can do multiple lines like this
-                grid_color when (is_horizontal_gridline or is_vertical_gridline or is_horizontal_hash or is_vertical_hash) else
-                ch1_color when (is_ch1_line) else
-                ch2_color when (is_ch2_line) else
+                grid_color when ((is_horizontal_gridline or is_vertical_gridline or is_horizontal_hash or is_vertical_hash) and is_within_grid) else
+                ch1_color when (is_ch1_line and is_within_grid) else
+                ch2_color when (is_ch2_line and is_within_grid) else
                 background;
                                    
 
