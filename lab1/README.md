@@ -3,15 +3,31 @@
 ***
 
 ## Introduction
-This lab uses a NexysVideo FPGA board to generate a VGA signal and display a grid framework for future use in oscilloscope projects. The screen displays a 600x400 pixel grid on which two channels are printed: channel 1 in yellow and channel 2 in green. For testing purposes, these channels are hard-coded to create horizontal lines. Additionally, indicators are placed along the vertical and horizontal axes for use as triggers.
+This lab uses a NexysVideo FPGA board to generate a VGA signal and display a grid framework for future use in oscilloscope projects. The screen displays a 600x400 pixel grid on which two channels are printed: channel 1 in yellow and channel 2 in green. For testing purposes, these channels are hard-coded to create horizontal lines. Additionally, indicators are placed along the vertical and horizontal axes for use as triggers. The grid displays minor gridlines of 10 vertical lines by 8 horizontal with hatch marks to indicate every 10 pixels on the vertical axis and 15 in the horizontal axis.
 
 ## Design / Implementation 
-First, I created a diagram of the grid, labeling each coordinate. The spacing for the grid and its placement on the screen are shown in the figure below where (0,0) represents the top left corner of the VGA display.
+First, I created a diagram of the grid, labeling each coordinate. The spacing for the grid and its placement on the screen are shown in the figure below where (0,0) represents the top left corner of the VGA display. All other major coordinates are listed, along with several hatch mark coordinates to describe spacing.
 ### Grid Layout:
 ![alt text](hw5diagram.png)
-This information is stored in the color_mapper component, which takes the vga signal's current position and assigns the grid color using the modulo operator.
+To implement this design, the components were arranged as shown in the block diagram.
 ### Block Diagram:
 ![alt text](<Lab01_Block_Diagram_2026 (1).jpg>)
+### Component Functionality
+#### Prebuilt components include:
+##### Video
+The video component connects the top level design in Lab1 to the VGA and Clock Wizard components. It also contains the DVID component.
+##### Clock Wizard
+The Clock Wizard handles the clocks for the DVID component, synchronizing its output with the VGA signal.
+##### DVID
+The DVID component converts the VGA signals from the VGA module to an HDMI signal. The DVID outputs become the outputs of the Video component.
+#### Lab1
+Lab1 is the top-level design that integrates two numeric steppers, the video component, and the hard-coded logic to test channels 1 and 2. The two numeric steppers, named num_step_t and num_step_v, control position of the time and voltage triggers using input from the up, down, left, and right buttons on the NexysVideo. Lab1 also maps inputs from the NexysVideo reset button and switches 0 and 1 into the Video component. It takes the output of Video and maps it to the board's HDMI output.
+#### Numeric Stepper
+Numeric stepper takes two control inputs, a reset input, and an enable. The two inputs control a counter which steps up or down only once for each button press. Holding down a button will not cause the stepper to increment or decrement more than once. The component has generic values max_value and min_value which control the range of outputs the stepper can generate.
+#### VGA
+The VGA component
+#### VGA Signal Generator
+#### Color Mapper
 
 ## Test / Debug
 
