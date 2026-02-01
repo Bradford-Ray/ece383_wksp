@@ -23,7 +23,7 @@ entity numeric_stepper is
 end numeric_stepper;
 
 architecture numeric_stepper_arch of numeric_stepper is
-    signal process_q : signed(num_bits-1 downto 0) := to_signed(0,num_bits);
+    signal process_q : signed(num_bits-1 downto 0) := to_signed(min_value, num_bits);
     signal prev_up, prev_down : std_logic := '0';
     signal is_increment, is_decrement : boolean := false;
 begin
@@ -36,18 +36,26 @@ process(clk)
         if(rising_edge(clk) and en = '1') then
             if (up = '0') then
                 prev_up <= '0';
-            elsif (down = '0') then
+            end if;
+            
+            if (down = '0') then
                 prev_down <= '0';
             end if;
             
             if (reset_n = '0') then
-                process_q <= (others => '0');
+                process_q <= TO_SIGNED(min_value, num_bits);
             elsif (is_increment) then
                 prev_up <= '1';
                 process_q <= process_q + delta;
             elsif (is_decrement) then
                 prev_down <= '1';
                 process_q <= process_q - delta;
+            end if;
+            
+            if (TO_INTEGER(process_q) > max_value) then
+                process_q <= TO_SIGNED(max_value, num_bits);
+            elsif (TO_INTEGER(process_q) < min_value) then
+                process_q <= TO_SIGNED(min_value, num_bits);
             end if;
         end if;
     end process;

@@ -57,9 +57,10 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18696-C27-5CG3121FGH/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-25472-C27-5CG3121FGH/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -108,8 +109,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/C27Bradford.Hurt/ece383_wksp/lab1/Lab1.srcs/constrs_1/imports/Downloads/Nexys-Video-Master.xdc
-set_property used_in_implementation false [get_files C:/Users/C27Bradford.Hurt/ece383_wksp/lab1/Lab1.srcs/constrs_1/imports/Downloads/Nexys-Video-Master.xdc]
+read_xdc C:/Users/C27Bradford.Hurt/ece383_wksp/lab1/Lab1.srcs/constrs_1/imports/Downloads/Lab1.xdc
+set_property used_in_implementation false [get_files C:/Users/C27Bradford.Hurt/ece383_wksp/lab1/Lab1.srcs/constrs_1/imports/Downloads/Lab1.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 

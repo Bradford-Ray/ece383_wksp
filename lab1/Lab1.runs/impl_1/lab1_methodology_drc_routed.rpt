@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sat Jan 31 01:24:07 2026
+| Date         : Sat Jan 31 23:10:07 2026
 | Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab1_methodology_drc_routed.rpt -pb lab1_methodology_drc_routed.pb -rpx lab1_methodology_drc_routed.rpx
 | Design       : lab1
@@ -23,13 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 26
+             Checks found: 27
 +-----------+------------------+------------------------------------------------------------------+--------+
 | Rule      | Severity         | Description                                                      | Checks |
 +-----------+------------------+------------------------------------------------------------------+--------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 24     |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                        | 1      |
 | CKLD-2    | Warning          | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1      |
+| XDCC-2    | Warning          | Scoped Non-Timing constraint/property overwritten                | 1      |
 +-----------+------------------+------------------------------------------------------------------+--------+
 
 2. REPORT DETAILS
@@ -162,6 +163,13 @@ Related violations: <none>
 CKLD-2#1 Warning
 Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
 Clock net clk_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): clk_IBUF_inst/O, num_step_t/clk, num_step_v/clk, video_1/clk
+Related violations: <none>
+
+XDCC-2#1 Warning
+Scoped Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on reset_n overrides a previous scoped property. It is not recommended to override a scoped (typically an IP) property and could result in unexpected behaviours.
+New Source: C:/Users/C27Bradford.Hurt/ece383_wksp/lab1/Lab1.srcs/constrs_1/imports/Downloads/Lab1.xdc (Line: 38)
+Previous Source: c:/Users/C27Bradford.Hurt/ece383_wksp/lab1/Lab1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc (Line: 4)
 Related violations: <none>
 
 

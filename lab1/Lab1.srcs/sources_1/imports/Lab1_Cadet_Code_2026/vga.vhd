@@ -21,7 +21,6 @@ end vga;
 architecture vga_arch of vga is
 			
 signal position : coordinate_t;
-signal vga_s : vga_t;
 signal color_s : color_t;
 
 begin
@@ -30,7 +29,7 @@ begin
         port map( clk => clk,
                   reset_n => reset_n,
                   position => position,
-                  vga => vga_s
+                  vga => vga
                   );
               
     color_mapper_1 : color_mapper
