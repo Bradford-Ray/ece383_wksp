@@ -7,11 +7,9 @@ This lab uses a NexysVideo FPGA board to generate a VGA signal and display a gri
 
 ## Design / Implementation 
 First, I created a diagram of the grid, labeling each coordinate. The spacing for the grid and its placement on the screen are shown in the figure below where (0,0) represents the top left corner of the VGA display. All other major coordinates are listed, along with several hatch mark coordinates to describe spacing.
-### Grid Layout:
-![alt text](hw5diagram.png)
+![Grid Layout](hw5diagram.png)
 To implement this design, the components were arranged as shown in the block diagram.
-### Block Diagram:
-![alt text](<Lab01_Block_Diagram_2026 (1).jpg>)
+![Block Diagram](<Lab01_Block_Diagram_2026 (1).jpg>)
 ### Component Functionality
 #### Prebuilt components include:
 ##### Video
@@ -33,10 +31,20 @@ The VGA Signal Generator takes the pixel clock from VGA and generates a pixel co
 The Color Mapper takes the pixel coordinate information from the VGA Signal Generator and calculates what color should be at each location. It also takes the Channel 1 and 2 signals and prints a different color for each channel at the correct locations. Color Mapper contains the information from the Grid Layout figure. The location of the printed grid along with hatch marks is determined within Color Mapper.
 
 ## Test / Debug
-The VGA Signal Generator was the first module tested using a pre-made instructor testbench. The column counter runs from 0 to _ and the row counter, which increments once for every column cycle, runs from 0 to _.
+The VGA Signal Generator was the first module tested using a pre-made instructor testbench. The column counter runs from 0 to 799 and the row counter, which increments once for every column cycle, runs from 0 to 524. The following waveform shows both counters rolling over from their maximum values back to 0.
 ![alt text](rowandcol_rollover.png)
-
-The second testbench ensured that the h_sync, v_sync, and blank signals aligned with VGA standards. The signals were calculated based on the pixel coordinate information generated in the previous testbench. As shown in the following screenshots, h_sync
+The second testbench ensured that the h_sync, v_sync, and blank signals aligned with VGA standards. The signals were calculated based on the pixel coordinate information generated in the previous testbench. As shown in the following screenshots, the three VGA control signals change at the desired times.
+h_sync is
+![alt text](hsync_h_to_l.png)
+![alt text](hsync_l_to_h.png)
+v_sync is
+![alt text](vsync_h_to_l.png)
+![alt text](vsync_l_to_h.png)
+blank is
+![alt text](blank_l_to_h_col.png)
+![alt text](blank_h_to_l_col.png)
+![alt text](blank_l_to_h_row.png)
+![alt text](blank_h_to_l_row.png)
 
 ## Results
 
