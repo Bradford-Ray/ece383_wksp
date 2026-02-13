@@ -1,7 +1,7 @@
-Running: xsim.dir/lec11_tb_behav/xsimk.exe -simmode gui -wdb lec11_tb_behav.wdb -simrunnum 0 -socket 51209
+Running: xsim.dir/lec11_tb_behav/xsimk.exe -simmode gui -wdb lec11_tb_behav.wdb -simrunnum 0 -socket 57625
 Design successfully loaded
-Design Loading Memory Usage: 27388 KB (Peak: 27388 KB)
-Design Loading CPU Usage: 1109 ms
+Design Loading Memory Usage: 27340 KB (Peak: 27340 KB)
+Design Loading CPU Usage: 1031 ms
 Simulation completed
-Simulation Memory Usage: 28924 KB (Peak: 28924 KB)
-Simulation CPU Usage: 1171 ms
+Simulation Memory Usage: 28996 KB (Peak: 28996 KB)
+Simulation CPU Usage: 1062 ms

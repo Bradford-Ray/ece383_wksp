@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Lab2.srcs/sources_1/imports/Downloads/Lab2_OLED/Lab2_OLED/ascii_rom.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/Downloads/Lab2_OLED/Lab2_OLED/delay.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/Downloads/Lab2_OLED/Lab2_OLED/oled_ex.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/Downloads/Lab2_OLED/Lab2_OLED/oled_init.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/Downloads/Lab2_OLED/Lab2_OLED/spi_ctrl.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/Downloads/Lab2_OLED/Lab2_OLED/Lab2_OLED.vhd" \
+
+# Do not sort compile order
+nosort
