@@ -57,8 +57,9 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-19136-C27-5CG3121FGH/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-31212-C27-5CG3121FGH/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -98,12 +99,12 @@ read_vhdl -library xil_defaultlib {
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2.vhd
 }
-read_ip -quiet c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+read_ip -quiet C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
+read_ip -quiet C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_ooc.xdc]

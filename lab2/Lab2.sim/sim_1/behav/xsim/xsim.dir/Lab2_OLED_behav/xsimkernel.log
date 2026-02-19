@@ -2,3 +2,6 @@ Running: xsim.dir/Lab2_OLED_behav/xsimk.exe -simmode gui -wdb Lab2_OLED_behav.wd
 Design successfully loaded
 Design Loading Memory Usage: 28236 KB (Peak: 28236 KB)
 Design Loading CPU Usage: 1000 ms
+Simulation completed
+Simulation Memory Usage: 29196 KB (Peak: 29196 KB)
+Simulation CPU Usage: 1031 ms

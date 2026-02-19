@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Fri Feb 13 09:06:18 2026
+| Date         : Wed Feb 18 15:19:11 2026
 | Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab2_utilization_synth.rpt -pb lab2_utilization_synth.pb
 | Design       : lab2
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  481 |     0 |          0 |    134600 |  0.36 |
-|   LUT as Logic          |  481 |     0 |          0 |    134600 |  0.36 |
+| Slice LUTs*             |  604 |     0 |          0 |    134600 |  0.45 |
+|   LUT as Logic          |  604 |     0 |          0 |    134600 |  0.45 |
 |   LUT as Memory         |    0 |     0 |          0 |     46200 |  0.00 |
-| Slice Registers         |  254 |     0 |          0 |    269200 |  0.09 |
-|   Register as Flip Flop |  254 |     0 |          0 |    269200 |  0.09 |
+| Slice Registers         |  434 |     0 |          0 |    269200 |  0.16 |
+|   Register as Flip Flop |  434 |     0 |          0 |    269200 |  0.16 |
 |   Register as Latch     |    0 |     0 |          0 |    269200 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     67300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     33650 |  0.00 |
@@ -60,7 +60,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 34    |          Yes |         Set |            - |
-| 220   |          Yes |       Reset |            - |
+| 400   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -70,10 +70,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |    1 |     0 |          0 |       365 |  0.27 |
+| Block RAM Tile    |    2 |     0 |          0 |       365 |  0.55 |
 |   RAMB36/FIFO*    |    0 |     0 |          0 |       365 |  0.00 |
-|   RAMB18          |    2 |     0 |          0 |       730 |  0.27 |
-|     RAMB18E1 only |    2 |       |            |           |       |
+|   RAMB18          |    4 |     0 |          0 |       730 |  0.55 |
+|     RAMB18E1 only |    4 |       |            |           |       |
 +-------------------+------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
@@ -94,7 +94,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   22 |     0 |          0 |       285 |  7.72 |
+| Bonded IOB                  |   25 |     0 |          0 |       285 |  8.77 |
 | Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |        10 |  0.00 |
@@ -154,21 +154,21 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  220 |        Flop & Latch |
-| LUT6     |  192 |                 LUT |
-| LUT2     |  105 |                 LUT |
-| LUT5     |   86 |                 LUT |
-| LUT4     |   78 |                 LUT |
-| LUT3     |   73 |                 LUT |
-| LUT1     |   51 |                 LUT |
+| FDRE     |  400 |        Flop & Latch |
+| LUT6     |  230 |                 LUT |
+| LUT2     |  159 |                 LUT |
+| LUT3     |  116 |                 LUT |
+| LUT5     |   88 |                 LUT |
+| LUT4     |   83 |                 LUT |
+| LUT1     |   55 |                 LUT |
 | CARRY4   |   39 |          CarryLogic |
 | FDSE     |   34 |        Flop & Latch |
-| IBUF     |   10 |                  IO |
+| IBUF     |   13 |                  IO |
 | OBUFDS   |    8 |                  IO |
+| RAMB18E1 |    4 |        Block Memory |
 | ODDR     |    4 |                  IO |
 | OBUF     |    4 |                  IO |
 | INV      |    4 |                 LUT |
-| RAMB18E1 |    2 |        Block Memory |
 | OBUFT    |    2 |                  IO |
 +----------+------+---------------------+
 

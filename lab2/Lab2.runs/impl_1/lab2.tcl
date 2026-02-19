@@ -107,8 +107,9 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
-  set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-19136-C27-5CG3121FGH/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-31212-C27-5CG3121FGH/incrSyn
   set_param checkpoint.writeSynthRtdsInDcp 1
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a200tsbg484-1
@@ -126,8 +127,8 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/lab2.dcp
-  read_ip -quiet c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-  read_ip -quiet c:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
+  read_ip -quiet C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/constrs_1/imports/lab2_code_for_cadets_2026/Lab2.xdc
 OPTRACE "read constraints: implementation" END { }
