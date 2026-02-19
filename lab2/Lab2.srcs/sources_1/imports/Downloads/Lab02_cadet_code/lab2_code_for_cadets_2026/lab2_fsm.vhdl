@@ -75,11 +75,11 @@ begin
 	--      2      write enable
 	-------------------------------------------------------------------------------
 	
-	cw <= "000" when state = Count_Addr else
-	      "000" when state = Wait_Ready else
-	      "101" when state = Write_Enable else
-	      "000" when state = Write_Disable else
-	      "010" when state = Reset_Addr else
+	cw <= "010" when state = Count_Addr else
+	      "010" when state = Wait_Ready else
+	      "111" when state = Write_Enable else
+	      "010" when state = Write_Disable else
+	      "000" when state = Reset_Addr;
 
 end Behavioral;
 
