@@ -55,7 +55,7 @@ is_vertical_hash <= (position.col >= center_column - hash_size) and (position.co
 is_horizontal_hash <= (position.row >= center_row - hash_size) and (position.row <= center_row + hash_size) and ((position.col - grid_start_col) mod hash_horizontal_spacing = 0);
 
 -- Use your booleans to choose the color
-color <=        trigger_color when (is_trigger_time or is_trigger_volt) else -- You can do multiple lines like this
+color <=        trigger_color when (is_trigger_time or is_trigger_volt) and is_within_grid else -- You can do multiple lines like this
                 grid_color when ((is_horizontal_gridline or is_vertical_gridline or is_horizontal_hash or is_vertical_hash) and is_within_grid) else
                 ch1_color when (is_ch1_line and is_within_grid) else
                 ch2_color when (is_ch2_line and is_within_grid) else
