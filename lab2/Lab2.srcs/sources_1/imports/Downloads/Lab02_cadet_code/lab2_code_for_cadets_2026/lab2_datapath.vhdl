@@ -172,8 +172,8 @@ begin
           max_value => 1023
         )
         port map ( clk => clk,
-               reset_n => reset_n,
-               ctrl => '1', --change to cw(0)
+               reset_n => cw_counter_control(1),
+               ctrl => cw_counter_control(0), --change to cw(0)
                roll => open,
                Q => writeCntr
     );
@@ -328,7 +328,7 @@ Audio_Codec : Audio_Codec_Wrapper
             WE => "11",                    -- Input write enable, width defined by write port depth
             WRADDR => std_logic_vector(write_address),                -- Input write address, width defined by write port depth
             WRCLK => clk,                   -- 1-bit input write clock
-            WREN => '1');              -- 1-bit input write port enable
+            WREN => cw_write_en);              -- 1-bit input write port enable
             -- End of BRAM_SDP_MACRO_inst instantiation
 
 
@@ -420,7 +420,7 @@ Audio_Codec : Audio_Codec_Wrapper
             WE => "11",                        -- Input write enable, width defined by write port depth
             WRADDR => std_logic_vector(write_address),                -- Input write address, width defined by write port depth
             WRCLK => clk,                    -- 1-bit input write clock
-            WREN => '1');                -- 1-bit input write port enable
+            WREN => cw_write_en);                -- 1-bit input write port enable
             -- End of BRAM_SDP_MACRO_inst instantiation
 
     sw(0) <= sw_ready;
@@ -428,7 +428,7 @@ Audio_Codec : Audio_Codec_Wrapper
     sw(2) <= sw_trigger;
     
     cw_counter_control <= cw(1 downto 0);
-    cw_write_en <= cw(2);
+    cw_write_en <= cw(2) when (exSel = '0') else exWen;
 
 end lab2_datapath_arch;
 

@@ -28,35 +28,58 @@ end lab2_fsm;
 
 architecture Behavioral of lab2_fsm is
 
---	type state_type is NEED_SOMETHING_HERE;
---	signal state: state_type;
+	type state_type is ( Count_Addr,
+	                     Wait_Ready,
+	                     Write_Enable,
+	                     Write_Disable,
+	                     Reset_Addr);
+	signal state: state_type;
 
 begin
 
 	-------------------------------------------------------------------------------
 	--		SW		meaning
-	--		
+	--       0     audio codec ready
+	--		 1     last address reached
+	--       2     trigger
 	-------------------------------------------------------------------------------
 	state_proces: process(clk)  
 	begin
 		if (rising_edge(clk)) then
---			if (reset_n = '0') then 
---				state <= NEED_SOMETHING_HERE;
---			else 
---				case state is
---					when NEED_SOMETHING_HERE
---				end case;
---			end if;
+			if (reset_n = '0') then 
+				state <= Reset_Addr;
+			else 
+				case state is 
+					when Count_Addr =>
+					   if (sw(1) = '1') then state <= Reset_Addr;
+					   else state <= Wait_Ready; end if;
+					when Wait_Ready =>
+					   if (sw(0) = '1') then state <= Write_Enable; end if;
+					when Write_Enable =>
+					   state <= Write_Disable;
+					when Write_Disable =>
+					   if (sw(0) = '0') then state <= Count_Addr; end if;
+					when Reset_Addr =>
+--					   if (sw(2) = '1') then state <= Count_Addr; end if; -- uncomment for trigger
+                       state <= Count_Addr;
+				end case;
+			end if;
 		end if;
 	end process;
 
 	-------------------------------------------------------------------------------
 	--  CW output table
 	--		CW		meaning
-	--		
+	--		0      counter control
+	--      1      counter reset
+	--      2      write enable
 	-------------------------------------------------------------------------------
 	
-	-- NEED_SOMETHING_HERE
+	cw <= "000" when state = Count_Addr else
+	      "000" when state = Wait_Ready else
+	      "101" when state = Write_Enable else
+	      "000" when state = Write_Disable else
+	      "010" when state = Reset_Addr else
 
 end Behavioral;
 
