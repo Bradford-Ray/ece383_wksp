@@ -79,6 +79,9 @@ begin
 
     -- Determine if the current row matches the stored data from BRAM which means the channel should be active (drawn)
 	-- Add code here
+	
+    ch1.active <= '1' when (apply_offset(ch1.from_bram(15 downto 7)) = position.row) else '0'; 
+    ch2.active <= '1' when (apply_offset(ch2.from_bram(15 downto 7)) = position.row) else '0'; 
 
 	-------------------------------------------------------------------------------
 	--  Buffer a copy of the sample memory to look for positive trigger crossing
@@ -88,21 +91,30 @@ begin
 	begin
 		if (rising_edge(clk)) then
 			if reset_n = '0' then
-				-- Add code here
+				Ch1.incoming_sample <= (others => '0');
+				Ch2.incoming_sample <= (others => '0');
 			elsif(sw_ready = '1') then
-				-- Add code here
+				Ch1.incoming_sample <= Ch1.from_ac(17 downto 2);
+				Ch1.to_ac <= Ch1.from_ac;
+				Ch2.incoming_sample <= Ch2.from_ac(17 downto 2);
+				Ch2.to_ac <= Ch2.from_ac;
 			end if;
 		end if;
 	end process;
 
     -- Convert Signed sample from Codec into an unsigned value
     -- Add code here (Look at make_unsigned function)
+    Ch1.current_sample <= make_unsigned(Ch1.incoming_sample);
+    Ch2.current_sample <= make_unsigned(Ch2.incoming_sample);
     
     -- Send the unsigned current sample to the BRAM
     -- Add code here 
+    Ch1.to_bram <= Ch1.current_sample when (exSel = '0') else exLBus;
+    Ch2.to_bram <= Ch2.current_sample when (exSel = '0') else exRBus;
 	
     -- Need logic for the FLAG register
 	-- Add code here
+	-- Add a clock process here to implement the state machine shown on course website
 	
     ------------------------------------------------------------------------------
 	-- If a button has been pressed then increment of decrement the trigger time and Volt
@@ -151,8 +163,23 @@ begin
 	-- Address counter for RAM
 	-- What range of addresses does it need to span?  Should it start at zero or something else?
 	-- How high should it count?  Will it go to its start value on reset or load?
+	--     Should count from 0 to 1023, max value of 10 bits
 	-------------------------------------------------------------------------------
 	-- Add code here.  Use a previously built counter.
+	addr_counter : counter
+        generic map(
+          num_bits  => 10,
+          max_value => 1023
+        )
+        port map ( clk => clk,
+               reset_n => reset_n,
+               ctrl => '1', --change to cw(0)
+               roll => open,
+               Q => writeCntr
+    );
+    
+    sw_last_address <= '1' when (writeCntr = x"3FF") else '0';
+    write_address <= writeCntr when (exSel = '0') else unsigned(exWrAddr);
 	
 	-------------------------------------------------------------------------------
 	-- Triggering Logic: A positive crossing of the trigger occurs when the previous value is 
@@ -188,8 +215,8 @@ begin
 
 -- Audio Codec stuff goes here
 
-is_live <= '0';     --  '0' simulate audio; '1' live audio
-                  -- should a switch go here?
+is_live <= switch(3);     --  '0' simulate audio; '1' live audio
+                          -- should a switch go here? - Yes
                   
 
 Audio_Codec : Audio_Codec_Wrapper
@@ -211,9 +238,6 @@ Audio_Codec : Audio_Codec_Wrapper
 
 
     -- BRAM stuff goes here
-    
-    ch1.active <= '1' when (apply_offset(ch1.from_bram(15 downto 7)) = position.row) else '0'; 
-    ch2.active <= '1' when (apply_offset(ch2.from_bram(15 downto 7)) = position.row) else '0'; 
 
 	reset <= not reset_n;
 	
@@ -302,7 +326,7 @@ Audio_Codec : Audio_Codec_Wrapper
             REGCE => '1',                   -- 1-bit input read output register enable
             DI => ch1.to_bram,                   -- Input data port, width defined by WRITE_WIDTH parameter
             WE => "11",                    -- Input write enable, width defined by write port depth
-            WRADDR => (9 downto 0 => '0'),                -- Input write address, width defined by write port depth
+            WRADDR => std_logic_vector(write_address),                -- Input write address, width defined by write port depth
             WRCLK => clk,                   -- 1-bit input write clock
             WREN => '1');              -- 1-bit input write port enable
             -- End of BRAM_SDP_MACRO_inst instantiation
@@ -394,9 +418,9 @@ Audio_Codec : Audio_Codec_Wrapper
             REGCE => '1',                   -- 1-bit input read output register enable
             DI => ch2.to_bram,                    -- Input data port, width defined by WRITE_WIDTH parameter
             WE => "11",                        -- Input write enable, width defined by write port depth
-            WRADDR => (9 downto 0 => '0'),                -- Input write address, width defined by write port depth
+            WRADDR => std_logic_vector(write_address),                -- Input write address, width defined by write port depth
             WRCLK => clk,                    -- 1-bit input write clock
-            WREN => '0');                -- 1-bit input write port enable
+            WREN => '1');                -- 1-bit input write port enable
             -- End of BRAM_SDP_MACRO_inst instantiation
 
     sw(0) <= sw_ready;
