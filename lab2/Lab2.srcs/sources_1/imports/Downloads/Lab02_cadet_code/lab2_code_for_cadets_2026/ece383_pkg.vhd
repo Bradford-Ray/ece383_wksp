@@ -116,6 +116,14 @@ package ece383_pkg is
   );
   end component;
   
+  -- The debouncer debounces button presses
+  COMPONENT button_debounce
+		Port(	clk: in  STD_LOGIC;
+				reset : in  STD_LOGIC;
+				button: in STD_LOGIC;
+				action: out STD_LOGIC);
+    END COMPONENT; 
+  
   -- Generates the signals needed for VGA video  
   component vga_signal_generator is
     port ( clk : in STD_LOGIC;

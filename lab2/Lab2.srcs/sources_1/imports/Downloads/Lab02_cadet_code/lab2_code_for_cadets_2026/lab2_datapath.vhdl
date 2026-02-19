@@ -151,8 +151,8 @@ begin
         clk     => clk,
         reset_n => reset_n,
         en      => '1',
-        up      => btn(UP),
-        down    => btn(DOWN),
+        up      => btn(DOWN),
+        down    => btn(UP),
         q       => num_stepper_v
       );
       
