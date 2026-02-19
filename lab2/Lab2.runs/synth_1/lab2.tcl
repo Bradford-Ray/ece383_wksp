@@ -84,6 +84,7 @@ read_verilog -library xil_defaultlib C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/
 read_vhdl -library xil_defaultlib {
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/Audio_Codec_Wrapper.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/TWICtl.vhd
+  C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Homework_7/button_debounce.vhdl
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/ece383_pkg.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/color_mapper.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/new/counter.vhd
@@ -92,6 +93,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/i2s_ctl.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_fsm.vhdl
+  C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Homework_7/lec10.vhdl
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/numeric_stepper.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/tdms.vhdl
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd
