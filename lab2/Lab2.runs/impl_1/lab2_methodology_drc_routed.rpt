@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Thu Feb 19 00:14:22 2026
+| Date         : Fri Feb 20 08:45:59 2026
 | Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab2_methodology_drc_routed.rpt -pb lab2_methodology_drc_routed.pb -rpx lab2_methodology_drc_routed.rpx
 | Design       : lab2
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 294
+             Checks found: 303
 +-----------+------------------+---------------------------------------------------+--------+
 | Rule      | Severity         | Description                                       | Checks |
 +-----------+------------------+---------------------------------------------------+--------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                       | 286    |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                       | 295    |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin         | 2      |
 | LUTAR-1   | Warning          | LUT drives async reset alert                      | 2      |
 | TIMING-20 | Warning          | Non-clocked latch                                 | 2      |
@@ -1465,6 +1465,51 @@ Related violations: <none>
 TIMING-17#286 Critical Warning
 Non-clocked sequential cell  
 The clock pin datapath/rightChannelMemory/sdp_bl.ramb18_dp_bl.ram18_bl/CLKBWRCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#287 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#288 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#289 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#290 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#291 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#292 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#293 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#294 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#295 Critical Warning
+Non-clocked sequential cell  
+The clock pin datapath/trig_detect/previous_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-27#1 Critical Warning

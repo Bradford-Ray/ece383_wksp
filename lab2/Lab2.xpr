@@ -214,6 +214,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd"/>
+          <Attr Name="ImportTime" Val="1770821570"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../lab1/Lab1.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd"/>
@@ -297,14 +305,6 @@
           <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/Lab2_OLED/Lab2_OLED/Lab2_OLED.vhd"/>
           <Attr Name="ImportTime" Val="1770821561"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd"/>
-          <Attr Name="ImportTime" Val="1770821570"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>

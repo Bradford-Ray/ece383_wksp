@@ -60,8 +60,8 @@ begin
 					when Write_Disable =>
 					   if (sw(0) = '0') then state <= Count_Addr; end if;
 					when Reset_Addr =>
---					   if (sw(2) = '1') then state <= Count_Addr; end if; -- uncomment for trigger
-                       state <= Count_Addr;
+					   if (sw(2) = '1') then state <= Count_Addr; end if; -- uncomment for trigger
+--                       state <= Count_Addr;
 				end case;
 			end if;
 		end if;

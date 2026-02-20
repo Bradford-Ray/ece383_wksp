@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Feb 19 00:09:26 2026
-# Process ID         : 27516
+# Start of session at: Fri Feb 20 08:42:20 2026
+# Process ID         : 7948
 # Current directory  : C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1
 # Command line       : vivado.exe -log lab2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab2.tcl
 # Log file           : C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/lab2.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16442 MB
-# Swap memory        : 11811 MB
-# Total Virtual      : 28253 MB
-# Available Virtual  : 5011 MB
+# Swap memory        : 11274 MB
+# Total Virtual      : 27717 MB
+# Available Virtual  : 8882 MB
 #-----------------------------------------------------------
 source lab2.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/utils_1/imports/synth_1/Lab2_OLED.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 32044
+INFO: [Synth 8-7075] Helper process launched with PID 9668
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1015.895 ; gain = 470.129
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1015.344 ; gain = 467.965
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'lab2' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2.vhd:23]
 INFO: [Synth 8-3491] module 'lab2_datapath' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:16' bound to instance 'datapath' of component 'lab2_datapath' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2.vhd:61]
@@ -83,10 +83,13 @@ INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/C27Bradford.Hurt/ece
 	Parameter num_bits bound to: 10 - type: integer 
 	Parameter max_value bound to: 1023 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'counter' (0#1) [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/new/counter.vhd:17]
+INFO: [Synth 8-3491] module 'trigger_detector' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd:10' bound to instance 'trig_detect' of component 'trigger_detector' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:190]
+INFO: [Synth 8-638] synthesizing module 'trigger_detector' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'trigger_detector' (0#1) [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd:21]
 INFO: [Synth 8-3491] module 'video' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl:11' bound to instance 'video_inst' of component 'video' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:203]
 INFO: [Synth 8-638] synthesizing module 'video' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl:22]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-27516-C27-5CG3121FGH/realtime/clk_wiz_0_stub.vhdl:6' bound to instance 'mmcm_adv_inst_display_clocks' of component 'clk_wiz_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl:51]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-27516-C27-5CG3121FGH/realtime/clk_wiz_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-7948-C27-5CG3121FGH/realtime/clk_wiz_0_stub.vhdl:6' bound to instance 'mmcm_adv_inst_display_clocks' of component 'clk_wiz_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl:51]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-7948-C27-5CG3121FGH/realtime/clk_wiz_0_stub.vhdl:19]
 INFO: [Synth 8-3491] module 'vga' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd:11' bound to instance 'Inst_vga' of component 'vga' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl:62]
 INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd:21]
 INFO: [Synth 8-3491] module 'vga_signal_generator' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga_signal_generator.vhd:8' bound to instance 'vga_sig_gen' of component 'vga_signal_generator' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd:28]
@@ -152,8 +155,8 @@ INFO: [Synth 8-226] default block is never used [C:/Users/C27Bradford.Hurt/ece38
 INFO: [Synth 8-256] done synthesizing module 'TWICtl' (0#1) [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/TWICtl.vhd:119]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/audio_init.v:151]
 INFO: [Synth 8-6155] done synthesizing module 'audio_init' (0#1) [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/audio_init.v:24]
-INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-27516-C27-5CG3121FGH/realtime/clk_wiz_1_stub.vhdl:6' bound to instance 'audiocodec_master_clock' of component 'clk_wiz_1' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/Audio_Codec_Wrapper.vhd:150]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-27516-C27-5CG3121FGH/realtime/clk_wiz_1_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-7948-C27-5CG3121FGH/realtime/clk_wiz_1_stub.vhdl:6' bound to instance 'audiocodec_master_clock' of component 'clk_wiz_1' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/Audio_Codec_Wrapper.vhd:150]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/.Xil/Vivado-7948-C27-5CG3121FGH/realtime/clk_wiz_1_stub.vhdl:18]
 	Parameter C_DATA_WIDTH bound to: 24 - type: integer 
 INFO: [Synth 8-3491] module 'i2s_ctl' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/i2s_ctl.vhd:36' bound to instance 'audio_inout' of component 'i2s_ctl' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/Audio_Codec_Wrapper.vhd:157]
 INFO: [Synth 8-638] synthesizing module 'i2s_ctl' [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/i2s_ctl.vhd:63]
@@ -1441,13 +1444,11 @@ WARNING: [Synth 8-6014] Unused sequential element timeOutCnt_reg was removed.  [
 WARNING: [Synth 8-6014] Unused sequential element errTypeR_reg was removed.  [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/TWICtl.vhd:313]
 WARNING: [Synth 8-6014] Unused sequential element regData1_reg was removed.  [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/audio_init.v:135]
 WARNING: [Synth 8-6014] Unused sequential element initFbWe_reg was removed.  [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/audio_init.v:150]
-WARNING: [Synth 8-3848] Net sw_trigger in module/entity lab2_datapath does not have driver. [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:62]
 WARNING: [Synth 8-3848] Net Lbus_out in module/entity lab2_datapath does not have driver. [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:34]
 WARNING: [Synth 8-3848] Net Rbus_out in module/entity lab2_datapath does not have driver. [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:34]
 WARNING: [Synth 8-3848] Net flagQ in module/entity lab2_datapath does not have driver. [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:36]
 WARNING: [Synth 8-3848] Net ch1[prev_sample] in module/entity lab2_datapath does not have driver. [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:69]
 WARNING: [Synth 8-3848] Net ch2[prev_sample] in module/entity lab2_datapath does not have driver. [C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/lab2_datapath.vhdl:69]
-WARNING: [Synth 8-7129] Port sw[2] in module lab2_fsm is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MM_I in module i2s_ctl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ch1[to_ac][17] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ch1[to_ac][16] in module color_mapper is either unconnected or has no load
@@ -1547,20 +1548,21 @@ WARNING: [Synth 8-7129] Port ch1[to_bram][5] in module color_mapper is either un
 WARNING: [Synth 8-7129] Port ch1[to_bram][4] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ch1[to_bram][3] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ch1[to_bram][2] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch1[to_bram][1] in module color_mapper is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1138.977 ; gain = 593.211
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1138.668 ; gain = 591.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1138.977 ; gain = 593.211
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1138.668 ; gain = 591.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1138.977 ; gain = 593.211
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1138.668 ; gain = 591.289
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1138.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1138.668 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'datapath/video_inst/inst_dvid/ODDR2_blue' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_n' that is connected to this pin will not be connected to the replacement instance.
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'datapath/video_inst/inst_dvid/ODDR2_clock' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_n' that is connected to this pin will not be connected to the replacement instance.
@@ -1582,24 +1584,24 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/lab2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1234.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1236.469 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 4 instances
   ODDR2 => ODDR: 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1234.250 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1236.469 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:27 . Memory (MB): peak = 1234.250 ; gain = 688.484
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 1236.469 ; gain = 689.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:27 . Memory (MB): peak = 1234.250 ; gain = 688.484
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 1236.469 ; gain = 689.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1609,7 +1611,7 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/User
 Applied set_property KEEP_HIERARCHY = SOFT for datapath/video_inst/mmcm_adv_inst_display_clocks. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for datapath/Audio_Codec/audiocodec_master_clock. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:27 . Memory (MB): peak = 1234.250 ; gain = 688.484
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 1236.469 ; gain = 689.090
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'button_debounce'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TWICtl'
@@ -1651,7 +1653,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'cw_reg' [C:/Users/C27Bradfo
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'lab2_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1234.250 ; gain = 688.484
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.469 ; gain = 689.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1664,7 +1666,7 @@ Detailed RTL Component Info :
 	   3 Input   12 Bit       Adders := 2     
 	   2 Input   11 Bit       Adders := 10    
 	   2 Input   10 Bit       Adders := 8     
-	   2 Input    9 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 4     
 	   2 Input    7 Bit       Adders := 3     
 	   2 Input    5 Bit       Adders := 2     
 	   8 Input    4 Bit       Adders := 3     
@@ -1682,7 +1684,7 @@ Detailed RTL Component Info :
 	               31 Bit    Registers := 1     
 	               24 Bit    Registers := 2     
 	               18 Bit    Registers := 2     
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	               11 Bit    Registers := 6     
 	               10 Bit    Registers := 14    
 	                8 Bit    Registers := 3     
@@ -1743,26 +1745,26 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:50 . Memory (MB): peak = 1376.922 ; gain = 831.156
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1377.406 ; gain = 830.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:58 . Memory (MB): peak = 1376.922 ; gain = 831.156
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:50 . Memory (MB): peak = 1390.395 ; gain = 843.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:01:03 . Memory (MB): peak = 1418.324 ; gain = 872.559
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:56 . Memory (MB): peak = 1428.680 ; gain = 881.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:01:03 . Memory (MB): peak = 1436.410 ; gain = 890.645
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:57 . Memory (MB): peak = 1446.723 ; gain = 899.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1780,37 +1782,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:01:01 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:01:01 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1830,16 +1832,16 @@ Report Cell Usage:
 +------+---------------+------+
 |1     |clk_wiz_0_bbox |     1|
 |2     |clk_wiz_1_bbox |     1|
-|3     |CARRY4         |    33|
-|4     |LUT1           |    53|
-|5     |LUT2           |   140|
-|6     |LUT3           |   133|
-|7     |LUT4           |   107|
-|8     |LUT5           |   135|
-|9     |LUT6           |   280|
+|3     |CARRY4         |    37|
+|4     |LUT1           |    56|
+|5     |LUT2           |   141|
+|6     |LUT3           |   136|
+|7     |LUT4           |   113|
+|8     |LUT5           |   140|
+|9     |LUT6           |   289|
 |10    |ODDR2          |     4|
 |11    |RAMB18E1       |     4|
-|15    |FDRE           |   464|
+|15    |FDRE           |   473|
 |16    |FDSE           |    29|
 |17    |LDC            |     1|
 |18    |LDP            |     1|
@@ -1849,14 +1851,14 @@ Report Cell Usage:
 |22    |OBUFDS         |     4|
 +------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:01:08 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 272 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:01:04 . Memory (MB): peak = 1597.199 ; gain = 956.160
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:01:09 . Memory (MB): peak = 1597.199 ; gain = 1051.434
+Synthesis finished with 0 errors, 0 critical warnings and 271 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:58 . Memory (MB): peak = 1608.684 ; gain = 963.504
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1608.684 ; gain = 1061.305
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1602.426 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1613.848 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 53 Unisim elements for replacement
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'datapath/video_inst/inst_dvid/ODDR2_blue' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_out3' that is connected to this pin will not be connected to the replacement instance.
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'datapath/video_inst/inst_dvid/ODDR2_clock' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_out3' that is connected to this pin will not be connected to the replacement instance.
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'datapath/video_inst/inst_dvid/ODDR2_green' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_out3' that is connected to this pin will not be connected to the replacement instance.
@@ -1865,7 +1867,7 @@ INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1612.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1624.043 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 12 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
@@ -1874,12 +1876,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 4 instances
   ODDR2 => ODDR: 4 instances
 
-Synth Design complete | Checksum: 39fab3e5
+Synth Design complete | Checksum: 644ebe9b
 INFO: [Common 17-83] Releasing license: Synthesis
-128 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
+131 Infos, 123 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:01:48 . Memory (MB): peak = 1612.664 ; gain = 1307.699
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1612.664 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:01:12 . Memory (MB): peak = 1624.043 ; gain = 1318.375
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1624.043 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.runs/synth_1/lab2.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file lab2_utilization_synth.rpt -pb lab2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Feb 19 00:11:27 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 20 08:43:41 2026...

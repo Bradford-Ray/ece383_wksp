@@ -5,6 +5,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use work.ece383_pkg.all;
 
 entity trigger_detector is
     port (
@@ -26,13 +27,13 @@ begin
     begin
         if rising_edge(clk) then
             if reset_n = '0' then
-                -- Add code here
-            elsif 
-                -- Add code here
+                previous <= (others => '0');
+            elsif (ready = '1') then
+                previous <= monitored_signal;
             end if;
         end if;
     end process;
 
-    crossed_trigger <= -- Add code here
+    crossed_trigger <= '1' when ((threshold > apply_offset(std_logic_vector(previous(15 downto 7)))) and (threshold < apply_offset(std_logic_vector(monitored_signal(15 downto 7))))) else '0';
 
 end architecture trigger_detector_arch;
