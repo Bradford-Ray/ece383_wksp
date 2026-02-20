@@ -65,6 +65,7 @@ architecture lab2_datapath_arch of lab2_datapath is
     signal cw_write_en: std_logic := '0';
     
     
+    signal counter_minus_twenty : unsigned(9 downto 0);
     signal counter_reset : std_logic;
     signal ch1, ch2: channel_t;       
     signal is_live: std_logic;    
@@ -172,12 +173,14 @@ begin
           max_value => 1023
         )
         port map ( clk => clk,
-               reset_n => cw_counter_control(1),
+               reset_n => counter_reset,
                ctrl => cw_counter_control(0), --change to cw(0)
                roll => open,
-               Q => writeCntr
+               Q => counter_minus_twenty
     );
     
+    writeCntr <= counter_minus_twenty + 20;
+    counter_reset <= cw_counter_control(1);
     sw_last_address <= '1' when (writeCntr = x"3FF") else '0';
     write_address <= writeCntr when (exSel = '0') else unsigned(exWrAddr);
 	
