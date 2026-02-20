@@ -57,7 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-28608-C27-5CG3121FGH/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15160-C27-5CG3121FGH/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
@@ -96,6 +96,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Homework_7/lec10.vhdl
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/numeric_stepper.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/tdms.vhdl
+  C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Downloads/Lab02_cadet_code/lab2_code_for_cadets_2026/trigger_detector.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/vga_signal_generator.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/lab2/Lab2.srcs/sources_1/imports/Lab1_Cadet_Code_2026/video.vhdl

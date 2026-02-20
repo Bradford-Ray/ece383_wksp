@@ -187,15 +187,15 @@ begin
 	-- the trigger.  Set the status word to alert the FSM that it should start 
 	-- recording the samples.
 	-------------------------------------------------------------------------------		
---	trig_detect : trigger_detector
---    port map (
---        clk  => clk,
---        reset_n => reset_n,
---        threshold => trigger.t,
---        ready => sw_ready,
---        monitored_signal => UNSIGNED(ch1.current_sample),
---        crossed_trigger => sw_trigger
---    );
+	trig_detect : trigger_detector
+    port map (
+        clk  => clk,
+        reset_n => reset_n,
+        threshold => trigger.v,
+        ready => sw_ready,
+        monitored_signal => UNSIGNED(ch1.current_sample),
+        crossed_trigger => sw_trigger
+    );
 	
 	-------------------------------------------------------------------------------
 	-- Instantiate the video driver from Lab1 - should integrate smoothly
