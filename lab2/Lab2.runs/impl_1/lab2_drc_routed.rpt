@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Fri Feb 20 08:45:55 2026
+| Date         : Fri Feb 20 09:20:27 2026
 | Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command      : report_drc -file lab2_drc_routed.rpt -pb lab2_drc_routed.pb -rpx lab2_drc_routed.rpx
 | Design       : lab2
@@ -50,7 +50,7 @@ Related violations: <none>
 
 PDRC-138#1 Warning
 SLICE_PairEqSame_D6D5_WARN  
-Luts D6LUT and D5LUT in use in site SLICE_X149Y135 with different equations without A6 pin connected to Global Logic High.
+Luts D6LUT and D5LUT in use in site SLICE_X143Y123 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 PDRC-153#1 Warning
