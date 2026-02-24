@@ -57,11 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/C27Bradford.Hurt/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15160-C27-5CG3121FGH/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
