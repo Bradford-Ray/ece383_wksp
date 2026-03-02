@@ -33,8 +33,11 @@ The trigger detector takes values for the trigger threshold and the monitored si
 Implementation of Lab 2 was done in stages to ensure smooth testing and that the prebuilt modules work. This allowed most problems to be resolved easily. Gate Check 1 included the Video and BRAM modules, with hard-coded data for the BRAM. Gate Check 2 added simulated values from the Audio Codec Wrapper along with a counter for writing to the BRAM. The final addition included trigger logic and live audio input.
 ### Major Problems
 When testing the live output, I noticed that my waveforms were considerably less crisp than those from the other students. Every wave except for the Sine wave was blurry and distorted.
+
 I resolved this issue by using another student's laptop to output the audio signal. The issue was with the output from my computer rather than the project.
+
 During testing of the trigger, I ran into several issues while comparing the incoming signal to the threshold. Each time, the type error was wrong or the number of bits was incorrect.
+
 The solution was to take the top 9 bits, convert to a standard logic vector, and use the apply_offset function from the 383 library to acheive the correct comparison.
 
 ## Results
