@@ -1,0 +1,12 @@
+timestamp=[2026-03-06 08:50:01], mode=WORKBENCH_START, duration=0:00:09.987, duration_ms=9987, data={}
+timestamp=[2026-03-06 08:50:02], mode=WORKBENCH_UI_INIT, duration=0:00:01.037, duration_ms=1037, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-03-06 08:50:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.120, duration_ms=120, data={}
+timestamp=[2026-03-06 08:52:03], mode=APP_CREATION, duration=0:00:13.927, duration_ms=13927, data={name=ublaze2, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2026-03-06 08:57:10], mode=PLATFORM_GENERATION, duration=0:00:07.525, duration_ms=7525, data={name=design_1_wrapper}
+timestamp=[2026-03-06 08:57:25], mode=PLATFORM_GENERATION, duration=0:00:04.894, duration_ms=4894, data={name=design_1_wrapper}
+timestamp=[2026-03-06 08:57:26], mode=BUILD, duration=0:00:00.667, duration_ms=667, data={name=ublaze2, configuration=Debug, clean_build=false}
+timestamp=[2026-03-06 09:02:47], mode=PLATFORM_GENERATION, duration=0:00:14.007, duration_ms=14007, data={name=design_1_wrapper}
+timestamp=[2026-03-06 09:03:49], mode=PLATFORM_GENERATION, duration=0:00:11.172, duration_ms=11172, data={name=design_1_wrapper}
+timestamp=[2026-03-06 09:03:53], mode=BUILD, duration=0:00:03.525, duration_ms=3525, data={name=ublaze2, configuration=Debug, clean_build=false}
+timestamp=[2026-03-06 09:04:23], mode=BUILD, duration=0:00:00.345, duration_ms=345, data={name=ublaze2, configuration=Debug, clean_build=false}
+timestamp=[2026-03-06 09:04:24], mode=BUILD, duration=0:00:00.360, duration_ms=360, data={name=ublaze2_system, configuration=Debug, clean_build=false}
