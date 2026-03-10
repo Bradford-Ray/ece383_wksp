@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.srcs/constrs_1/imports/ice2/ice2.xdc rfile:../../../project_1.srcs/constrs_1/imports/ice2/ice2.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.srcs/constrs_1/imports/ice2/ice2.xdc rfile:../../../ublaze3.srcs/constrs_1/imports/ice2/ice2.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS25 } [get_ports { LED[0] }]; #IO_L15P_T2_DQS_13 Sch=led[0]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]

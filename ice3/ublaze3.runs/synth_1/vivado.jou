@@ -3,12 +3,12 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Mar  6 08:33:00 2026
-# Process ID         : 17852
-# Current directory  : C:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.runs/synth_1
+# Start of session at: Tue Mar 10 00:43:05 2026
+# Process ID         : 29408
+# Current directory  : C:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.runs/synth_1
 # Command line       : vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file           : C:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.runs/synth_1/design_1_wrapper.vds
-# Journal file       : C:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.runs/synth_1\vivado.jou
+# Log file           : C:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.runs/synth_1/design_1_wrapper.vds
+# Journal file       : C:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.runs/synth_1\vivado.jou
 # Running On         : C27-5CG3121FGH
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 22631
@@ -17,8 +17,8 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16442 MB
-# Swap memory        : 12699 MB
-# Total Virtual      : 29142 MB
-# Available Virtual  : 5883 MB
+# Swap memory        : 12348 MB
+# Total Virtual      : 28790 MB
+# Available Virtual  : 10042 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

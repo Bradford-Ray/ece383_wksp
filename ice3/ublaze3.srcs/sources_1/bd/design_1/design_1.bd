@@ -785,7 +785,7 @@
       },
       "My_Counter_IP_0": {
         "vlnv": "xilinx.com:user:My_Counter_IP:1.0",
-        "ip_revision": "2",
+        "ip_revision": "3",
         "xci_name": "design_1_My_Counter_IP_0_0",
         "xci_path": "ip\\design_1_My_Counter_IP_0_0\\design_1_My_Counter_IP_0_0.xci",
         "inst_hier_path": "My_Counter_IP_0"
@@ -864,6 +864,12 @@
         "ports": [
           "My_Counter_IP_0/LED",
           "LED"
+        ]
+      },
+      "My_Counter_IP_0_roll": {
+        "ports": [
+          "My_Counter_IP_0/roll",
+          "microblaze_0/Interrupt"
         ]
       },
       "clk_wiz_1_clk_out2": {

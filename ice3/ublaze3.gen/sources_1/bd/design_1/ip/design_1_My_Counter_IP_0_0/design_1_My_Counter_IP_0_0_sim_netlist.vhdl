@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Fri Mar  6 08:30:33 2026
+-- Date        : Tue Mar 10 00:38:02 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.gen/sources_1/bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0_sim_netlist.vhdl
+--               c:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.gen/sources_1/bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0_sim_netlist.vhdl
 -- Design      : design_1_My_Counter_IP_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,6 +19,7 @@ entity design_1_My_Counter_IP_0_0_lec10 is
   port (
     Q : out STD_LOGIC_VECTOR ( 7 downto 0 );
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
+    roll : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     \processQ_reg[0]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \processQ_reg[7]_0\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -32,11 +33,11 @@ architecture STRUCTURE of design_1_My_Counter_IP_0_0_lec10 is
   signal \^q\ : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \^sr\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processQ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \processQ[3]_i_2_n_0\ : STD_LOGIC;
   signal \processQ[4]_i_2_n_0\ : STD_LOGIC;
   signal \processQ[5]_i_2_n_0\ : STD_LOGIC;
   signal \processQ[7]_i_2_n_0\ : STD_LOGIC;
   signal \processQ[7]_i_4_n_0\ : STD_LOGIC;
+  signal roll_i_1_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \processQ[4]_i_2\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \processQ[5]_i_2\ : label is "soft_lutpair0";
@@ -45,100 +46,90 @@ begin
   SR(0) <= \^sr\(0);
 \processQ[0]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"3404"
+      INIT => X"0A30"
     )
         port map (
-      I0 => \^q\(0),
-      I1 => \processQ_reg[0]_0\(0),
-      I2 => \processQ_reg[0]_0\(1),
-      I3 => \processQ_reg[7]_0\(0),
+      I0 => \processQ_reg[7]_0\(0),
+      I1 => \^q\(0),
+      I2 => \processQ_reg[0]_0\(0),
+      I3 => \processQ_reg[0]_0\(1),
       O => processQ(0)
     );
 \processQ[1]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0F600060"
+      INIT => X"0066F000"
     )
         port map (
       I0 => \^q\(1),
       I1 => \^q\(0),
-      I2 => \processQ_reg[0]_0\(0),
+      I2 => \processQ_reg[7]_0\(1),
       I3 => \processQ_reg[0]_0\(1),
-      I4 => \processQ_reg[7]_0\(1),
+      I4 => \processQ_reg[0]_0\(0),
       O => processQ(1)
     );
 \processQ[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00FF6A0000006A00"
-    )
-        port map (
-      I0 => \^q\(2),
-      I1 => \^q\(1),
-      I2 => \^q\(0),
-      I3 => \processQ_reg[0]_0\(0),
-      I4 => \processQ_reg[0]_0\(1),
-      I5 => \processQ_reg[7]_0\(2),
-      O => processQ(2)
-    );
-\processQ[3]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0F600060"
-    )
-        port map (
-      I0 => \^q\(3),
-      I1 => \processQ[3]_i_2_n_0\,
-      I2 => \processQ_reg[0]_0\(0),
-      I3 => \processQ_reg[0]_0\(1),
-      I4 => \processQ_reg[7]_0\(3),
-      O => processQ(3)
-    );
-\processQ[3]_i_2\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
+      INIT => X"00006A6AFF000000"
     )
         port map (
       I0 => \^q\(2),
       I1 => \^q\(0),
       I2 => \^q\(1),
-      O => \processQ[3]_i_2_n_0\
+      I3 => \processQ_reg[7]_0\(2),
+      I4 => \processQ_reg[0]_0\(1),
+      I5 => \processQ_reg[0]_0\(0),
+      O => processQ(2)
     );
-\processQ[4]_i_1\: unisim.vcomponents.LUT5
+\processQ[3]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0F600060"
+      INIT => X"0099F000"
+    )
+        port map (
+      I0 => \^q\(3),
+      I1 => \processQ[4]_i_2_n_0\,
+      I2 => \processQ_reg[7]_0\(3),
+      I3 => \processQ_reg[0]_0\(1),
+      I4 => \processQ_reg[0]_0\(0),
+      O => processQ(3)
+    );
+\processQ[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00009A9AFF000000"
     )
         port map (
       I0 => \^q\(4),
       I1 => \processQ[4]_i_2_n_0\,
-      I2 => \processQ_reg[0]_0\(0),
-      I3 => \processQ_reg[0]_0\(1),
-      I4 => \processQ_reg[7]_0\(4),
+      I2 => \^q\(3),
+      I3 => \processQ_reg[7]_0\(4),
+      I4 => \processQ_reg[0]_0\(1),
+      I5 => \processQ_reg[0]_0\(0),
       O => processQ(4)
     );
-\processQ[4]_i_2\: unisim.vcomponents.LUT4
+\processQ[4]_i_2\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8000"
+      INIT => X"7F"
     )
         port map (
-      I0 => \^q\(3),
-      I1 => \^q\(1),
-      I2 => \^q\(0),
-      I3 => \^q\(2),
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
       O => \processQ[4]_i_2_n_0\
     );
 \processQ[5]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0F600060"
+      INIT => X"0099F000"
     )
         port map (
       I0 => \^q\(5),
       I1 => \processQ[5]_i_2_n_0\,
-      I2 => \processQ_reg[0]_0\(0),
+      I2 => \processQ_reg[7]_0\(5),
       I3 => \processQ_reg[0]_0\(1),
-      I4 => \processQ_reg[7]_0\(5),
+      I4 => \processQ_reg[0]_0\(0),
       O => processQ(5)
     );
 \processQ[5]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"80000000"
+      INIT => X"7FFFFFFF"
     )
         port map (
       I0 => \^q\(4),
@@ -150,14 +141,14 @@ begin
     );
 \processQ[6]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0F600060"
+      INIT => X"0066F000"
     )
         port map (
       I0 => \^q\(6),
       I1 => \processQ[7]_i_4_n_0\,
-      I2 => \processQ_reg[0]_0\(0),
+      I2 => \processQ_reg[7]_0\(6),
       I3 => \processQ_reg[0]_0\(1),
-      I4 => \processQ_reg[7]_0\(6),
+      I4 => \processQ_reg[0]_0\(0),
       O => processQ(6)
     );
 \processQ[7]_i_1\: unisim.vcomponents.LUT1
@@ -179,15 +170,15 @@ begin
     );
 \processQ[7]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00FF6A0000006A00"
+      INIT => X"00006A6AFF000000"
     )
         port map (
       I0 => \^q\(7),
-      I1 => \^q\(6),
-      I2 => \processQ[7]_i_4_n_0\,
-      I3 => \processQ_reg[0]_0\(0),
+      I1 => \processQ[7]_i_4_n_0\,
+      I2 => \^q\(6),
+      I3 => \processQ_reg[7]_0\(7),
       I4 => \processQ_reg[0]_0\(1),
-      I5 => \processQ_reg[7]_0\(7),
+      I5 => \processQ_reg[0]_0\(0),
       O => processQ(7)
     );
 \processQ[7]_i_4\: unisim.vcomponents.LUT6
@@ -267,6 +258,27 @@ begin
       Q => \^q\(7),
       R => \^sr\(0)
     );
+roll_i_1: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000080000000"
+    )
+        port map (
+      I0 => \^q\(6),
+      I1 => \^q\(7),
+      I2 => \^q\(5),
+      I3 => \^q\(4),
+      I4 => \^q\(3),
+      I5 => \processQ[4]_i_2_n_0\,
+      O => roll_i_1_n_0
+    );
+roll_reg: unisim.vcomponents.FDRE
+     port map (
+      C => s00_axi_aclk,
+      CE => '1',
+      D => roll_i_1_n_0,
+      Q => roll,
+      R => '0'
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -286,6 +298,7 @@ entity design_1_My_Counter_IP_0_0_My_Counter_IP_slave_lite_v1_0_S00_AXI is
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     Q : out STD_LOGIC_VECTOR ( 7 downto 0 );
     \FSM_onehot_state_write_reg[2]_1\ : out STD_LOGIC;
+    roll : out STD_LOGIC;
     axi_bvalid_reg_0 : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     axi_awready_reg_1 : in STD_LOGIC;
@@ -1181,6 +1194,7 @@ counter: entity work.design_1_My_Counter_IP_0_0_lec10
       SR(0) => p_0_in,
       \processQ_reg[0]_0\(1 downto 0) => slv_reg1(1 downto 0),
       \processQ_reg[7]_0\(7 downto 0) => slv_reg0(7 downto 0),
+      roll => roll,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn
     );
@@ -15512,6 +15526,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_My_Counter_IP_0_0_My_Counter_IP is
   port (
     LED : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    roll : out STD_LOGIC;
     axi_awready_reg : out STD_LOGIC;
     axi_rvalid_reg : out STD_LOGIC;
     axi_arready_reg : out STD_LOGIC;
@@ -15571,6 +15586,7 @@ My_Counter_IP_slave_lite_v1_0_S00_AXI_inst: entity work.design_1_My_Counter_IP_0
       axi_rvalid_reg_1 => axi_rvalid_i_1_n_0,
       axi_wready => axi_wready,
       axi_wready_reg_0 => axi_wready_i_1_n_0,
+      roll => roll,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(4 downto 0) => s00_axi_araddr(4 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
@@ -15655,6 +15671,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_My_Counter_IP_0_0 is
   port (
     LED : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    roll : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -15734,6 +15751,7 @@ U0: entity work.design_1_My_Counter_IP_0_0_My_Counter_IP
       axi_arready_reg => s00_axi_arready,
       axi_awready_reg => s00_axi_awready,
       axi_rvalid_reg => s00_axi_rvalid,
+      roll => roll,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(4 downto 0) => s00_axi_araddr(6 downto 2),
       s00_axi_aresetn => s00_axi_aresetn,

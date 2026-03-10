@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:My_Counter_IP:1.0
--- IP Revision: 2
+-- IP Revision: 3
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -56,6 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_My_Counter_IP_0_0 IS
   PORT (
     LED : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    roll : OUT STD_LOGIC;
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -90,6 +91,7 @@ ARCHITECTURE design_1_My_Counter_IP_0_0_arch OF design_1_My_Counter_IP_0_0 IS
     );
     PORT (
       LED : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      roll : OUT STD_LOGIC;
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -118,7 +120,7 @@ ARCHITECTURE design_1_My_Counter_IP_0_0_arch OF design_1_My_Counter_IP_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_My_Counter_IP_0_0_arch : ARCHITECTURE IS "design_1_My_Counter_IP_0_0,My_Counter_IP,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_My_Counter_IP_0_0_arch: ARCHITECTURE IS "design_1_My_Counter_IP_0_0,My_Counter_IP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=My_Counter_IP,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_My_Counter_IP_0_0_arch: ARCHITECTURE IS "design_1_My_Counter_IP_0_0,My_Counter_IP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=My_Counter_IP,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
@@ -158,6 +160,7 @@ BEGIN
     )
     PORT MAP (
       LED => LED,
+      roll => roll,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_awaddr => s00_axi_awaddr,
