@@ -1,0 +1,21 @@
+08:15:48 **** Incremental Build of configuration Debug for project ICE3 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/ice3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: ICE3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/ice3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "ICE3.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: ICE3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size ICE3.elf  |tee "ICE3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   7416	     24	   3432	  10872	   2a78	ICE3.elf
+'Finished building: ICE3.elf.size'
+' '
+
+08:15:52 Build Finished (took 4s.101ms)
+

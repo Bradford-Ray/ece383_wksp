@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Fri Mar  6 08:30:33 2026
+// Date        : Tue Mar 10 00:38:02 2026
 // Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.gen/sources_1/bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0_sim_netlist.v
+//               c:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.gen/sources_1/bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0_sim_netlist.v
 // Design      : design_1_My_Counter_IP_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,6 +17,7 @@
 (* NotValidForBitStream *)
 module design_1_My_Counter_IP_0_0
    (LED,
+    roll,
     s00_axi_aclk,
     s00_axi_aresetn,
     s00_axi_awaddr,
@@ -39,6 +40,7 @@ module design_1_My_Counter_IP_0_0
     s00_axi_rvalid,
     s00_axi_rready);
   output [7:0]LED;
+  output roll;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* x_interface_mode = "slave S00_AXI_CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input s00_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* x_interface_mode = "slave S00_AXI_RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) (* x_interface_mode = "slave S00_AXI" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [6:0]s00_axi_awaddr;
@@ -63,6 +65,7 @@ module design_1_My_Counter_IP_0_0
 
   wire \<const0> ;
   wire [7:0]LED;
+  wire roll;
   wire s00_axi_aclk;
   wire [6:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -92,6 +95,7 @@ module design_1_My_Counter_IP_0_0
         .axi_arready_reg(s00_axi_arready),
         .axi_awready_reg(s00_axi_awready),
         .axi_rvalid_reg(s00_axi_rvalid),
+        .roll(roll),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[6:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -111,6 +115,7 @@ endmodule
 (* ORIG_REF_NAME = "My_Counter_IP" *) 
 module design_1_My_Counter_IP_0_0_My_Counter_IP
    (LED,
+    roll,
     axi_awready_reg,
     axi_rvalid_reg,
     axi_arready_reg,
@@ -129,6 +134,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP
     s00_axi_wstrb,
     s00_axi_bready);
   output [7:0]LED;
+  output roll;
   output axi_awready_reg;
   output axi_rvalid_reg;
   output axi_arready_reg;
@@ -160,6 +166,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP
   wire axi_rvalid_reg;
   wire axi_wready;
   wire axi_wready_i_1_n_0;
+  wire roll;
   wire s00_axi_aclk;
   wire [4:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -190,6 +197,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP
         .axi_rvalid_reg_1(axi_rvalid_i_1_n_0),
         .axi_wready(axi_wready),
         .axi_wready_reg_0(axi_wready_i_1_n_0),
+        .roll(roll),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -266,6 +274,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP_slave_lite_v1_0_S00_AXI
     s00_axi_rdata,
     Q,
     \FSM_onehot_state_write_reg[2]_1 ,
+    roll,
     axi_bvalid_reg_0,
     s00_axi_aclk,
     axi_awready_reg_1,
@@ -293,6 +302,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP_slave_lite_v1_0_S00_AXI
   output [31:0]s00_axi_rdata;
   output [7:0]Q;
   output \FSM_onehot_state_write_reg[2]_1 ;
+  output roll;
   input axi_bvalid_reg_0;
   input s00_axi_aclk;
   input axi_awready_reg_1;
@@ -722,6 +732,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP_slave_lite_v1_0_S00_AXI
   wire \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_8_n_0 ;
   wire \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_9_n_0 ;
   wire [31:7]p_1_in;
+  wire roll;
   wire s00_axi_aclk;
   wire [4:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -1120,6 +1131,7 @@ module design_1_My_Counter_IP_0_0_My_Counter_IP_slave_lite_v1_0_S00_AXI
         .SR(p_0_in),
         .\processQ_reg[0]_0 (slv_reg1),
         .\processQ_reg[7]_0 (slv_reg0),
+        .roll(roll),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_aresetn(s00_axi_aresetn));
   LUT6 #(
@@ -11916,12 +11928,14 @@ endmodule
 module design_1_My_Counter_IP_0_0_lec10
    (Q,
     SR,
+    roll,
     s00_axi_aclk,
     \processQ_reg[0]_0 ,
     \processQ_reg[7]_0 ,
     s00_axi_aresetn);
   output [7:0]Q;
   output [0:0]SR;
+  output roll;
   input s00_axi_aclk;
   input [1:0]\processQ_reg[0]_0 ;
   input [7:0]\processQ_reg[7]_0 ;
@@ -11930,89 +11944,83 @@ module design_1_My_Counter_IP_0_0_lec10
   wire [7:0]Q;
   wire [0:0]SR;
   wire [7:0]processQ;
-  wire \processQ[3]_i_2_n_0 ;
   wire \processQ[4]_i_2_n_0 ;
   wire \processQ[5]_i_2_n_0 ;
   wire \processQ[7]_i_2_n_0 ;
   wire \processQ[7]_i_4_n_0 ;
   wire [1:0]\processQ_reg[0]_0 ;
   wire [7:0]\processQ_reg[7]_0 ;
+  wire roll;
+  wire roll_i_1_n_0;
   wire s00_axi_aclk;
   wire s00_axi_aresetn;
 
   LUT4 #(
-    .INIT(16'h3404)) 
+    .INIT(16'h0A30)) 
     \processQ[0]_i_1 
-       (.I0(Q[0]),
-        .I1(\processQ_reg[0]_0 [0]),
-        .I2(\processQ_reg[0]_0 [1]),
-        .I3(\processQ_reg[7]_0 [0]),
+       (.I0(\processQ_reg[7]_0 [0]),
+        .I1(Q[0]),
+        .I2(\processQ_reg[0]_0 [0]),
+        .I3(\processQ_reg[0]_0 [1]),
         .O(processQ[0]));
   LUT5 #(
-    .INIT(32'h0F600060)) 
+    .INIT(32'h0066F000)) 
     \processQ[1]_i_1 
        (.I0(Q[1]),
         .I1(Q[0]),
-        .I2(\processQ_reg[0]_0 [0]),
+        .I2(\processQ_reg[7]_0 [1]),
         .I3(\processQ_reg[0]_0 [1]),
-        .I4(\processQ_reg[7]_0 [1]),
+        .I4(\processQ_reg[0]_0 [0]),
         .O(processQ[1]));
   LUT6 #(
-    .INIT(64'h00FF6A0000006A00)) 
+    .INIT(64'h00006A6AFF000000)) 
     \processQ[2]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[0]),
-        .I3(\processQ_reg[0]_0 [0]),
-        .I4(\processQ_reg[0]_0 [1]),
-        .I5(\processQ_reg[7]_0 [2]),
-        .O(processQ[2]));
-  LUT5 #(
-    .INIT(32'h0F600060)) 
-    \processQ[3]_i_1 
-       (.I0(Q[3]),
-        .I1(\processQ[3]_i_2_n_0 ),
-        .I2(\processQ_reg[0]_0 [0]),
-        .I3(\processQ_reg[0]_0 [1]),
-        .I4(\processQ_reg[7]_0 [3]),
-        .O(processQ[3]));
-  LUT3 #(
-    .INIT(8'h80)) 
-    \processQ[3]_i_2 
        (.I0(Q[2]),
         .I1(Q[0]),
         .I2(Q[1]),
-        .O(\processQ[3]_i_2_n_0 ));
+        .I3(\processQ_reg[7]_0 [2]),
+        .I4(\processQ_reg[0]_0 [1]),
+        .I5(\processQ_reg[0]_0 [0]),
+        .O(processQ[2]));
   LUT5 #(
-    .INIT(32'h0F600060)) 
+    .INIT(32'h0099F000)) 
+    \processQ[3]_i_1 
+       (.I0(Q[3]),
+        .I1(\processQ[4]_i_2_n_0 ),
+        .I2(\processQ_reg[7]_0 [3]),
+        .I3(\processQ_reg[0]_0 [1]),
+        .I4(\processQ_reg[0]_0 [0]),
+        .O(processQ[3]));
+  LUT6 #(
+    .INIT(64'h00009A9AFF000000)) 
     \processQ[4]_i_1 
        (.I0(Q[4]),
         .I1(\processQ[4]_i_2_n_0 ),
-        .I2(\processQ_reg[0]_0 [0]),
-        .I3(\processQ_reg[0]_0 [1]),
-        .I4(\processQ_reg[7]_0 [4]),
+        .I2(Q[3]),
+        .I3(\processQ_reg[7]_0 [4]),
+        .I4(\processQ_reg[0]_0 [1]),
+        .I5(\processQ_reg[0]_0 [0]),
         .O(processQ[4]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
+  LUT3 #(
+    .INIT(8'h7F)) 
     \processQ[4]_i_2 
-       (.I0(Q[3]),
-        .I1(Q[1]),
-        .I2(Q[0]),
-        .I3(Q[2]),
+       (.I0(Q[2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
         .O(\processQ[4]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h0F600060)) 
+    .INIT(32'h0099F000)) 
     \processQ[5]_i_1 
        (.I0(Q[5]),
         .I1(\processQ[5]_i_2_n_0 ),
-        .I2(\processQ_reg[0]_0 [0]),
+        .I2(\processQ_reg[7]_0 [5]),
         .I3(\processQ_reg[0]_0 [1]),
-        .I4(\processQ_reg[7]_0 [5]),
+        .I4(\processQ_reg[0]_0 [0]),
         .O(processQ[5]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h80000000)) 
+    .INIT(32'h7FFFFFFF)) 
     \processQ[5]_i_2 
        (.I0(Q[4]),
         .I1(Q[2]),
@@ -12021,13 +12029,13 @@ module design_1_My_Counter_IP_0_0_lec10
         .I4(Q[3]),
         .O(\processQ[5]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h0F600060)) 
+    .INIT(32'h0066F000)) 
     \processQ[6]_i_1 
        (.I0(Q[6]),
         .I1(\processQ[7]_i_4_n_0 ),
-        .I2(\processQ_reg[0]_0 [0]),
+        .I2(\processQ_reg[7]_0 [6]),
         .I3(\processQ_reg[0]_0 [1]),
-        .I4(\processQ_reg[7]_0 [6]),
+        .I4(\processQ_reg[0]_0 [0]),
         .O(processQ[6]));
   LUT1 #(
     .INIT(2'h1)) 
@@ -12041,14 +12049,14 @@ module design_1_My_Counter_IP_0_0_lec10
         .I1(\processQ_reg[0]_0 [1]),
         .O(\processQ[7]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h00FF6A0000006A00)) 
+    .INIT(64'h00006A6AFF000000)) 
     \processQ[7]_i_3 
        (.I0(Q[7]),
-        .I1(Q[6]),
-        .I2(\processQ[7]_i_4_n_0 ),
-        .I3(\processQ_reg[0]_0 [0]),
+        .I1(\processQ[7]_i_4_n_0 ),
+        .I2(Q[6]),
+        .I3(\processQ_reg[7]_0 [7]),
         .I4(\processQ_reg[0]_0 [1]),
-        .I5(\processQ_reg[7]_0 [7]),
+        .I5(\processQ_reg[0]_0 [0]),
         .O(processQ[7]));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
@@ -12108,6 +12116,22 @@ module design_1_My_Counter_IP_0_0_lec10
         .D(processQ[7]),
         .Q(Q[7]),
         .R(SR));
+  LUT6 #(
+    .INIT(64'h0000000080000000)) 
+    roll_i_1
+       (.I0(Q[6]),
+        .I1(Q[7]),
+        .I2(Q[5]),
+        .I3(Q[4]),
+        .I4(Q[3]),
+        .I5(\processQ[4]_i_2_n_0 ),
+        .O(roll_i_1_n_0));
+  FDRE roll_reg
+       (.C(s00_axi_aclk),
+        .CE(1'b1),
+        .D(roll_i_1_n_0),
+        .Q(roll),
+        .R(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

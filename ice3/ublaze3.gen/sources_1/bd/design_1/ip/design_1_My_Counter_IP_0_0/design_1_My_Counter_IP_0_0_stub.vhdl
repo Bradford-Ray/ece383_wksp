@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Fri Mar  6 08:30:33 2026
+-- Date        : Tue Mar 10 00:38:02 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.gen/sources_1/bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0_stub.vhdl
+--               c:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.gen/sources_1/bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0_stub.vhdl
 -- Design      : design_1_My_Counter_IP_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tsbg484-1
@@ -16,6 +16,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity design_1_My_Counter_IP_0_0 is
   Port ( 
     LED : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    roll : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -42,7 +43,7 @@ entity design_1_My_Counter_IP_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of design_1_My_Counter_IP_0_0 : entity is "design_1_My_Counter_IP_0_0,My_Counter_IP,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of design_1_My_Counter_IP_0_0 : entity is "design_1_My_Counter_IP_0_0,My_Counter_IP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=My_Counter_IP,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}";
+  attribute core_generation_info of design_1_My_Counter_IP_0_0 : entity is "design_1_My_Counter_IP_0_0,My_Counter_IP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=My_Counter_IP,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of design_1_My_Counter_IP_0_0 : entity is "yes";
 end design_1_My_Counter_IP_0_0;
@@ -51,7 +52,7 @@ architecture stub of design_1_My_Counter_IP_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "LED[7:0],s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[6:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[6:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
+  attribute black_box_pad_pin of stub : architecture is "LED[7:0],roll,s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[6:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[6:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
   attribute x_interface_info : string;
   attribute x_interface_info of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   attribute x_interface_mode : string;

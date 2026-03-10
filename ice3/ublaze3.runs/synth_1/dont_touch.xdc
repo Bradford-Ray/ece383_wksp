@@ -54,4 +54,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rs
 # IP: bd/design_1/ip/design_1_My_Counter_IP_0_0/design_1_My_Counter_IP_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_My_Counter_IP_0_0 || ORIG_REF_NAME==design_1_My_Counter_IP_0_0} -quiet] -quiet
 
-# XDC: C:/Users/C27Bradford.Hurt/ece383_wksp/ice2/project_1.gen/sources_1/bd/design_1/design_1_ooc.xdc
+# XDC: c:/Users/C27Bradford.Hurt/ece383_wksp/ice3/ublaze3.gen/sources_1/bd/design_1/design_1_ooc.xdc

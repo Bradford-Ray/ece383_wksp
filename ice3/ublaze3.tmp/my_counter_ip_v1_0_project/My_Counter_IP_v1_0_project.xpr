@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="68" Path="c:/users/c27bradford.hurt/ece383_wksp/ice3/ublaze3.tmp/my_counter_ip_v1_0_project/My_Counter_IP_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="3eabf1b65c63486dae9dab4d318def33"/>
+    <Option Name="Id" Val="6a931894d0154a2d9cd32d7cd9623cfa"/>
     <Option Name="Part" Val="xc7a200tsbg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -121,7 +121,7 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="My_Counter_IP"/>
-        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../Users/C27Bradford.Hurt/ece383_wksp/ip_repo/My_Counter_IP_1_0/src/ice2.vhdl"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../Users/C27Bradford.Hurt/ece383_wksp/ip_repo/My_Counter_IP_1_0/hdl/My_Counter_IP.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
