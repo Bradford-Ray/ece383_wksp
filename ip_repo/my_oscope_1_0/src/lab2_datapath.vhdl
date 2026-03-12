@@ -34,8 +34,7 @@ use work.ece383_pkg.all;
     Lbus_out, Rbus_out: out std_logic_vector(15 downto 0);
     exLbus, exRbus: in std_logic_vector(15 downto 0);
     flagQ: out std_logic;   
-    flagClear: in std_logic;
-    trigger_out: out trigger_t); 
+    flagClear: in std_logic); 
 end lab2_datapath;
 
 architecture lab2_datapath_arch of lab2_datapath is
@@ -118,21 +117,6 @@ begin
 	-- Add code here
 	-- Add a clock process here to implement the state machine shown on course website
 	
-	process (clk)
-	begin
-		if (rising_edge(clk)) then
-			if reset_n = '0' then
-				-- Add code here
-				flagQ <= '0';
-			elsif(sw_ready = '1') then
-				-- Add code here
-				flagQ <= '1';
-            elsif(flagClear = '1') then
-                flagQ <= '0';        
-			end if;
-		end if;
-	end process;
-	
     ------------------------------------------------------------------------------
 	-- If a button has been pressed then increment of decrement the trigger time and Volt
 	--    should this be debounced?
@@ -175,8 +159,6 @@ begin
       
     trigger.t <= unsigned(num_stepper_t);
     trigger.v <= unsigned(num_stepper_v);
-    trigger_out.t <= trigger.t;
-    trigger_out.v <= trigger.v;
 	
 	-------------------------------------------------------------------------------
 	-- Address counter for RAM
