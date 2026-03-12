@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.ece383_pkg.all;
 
 entity my_oscope_slave_lite_v1_0_S00_AXI is
 	generic (
@@ -16,7 +17,26 @@ entity my_oscope_slave_lite_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-
+        --clk : in  STD_LOGIC;
+        --reset_n : in  STD_LOGIC;
+        ac_mclk : out STD_LOGIC;
+        ac_adc_sdata : in STD_LOGIC;
+        ac_dac_sdata : out STD_LOGIC;
+        ac_bclk : out STD_LOGIC;
+        ac_lrclk : out STD_LOGIC;
+        scl : inout STD_LOGIC;
+        sda : inout STD_LOGIC;    
+        tmds : out  STD_LOGIC_VECTOR (3 downto 0);
+        tmdsb : out  STD_LOGIC_VECTOR (3 downto 0);
+        btn: in    STD_LOGIC_VECTOR(4 downto 0);
+        switch: in    STD_LOGIC_VECTOR(3 downto 0);
+        exWrAddr: in std_logic_vector(9 downto 0);
+        exWen, exSel: in std_logic;
+        Lbus_out, Rbus_out: out std_logic_vector(15 downto 0);
+        exLbus, exRbus: in std_logic_vector(15 downto 0);
+        flagQ: out std_logic;   
+        flagClear: in std_logic;
+        trigger_out: out trigger_t;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -85,6 +105,13 @@ end my_oscope_slave_lite_v1_0_S00_AXI;
 
 architecture arch_imp of my_oscope_slave_lite_v1_0_S00_AXI is
 
+	-- User signals
+	signal sw: std_logic_vector(2 downto 0);
+	signal cw: std_logic_vector (2 downto 0);
+	signal Lbus_out_s, Rbus_out_s: std_logic_vector (15 downto 0);
+	signal flagQ_s: std_logic;
+	signal trigger_s: trigger_t;
+	
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -612,14 +639,14 @@ begin
 	-- Implement memory mapped register select and read logic generation
 	 S_AXI_RDATA <= slv_reg0 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00000" ) else 
 	 slv_reg1 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00001" ) else 
-	 slv_reg2 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00010" ) else 
-	 slv_reg3 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00011" ) else 
+	 X"0000" & Lbus_out_s when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00010" ) else 
+	 X"0000" & Rbus_out_s when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00011" ) else 
 	 slv_reg4 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00100" ) else 
 	 slv_reg5 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00101" ) else 
-	 slv_reg6 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00110" ) else 
+	 X"0000000" & "000" & flagQ_s when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00110" ) else 
 	 slv_reg7 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00111" ) else 
-	 slv_reg8 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01000" ) else 
-	 slv_reg9 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01001" ) else 
+	 X"00000" & "0" & std_logic_vector(trigger_s.v) when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01000" ) else 
+	 X"00000" & "0" & std_logic_vector(trigger_s.t) when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01001" ) else 
 	 slv_reg10 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01010" ) else 
 	 slv_reg11 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01011" ) else 
 	 slv_reg12 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01100" ) else 
@@ -645,7 +672,39 @@ begin
 	 (others => '0');
 
 	-- Add user logic here
-
+    	datapath: lab2_datapath port map(
+            clk => S_AXI_ACLK,
+            reset_n => S_AXI_ARESETN,
+            ac_mclk => ac_mclk,
+            ac_adc_sdata => ac_adc_sdata,
+            ac_dac_sdata => ac_dac_sdata,
+            ac_bclk => ac_bclk,
+            ac_lrclk => ac_lrclk,
+            scl => scl,
+            sda => sda,
+            tmds => tmds,
+            tmdsb => tmdsb,
+            sw => sw,
+            cw => cw,
+            btn => btn, 
+            switch => switch,
+            exWrAddr => slv_reg0(9 downto 0),
+            exWen => slv_reg1(0),
+            exSel => switch(2),
+            Lbus_out => Lbus_out_s,
+            Rbus_out => Rbus_out_s,
+            exLbus => slv_reg4(15 downto 0),
+            exRbus => slv_reg5(15 downto 0),		
+            flagQ => flagQ_s,
+            flagClear => slv_reg7(0),
+            trigger_out => trigger_s
+		);
+			  
+	control: lab2_fsm port map( 
+		clk => S_AXI_ACLK,
+		reset_n => S_AXI_ARESETN,
+		sw => sw,
+		cw => cw);
 	-- User logic ends
 
 end arch_imp;
