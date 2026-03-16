@@ -8,8 +8,6 @@
 module design_1 (
   usb_uart_rxd,
   usb_uart_txd,
-  sys_clock,
-  reset,
   DDR3_0_dq,
   DDR3_0_dqs_p,
   DDR3_0_dqs_n,
@@ -23,7 +21,20 @@ module design_1 (
   DDR3_0_ck_n,
   DDR3_0_cke,
   DDR3_0_dm,
-  DDR3_0_odt
+  DDR3_0_odt,
+  sys_clock,
+  reset,
+  ac_mclk,
+  ac_dac_sdata,
+  ac_bclk,
+  ac_lrclk,
+  scl,
+  sda,
+  tmds,
+  tmdsb,
+  switch,
+  btn,
+  ac_adc_sdata
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *)
@@ -31,14 +42,6 @@ module design_1 (
   input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *)
   output usb_uart_txd;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *)
-  (* X_INTERFACE_MODE = "slave CLK.SYS_CLOCK" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_sys_clock, INSERT_VIP 0" *)
-  input sys_clock;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *)
-  (* X_INTERFACE_MODE = "slave RST.RESET" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-  input reset;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 DQ" *)
   (* X_INTERFACE_MODE = "master DDR3_0" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR3_0, CAN_DEBUG false, TIMEPERIOD_PS 1250, MEMORY_TYPE COMPONENTS, DATA_WIDTH 8, CS_ENABLED true, DATA_MASK_ENABLED true, SLOT Single, MEM_ADDR_MAP ROW_COLUMN_BANK, BURST_LENGTH 8, AXI_ARBITRATION_SCHEME TDM, CAS_LATENCY 11, CAS_WRITE_LATENCY 11" *)
@@ -69,6 +72,36 @@ module design_1 (
   output [1:0]DDR3_0_dm;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 ODT" *)
   output [0:0]DDR3_0_odt;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *)
+  (* X_INTERFACE_MODE = "slave CLK.SYS_CLOCK" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_sys_clock, INSERT_VIP 0" *)
+  input sys_clock;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *)
+  (* X_INTERFACE_MODE = "slave RST.RESET" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+  input reset;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output ac_mclk;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output ac_dac_sdata;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output ac_bclk;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output ac_lrclk;
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout scl;
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout sda;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output [3:0]tmds;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output [3:0]tmdsb;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [3:0]switch;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [4:0]btn;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input ac_adc_sdata;
 
   // stub module has no contents
 
