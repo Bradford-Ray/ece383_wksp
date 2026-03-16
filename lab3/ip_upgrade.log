@@ -1,0 +1,107 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 16 08:02:57 2026
+| Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_my_oscope_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_my_oscope_0_0 (xilinx.com:user:my_oscope:1.0) from (Rev. 2) to (Rev. 3)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_my_oscope_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'Lbus_out'
+
+-Upgrade has removed port 'Rbus_out'
+
+-Upgrade has removed port 'exLbus'
+
+-Upgrade has removed port 'exRbus'
+
+-Upgrade has removed port 'exSel'
+
+-Upgrade has removed port 'exWen'
+
+-Upgrade has removed port 'exWrAddr'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 16 07:53:41 2026
+| Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_my_oscope_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_my_oscope_0_0 (xilinx.com:user:my_oscope:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_my_oscope_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'Lbus_out'
+
+-Upgrade has added port 'Rbus_out'
+
+-Upgrade has added port 'ac_adc_sdata'
+
+-Upgrade has added port 'ac_bclk'
+
+-Upgrade has added port 'ac_dac_sdata'
+
+-Upgrade has added port 'ac_lrclk'
+
+-Upgrade has added port 'ac_mclk'
+
+-Upgrade has added port 'btn'
+
+-Upgrade has added port 'exLbus'
+
+-Upgrade has added port 'exRbus'
+
+-Upgrade has added port 'exSel'
+
+-Upgrade has added port 'exWen'
+
+-Upgrade has added port 'exWrAddr'
+
+-Upgrade has added port 'flagQ'
+
+-Upgrade has added port 'scl'
+
+-Upgrade has added port 'sda'
+
+-Upgrade has added port 'switch'
+
+-Upgrade has added port 'tmds'
+
+-Upgrade has added port 'tmdsb'
+
+
