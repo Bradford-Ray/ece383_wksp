@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "clk_wiz_0",
-    "cell_name": "my_oscope_slave_lite_v1_0_S00_AXI_inst//video_inst/mmcm_adv_inst_display_clocks",
+    "cell_name": "my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/video_inst/mmcm_adv_inst_display_clocks",
     "component_reference": "xilinx.com:ip:clk_wiz:6.0",
     "ip_revision": "15",
     "gen_directory": "../../../../../../../users/c27bradford.hurt/ece383_wksp/lab3/lab3.tmp/my_oscope_v1_0_project/my_oscope_v1_0_project.gen/sources_1/ip/clk_wiz_0",

@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Mon Mar 16 08:10:44 2026
+--Date        : Mon Mar 16 09:25:17 2026
 --Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -561,7 +561,7 @@ entity design_1 is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=5,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=None}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=6,da_clkrst_cnt=2,da_mb_cnt=2,synth_mode=None}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -734,70 +734,6 @@ architecture STRUCTURE of design_1 is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rst_clk_wiz_1_100M_0;
-  component design_1_mig_7series_0_0 is
-  port (
-    sys_rst : in STD_LOGIC;
-    clk_ref_i : in STD_LOGIC;
-    ddr3_dq : inout STD_LOGIC_VECTOR ( 15 downto 0 );
-    ddr3_dqs_p : inout STD_LOGIC_VECTOR ( 1 downto 0 );
-    ddr3_dqs_n : inout STD_LOGIC_VECTOR ( 1 downto 0 );
-    ddr3_addr : out STD_LOGIC_VECTOR ( 14 downto 0 );
-    ddr3_ba : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    ddr3_ras_n : out STD_LOGIC;
-    ddr3_cas_n : out STD_LOGIC;
-    ddr3_we_n : out STD_LOGIC;
-    ddr3_reset_n : out STD_LOGIC;
-    ddr3_ck_p : out STD_LOGIC_VECTOR ( 0 to 0 );
-    ddr3_ck_n : out STD_LOGIC_VECTOR ( 0 to 0 );
-    ddr3_cke : out STD_LOGIC_VECTOR ( 0 to 0 );
-    ddr3_dm : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ddr3_odt : out STD_LOGIC_VECTOR ( 0 to 0 );
-    ui_clk_sync_rst : out STD_LOGIC;
-    ui_clk : out STD_LOGIC;
-    ui_addn_clk_0 : out STD_LOGIC;
-    s_axi_awid : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
-    s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_awlock : in STD_LOGIC;
-    s_axi_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_awqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_awvalid : in STD_LOGIC;
-    s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_wlast : in STD_LOGIC;
-    s_axi_wvalid : in STD_LOGIC;
-    s_axi_wready : out STD_LOGIC;
-    s_axi_bready : in STD_LOGIC;
-    s_axi_bid : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bvalid : out STD_LOGIC;
-    s_axi_arid : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
-    s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_arlock : in STD_LOGIC;
-    s_axi_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_arqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_arvalid : in STD_LOGIC;
-    s_axi_arready : out STD_LOGIC;
-    s_axi_rready : in STD_LOGIC;
-    s_axi_rid : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rlast : out STD_LOGIC;
-    s_axi_rvalid : out STD_LOGIC;
-    mmcm_locked : out STD_LOGIC;
-    sys_clk_i : in STD_LOGIC;
-    init_calib_complete : out STD_LOGIC;
-    aresetn : in STD_LOGIC
-  );
-  end component design_1_mig_7series_0_0;
   component design_1_axi_uartlite_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -1032,6 +968,70 @@ architecture STRUCTURE of design_1 is
     s00_axi_rready : in STD_LOGIC
   );
   end component design_1_my_oscope_0_0;
+  component design_1_mig_7series_0_1 is
+  port (
+    sys_rst : in STD_LOGIC;
+    clk_ref_i : in STD_LOGIC;
+    ddr3_dq : inout STD_LOGIC_VECTOR ( 15 downto 0 );
+    ddr3_dqs_p : inout STD_LOGIC_VECTOR ( 1 downto 0 );
+    ddr3_dqs_n : inout STD_LOGIC_VECTOR ( 1 downto 0 );
+    ddr3_addr : out STD_LOGIC_VECTOR ( 14 downto 0 );
+    ddr3_ba : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    ddr3_ras_n : out STD_LOGIC;
+    ddr3_cas_n : out STD_LOGIC;
+    ddr3_we_n : out STD_LOGIC;
+    ddr3_reset_n : out STD_LOGIC;
+    ddr3_ck_p : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ddr3_ck_n : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ddr3_cke : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ddr3_dm : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ddr3_odt : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ui_clk_sync_rst : out STD_LOGIC;
+    ui_clk : out STD_LOGIC;
+    ui_addn_clk_0 : out STD_LOGIC;
+    s_axi_awid : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
+    s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_awlock : in STD_LOGIC;
+    s_axi_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wlast : in STD_LOGIC;
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_bid : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_arid : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
+    s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_arlock : in STD_LOGIC;
+    s_axi_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    s_axi_rid : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rlast : out STD_LOGIC;
+    s_axi_rvalid : out STD_LOGIC;
+    mmcm_locked : out STD_LOGIC;
+    sys_clk_i : in STD_LOGIC;
+    init_calib_complete : out STD_LOGIC;
+    aresetn : in STD_LOGIC
+  );
+  end component design_1_mig_7series_0_1;
   signal axi_smc_1_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 28 downto 0 );
   signal axi_smc_1_M00_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_smc_1_M00_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1620,7 +1620,7 @@ microblaze_0_local_memory: entity work.microblaze_0_local_memory_imp_1K0VQXK
       LMB_Clk => microblaze_0_Clk,
       SYS_Rst => rst_clk_wiz_1_100M_bus_struct_reset(0)
     );
-mig_7series_0: component design_1_mig_7series_0_0
+mig_7series_0: component design_1_mig_7series_0_1
      port map (
       aresetn => rst_mig_7series_0_100M_peripheral_aresetn(0),
       clk_ref_i => clk_wiz_1_clk_out2,
