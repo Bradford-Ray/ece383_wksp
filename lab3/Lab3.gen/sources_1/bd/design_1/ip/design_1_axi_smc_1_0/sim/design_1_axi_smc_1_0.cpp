@@ -297,7 +297,7 @@ void design_1_axi_smc_1_0::before_end_of_elaboration()
     M00_AXI_transactor_param_props.addFloat("PHASE", "0");
     M00_AXI_transactor_param_props.addString("PROTOCOL", "AXI4");
     M00_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_0_ui_clk");
+    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_1_ui_clk");
 
     mp_M00_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,29,1,1,1,1,1,1>("M00_AXI_transactor", M00_AXI_transactor_param_props);
 
@@ -598,7 +598,7 @@ void design_1_axi_smc_1_0::before_end_of_elaboration()
     M00_AXI_transactor_param_props.addFloat("PHASE", "0");
     M00_AXI_transactor_param_props.addString("PROTOCOL", "AXI4");
     M00_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_0_ui_clk");
+    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_1_ui_clk");
 
     mp_M00_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,29,1,1,1,1,1,1>("M00_AXI_transactor", M00_AXI_transactor_param_props);
 
@@ -899,7 +899,7 @@ void design_1_axi_smc_1_0::before_end_of_elaboration()
     M00_AXI_transactor_param_props.addFloat("PHASE", "0");
     M00_AXI_transactor_param_props.addString("PROTOCOL", "AXI4");
     M00_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_0_ui_clk");
+    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_1_ui_clk");
 
     mp_M00_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,29,1,1,1,1,1,1>("M00_AXI_transactor", M00_AXI_transactor_param_props);
 
@@ -1150,7 +1150,7 @@ design_1_axi_smc_1_0::design_1_axi_smc_1_0(const sc_core::sc_module_name& nm) : 
     M00_AXI_transactor_param_props.addFloat("PHASE", "0");
     M00_AXI_transactor_param_props.addString("PROTOCOL", "AXI4");
     M00_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_0_ui_clk");
+    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_1_ui_clk");
 
     mp_M00_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,29,1,1,1,1,1,1>("M00_AXI_transactor", M00_AXI_transactor_param_props);
   mp_M00_AXI_transactor->AWADDR(M00_AXI_awaddr);
@@ -1447,7 +1447,7 @@ design_1_axi_smc_1_0::design_1_axi_smc_1_0(const sc_core::sc_module_name& nm) : 
     M00_AXI_transactor_param_props.addFloat("PHASE", "0");
     M00_AXI_transactor_param_props.addString("PROTOCOL", "AXI4");
     M00_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_0_ui_clk");
+    M00_AXI_transactor_param_props.addString("CLK_DOMAIN", "design_1_mig_7series_0_1_ui_clk");
 
     mp_M00_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,29,1,1,1,1,1,1>("M00_AXI_transactor", M00_AXI_transactor_param_props);
   mp_M00_AXI_transactor->AWADDR(M00_AXI_awaddr);

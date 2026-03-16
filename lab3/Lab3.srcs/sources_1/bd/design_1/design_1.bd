@@ -22,13 +22,13 @@
       "mdm_1": "",
       "clk_wiz_1": "",
       "rst_clk_wiz_1_100M": "",
-      "mig_7series_0": "",
       "axi_uartlite_0": "",
       "axi_smc": "",
       "util_ds_buf_0": "",
       "axi_smc_1": "",
       "rst_mig_7series_0_100M": "",
-      "my_oscope_0": ""
+      "my_oscope_0": "",
+      "mig_7series_0": ""
     },
     "interface_ports": {
       "usb_uart": {
@@ -282,6 +282,9 @@
           },
           "C_D_LMB": {
             "value": "1"
+          },
+          "C_ENABLE_CONVERSION": {
+            "value": "0"
           },
           "C_I_LMB": {
             "value": "1"
@@ -600,27 +603,6 @@
           }
         }
       },
-      "mig_7series_0": {
-        "vlnv": "xilinx.com:ip:mig_7series:4.2",
-        "ip_revision": "1",
-        "xci_name": "design_1_mig_7series_0_0",
-        "xci_path": "ip\\design_1_mig_7series_0_0\\design_1_mig_7series_0_0.xci",
-        "inst_hier_path": "mig_7series_0",
-        "parameters": {
-          "BOARD_MIG_PARAM": {
-            "value": "Custom"
-          },
-          "MIG_DONT_TOUCH_PARAM": {
-            "value": "Custom"
-          },
-          "RESET_BOARD_INTERFACE": {
-            "value": "reset"
-          },
-          "XML_INPUT_FILE": {
-            "value": "mig_a.prj"
-          }
-        }
-      },
       "axi_uartlite_0": {
         "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
         "ip_revision": "37",
@@ -821,10 +803,31 @@
       },
       "my_oscope_0": {
         "vlnv": "xilinx.com:user:my_oscope:1.0",
-        "ip_revision": "3",
+        "ip_revision": "4",
         "xci_name": "design_1_my_oscope_0_0",
         "xci_path": "ip\\design_1_my_oscope_0_0\\design_1_my_oscope_0_0.xci",
         "inst_hier_path": "my_oscope_0"
+      },
+      "mig_7series_0": {
+        "vlnv": "xilinx.com:ip:mig_7series:4.2",
+        "ip_revision": "1",
+        "xci_name": "design_1_mig_7series_0_1",
+        "xci_path": "ip\\design_1_mig_7series_0_1\\design_1_mig_7series_0_1.xci",
+        "inst_hier_path": "mig_7series_0",
+        "parameters": {
+          "BOARD_MIG_PARAM": {
+            "value": "Custom"
+          },
+          "MIG_DONT_TOUCH_PARAM": {
+            "value": "Custom"
+          },
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
+          },
+          "XML_INPUT_FILE": {
+            "value": "mig_b.prj"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1061,8 +1064,8 @@
       "util_ds_buf_0_BUFG_O": {
         "ports": [
           "util_ds_buf_0/BUFG_O",
-          "mig_7series_0/sys_clk_i",
-          "clk_wiz_1/clk_in1"
+          "clk_wiz_1/clk_in1",
+          "mig_7series_0/sys_clk_i"
         ]
       }
     },

@@ -353,7 +353,7 @@
             "value_src": "default"
           },
           "CLK_DOMAIN": {
-            "value": "design_1_mig_7series_0_0_ui_clk",
+            "value": "design_1_mig_7series_0_1_ui_clk",
             "value_src": "default_prop"
           },
           "DATA_WIDTH": {
@@ -502,7 +502,7 @@
             "value_src": "constant"
           },
           "CLK_DOMAIN": {
-            "value": "design_1_mig_7series_0_0_ui_clk",
+            "value": "design_1_mig_7series_0_1_ui_clk",
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
