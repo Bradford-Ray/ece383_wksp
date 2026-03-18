@@ -1742,3 +1742,30 @@ error cannot find a jtag device with node id $node_id}], Result: [null, ]. Thr
 
 !ENTRY com.xilinx.sdk.utils 1 0 2026-03-18 08:34:09.781
 !MESSAGE Tool usage for 'TCF_APP_DEBUG' updated to '1'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-03-18 09:21:04.493
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/system.mss ], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-03-18 09:21:04.568
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/system.mss ], Result: [null, ]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-03-18 09:21:04.569
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/system.mss], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-03-18 09:21:04.587
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/system.mss], Result: [null, {"procname": "microblaze_0",
+"osname": "standalone",
+"osver": "9.2",
+}]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-03-18 09:21:04.588
+!MESSAGE Generating MD5 hash for file: C:\Users\C27Bradford.Hurt\ece383_wksp\lab3_2\design_1_wrapper\export\design_1_wrapper\sw\design_1_wrapper\standalone_microblaze_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-03-18 09:21:04.589
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/system.mss], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-03-18 09:21:04.596
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/system.mss], Result: [null, ]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2026-03-18 09:21:07.077
+!MESSAGE Build step failed, canceling full build chain.

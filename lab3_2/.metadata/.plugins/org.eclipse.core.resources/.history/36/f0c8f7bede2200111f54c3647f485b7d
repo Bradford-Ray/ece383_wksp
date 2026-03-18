@@ -79,10 +79,7 @@ int main(void) {
 			switch(c) {
 				case 'p':
 					printf("exWrAddr:\t%b\n", Xil_In16(exWrAddr));
-					printf("Lbus_out_s:\t%b\n", Xil_In16(Lbus_out_s));
-				default:
-					printf("unrecognized character: %c\r\n",c);
-					break;
+
 			}  // end switch
 		} // end if
 		If (live_mode == 1) {
