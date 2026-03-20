@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Wed Mar 18 07:50:15 2026
+// Date        : Fri Mar 20 08:05:05 2026
 // Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/ip/design_1_my_oscope_0_0/design_1_my_oscope_0_0_stub.v
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "design_1_my_oscope_0_0,my_oscope,{}" *) (* core_generation_info = "design_1_my_oscope_0_0,my_oscope,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=my_oscope,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "design_1_my_oscope_0_0,my_oscope,{}" *) (* core_generation_info = "design_1_my_oscope_0_0,my_oscope,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=my_oscope,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "my_oscope,Vivado 2024.2" *) 
 module design_1_my_oscope_0_0(ac_mclk, ac_adc_sdata, ac_dac_sdata, ac_bclk, 
   ac_lrclk, scl, sda, tmds, tmdsb, btn, switch, flagQ, s00_axi_aclk, s00_axi_aresetn, s00_axi_awaddr, 

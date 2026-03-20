@@ -56,8 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
 set_param bd.open.in_stealth_mode 2
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -179,7 +179,7 @@ set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.H
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/ip/design_1_my_oscope_0_0/src/clk_wiz_1/clk_wiz_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/ip/design_1_my_oscope_0_0/src/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/ip/design_1_my_oscope_0_0/src/clk_wiz_0/clk_wiz_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/design_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
 
 OPTRACE "Adding files" END { }

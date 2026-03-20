@@ -14,7 +14,7 @@ LIBSOURCES=($wildcard *.c)
 OUTS = ($wildcard *.o)
 
 libs:
-	echo "Compiling My_Counter_IP..."
+	echo "Compiling my_oscope..."
 	$(COMPILER) $(COMPILER_FLAGS) $(EXTRA_COMPILER_FLAGS) $(INCLUDES) $(LIBSOURCES)
 	$(ARCHIVER) -r ${RELEASEDIR}/${LIB} ${OUTS}
 	make clean

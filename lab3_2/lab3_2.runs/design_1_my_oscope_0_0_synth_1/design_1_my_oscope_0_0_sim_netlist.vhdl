@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Wed Mar 18 07:50:14 2026
+-- Date        : Fri Mar 20 08:05:04 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_my_oscope_0_0_sim_netlist.vhdl
@@ -7338,7 +7338,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_i2s_ctl is
     ac_adc_sdata : in STD_LOGIC;
     switch : in STD_LOGIC_VECTOR ( 0 to 0 );
     DOADO : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    \ch2_reg[incoming_sample][15]\ : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    \ch2_reg[to_ac][17]\ : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_i2s_ctl;
 
@@ -7432,38 +7432,38 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_i2s_ctl is
   attribute SOFT_HLUTNM of LRCLK_i_2 : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \ac_lrclk_count[0]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \ac_lrclk_count[1]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \ch1[to_ac][10]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \ch1[to_ac][11]_i_1\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \ch1[to_ac][12]_i_1\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \ch1[to_ac][13]_i_1\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \ch1[to_ac][14]_i_1\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \ch1[to_ac][15]_i_1\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \ch1[to_ac][16]_i_1\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \ch1[to_ac][17]_i_2\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \ch1[to_ac][2]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \ch1[to_ac][3]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \ch1[to_ac][4]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \ch1[to_ac][5]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \ch1[to_ac][6]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \ch1[to_ac][7]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \ch1[to_ac][8]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \ch1[to_ac][9]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \ch2[to_ac][10]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \ch2[to_ac][11]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \ch2[to_ac][12]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \ch2[to_ac][13]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \ch2[to_ac][14]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \ch2[to_ac][15]_i_1\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \ch2[to_ac][16]_i_1\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \ch2[to_ac][17]_i_1\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \ch2[to_ac][2]_i_1\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \ch2[to_ac][3]_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \ch2[to_ac][4]_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \ch2[to_ac][5]_i_1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \ch2[to_ac][6]_i_1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \ch2[to_ac][7]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \ch2[to_ac][8]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \ch2[to_ac][9]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][0]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][10]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][11]_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][12]_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][13]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][14]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][15]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][1]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][2]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][3]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][4]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][5]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][6]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][7]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][8]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \ch1[incoming_sample][9]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][0]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][10]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][11]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][12]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][13]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][14]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][15]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][1]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][2]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][3]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][4]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][5]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][6]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][7]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][8]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \ch2[incoming_sample][9]_i_1\ : label is "soft_lutpair21";
 begin
   BCLK_int_reg_0 <= \^bclk_int_reg_0\;
   LRCLK_reg_0 <= \^lrclk_reg_0\;
@@ -8856,87 +8856,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => \^lrclk_reg_0\,
       O => ac_lrclk_sig_prev_reg
     );
-\ch1[to_ac][10]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(16),
-      I1 => switch(0),
-      I2 => DOADO(8),
-      O => D(8)
-    );
-\ch1[to_ac][11]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(17),
-      I1 => switch(0),
-      I2 => DOADO(9),
-      O => D(9)
-    );
-\ch1[to_ac][12]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(18),
-      I1 => switch(0),
-      I2 => DOADO(10),
-      O => D(10)
-    );
-\ch1[to_ac][13]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(19),
-      I1 => switch(0),
-      I2 => DOADO(11),
-      O => D(11)
-    );
-\ch1[to_ac][14]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(20),
-      I1 => switch(0),
-      I2 => DOADO(12),
-      O => D(12)
-    );
-\ch1[to_ac][15]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(21),
-      I1 => switch(0),
-      I2 => DOADO(13),
-      O => D(13)
-    );
-\ch1[to_ac][16]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_L_O_int(22),
-      I1 => switch(0),
-      I2 => DOADO(14),
-      O => D(14)
-    );
-\ch1[to_ac][17]_i_2\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"8B"
-    )
-        port map (
-      I0 => D_L_O_int(23),
-      I1 => switch(0),
-      I2 => DOADO(15),
-      O => D(15)
-    );
-\ch1[to_ac][2]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][0]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -8946,7 +8866,67 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(0),
       O => D(0)
     );
-\ch1[to_ac][3]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][10]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_L_O_int(18),
+      I1 => switch(0),
+      I2 => DOADO(10),
+      O => D(10)
+    );
+\ch1[incoming_sample][11]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_L_O_int(19),
+      I1 => switch(0),
+      I2 => DOADO(11),
+      O => D(11)
+    );
+\ch1[incoming_sample][12]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_L_O_int(20),
+      I1 => switch(0),
+      I2 => DOADO(12),
+      O => D(12)
+    );
+\ch1[incoming_sample][13]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_L_O_int(21),
+      I1 => switch(0),
+      I2 => DOADO(13),
+      O => D(13)
+    );
+\ch1[incoming_sample][14]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_L_O_int(22),
+      I1 => switch(0),
+      I2 => DOADO(14),
+      O => D(14)
+    );
+\ch1[incoming_sample][15]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"8B"
+    )
+        port map (
+      I0 => D_L_O_int(23),
+      I1 => switch(0),
+      I2 => DOADO(15),
+      O => D(15)
+    );
+\ch1[incoming_sample][1]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -8956,7 +8936,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(1),
       O => D(1)
     );
-\ch1[to_ac][4]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][2]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -8966,7 +8946,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(2),
       O => D(2)
     );
-\ch1[to_ac][5]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][3]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -8976,7 +8956,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(3),
       O => D(3)
     );
-\ch1[to_ac][6]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][4]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -8986,7 +8966,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(4),
       O => D(4)
     );
-\ch1[to_ac][7]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][5]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -8996,7 +8976,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(5),
       O => D(5)
     );
-\ch1[to_ac][8]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][6]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -9006,7 +8986,7 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(6),
       O => D(6)
     );
-\ch1[to_ac][9]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][7]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -9016,165 +8996,185 @@ ac_lrclk_sig_prev_i_1: unisim.vcomponents.LUT3
       I2 => DOADO(7),
       O => D(7)
     );
-\ch2[to_ac][10]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][8]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => D_R_O_int(16),
+      I0 => D_L_O_int(16),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(8),
-      O => \D_R_O_int_reg[23]_0\(8)
+      I2 => DOADO(8),
+      O => D(8)
     );
-\ch2[to_ac][11]_i_1\: unisim.vcomponents.LUT3
+\ch1[incoming_sample][9]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => D_R_O_int(17),
+      I0 => D_L_O_int(17),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(9),
-      O => \D_R_O_int_reg[23]_0\(9)
+      I2 => DOADO(9),
+      O => D(9)
     );
-\ch2[to_ac][12]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_R_O_int(18),
-      I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(10),
-      O => \D_R_O_int_reg[23]_0\(10)
-    );
-\ch2[to_ac][13]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_R_O_int(19),
-      I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(11),
-      O => \D_R_O_int_reg[23]_0\(11)
-    );
-\ch2[to_ac][14]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_R_O_int(20),
-      I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(12),
-      O => \D_R_O_int_reg[23]_0\(12)
-    );
-\ch2[to_ac][15]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_R_O_int(21),
-      I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(13),
-      O => \D_R_O_int_reg[23]_0\(13)
-    );
-\ch2[to_ac][16]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => D_R_O_int(22),
-      I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(14),
-      O => \D_R_O_int_reg[23]_0\(14)
-    );
-\ch2[to_ac][17]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"8B"
-    )
-        port map (
-      I0 => D_R_O_int(23),
-      I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(15),
-      O => \D_R_O_int_reg[23]_0\(15)
-    );
-\ch2[to_ac][2]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][0]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(8),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(0),
+      I2 => \ch2_reg[to_ac][17]\(0),
       O => \D_R_O_int_reg[23]_0\(0)
     );
-\ch2[to_ac][3]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][10]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(18),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(10),
+      O => \D_R_O_int_reg[23]_0\(10)
+    );
+\ch2[incoming_sample][11]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(19),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(11),
+      O => \D_R_O_int_reg[23]_0\(11)
+    );
+\ch2[incoming_sample][12]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(20),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(12),
+      O => \D_R_O_int_reg[23]_0\(12)
+    );
+\ch2[incoming_sample][13]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(21),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(13),
+      O => \D_R_O_int_reg[23]_0\(13)
+    );
+\ch2[incoming_sample][14]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(22),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(14),
+      O => \D_R_O_int_reg[23]_0\(14)
+    );
+\ch2[incoming_sample][15]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"8B"
+    )
+        port map (
+      I0 => D_R_O_int(23),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(15),
+      O => \D_R_O_int_reg[23]_0\(15)
+    );
+\ch2[incoming_sample][1]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(9),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(1),
+      I2 => \ch2_reg[to_ac][17]\(1),
       O => \D_R_O_int_reg[23]_0\(1)
     );
-\ch2[to_ac][4]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][2]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(10),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(2),
+      I2 => \ch2_reg[to_ac][17]\(2),
       O => \D_R_O_int_reg[23]_0\(2)
     );
-\ch2[to_ac][5]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][3]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(11),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(3),
+      I2 => \ch2_reg[to_ac][17]\(3),
       O => \D_R_O_int_reg[23]_0\(3)
     );
-\ch2[to_ac][6]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][4]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(12),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(4),
+      I2 => \ch2_reg[to_ac][17]\(4),
       O => \D_R_O_int_reg[23]_0\(4)
     );
-\ch2[to_ac][7]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][5]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(13),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(5),
+      I2 => \ch2_reg[to_ac][17]\(5),
       O => \D_R_O_int_reg[23]_0\(5)
     );
-\ch2[to_ac][8]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][6]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(14),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(6),
+      I2 => \ch2_reg[to_ac][17]\(6),
       O => \D_R_O_int_reg[23]_0\(6)
     );
-\ch2[to_ac][9]_i_1\: unisim.vcomponents.LUT3
+\ch2[incoming_sample][7]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
       I0 => D_R_O_int(15),
       I1 => switch(0),
-      I2 => \ch2_reg[incoming_sample][15]\(7),
+      I2 => \ch2_reg[to_ac][17]\(7),
       O => \D_R_O_int_reg[23]_0\(7)
+    );
+\ch2[incoming_sample][8]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(16),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(8),
+      O => \D_R_O_int_reg[23]_0\(8)
+    );
+\ch2[incoming_sample][9]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => D_R_O_int(17),
+      I1 => switch(0),
+      I2 => \ch2_reg[to_ac][17]\(9),
+      O => \D_R_O_int_reg[23]_0\(9)
     );
 \i__carry_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -10932,8 +10932,8 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_trigger_dete
   signal \FSM_sequential_state_reg[0]_i_8_n_1\ : STD_LOGIC;
   signal \FSM_sequential_state_reg[0]_i_8_n_2\ : STD_LOGIC;
   signal \FSM_sequential_state_reg[0]_i_8_n_3\ : STD_LOGIC;
+  signal Lbus_out : STD_LOGIC_VECTOR ( 15 to 15 );
   signal input_vector : STD_LOGIC_VECTOR ( 14 downto 7 );
-  signal \previous[15]_i_1_n_0\ : STD_LOGIC;
   signal \^previous_reg[11]_0\ : STD_LOGIC;
   signal \^previous_reg[15]_0\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_FSM_sequential_state_reg[0]_i_8_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -11071,7 +11071,7 @@ begin
     )
         port map (
       I0 => Q(8),
-      O => \previous[15]_i_1_n_0\
+      O => Lbus_out(15)
     );
 \previous_reg[10]\: unisim.vcomponents.FDRE
      port map (
@@ -11117,7 +11117,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => E(0),
-      D => \previous[15]_i_1_n_0\,
+      D => Lbus_out(15),
       Q => \^previous_reg[15]_0\(3),
       R => \previous_reg[7]_0\
     );
@@ -16866,7 +16866,7 @@ audio_inout: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_i2s_ctl
       \ac_lrclk_count_reg[2]\ => audio_inout_n_7,
       \ac_lrclk_count_reg[2]_0\ => ac_lrclk_sig_prev_reg_n_0,
       ac_lrclk_sig_prev_reg => audio_inout_n_6,
-      \ch2_reg[incoming_sample][15]\(15 downto 0) => readR(17 downto 2),
+      \ch2_reg[to_ac][17]\(15 downto 0) => readR(17 downto 2),
       ready_sig_reg => ready_sig_i_2_n_0,
       ready_sig_reg_0 => \^e\(0),
       s00_axi_aclk => s00_axi_aclk,
@@ -18989,6 +18989,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath is
     sw : out STD_LOGIC_VECTOR ( 0 to 0 );
     \process_q_reg[10]\ : out STD_LOGIC_VECTOR ( 9 downto 0 );
     \FSM_sequential_state_reg[1]\ : out STD_LOGIC;
+    \ch1_reg[incoming_sample][15]_0\ : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    \ch2_reg[incoming_sample][15]_0\ : out STD_LOGIC_VECTOR ( 15 downto 0 );
     CO : out STD_LOGIC_VECTOR ( 0 to 0 );
     \process_q_reg[10]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -19026,22 +19028,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapat
   signal \ch1[active]\ : STD_LOGIC;
   signal \ch1[from_ac]\ : STD_LOGIC_VECTOR ( 17 downto 2 );
   signal \ch1[to_ac]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][0]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][10]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][11]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][12]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][13]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][14]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][15]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][1]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][2]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][3]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][4]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][5]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][6]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][7]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][8]\ : STD_LOGIC;
-  signal \ch1_reg[incoming_sample_n_0_][9]\ : STD_LOGIC;
+  signal \^ch1_reg[incoming_sample][15]_0\ : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal \ch1_reg[to_ac_n_0_][0]\ : STD_LOGIC;
   signal \ch1_reg[to_ac_n_0_][10]\ : STD_LOGIC;
   signal \ch1_reg[to_ac_n_0_][11]\ : STD_LOGIC;
@@ -19062,22 +19049,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapat
   signal \ch1_reg[to_ac_n_0_][9]\ : STD_LOGIC;
   signal \ch2[active]\ : STD_LOGIC;
   signal \ch2[from_ac]\ : STD_LOGIC_VECTOR ( 17 downto 2 );
-  signal \ch2_reg[incoming_sample_n_0_][0]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][10]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][11]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][12]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][13]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][14]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][15]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][1]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][2]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][3]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][4]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][5]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][6]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][7]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][8]\ : STD_LOGIC;
-  signal \ch2_reg[incoming_sample_n_0_][9]\ : STD_LOGIC;
+  signal \^ch2_reg[incoming_sample][15]_0\ : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal \ch2_reg[to_ac_n_0_][0]\ : STD_LOGIC;
   signal \ch2_reg[to_ac_n_0_][10]\ : STD_LOGIC;
   signal \ch2_reg[to_ac_n_0_][11]\ : STD_LOGIC;
@@ -19117,6 +19089,8 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapat
 begin
   SR(0) <= \^sr\(0);
   \^q\(9 downto 0) <= \^q_1\(9 downto 0);
+  \ch1_reg[incoming_sample][15]_0\(15 downto 0) <= \^ch1_reg[incoming_sample][15]_0\(15 downto 0);
+  \ch2_reg[incoming_sample][15]_0\(15 downto 0) <= \^ch2_reg[incoming_sample][15]_0\(15 downto 0);
   flagQ_s <= \^flagq_s\;
   \process_q_reg[10]\(9 downto 0) <= \^process_q_reg[10]\(9 downto 0);
   sw(0) <= \^sw\(0);
@@ -19186,10 +19160,10 @@ Audio_Codec: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Audio_Codec_W
       INIT => X"01FF"
     )
         port map (
-      I0 => \ch1_reg[incoming_sample_n_0_][11]\,
-      I1 => \ch1_reg[incoming_sample_n_0_][9]\,
-      I2 => \ch1_reg[incoming_sample_n_0_][10]\,
-      I3 => \ch1_reg[incoming_sample_n_0_][12]\,
+      I0 => \^ch1_reg[incoming_sample][15]_0\(11),
+      I1 => \^ch1_reg[incoming_sample][15]_0\(9),
+      I2 => \^ch1_reg[incoming_sample][15]_0\(10),
+      I3 => \^ch1_reg[incoming_sample][15]_0\(12),
       O => \FSM_sequential_state[0]_i_20_n_0\
     );
 addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
@@ -19207,7 +19181,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(2),
-      Q => \ch1_reg[incoming_sample_n_0_][0]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(0),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][10]\: unisim.vcomponents.FDRE
@@ -19215,7 +19189,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(12),
-      Q => \ch1_reg[incoming_sample_n_0_][10]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(10),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][11]\: unisim.vcomponents.FDRE
@@ -19223,7 +19197,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(13),
-      Q => \ch1_reg[incoming_sample_n_0_][11]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(11),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][12]\: unisim.vcomponents.FDRE
@@ -19231,7 +19205,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(14),
-      Q => \ch1_reg[incoming_sample_n_0_][12]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(12),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][13]\: unisim.vcomponents.FDRE
@@ -19239,7 +19213,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(15),
-      Q => \ch1_reg[incoming_sample_n_0_][13]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(13),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][14]\: unisim.vcomponents.FDRE
@@ -19247,7 +19221,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(16),
-      Q => \ch1_reg[incoming_sample_n_0_][14]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(14),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][15]\: unisim.vcomponents.FDRE
@@ -19255,7 +19229,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(17),
-      Q => \ch1_reg[incoming_sample_n_0_][15]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(15),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][1]\: unisim.vcomponents.FDRE
@@ -19263,7 +19237,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(3),
-      Q => \ch1_reg[incoming_sample_n_0_][1]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(1),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][2]\: unisim.vcomponents.FDRE
@@ -19271,7 +19245,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(4),
-      Q => \ch1_reg[incoming_sample_n_0_][2]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(2),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][3]\: unisim.vcomponents.FDRE
@@ -19279,7 +19253,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(5),
-      Q => \ch1_reg[incoming_sample_n_0_][3]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(3),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][4]\: unisim.vcomponents.FDRE
@@ -19287,7 +19261,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(6),
-      Q => \ch1_reg[incoming_sample_n_0_][4]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(4),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][5]\: unisim.vcomponents.FDRE
@@ -19295,7 +19269,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(7),
-      Q => \ch1_reg[incoming_sample_n_0_][5]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(5),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][6]\: unisim.vcomponents.FDRE
@@ -19303,7 +19277,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(8),
-      Q => \ch1_reg[incoming_sample_n_0_][6]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(6),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][7]\: unisim.vcomponents.FDRE
@@ -19311,7 +19285,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(9),
-      Q => \ch1_reg[incoming_sample_n_0_][7]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(7),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][8]\: unisim.vcomponents.FDRE
@@ -19319,7 +19293,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(10),
-      Q => \ch1_reg[incoming_sample_n_0_][8]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(8),
       R => \^sr\(0)
     );
 \ch1_reg[incoming_sample][9]\: unisim.vcomponents.FDRE
@@ -19327,7 +19301,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch1[from_ac]\(11),
-      Q => \ch1_reg[incoming_sample_n_0_][9]\,
+      Q => \^ch1_reg[incoming_sample][15]_0\(9),
       R => \^sr\(0)
     );
 \ch1_reg[to_ac][0]\: unisim.vcomponents.FDRE
@@ -19479,7 +19453,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(2),
-      Q => \ch2_reg[incoming_sample_n_0_][0]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(0),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][10]\: unisim.vcomponents.FDRE
@@ -19487,7 +19461,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(12),
-      Q => \ch2_reg[incoming_sample_n_0_][10]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(10),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][11]\: unisim.vcomponents.FDRE
@@ -19495,7 +19469,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(13),
-      Q => \ch2_reg[incoming_sample_n_0_][11]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(11),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][12]\: unisim.vcomponents.FDRE
@@ -19503,7 +19477,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(14),
-      Q => \ch2_reg[incoming_sample_n_0_][12]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(12),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][13]\: unisim.vcomponents.FDRE
@@ -19511,7 +19485,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(15),
-      Q => \ch2_reg[incoming_sample_n_0_][13]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(13),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][14]\: unisim.vcomponents.FDRE
@@ -19519,7 +19493,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(16),
-      Q => \ch2_reg[incoming_sample_n_0_][14]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(14),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][15]\: unisim.vcomponents.FDRE
@@ -19527,7 +19501,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(17),
-      Q => \ch2_reg[incoming_sample_n_0_][15]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(15),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][1]\: unisim.vcomponents.FDRE
@@ -19535,7 +19509,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(3),
-      Q => \ch2_reg[incoming_sample_n_0_][1]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(1),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][2]\: unisim.vcomponents.FDRE
@@ -19543,7 +19517,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(4),
-      Q => \ch2_reg[incoming_sample_n_0_][2]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(2),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][3]\: unisim.vcomponents.FDRE
@@ -19551,7 +19525,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(5),
-      Q => \ch2_reg[incoming_sample_n_0_][3]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(3),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][4]\: unisim.vcomponents.FDRE
@@ -19559,7 +19533,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(6),
-      Q => \ch2_reg[incoming_sample_n_0_][4]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(4),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][5]\: unisim.vcomponents.FDRE
@@ -19567,7 +19541,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(7),
-      Q => \ch2_reg[incoming_sample_n_0_][5]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(5),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][6]\: unisim.vcomponents.FDRE
@@ -19575,7 +19549,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(8),
-      Q => \ch2_reg[incoming_sample_n_0_][6]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(6),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][7]\: unisim.vcomponents.FDRE
@@ -19583,7 +19557,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(9),
-      Q => \ch2_reg[incoming_sample_n_0_][7]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(7),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][8]\: unisim.vcomponents.FDRE
@@ -19591,7 +19565,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(10),
-      Q => \ch2_reg[incoming_sample_n_0_][8]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(8),
       R => \^sr\(0)
     );
 \ch2_reg[incoming_sample][9]\: unisim.vcomponents.FDRE
@@ -19599,7 +19573,7 @@ addr_counter: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter
       C => s00_axi_aclk,
       CE => \^sw\(0),
       D => \ch2[from_ac]\(11),
-      Q => \ch2_reg[incoming_sample_n_0_][9]\,
+      Q => \^ch2_reg[incoming_sample][15]_0\(9),
       R => \^sr\(0)
     );
 \ch2_reg[to_ac][0]\: unisim.vcomponents.FDRE
@@ -19765,22 +19739,7 @@ leftChannelMemory: entity work.\decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_unimac
       s00_axi_aclk => s00_axi_aclk,
       \sdp_bl.ramb18_dp_bl.ram18_bl_0\ => \^sr\(0),
       \sdp_bl.ramb18_dp_bl.ram18_bl_1\(15 downto 0) => Q(15 downto 0),
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(15) => \ch1_reg[incoming_sample_n_0_][15]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(14) => \ch1_reg[incoming_sample_n_0_][14]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(13) => \ch1_reg[incoming_sample_n_0_][13]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(12) => \ch1_reg[incoming_sample_n_0_][12]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(11) => \ch1_reg[incoming_sample_n_0_][11]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(10) => \ch1_reg[incoming_sample_n_0_][10]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(9) => \ch1_reg[incoming_sample_n_0_][9]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(8) => \ch1_reg[incoming_sample_n_0_][8]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(7) => \ch1_reg[incoming_sample_n_0_][7]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(6) => \ch1_reg[incoming_sample_n_0_][6]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(5) => \ch1_reg[incoming_sample_n_0_][5]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(4) => \ch1_reg[incoming_sample_n_0_][4]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(3) => \ch1_reg[incoming_sample_n_0_][3]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(2) => \ch1_reg[incoming_sample_n_0_][2]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(1) => \ch1_reg[incoming_sample_n_0_][1]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(0) => \ch1_reg[incoming_sample_n_0_][0]\,
+      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(15 downto 0) => \^ch1_reg[incoming_sample][15]_0\(15 downto 0),
       switch(1) => switch(2),
       switch(0) => switch(0),
       switch_0_sp_1 => leftChannelMemory_n_1
@@ -19802,15 +19761,7 @@ num_step_v: entity work.\decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_numeric_stepp
       DI(0) => num_step_v_n_1,
       \FSM_sequential_state_reg[0]\(0) => trig_detect_n_6,
       \FSM_sequential_state_reg[0]_0\(0) => trig_detect_n_4,
-      \FSM_sequential_state_reg[0]_i_2_0\(8) => \ch1_reg[incoming_sample_n_0_][15]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(7) => \ch1_reg[incoming_sample_n_0_][14]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(6) => \ch1_reg[incoming_sample_n_0_][13]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(5) => \ch1_reg[incoming_sample_n_0_][12]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(4) => \ch1_reg[incoming_sample_n_0_][11]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(3) => \ch1_reg[incoming_sample_n_0_][10]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(2) => \ch1_reg[incoming_sample_n_0_][9]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(1) => \ch1_reg[incoming_sample_n_0_][8]\,
-      \FSM_sequential_state_reg[0]_i_2_0\(0) => \ch1_reg[incoming_sample_n_0_][7]\,
+      \FSM_sequential_state_reg[0]_i_2_0\(8 downto 0) => \^ch1_reg[incoming_sample][15]_0\(15 downto 7),
       \FSM_sequential_state_reg[0]_i_2_1\ => \FSM_sequential_state[0]_i_20_n_0\,
       \FSM_sequential_state_reg[0]_i_3_0\(3) => input_vector(15),
       \FSM_sequential_state_reg[0]_i_3_0\(2 downto 0) => input_vector(10 downto 8),
@@ -19835,22 +19786,7 @@ rightChannelMemory: entity work.\decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_unima
       s00_axi_aclk => s00_axi_aclk,
       \sdp_bl.ramb18_dp_bl.ram18_bl_0\ => \^sr\(0),
       \sdp_bl.ramb18_dp_bl.ram18_bl_1\(15 downto 0) => \sdp_bl.ramb18_dp_bl.ram18_bl\(15 downto 0),
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(15) => \ch2_reg[incoming_sample_n_0_][15]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(14) => \ch2_reg[incoming_sample_n_0_][14]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(13) => \ch2_reg[incoming_sample_n_0_][13]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(12) => \ch2_reg[incoming_sample_n_0_][12]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(11) => \ch2_reg[incoming_sample_n_0_][11]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(10) => \ch2_reg[incoming_sample_n_0_][10]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(9) => \ch2_reg[incoming_sample_n_0_][9]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(8) => \ch2_reg[incoming_sample_n_0_][8]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(7) => \ch2_reg[incoming_sample_n_0_][7]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(6) => \ch2_reg[incoming_sample_n_0_][6]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(5) => \ch2_reg[incoming_sample_n_0_][5]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(4) => \ch2_reg[incoming_sample_n_0_][4]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(3) => \ch2_reg[incoming_sample_n_0_][3]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(2) => \ch2_reg[incoming_sample_n_0_][2]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(1) => \ch2_reg[incoming_sample_n_0_][1]\,
-      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(0) => \ch2_reg[incoming_sample_n_0_][0]\,
+      \sdp_bl.ramb18_dp_bl.ram18_bl_2\(15 downto 0) => \^ch2_reg[incoming_sample][15]_0\(15 downto 0),
       switch(1 downto 0) => switch(2 downto 1),
       switch_1_sp_1 => rightChannelMemory_n_1
     );
@@ -19860,15 +19796,7 @@ trig_detect: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_trigger_detec
       DI(0) => num_step_v_n_1,
       E(0) => \^sw\(0),
       \FSM_sequential_state_reg[0]_i_3\(8 downto 0) => \^process_q_reg[10]\(8 downto 0),
-      Q(8) => \ch1_reg[incoming_sample_n_0_][15]\,
-      Q(7) => \ch1_reg[incoming_sample_n_0_][14]\,
-      Q(6) => \ch1_reg[incoming_sample_n_0_][13]\,
-      Q(5) => \ch1_reg[incoming_sample_n_0_][12]\,
-      Q(4) => \ch1_reg[incoming_sample_n_0_][11]\,
-      Q(3) => \ch1_reg[incoming_sample_n_0_][10]\,
-      Q(2) => \ch1_reg[incoming_sample_n_0_][9]\,
-      Q(1) => \ch1_reg[incoming_sample_n_0_][8]\,
-      Q(0) => \ch1_reg[incoming_sample_n_0_][7]\,
+      Q(8 downto 0) => \^ch1_reg[incoming_sample][15]_0\(15 downto 7),
       \previous_reg[11]_0\ => trig_detect_n_5,
       \previous_reg[13]_0\(0) => trig_detect_n_6,
       \previous_reg[15]_0\(3) => input_vector(15),
@@ -19952,7 +19880,9 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \^fsm_onehot_state_write_reg[2]_0\ : STD_LOGIC;
   signal \FSM_sequential_state_read[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_state_read[1]_i_1_n_0\ : STD_LOGIC;
+  signal Lbus_out : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal RST : STD_LOGIC;
+  signal Rbus_out : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal \axi_araddr[6]_i_1_n_0\ : STD_LOGIC;
   signal \axi_araddr_reg[2]_rep_n_0\ : STD_LOGIC;
   signal \axi_araddr_reg[3]_rep_n_0\ : STD_LOGIC;
@@ -19970,10 +19900,13 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal cw_write_en : STD_LOGIC;
   signal datapath_n_23 : STD_LOGIC;
   signal datapath_n_24 : STD_LOGIC;
-  signal datapath_n_25 : STD_LOGIC;
+  signal datapath_n_40 : STD_LOGIC;
+  signal datapath_n_56 : STD_LOGIC;
+  signal datapath_n_57 : STD_LOGIC;
   signal flagQ_s : STD_LOGIC;
   signal mem_logic : STD_LOGIC_VECTOR ( 5 downto 2 );
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -19985,6 +19918,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -19995,6 +19929,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_8_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_11_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20005,6 +19940,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_8_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_11_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20015,6 +19951,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_8_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_11_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20025,6 +19962,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_8_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_11_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20035,6 +19973,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_8_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_11_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20086,6 +20025,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[19]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20197,6 +20137,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[29]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20228,6 +20169,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[31]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20239,6 +20181,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20250,6 +20193,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20261,6 +20205,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20272,6 +20217,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20283,6 +20229,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20294,6 +20241,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_sl
   signal \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_12_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -20780,8 +20728,8 @@ axi_wready_reg: unisim.vcomponents.FDRE
     );
 control: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_fsm
      port map (
-      CO(0) => datapath_n_24,
-      \FSM_sequential_state_reg[0]_0\(0) => datapath_n_25,
+      CO(0) => datapath_n_56,
+      \FSM_sequential_state_reg[0]_0\(0) => datapath_n_57,
       \FSM_sequential_state_reg[1]_0\(0) => state(1),
       \FSM_sequential_state_reg[1]_1\ => datapath_n_23,
       \FSM_sequential_state_reg[2]_0\(1 downto 0) => cw(2 downto 1),
@@ -20795,7 +20743,7 @@ control: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_fsm
 datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
      port map (
       BCLK_int_reg => BCLK_int_reg,
-      CO(0) => datapath_n_24,
+      CO(0) => datapath_n_56,
       \FSM_sequential_state_reg[1]\ => datapath_n_23,
       \FSM_sequential_state_reg[1]_0\(0) => state(1),
       LRCLK_reg => LRCLK_reg,
@@ -20805,12 +20753,16 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       ac_dac_sdata => ac_dac_sdata,
       ac_mclk => ac_mclk,
       btn(3 downto 0) => btn(3 downto 0),
+      \ch1_reg[incoming_sample][15]_0\(15) => datapath_n_24,
+      \ch1_reg[incoming_sample][15]_0\(14 downto 0) => Lbus_out(14 downto 0),
+      \ch2_reg[incoming_sample][15]_0\(15) => datapath_n_40,
+      \ch2_reg[incoming_sample][15]_0\(14 downto 0) => Rbus_out(14 downto 0),
       cw_write_en => cw_write_en,
       flagQ_reg_0(0) => slv_reg7(0),
       flagQ_s => flagQ_s,
       \processQ_reg[0]\(1 downto 0) => cw(2 downto 1),
       \process_q_reg[10]\(9 downto 0) => \trigger_out[v]\(10 downto 1),
-      \process_q_reg[10]_0\(0) => datapath_n_25,
+      \process_q_reg[10]_0\(0) => datapath_n_57,
       \^q\(9 downto 0) => \trigger_out[t]\(10 downto 1),
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn,
@@ -20848,13 +20800,26 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
+      I0 => Rbus_out(0),
+      I1 => Lbus_out(0),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => slv_reg1(0),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(0),
+      O => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_10_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
       I0 => slv_reg7(0),
       I1 => flagQ_s,
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => slv_reg5(0),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
       I5 => slv_reg4(0),
-      O => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_10_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -20876,18 +20841,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg11(0),
       O => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_3_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_10_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(0),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => slv_reg1(0),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -20987,7 +20946,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(10),
       O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(10),
+      I1 => Lbus_out(10),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(10),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => \slv_reg0__0\(10),
+      O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -20997,7 +20969,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(10),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(10),
-      O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -21013,18 +20985,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => \slv_reg0__0\(10),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(10),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[10]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -21111,7 +21077,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_1_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_10\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(11),
+      I1 => Lbus_out(11),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(11),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => \slv_reg0__0\(11),
+      O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_10_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_11\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -21121,7 +21100,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(11),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(11),
-      O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_10_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_11_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -21143,18 +21122,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg11(11),
       O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_3_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_10_n_0\,
-      I1 => sel0(2),
-      I2 => \slv_reg0__0\(11),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(11),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_11_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[11]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -21241,7 +21214,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_1_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_10\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(12),
+      I1 => Lbus_out(12),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(12),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => \slv_reg0__0\(12),
+      O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_10_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_11\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -21251,7 +21237,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(12),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(12),
-      O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_10_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_11_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -21273,18 +21259,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg11(12),
       O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_3_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_10_n_0\,
-      I1 => sel0(2),
-      I2 => \slv_reg0__0\(12),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(12),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_11_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[12]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -21371,7 +21351,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_1_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_10\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(13),
+      I1 => Lbus_out(13),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(13),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => \slv_reg0__0\(13),
+      O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_10_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_11\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -21381,7 +21374,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(13),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(13),
-      O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_10_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_11_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -21403,18 +21396,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg11(13),
       O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_3_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_10_n_0\,
-      I1 => sel0(2),
-      I2 => \slv_reg0__0\(13),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(13),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_11_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[13]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -21501,7 +21488,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_1_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_10\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(14),
+      I1 => Lbus_out(14),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(14),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => \slv_reg0__0\(14),
+      O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_10_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_11\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -21511,7 +21511,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(14),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(14),
-      O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_10_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_11_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -21533,18 +21533,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg11(14),
       O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_3_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_10_n_0\,
-      I1 => sel0(2),
-      I2 => \slv_reg0__0\(14),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(14),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_11_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[14]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -21631,7 +21625,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_1_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_10\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"5F503F3F5F503030"
+    )
+        port map (
+      I0 => datapath_n_40,
+      I1 => datapath_n_24,
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(15),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => \slv_reg0__0\(15),
+      O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_10_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_11\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -21641,7 +21648,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(15),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(15),
-      O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_10_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_11_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -21663,18 +21670,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg11(15),
       O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_3_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_10_n_0\,
-      I1 => sel0(2),
-      I2 => \slv_reg0__0\(15),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(15),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_11_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[15]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -22294,7 +22295,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(1),
       O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(1),
+      I1 => Lbus_out(1),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(1),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(1),
+      O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -22304,7 +22318,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(1),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(1),
-      O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -22320,18 +22334,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(1),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(1),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[1]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -23731,7 +23739,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(2),
       O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(2),
+      I1 => Lbus_out(2),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(2),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(2),
+      O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -23741,7 +23762,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(2),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(2),
-      O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -23757,18 +23778,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(2),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(2),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[2]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24128,7 +24143,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(3),
       O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(3),
+      I1 => Lbus_out(3),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(3),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(3),
+      O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24138,7 +24166,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(3),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(3),
-      O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24154,18 +24182,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(3),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(3),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[3]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24265,7 +24287,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(4),
       O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(4),
+      I1 => Lbus_out(4),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(4),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(4),
+      O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24275,7 +24310,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(4),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(4),
-      O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24291,18 +24326,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(4),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(4),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[4]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24402,7 +24431,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(5),
       O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(5),
+      I1 => Lbus_out(5),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(5),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(5),
+      O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24412,7 +24454,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(5),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(5),
-      O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24428,18 +24470,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(5),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(5),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[5]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24539,7 +24575,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(6),
       O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(6),
+      I1 => Lbus_out(6),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(6),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(6),
+      O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24549,7 +24598,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(6),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(6),
-      O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24565,18 +24614,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(6),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(6),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[6]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24676,7 +24719,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(7),
       O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(7),
+      I1 => Lbus_out(7),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(7),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(7),
+      O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24686,7 +24742,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(7),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(7),
-      O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24702,18 +24758,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(7),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(7),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[7]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24813,7 +24863,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(8),
       O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(8),
+      I1 => Lbus_out(8),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(8),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(8),
+      O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24823,7 +24886,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(8),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(8),
-      O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24839,18 +24902,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(8),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(8),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[8]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
@@ -24950,7 +25007,20 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I5 => slv_reg12(9),
       O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_10_n_0\
     );
-\p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_11\: unisim.vcomponents.LUT5
+\p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => Rbus_out(9),
+      I1 => Lbus_out(9),
+      I2 => \axi_araddr_reg[3]_rep_n_0\,
+      I3 => \slv_reg1__0\(9),
+      I4 => \axi_araddr_reg[2]_rep_n_0\,
+      I5 => slv_reg0(9),
+      O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_11_n_0\
+    );
+\p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_12\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"B833B800"
     )
@@ -24960,7 +25030,7 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       I2 => slv_reg5(9),
       I3 => \axi_araddr_reg[2]_rep_n_0\,
       I4 => slv_reg4(9),
-      O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_11_n_0\
+      O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_12_n_0\
     );
 \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_2\: unisim.vcomponents.MUXF7
      port map (
@@ -24976,18 +25046,12 @@ datapath: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
       O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_3_n_0\,
       S => sel0(2)
     );
-\p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBB888B8"
-    )
-        port map (
+\p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_4\: unisim.vcomponents.MUXF7
+     port map (
       I0 => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_11_n_0\,
-      I1 => sel0(2),
-      I2 => slv_reg0(9),
-      I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => \slv_reg1__0\(9),
-      I5 => \axi_araddr_reg[3]_rep_n_0\,
-      O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_4_n_0\
+      I1 => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_12_n_0\,
+      O => \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_4_n_0\,
+      S => sel0(2)
     );
 \p_0_out_inferred__0/s00_axi_rdata[9]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(

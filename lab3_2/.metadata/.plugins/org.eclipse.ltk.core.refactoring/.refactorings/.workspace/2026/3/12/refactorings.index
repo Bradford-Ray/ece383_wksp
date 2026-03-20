@@ -1,2 +1,5 @@
 1773844024333	Delete resource 'design_1_wrapper/hw/drivers'
 1773844063145	Delete resource 'design_1_wrapper/microblaze_0/standalone_microblaze_0/bsp/microblaze_0/libsrc/my_oscope_v1_0'
+1774018240322	Delete resource 'design_1_wrapper'
+1774018316507	Delete resource 'lab3_platform/hw/drivers/my_oscope_v1_0'
+1774018330861	Delete resource 'lab3_platform/microblaze_0/standalone_domain/bsp/microblaze_0/libsrc/my_oscope_v1_0'

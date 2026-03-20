@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Wed Mar 18 07:50:15 2026
+| Date         : Fri Mar 20 08:05:05 2026
 | Host         : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_my_oscope_0_0_utilization_synth.rpt -pb design_1_my_oscope_0_0_utilization_synth.pb
 | Design       : design_1_my_oscope_0_0
@@ -37,7 +37,7 @@ Table of Contents
 | Slice Registers         | 1391 |     0 |          0 |    269200 |  0.52 |
 |   Register as Flip Flop | 1389 |     0 |          0 |    269200 |  0.52 |
 |   Register as Latch     |    2 |     0 |          0 |    269200 | <0.01 |
-| F7 Muxes                |   74 |     0 |          0 |     67300 |  0.11 |
+| F7 Muxes                |   90 |     0 |          0 |     67300 |  0.13 |
 | F8 Muxes                |    0 |     0 |          0 |     33650 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -160,7 +160,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT3       |  177 |                 LUT |
 | LUT2       |  167 |                 LUT |
 | LUT4       |  117 |                 LUT |
-| MUXF7      |   74 |               MuxFx |
+| MUXF7      |   90 |               MuxFx |
 | LUT1       |   60 |                 LUT |
 | CARRY4     |   37 |          CarryLogic |
 | FDSE       |   30 |        Flop & Latch |
