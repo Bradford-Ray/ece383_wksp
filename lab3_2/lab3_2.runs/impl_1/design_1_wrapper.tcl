@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -118,8 +119,8 @@ OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.cache/wt [current_project]
   set_property parent.project_path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.xpr [current_project]
   set_property ip_repo_paths {
-  c:/Users/C27Bradford.Hurt/ece383_wksp/ip_repo/my_oscope_1_0
-  c:/Users/C27Bradford.Hurt/ece383_wksp/ip_repo/My_Counter_IP_1_0
+  C:/Users/C27Bradford.Hurt/ece383_wksp/ip_repo/my_oscope_1_0
+  C:/Users/C27Bradford.Hurt/ece383_wksp/ip_repo/My_Counter_IP_1_0
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.cache/ip [current_project]

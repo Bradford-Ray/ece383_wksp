@@ -50,6 +50,8 @@
 
 #define	uartRegAddr			0x40600000		// read <= RX, write => TX
 
+#define VERT_OFFSET 36
+
 /************************** Function Prototypes ****************************/
 void myISR(void);
 
@@ -65,32 +67,45 @@ int main(void) {
 
 	init_platform();
 
-	print("Welcome to Dom and Bradford's Lab3\n\r");
+	print("Welcome to Dom and Bradford's Hell\n\r");
 
     microblaze_register_handler((XInterruptHandler) myISR, (void *) 0);
-    microblaze_enable_interrupts();
+    microblaze_disable_interrupts();
 
-    Xil_Out8(countClearReg, 0x01);					// Clear the flag and then you MUST
-	Xil_Out8(countClearReg, 0x00);					// allow the flag to be reset later
+    Xil_Out8(flagClear, 0x01);					// Clear the flag and then you MUST
+	Xil_Out8(flagClear, 0x00);					// allow the flag to be reset later
 
 	while(1) {   // run forever
 		if (!XUartLite_IsReceiveEmpty(uartRegAddr)) { // if a key is pressed
 	    	c=XUartLite_RecvByte(uartRegAddr);
 			switch(c) {
 				case 'p':
-					printf("exWrAddr:\t%b\n", Xil_In16(exWrAddr));
-					printf("Lbus_out_s:\t%b\n", Xil_In16(Lbus_out_s));
+					printf("exWrAddr:\t%d\r\n", Xil_In16(exWrAddr));
+					printf("Lbus_out_s:\t%d\r\n", Xil_In16(Lbus_out_s));
+					printf("trigger_v:\t%d\r\n", Xil_In16(trigger_v));
+					break;
+				case 'd':	// test print horizontal line and diagonal line
+					printf("Print horizontal and diagonal lines\r\n");
+					uint16_t h = (210+VERT_OFFSET) << 7;
+					for (int i = 0; i < 1024; i++){
+						Xil_Out16(exWrAddr, i);	// set BRAM address
+						Xil_Out16(exLbus, h); // row for horizontal line
+						Xil_Out16(exRbus, ((i + VERT_OFFSET) << 7));	// diagonal line
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+					break;
 				default:
 					printf("unrecognized character: %c\r\n",c);
 					break;
 			}  // end switch
 		} // end if
-		If (live_mode == 1) {
-//			Do live mode...
-//				grab samples from audio codec and put in Array;
-//				find trigger location in Array;
-//				Write 620 samples from Array to proper location in BRAM;
-		} // end if
+//		If (live_mode == 1) {
+////			Do live mode...
+////				grab samples from audio codec and put in Array;
+////				find trigger location in Array;
+////				Write 620 samples from Array to proper location in BRAM;
+//		} // end if
 	} // end while
 
 //    while(1) {
@@ -207,7 +222,7 @@ int main(void) {
 
 
 void myISR(void) {
-	isrCount = isrCount + 1;
-	Xil_Out8(countClearReg, 0x01);					// Clear the flag and then you MUST
-	Xil_Out8(countClearReg, 0x00);					// allow the flag to be reset later
+//	isrCount = isrCount + 1;
+//	Xil_Out8(countClearReg, 0x01);					// Clear the flag and then you MUST
+//	Xil_Out8(countClearReg, 0x00);					// allow the flag to be reset later
 }

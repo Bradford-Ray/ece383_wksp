@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Wed Mar 18 08:19:59 2026
+| Date             : Fri Mar 20 08:13:48 2026
 | Host             : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.036 |       15 |       --- |             --- |
-| Slice Logic              |     0.040 |    30003 |       --- |             --- |
-|   LUT as Logic           |     0.035 |    10422 |    133800 |            7.79 |
+| Slice Logic              |     0.040 |    30019 |       --- |             --- |
+|   LUT as Logic           |     0.035 |    10421 |    133800 |            7.79 |
 |   LUT as Distributed RAM |     0.003 |      924 |     46200 |            2.00 |
 |   Register               |     0.002 |    12414 |    267600 |            4.64 |
 |   CARRY4                 |    <0.001 |      255 |     33450 |            0.76 |
 |   LUT as Shift Register  |    <0.001 |      466 |     46200 |            1.01 |
-|   F7/F8 Muxes            |    <0.001 |      249 |    133800 |            0.19 |
+|   F7/F8 Muxes            |    <0.001 |      265 |    133800 |            0.20 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   Others                 |    <0.001 |     1427 |       --- |             --- |
 |   BUFR                   |     0.000 |        1 |       160 |            0.63 |
-| Signals                  |     0.049 |    21897 |       --- |             --- |
+| Signals                  |     0.048 |    21908 |       --- |             --- |
 | Block RAM                |     0.035 |       20 |       365 |            5.48 |
 | MMCM                     |     0.392 |        4 |        10 |           40.00 |
 | PLL                      |     0.086 |        1 |        10 |           10.00 |

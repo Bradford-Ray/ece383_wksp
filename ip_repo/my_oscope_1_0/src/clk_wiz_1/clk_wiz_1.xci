@@ -5,7 +5,7 @@
     "cell_name": "my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/Audio_Codec/audiocodec_master_clock",
     "component_reference": "xilinx.com:ip:clk_wiz:6.0",
     "ip_revision": "15",
-    "gen_directory": "../../../../../../../users/c27bradford.hurt/ece383_wksp/lab3/lab3.tmp/my_oscope_v1_0_project/my_oscope_v1_0_project.gen/sources_1/ip/clk_wiz_1",
+    "gen_directory": "../../../../../../../users/c27bradford.hurt/ece383_wksp/lab3_2/lab3_2.tmp/my_oscope_v1_0_project/my_oscope_v1_0_project.gen/sources_1/ip/clk_wiz_1",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "clk_wiz_1", "resolve_type": "user", "usage": "all" } ],
@@ -600,7 +600,7 @@
         "IPCONTEXT": [ { "value": "IP_Flow" } ],
         "IPREVISION": [ { "value": "15" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../../users/c27bradford.hurt/ece383_wksp/lab3/lab3.tmp/my_oscope_v1_0_project/my_oscope_v1_0_project.gen/sources_1/ip/clk_wiz_1" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../../users/c27bradford.hurt/ece383_wksp/lab3_2/lab3_2.tmp/my_oscope_v1_0_project/my_oscope_v1_0_project.gen/sources_1/ip/clk_wiz_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "." } ],
         "SWVERSION": [ { "value": "2024.2" } ],

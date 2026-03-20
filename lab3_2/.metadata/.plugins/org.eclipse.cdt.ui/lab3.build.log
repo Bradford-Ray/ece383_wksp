@@ -1,31 +1,21 @@
-09:21:04 **** Incremental Build of configuration Debug for project lab3 ****
+09:11:03 **** Incremental Build of configuration Debug for project lab3 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:73:14: error: 'countClearReg' undeclared (first use in this function)
-   73 |     Xil_Out8(countClearReg, 0x01);                                      // Clear the flag and then you MUST
-      |              ^~~~~~~~~~~~~
-../src/helloworld.c:73:14: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:85:17: warning: implicit declaration of function 'If' [-Wimplicit-function-declaration]
-   85 |                 If (live_mode == 1) {
-      |                 ^~
-../src/helloworld.c:85:21: error: 'live_mode' undeclared (first use in this function)
-   85 |                 If (live_mode == 1) {
-      |                     ^~~~~~~~~
-../src/helloworld.c:85:36: error: expected ';' before '{' token
-   85 |                 If (live_mode == 1) {
-      |                                    ^~
-      |                                    ;
-../src/helloworld.c: In function 'myISR':
-../src/helloworld.c:207:9: error: 'isrCount' undeclared (first use in this function)
-  207 |         isrCount = isrCount + 1;
-      |         ^~~~~~~~
-../src/helloworld.c:208:18: error: 'countClearReg' undeclared (first use in this function)
-  208 |         Xil_Out8(countClearReg, 0x01);                                  // Clear the flag and then you MUST
-      |                  ^~~~~~~~~~~~~
-make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/export/lab3_platform/sw/lab3_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: lab3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/export/lab3_platform/sw/lab3_platform/standalone_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab3.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lab3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lab3.elf  |tee "lab3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   6692	     24	  49508	  56224	   dba0	lab3.elf
+'Finished building: lab3.elf.size'
+' '
 
-09:21:07 Build Finished (took 2s.391ms)
+09:11:06 Build Finished (took 2s.475ms)
 

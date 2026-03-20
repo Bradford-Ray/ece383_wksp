@@ -594,7 +594,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cb55577d</spirit:value>
+            <spirit:value>9:0e292603</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -608,11 +608,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 18 13:50:15 UTC 2026</spirit:value>
+            <spirit:value>Fri Mar 20 14:05:06 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cb55577d</spirit:value>
+            <spirit:value>9:0e292603</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -626,11 +626,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 18 13:48:03 UTC 2026</spirit:value>
+            <spirit:value>Fri Mar 20 14:02:54 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cb55577d</spirit:value>
+            <spirit:value>9:0e292603</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -641,7 +641,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cb55577d</spirit:value>
+            <spirit:value>9:0e292603</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -657,11 +657,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 18 13:48:03 UTC 2026</spirit:value>
+            <spirit:value>Fri Mar 20 14:02:54 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a38a7711</spirit:value>
+            <spirit:value>9:66f6066f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -677,11 +677,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 18 13:48:03 UTC 2026</spirit:value>
+            <spirit:value>Fri Mar 20 14:02:54 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a38a7711</spirit:value>
+            <spirit:value>9:66f6066f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -697,11 +697,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 18 13:48:03 UTC 2026</spirit:value>
+            <spirit:value>Fri Mar 20 14:02:54 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cb55577d</spirit:value>
+            <spirit:value>9:0e292603</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -717,11 +717,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Mar 18 13:48:03 UTC 2026</spirit:value>
+            <spirit:value>Fri Mar 20 14:02:54 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cb55577d</spirit:value>
+            <spirit:value>9:0e292603</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1307,83 +1307,83 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/hdl/my_oscope_slave_lite_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/hdl/my_oscope_slave_lite_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/audio_init.v</spirit:name>
+        <spirit:name>../../ipshared/563e/src/audio_init.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/Audio_Codec_Wrapper.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/Audio_Codec_Wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/TWICtl.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/TWICtl.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/button_debounce.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/button_debounce.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/ece383_pkg.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/ece383_pkg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/color_mapper.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/color_mapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/counter.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/counter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/dvid.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/dvid.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/i2s_ctl.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/i2s_ctl.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/lab2_datapath.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/lab2_datapath.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/lab2_fsm.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/lab2_fsm.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/lec10.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/lec10.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/numeric_stepper.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/numeric_stepper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/tdms.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/tdms.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/trigger_detector.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/trigger_detector.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/vga.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/vga.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/vga_signal_generator.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/vga_signal_generator.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/video.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/video.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/hdl/my_oscope.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/hdl/my_oscope.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1408,83 +1408,83 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/hdl/my_oscope_slave_lite_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/hdl/my_oscope_slave_lite_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/audio_init.v</spirit:name>
+        <spirit:name>../../ipshared/563e/src/audio_init.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/Audio_Codec_Wrapper.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/Audio_Codec_Wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/TWICtl.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/TWICtl.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/button_debounce.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/button_debounce.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/ece383_pkg.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/ece383_pkg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/color_mapper.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/color_mapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/counter.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/counter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/dvid.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/dvid.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/i2s_ctl.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/i2s_ctl.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/lab2_datapath.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/lab2_datapath.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/lab2_fsm.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/lab2_fsm.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/lec10.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/lec10.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/numeric_stepper.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/numeric_stepper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/tdms.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/tdms.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/trigger_detector.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/trigger_detector.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/vga.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/vga.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/vga_signal_generator.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/src/vga_signal_generator.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/src/video.vhdl</spirit:name>
+        <spirit:name>../../ipshared/563e/src/video.vhdl</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/1fc3/hdl/my_oscope.vhd</spirit:name>
+        <spirit:name>../../ipshared/563e/hdl/my_oscope.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1570,7 +1570,7 @@
       <xilinx:xpmLibraries>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ARUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -1618,7 +1618,7 @@
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0312d308"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2f5ff642"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c64def4a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="7e1c014c"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="a0a6f17f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c89f38dd"/>
