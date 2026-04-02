@@ -1,4 +1,4 @@
-08:04:32 **** Incremental Build of configuration Debug for project lab3 ****
+09:22:09 **** Incremental Build of configuration Debug for project lab3 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -13,9 +13,9 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/lab3
 'Invoking: MicroBlaze Print Size'
 mb-size lab3.elf  |tee "lab3.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   9004	     24	  49508	  58536	   e4a8	lab3.elf
+   9760	     24	  53608	  63392	   f7a0	lab3.elf
 'Finished building: lab3.elf.size'
 ' '
 
-08:04:37 Build Finished (took 5s.42ms)
+09:22:14 Build Finished (took 4s.709ms)
 

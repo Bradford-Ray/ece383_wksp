@@ -1,20 +1,20 @@
-Nothing to build in platform 'lab3_platform'
+Nothing to build in platform 'design_1_wrapper_fixed'
 
-08:04:32 **** Incremental Build of configuration Debug for project lab3 ****
+17:00:49 **** Incremental Build of configuration Debug for project lab3_3 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/export/lab3_platform/sw/lab3_platform/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper_fixed/export/design_1_wrapper_fixed/sw/design_1_wrapper_fixed/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 'Finished building: ../src/helloworld.c'
 ' '
-'Building target: lab3.elf'
+'Building target: lab3_3.elf'
 'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/export/lab3_platform/sw/lab3_platform/standalone_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab3.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: lab3.elf'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper_fixed/export/design_1_wrapper_fixed/sw/design_1_wrapper_fixed/standalone_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab3_3.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lab3_3.elf'
 ' '
 'Invoking: MicroBlaze Print Size'
-mb-size lab3.elf  |tee "lab3.elf.size"
+mb-size lab3_3.elf  |tee "lab3_3.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   9004	     24	  49508	  58536	   e4a8	lab3.elf
-'Finished building: lab3.elf.size'
+  10340	     24	   7532	  17896	   45e8	lab3_3.elf
+'Finished building: lab3_3.elf.size'
 ' '
