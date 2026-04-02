@@ -1,0 +1,292 @@
+/*--------------------------------------------------------------------
+-- Name:	Maj Jeff Falkinburg
+-- Date:	Feb 19, 2017
+-- File:	lec19.c
+-- Event:	Lecture 19
+-- Crs:		ECE 383
+--
+-- Purp:	MicroBlaze Tutorial that implements a custom IP with interrupt
+--			to MicroBlaze.
+--
+-- Documentation:	MicroBlaze Tutorial
+--
+-- Academic Integrity Statement: I certify that, while others may have
+-- assisted me in brain storming, debugging and validating this program,
+-- the program itself is my own work. I understand that submitting code
+-- which is the work of other individuals is a violation of the honor
+-- code.  I also understand that if I knowingly give my original work to
+-- another individual is also a violation of the honor code.
+-------------------------------------------------------------------------*/
+/***************************** Include Files ********************************/
+
+#include "xparameters.h"
+#include "stdio.h"
+#include "xstatus.h"
+
+#include "platform.h"
+#include "xil_printf.h"						// Contains xil_printf
+#include <xuartlite_l.h>					// Contains XUartLite_RecvByte
+#include <xil_io.h>							// Contains Xil_Out8 and its variations
+#include <xil_exception.h>
+
+/************************** Constant Definitions ****************************/
+
+/*
+ * The following constants define the slave registers used for our Counter PCORE
+ */
+#define countBase		0x44a00000
+#define exWrAddr		countBase			// 10 LSBs of slv_reg0 BRAM address
+#define	exWen			countBase+4			// 1  LSBs of slv_reg1 BRAM external write enable
+#define	Lbus_out_s		countBase+8			// 16 LSBs of slv_reg2 Left sample bus from datapath
+#define	Rbus_out_s		countBase+0xc		// 16 LSBs of slv_reg3 Right sample bus from datapath
+#define exLbus			countBase+0x10		// 16 LSBs of slv_reg4 Left sample bus to datapath
+#define exRbus			countBase+0x14		// 16 LSBs of slv_reg5 Right sample bus to datapath
+#define flagQ_s 		countBase+0x18		// 1  LSBs of slv_reg6 Datapath interrupt for ublaze
+#define flagClear		countBase+0x1c		// 1  LSBs of slv_reg7 Interrupt reset from ublaze to DP
+#define trigger_v		countBase+0x20		// 11 LSBs of slv_reg8 Vertical trigger location
+#define trigger_t		countBase+0x24		// 11 LSBs of slv_reg9 Horizontal trigger location
+
+#define printf xil_printf			/* A smaller footprint printf */
+
+#define	uartRegAddr			0x40600000		// read <= RX, write => TX
+
+#define VERT_OFFSET 36
+
+/************************** Function Prototypes ****************************/
+void myISR(void);
+
+/************************** Variable Definitions **************************/
+/*
+ * The following are declared globally so they are zeroed and so they are
+ * easily accessible from a debugger
+ */
+
+int main(void) {
+
+	unsigned char c;
+
+	init_platform();
+
+	print("Welcome to Dom and Bradford's Hell\n\r");
+
+    microblaze_register_handler((XInterruptHandler) myISR, (void *) 0);
+    microblaze_disable_interrupts();
+
+//    Xil_Out8(flagClear, 0x01);					// Clear the flag and then you MUST
+//	Xil_Out8(flagClear, 0x00);					// allow the flag to be reset later
+
+	uint16_t bufferL[1024];
+	uint16_t bufferR[1024];
+
+	while(1) {   // run forever
+		if (!XUartLite_IsReceiveEmpty(uartRegAddr)) { // if a key is pressed
+	    	c=XUartLite_RecvByte(uartRegAddr);
+			switch(c) {
+				case 'c':
+					printf("Clearing Screen\r\n");
+					for (int i = 0; i < 1024; i++){
+						Xil_Out16(exWrAddr, i);	// set BRAM address
+						Xil_Out16(exLbus, (VERT_OFFSET << 7)); // row for horizontal line
+						Xil_Out16(exRbus, (VERT_OFFSET << 7));	// diagonal line
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+				case 'p':
+					printf("exWrAddr:\t%d\r\n", Xil_In16(exWrAddr));
+					printf("Lbus_out_s:\t%d\r\n", Xil_In16(Lbus_out_s));
+					printf("trigger_v:\t%d\r\n", Xil_In16(trigger_v));
+					break;
+				case 'd':	// test print horizontal line and diagonal line
+					printf("Print horizontal and diagonal lines\r\n");
+					uint16_t h = (210+VERT_OFFSET) << 7;
+					for (int i = 0; i < 1024; i++){
+						Xil_Out16(exWrAddr, i);	// set BRAM address
+						Xil_Out16(exLbus, h); // row for horizontal line
+						Xil_Out16(exRbus, ((i + VERT_OFFSET) << 7));	// diagonal line
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+					break;
+				case 'r': // test read the waveform
+					printf("Reading waveform:\r\n");
+					for(int i = 20; i < 1024; i++){
+						while(Xil_In8(flagQ_s) == 0);
+						bufferL[i] = Xil_In16(Lbus_out_s);
+						bufferR[i] = Xil_In16(Rbus_out_s);
+						Xil_Out8(flagClear, 0x01);					// Clear the flag
+						Xil_Out8(flagClear, 0x00);
+					}
+					break;
+				case 't': // print the buffers
+					printf("Printing bufferL:\r\n");
+					for(int i = 0; i < 1024; i++){
+						printf("%x\r\n", bufferL[i]);
+					}
+					printf("\r\nPrinting bufferR:\r\n");
+					for(int i = 0; i < 1024; i++){
+						printf("%x\r\n", bufferR[i]);
+					}
+					break;
+				case 'o': // print the buffers
+					printf("Pushing saved waveform\r\n");
+					for (int i = 20; i < 1024; i++){
+						Xil_Out16(exWrAddr, i);	// set BRAM address
+						Xil_Out16(exLbus, bufferL[i]); // left buffer
+						Xil_Out16(exRbus, bufferR[i]); // right buffer
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+					break;
+				case 'w': // align waveform to both triggers
+					printf("Aligning waveform to both triggers:\r\n");
+					uint16_t trig_v = Xil_In16(trigger_v);
+					printf("Trigger Volt initial: %d\r\n", trig_v);
+					uint16_t i = Xil_In16(trigger_t);
+					printf("Trigger Time initial: %d\r\n", i);
+					uint16_t buffer_val = (bufferL[i] >> 7) - 36;
+					while((((trig_v <= ((bufferL[i] >> 7) - 36)))||(trig_v > ((bufferL[i+1] >> 7) - 36)))){
+						printf("trigger_v: %d\tbufferL[i]: %d\tbufferL[i+1]: %d\r\n", trig_v, (bufferL[i] >> 7) - 36, (bufferL[i+1] >> 7) - 36);
+						buffer_val = (bufferL[i] >> 6) - 36;
+						i++;
+					}
+					printf("Trigger Time final: %d\r\n", i);
+					printf("Trigger Volt at trigger point: %d\r\n", buffer_val);
+					for (int j = 0; j < 1024; j++){
+						Xil_Out16(exWrAddr, j);	// set BRAM address
+						Xil_Out16(exLbus, bufferL[j]); // left buffer
+						Xil_Out16(exRbus, bufferR[j]); // right buffer
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+					break;
+				default:
+					printf("unrecognized character: %c\r\n",c);
+					break;
+			}  // end switch
+		} // end if
+//		If (live_mode == 1) {
+////			Do live mode...
+////				grab samples from audio codec and put in Array;
+////				find trigger location in Array;
+////				Write 620 samples from Array to proper location in BRAM;
+//		} // end if
+	} // end while
+
+//    while(1) {
+//
+//    	c=XUartLite_RecvByte(uartRegAddr);
+//
+//		switch(c) {
+//
+//    		/*-------------------------------------------------
+//    		 * Reply with the help menu
+//    		 *-------------------------------------------------
+//			 */
+//    		case '?':
+//    			printf("--------------------------\r\n");
+//    			printf("	count Q = %x\r\n",Xil_In16(countQReg));
+//    			printf("	isr count = %x\r\n",isrCount);
+//    			printf("	Roll = %x\r\n",Xil_In16(countRollReg));
+//    			printf("--------------------------\r\n");
+//    			printf("?: help menu\r\n");
+//    			printf("o: k\r\n");
+//    			printf("c:   COUNTER	count up LEDs (by x26)\r\n");
+//    			printf("s/S: COUNTER 	start/Stop counter\r\n");
+//    			printf("S:   COUNTER	stop counter\r\n");
+//    			printf("l:   COUNTER	load counter\r\n");
+//    			printf("r:   COUNTER	reset counter\r\n");
+//    			printf("i:   Clear ISR counter\r\n");
+//    			printf("f:   flush terminal\r\n");
+//    			break;
+//
+//			/*-------------------------------------------------
+//			 * Basic I/O loopback
+//			 *-------------------------------------------------
+//			 */
+//    		case 'o':
+//    			printf("k \r\n");
+//    			break;
+//
+//			/*-------------------------------------------------
+//			 * Tell the counter to count up
+//			 *-------------------------------------------------
+//			 */
+//    		case 'c':
+//    			Xil_Out8(countCtrlReg,count_COUNT);
+//    			Xil_Out8(countCtrlReg,count_HOLD);
+//    			break;
+//
+//			/*-------------------------------------------------
+//			 * Start the counter to count up
+//			 *-------------------------------------------------
+//			 */
+//        	case 's':
+//        		Xil_Out8(countCtrlReg,count_COUNT);
+//        		break;
+//
+//			/*-------------------------------------------------
+//			 * Stop the counter from counting
+//			 *-------------------------------------------------
+//			 */
+//        	case 'S':
+//        		Xil_Out8(countCtrlReg,count_HOLD);
+//        		break;
+//
+//			/*-------------------------------------------------
+//			 * Tell the counter to load a value
+//			 *-------------------------------------------------
+//			 */
+//        	case 'l':
+//        		printf("Enter a 0-9 value to store in the counter: ");
+//            	c=XUartLite_RecvByte(uartRegAddr) - 0x30;
+//        		Xil_Out8(countQReg,c);						// put value into slv_reg1
+//        		Xil_Out8(countCtrlReg,count_LOAD);			// load command
+//    			printf("%c\r\n",c+0x30);
+//        		break;
+//
+//			/*-------------------------------------------------
+//			 * Reset the counter
+//			 *-------------------------------------------------
+//			 */
+//            case 'r':
+//            	Xil_Out8(countCtrlReg,count_RESET);				// reset command
+//            	break;
+//
+//			/*-------------------------------------------------
+//			 * Clear the ISR counter
+//			 *-------------------------------------------------
+//			 */
+//			case 'i':
+//				isrCount = 0;				// clear ISR Count
+//				break;
+//
+//			/*-------------------------------------------------
+//			 * Clear the terminal window
+//			 *-------------------------------------------------
+//			 */
+//            case 'f':
+//            	for (c=0; c<40; c++) printf("\r\n");
+//               	break;
+//
+//			/*-------------------------------------------------
+//			 * Unknown character was
+//			 *-------------------------------------------------
+//			 */
+//    		default:
+//    			printf("unrecognized character: %c\r\n",c);
+//    			break;
+//    	} // end case
+//
+//    } // end while 1
+
+    cleanup_platform();
+
+    return 0;
+} // end main
+
+
+void myISR(void) {
+//	isrCount = isrCount + 1;
+//	Xil_Out8(countClearReg, 0x01);					// Clear the flag and then you MUST
+//	Xil_Out8(countClearReg, 0x00);					// allow the flag to be reset later
+}

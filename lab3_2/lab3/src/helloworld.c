@@ -72,13 +72,25 @@ int main(void) {
     microblaze_register_handler((XInterruptHandler) myISR, (void *) 0);
     microblaze_disable_interrupts();
 
-    Xil_Out8(flagClear, 0x01);					// Clear the flag and then you MUST
-	Xil_Out8(flagClear, 0x00);					// allow the flag to be reset later
+//    Xil_Out8(flagClear, 0x01);					// Clear the flag and then you MUST
+//	Xil_Out8(flagClear, 0x00);					// allow the flag to be reset later
+
+	uint16_t bufferL[1024];
+	uint16_t bufferR[1024];
 
 	while(1) {   // run forever
 		if (!XUartLite_IsReceiveEmpty(uartRegAddr)) { // if a key is pressed
 	    	c=XUartLite_RecvByte(uartRegAddr);
 			switch(c) {
+				case 'c':
+					printf("Clearing Screen\r\n");
+					for (int i = 0; i < 1024; i++){
+						Xil_Out16(exWrAddr, i);	// set BRAM address
+						Xil_Out16(exLbus, (VERT_OFFSET << 7)); // row for horizontal line
+						Xil_Out16(exRbus, (VERT_OFFSET << 7));	// diagonal line
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
 				case 'p':
 					printf("exWrAddr:\t%d\r\n", Xil_In16(exWrAddr));
 					printf("Lbus_out_s:\t%d\r\n", Xil_In16(Lbus_out_s));
@@ -91,6 +103,61 @@ int main(void) {
 						Xil_Out16(exWrAddr, i);	// set BRAM address
 						Xil_Out16(exLbus, h); // row for horizontal line
 						Xil_Out16(exRbus, ((i + VERT_OFFSET) << 7));	// diagonal line
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+					break;
+				case 'r': // test read the waveform
+					printf("Reading waveform:\r\n");
+					for(int i = 20; i < 1024; i++){
+						while(Xil_In8(flagQ_s) == 0);
+						bufferL[i] = Xil_In16(Lbus_out_s);
+						bufferR[i] = Xil_In16(Rbus_out_s);
+						Xil_Out8(flagClear, 0x01);					// Clear the flag
+						Xil_Out8(flagClear, 0x00);
+					}
+					break;
+				case 't': // print the buffers
+					printf("Printing bufferL:\r\n");
+					for(int i = 0; i < 1024; i++){
+						printf("%x\r\n", bufferL[i]);
+					}
+					printf("\r\nPrinting bufferR:\r\n");
+					for(int i = 0; i < 1024; i++){
+						printf("%x\r\n", bufferR[i]);
+					}
+					break;
+				case 'o': // print the buffers
+					printf("Pushing saved waveform\r\n");
+					for (int i = 20; i < 1024; i++){
+						Xil_Out16(exWrAddr, i);	// set BRAM address
+						Xil_Out16(exLbus, bufferL[i]); // left buffer
+						Xil_Out16(exRbus, bufferR[i]); // right buffer
+						Xil_Out8(exWen, 1);	// write to BRAM
+						Xil_Out8(exWen, 0);	// turn off write
+					}
+					break;
+				case 'w': // align waveform to both triggers
+					printf("Aligning waveform to both triggers:\r\n");
+					uint16_t trig_v = Xil_In16(trigger_v);
+					printf("Trigger Volt initial: %d\r\n", trig_v);
+
+					uint16_t i = Xil_In16(trigger_t);
+					uint16_t trig_t = i;
+					printf("Trigger Time initial: %d\r\n", i);
+
+					uint16_t buffer_val = (bufferL[i] >> 7) - 36;
+					while((((trig_v <= ((bufferL[i] >> 7) - 36)))||(trig_v > ((bufferL[i+1] >> 7) - 36)))){
+						//printf("trigger_v: %d\tbufferL[i]: %d\tbufferL[i+1]: %d\r\n", trig_v, (bufferL[i] >> 7) - 36, (bufferL[i+1] >> 7) - 36);
+						buffer_val = (bufferL[i] >> 7) - 36;
+						i++;
+					}
+					printf("Trigger Time final: %d\r\n", i);
+					printf("Trigger Volt at trigger point: %d\r\n", buffer_val);
+					for (int j = 20; j < 620; j++){
+						Xil_Out16(exWrAddr, j);	// set BRAM address
+						Xil_Out16(exLbus, bufferL[j+(i-trig_t)]); // left buffer
+						Xil_Out16(exRbus, bufferR[j+(i-trig_t)]); // right buffer
 						Xil_Out8(exWen, 1);	// write to BRAM
 						Xil_Out8(exWen, 0);	// turn off write
 					}

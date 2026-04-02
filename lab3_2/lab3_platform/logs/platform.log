@@ -1051,3 +1051,288 @@ TRACE::2026-03-20.08:52:56::SCWMssOS::DEBUG:  swdes dump  C:/Users/C27Bradford.H
 C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss|system_0||
 
 TRACE::2026-03-20.08:52:56::SCWMssOS::Sw design exists and opened at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:22::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:22::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:22::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:22::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:22::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:22::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:22::SCWPlatform::Do not have an existing db opened. 
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened new HwDB with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWReader::Active system found as  lab3_platform
+TRACE::2026-03-31.18:02:23::SCWReader::Handling sysconfig lab3_platform
+TRACE::2026-03-31.18:02:23::SCWDomain::checking for install qemu data   : 
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:23::SCWMssOS::Checking the sw design at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2026-03-31.18:02:23::SCWMssOS::No sw design opened at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::mss exists loading the mss file  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::Opened the sw design from mss  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::Adding the swdes entry C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2026-03-31.18:02:23::SCWMssOS::updating the scw layer about changes
+TRACE::2026-03-31.18:02:23::SCWMssOS::Opened the sw design.  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::Saving the mss changes C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2026-03-31.18:02:23::SCWMssOS::Completed writemss as part of save.
+TRACE::2026-03-31.18:02:23::SCWMssOS::Commit changes completed.
+TRACE::2026-03-31.18:02:23::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2026-03-31.18:02:23::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:23::SCWMssOS::Checking the sw design at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::DEBUG:  swdes dump  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2026-03-31.18:02:23::SCWMssOS::Sw design exists and opened at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWReader::No isolation master present  
+LOG::2026-03-31.18:02:23::SCWPlatform::Started generating the artifacts platform lab3_platform
+TRACE::2026-03-31.18:02:23::SCWPlatform::Sanity checking of platform is completed
+LOG::2026-03-31.18:02:23::SCWPlatform::Started generating the artifacts for system configuration lab3_platform
+LOG::2026-03-31.18:02:23::SCWSystem::Checking the domain standalone_domain
+LOG::2026-03-31.18:02:23::SCWSystem::Not a boot domain 
+LOG::2026-03-31.18:02:23::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2026-03-31.18:02:23::SCWDomain::Generating domain artifcats
+TRACE::2026-03-31.18:02:23::SCWMssOS::Generating standalone artifcats
+TRACE::2026-03-31.18:02:23::SCWMssOS:: Copying the user libraries. 
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:23::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:23::SCWMssOS::Checking the sw design at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::DEBUG:  swdes dump  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2026-03-31.18:02:23::SCWMssOS::Sw design exists and opened at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::Completed writing the mss file at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp
+TRACE::2026-03-31.18:02:23::SCWMssOS::Mss edits present, copying mssfile into export location C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:23::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2026-03-31.18:02:23::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2026-03-31.18:02:23::SCWDomain::Building the domain as part of full build :  standalone_domain
+TRACE::2026-03-31.18:02:23::SCWMssOS::doing bsp build ... 
+TRACE::2026-03-31.18:02:23::SCWMssOS::System Command Ran  C: & cd  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp & make 
+TRACE::2026-03-31.18:02:24::SCWMssOS::make --no-print-directory seq_libs
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::'Finished building libraries sequentially.'
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::make -j 14 --no-print-directory par_libs
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::"Running Make include in microblaze_0/libsrc/bram_v4_11/src"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2026-03-31.18:02:24::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+TRACE::2026-03-31.18:02:24::SCWMssOS:: -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::"Running Make include in microblaze_0/libsrc/cpu_v2_18/src"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_18/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2026-03-31.18:02:24::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+TRACE::2026-03-31.18:02:24::SCWMssOS::-Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::"Running Make include in microblaze_0/libsrc/standalone_v9_2/src"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::make -C microblaze_0/libsrc/standalone_v9_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "C
+TRACE::2026-03-31.18:02:24::SCWMssOS::OMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections 
+TRACE::2026-03-31.18:02:24::SCWMssOS::-Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::"Running Make include in microblaze_0/libsrc/uartlite_v3_11/src"
+
+TRACE::2026-03-31.18:02:24::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "CO
+TRACE::2026-03-31.18:02:24::SCWMssOS::MPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -
+TRACE::2026-03-31.18:02:24::SCWMssOS::Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::"Running Make libs in microblaze_0/libsrc/bram_v4_11/src"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+TRACE::2026-03-31.18:02:26::SCWMssOS::FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -W
+TRACE::2026-03-31.18:02:26::SCWMssOS::extra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::"Running Make libs in microblaze_0/libsrc/cpu_v2_18/src"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_18/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2026-03-31.18:02:26::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
+TRACE::2026-03-31.18:02:26::SCWMssOS::xtra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::"Running Make libs in microblaze_0/libsrc/standalone_v9_2/src"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::make -C microblaze_0/libsrc/standalone_v9_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
+TRACE::2026-03-31.18:02:26::SCWMssOS::ILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wa
+TRACE::2026-03-31.18:02:26::SCWMssOS::ll -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::"Running Make libs in microblaze_0/libsrc/uartlite_v3_11/src"
+
+TRACE::2026-03-31.18:02:26::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+TRACE::2026-03-31.18:02:26::SCWMssOS::LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wal
+TRACE::2026-03-31.18:02:26::SCWMssOS::l -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2026-03-31.18:02:27::SCWMssOS::'Finished building libraries parallelly.'
+
+TRACE::2026-03-31.18:02:27::SCWMssOS::make --no-print-directory archive
+
+TRACE::2026-03-31.18:02:27::SCWMssOS::mb-ar -r  microblaze_0/lib/libxil.a microblaze_0/lib/_exit.o microblaze_0/lib/errno.o microblaze_0/lib/fcntl.o microblaze_0/lib
+TRACE::2026-03-31.18:02:27::SCWMssOS::/hw_exception_handler.o microblaze_0/lib/inbyte.o microblaze_0/lib/microblaze_disable_dcache.o microblaze_0/lib/microblaze_disa
+TRACE::2026-03-31.18:02:27::SCWMssOS::ble_exceptions.o microblaze_0/lib/microblaze_disable_icache.o microblaze_0/lib/microblaze_disable_interrupts.o microblaze_0/lib
+TRACE::2026-03-31.18:02:27::SCWMssOS::/microblaze_enable_dcache.o microblaze_0/lib/microblaze_enable_exceptions.o microblaze_0/lib/microblaze_enable_icache.o microbl
+TRACE::2026-03-31.18:02:27::SCWMssOS::aze_0/lib/microblaze_enable_interrupts.o microblaze_0/lib/microblaze_exception_handler.o microblaze_0/lib/microblaze_flush_cach
+TRACE::2026-03-31.18:02:27::SCWMssOS::e_ext.o microblaze_0/lib/microblaze_flush_cache_ext_range.o microblaze_0/lib/microblaze_flush_dcache.o microblaze_0/lib/microbl
+TRACE::2026-03-31.18:02:27::SCWMssOS::aze_flush_dcache_range.o microblaze_0/lib/microblaze_init_dcache_range.o microblaze_0/lib/microblaze_init_icache_range.o microb
+TRACE::2026-03-31.18:02:27::SCWMssOS::laze_0/lib/microblaze_interrupt_handler.o microblaze_0/lib/microblaze_interrupts_g.o microblaze_0/lib/microblaze_invalidate_cac
+TRACE::2026-03-31.18:02:27::SCWMssOS::he_ext.o microblaze_0/lib/microblaze_invalidate_cache_ext_range.o microblaze_0/lib/microblaze_invalidate_dcache.o microblaze_0/
+TRACE::2026-03-31.18:02:27::SCWMssOS::lib/microblaze_invalidate_dcache_range.o microblaze_0/lib/microblaze_invalidate_icache.o microblaze_0/lib/microblaze_invalidate
+TRACE::2026-03-31.18:02:27::SCWMssOS::_icache_range.o microblaze_0/lib/microblaze_scrub.o microblaze_0/lib/microblaze_selftest.o microblaze_0/lib/microblaze_sleep.o 
+TRACE::2026-03-31.18:02:27::SCWMssOS::microblaze_0/lib/microblaze_update_dcache.o microblaze_0/lib/microblaze_update_icache.o microblaze_0/lib/outbyte.o microblaze_0
+TRACE::2026-03-31.18:02:27::SCWMssOS::/lib/print.o microblaze_0/lib/pvr.o microblaze_0/lib/xbram.o microblaze_0/lib/xbram_g.o microblaze_0/lib/xbram_intr.o microblaz
+TRACE::2026-03-31.18:02:27::SCWMssOS::e_0/lib/xbram_selftest.o microblaze_0/lib/xbram_sinit.o microblaze_0/lib/xil_assert.o microblaze_0/lib/xil_cache.o microblaze_0
+TRACE::2026-03-31.18:02:27::SCWMssOS::/lib/xil_clocking.o microblaze_0/lib/xil_exception.o microblaze_0/lib/xil_mem.o microblaze_0/lib/xil_misc_psreset_api.o microbl
+TRACE::2026-03-31.18:02:27::SCWMssOS::aze_0/lib/xil_printf.o microblaze_0/lib/xil_sleepcommon.o microblaze_0/lib/xil_sutil.o microblaze_0/lib/xil_testcache.o microbl
+TRACE::2026-03-31.18:02:27::SCWMssOS::aze_0/lib/xil_testio.o microblaze_0/lib/xil_testmem.o microblaze_0/lib/xil_util.o microblaze_0/lib/xinterrupt_wrap.o microblaze
+TRACE::2026-03-31.18:02:27::SCWMssOS::_0/lib/xio.o microblaze_0/lib/xplatform_info.o microblaze_0/lib/xpm_init.o microblaze_0/lib/xuartlite.o microblaze_0/lib/xuartl
+TRACE::2026-03-31.18:02:27::SCWMssOS::ite_g.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/xuartlite_l.o microblaze_0/lib/xuartlite_selftest.o microblaze_0/lib
+TRACE::2026-03-31.18:02:27::SCWMssOS::/xuartlite_sinit.o microblaze_0/lib/xuartlite_stats.o
+
+TRACE::2026-03-31.18:02:29::SCWMssOS::'Finished building libraries'
+
+TRACE::2026-03-31.18:02:29::SCWMssOS::Copying to export directory.
+TRACE::2026-03-31.18:02:29::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2026-03-31.18:02:29::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2026-03-31.18:02:29::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2026-03-31.18:02:29::SCWSystem::Completed Processing the sysconfig lab3_platform
+LOG::2026-03-31.18:02:29::SCWPlatform::Completed generating the artifacts for system configuration lab3_platform
+TRACE::2026-03-31.18:02:29::SCWPlatform::Started preparing the platform 
+TRACE::2026-03-31.18:02:29::SCWSystem::Writing the bif file for system config lab3_platform
+TRACE::2026-03-31.18:02:29::SCWSystem::dir created 
+TRACE::2026-03-31.18:02:29::SCWSystem::Writing the bif 
+TRACE::2026-03-31.18:02:29::SCWPlatform::Started writing the spfm file 
+TRACE::2026-03-31.18:02:29::SCWPlatform::Started writing the xpfm file 
+TRACE::2026-03-31.18:02:29::SCWPlatform::Completed generating the platform
+TRACE::2026-03-31.18:02:29::SCWMssOS::Saving the mss changes C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:29::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2026-03-31.18:02:29::SCWMssOS::Completed writemss as part of save.
+TRACE::2026-03-31.18:02:29::SCWMssOS::Commit changes completed.
+TRACE::2026-03-31.18:02:29::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:29::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:29::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:29::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:29::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:29::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:29::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:29::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:29::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:29::SCWMssOS::Checking the sw design at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:29::SCWMssOS::DEBUG:  swdes dump  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2026-03-31.18:02:29::SCWMssOS::Sw design exists and opened at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:29::SCWWriter::formatted JSON is {
+	"platformName":	"lab3_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab3_platform",
+	"platHandOff":	"C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_1_wrapper.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab3_platform",
+	"systems":	[{
+			"systemName":	"lab3_platform",
+			"systemDesc":	"lab3_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab3_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"9.2",
+					"mssFile":	"",
+					"md5Digest":	"9499a4de66c9c57c9925c6420c5e637c",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2026-03-31.18:02:29::SCWPlatform::updated the xpfm file.
+TRACE::2026-03-31.18:02:30::SCWPlatform::Trying to open the hw design at C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:30::SCWPlatform::DSA given C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:30::SCWPlatform::DSA absoulate path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:30::SCWPlatform::DSA directory C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw
+TRACE::2026-03-31.18:02:30::SCWPlatform:: Platform Path C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/hw/design_1_wrapper.xsa
+TRACE::2026-03-31.18:02:30::SCWPlatform:: Unique name xilinx:nexys_video::0.0
+TRACE::2026-03-31.18:02:30::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2026-03-31.18:02:30::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2026-03-31.18:02:30::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2026-03-31.18:02:30::SCWMssOS::Checking the sw design at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2026-03-31.18:02:30::SCWMssOS::DEBUG:  swdes dump  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2026-03-31.18:02:30::SCWMssOS::Sw design exists and opened at  C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/microblaze_0/standalone_domain/bsp/system.mss
