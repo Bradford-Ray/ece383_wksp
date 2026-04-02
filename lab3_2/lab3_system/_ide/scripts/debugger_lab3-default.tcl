@@ -10,7 +10,7 @@
 # source C:\Users\C27Bradford.Hurt\ece383_wksp\lab3_2\lab3_system\_ide\scripts\debugger_lab3-default.tcl
 # 
 connect -url tcp:127.0.0.1:3121
-targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276B7D0EDB-13636093-0"}
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723218B" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276723218B-13636093-0"}
 fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3/_ide/bitstream/design_1_wrapper.bit
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
 loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_platform/export/lab3_platform/hw/design_1_wrapper.xsa -regs

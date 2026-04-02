@@ -821,7 +821,7 @@
       },
       "my_oscope_0": {
         "vlnv": "xilinx.com:user:my_oscope:1.0",
-        "ip_revision": "5",
+        "ip_revision": "6",
         "xci_name": "design_1_my_oscope_0_0",
         "xci_path": "ip\\design_1_my_oscope_0_0\\design_1_my_oscope_0_0.xci",
         "inst_hier_path": "my_oscope_0"

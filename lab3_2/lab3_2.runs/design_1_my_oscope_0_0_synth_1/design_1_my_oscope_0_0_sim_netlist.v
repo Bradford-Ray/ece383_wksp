@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Fri Mar 20 08:05:04 2026
+// Date        : Thu Apr  2 09:30:55 2026
 // Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_my_oscope_0_0_sim_netlist.v
@@ -32,7 +32,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Audio_Codec_Wrapper
     s00_axi_aresetn,
     switch,
     flagQ_reg,
-    flagQ_s,
+    flagQ,
     s00_axi_aclk,
     ac_adc_sdata,
     \Data_Out_int_reg[13] ,
@@ -60,7 +60,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Audio_Codec_Wrapper
   input s00_axi_aresetn;
   input [0:0]switch;
   input [0:0]flagQ_reg;
-  input flagQ_s;
+  input flagQ;
   input s00_axi_aclk;
   input ac_adc_sdata;
   input \Data_Out_int_reg[13] ;
@@ -99,8 +99,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Audio_Codec_Wrapper
   wire clk_50;
   wire \count[9]_i_2_n_0 ;
   wire [9:0]count_reg;
+  wire flagQ;
   wire [0:0]flagQ_reg;
-  wire flagQ_s;
   wire lopt;
   wire [9:0]plusOp;
   wire [17:2]readR;
@@ -347,7 +347,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Audio_Codec_Wrapper
     flagQ_i_1
        (.I0(E),
         .I1(flagQ_reg),
-        .I2(flagQ_s),
+        .I2(flagQ),
         .O(ready_sig_reg_1));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_audio_init initialize_audio
        (.CLK(clk_50),
@@ -8799,6 +8799,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   wire ac_lrclk;
   wire ac_mclk;
   wire [4:0]btn;
+  wire flagQ;
   (* IBUF_LOW_PWR *) wire s00_axi_aclk;
   wire [6:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -8822,7 +8823,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   (* SLEW = "SLOW" *) wire [3:0]tmds;
   (* SLEW = "SLOW" *) wire [3:0]tmdsb;
 
-  assign flagQ = \<const0> ;
   assign s00_axi_bresp[1] = \<const0> ;
   assign s00_axi_bresp[0] = \<const0> ;
   assign s00_axi_rresp[1] = \<const0> ;
@@ -8839,6 +8839,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
         .axi_awready_reg(s00_axi_awready),
         .axi_rvalid_reg(s00_axi_rvalid),
         .btn(btn[3:0]),
+        .flagQ(flagQ),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[6:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -11264,7 +11265,7 @@ endmodule
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
    (SR,
-    flagQ_s,
+    flagQ,
     q,
     sw,
     \process_q_reg[10] ,
@@ -11294,7 +11295,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
     \processQ_reg[0] ,
     ac_adc_sdata);
   output [0:0]SR;
-  output flagQ_s;
+  output flagQ;
   output [9:0]q;
   output [0:0]sw;
   output [9:0]\process_q_reg[10] ;
@@ -11386,8 +11387,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
   wire \ch2_reg[to_ac_n_0_][8] ;
   wire \ch2_reg[to_ac_n_0_][9] ;
   wire cw_write_en;
+  wire flagQ;
   wire [0:0]flagQ_reg_0;
-  wire flagQ_s;
   wire [15:8]input_vector;
   wire leftChannelMemory_n_1;
   wire lopt;
@@ -11435,8 +11436,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
         .ac_dac_sdata(ac_dac_sdata),
         .ac_mclk(ac_mclk),
         .\ch1[to_ac] (\ch1[to_ac] ),
+        .flagQ(flagQ),
         .flagQ_reg(flagQ_reg_0),
-        .flagQ_s(flagQ_s),
         .lopt(lopt),
         .ready_sig_reg_0(Audio_Codec_n_0),
         .ready_sig_reg_1(Audio_Codec_n_3),
@@ -11874,7 +11875,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lab2_datapath
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .D(Audio_Codec_n_3),
-        .Q(flagQ_s),
+        .Q(flagQ),
         .R(SR));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_unimacro_BRAM_SDP_MACRO__parameterized1 leftChannelMemory
        (.ADDRBWRADDR(WRADDR),
@@ -13308,6 +13309,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope
     ac_dac_sdata,
     LRCLK_reg,
     BCLK_int_reg,
+    flagQ,
     axi_awready_reg,
     axi_rvalid_reg,
     axi_arready_reg,
@@ -13336,6 +13338,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope
   output ac_dac_sdata;
   output LRCLK_reg;
   output BCLK_int_reg;
+  output flagQ;
   output axi_awready_reg;
   output axi_rvalid_reg;
   output axi_arready_reg;
@@ -13374,7 +13377,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope
   wire axi_wready;
   wire axi_wready_i_1_n_0;
   wire [3:0]btn;
-  wire my_oscope_slave_lite_v1_0_S00_AXI_inst_n_42;
+  wire flagQ;
+  wire my_oscope_slave_lite_v1_0_S00_AXI_inst_n_43;
   wire my_oscope_slave_lite_v1_0_S00_AXI_inst_n_5;
   wire my_oscope_slave_lite_v1_0_S00_AXI_inst_n_6;
   wire s00_axi_aclk;
@@ -13426,7 +13430,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope
         .I2(my_oscope_slave_lite_v1_0_S00_AXI_inst_n_5),
         .I3(s00_axi_bready),
         .I4(s00_axi_bvalid),
-        .I5(my_oscope_slave_lite_v1_0_S00_AXI_inst_n_42),
+        .I5(my_oscope_slave_lite_v1_0_S00_AXI_inst_n_43),
         .O(axi_bvalid_i_1_n_0));
   LUT6 #(
     .INIT(64'hA2A2A2A2FAAAAAAA)) 
@@ -13448,7 +13452,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope
        (.BCLK_int_reg(BCLK_int_reg),
         .\FSM_onehot_state_write_reg[1]_0 (my_oscope_slave_lite_v1_0_S00_AXI_inst_n_5),
         .\FSM_onehot_state_write_reg[2]_0 (my_oscope_slave_lite_v1_0_S00_AXI_inst_n_6),
-        .\FSM_onehot_state_write_reg[2]_1 (my_oscope_slave_lite_v1_0_S00_AXI_inst_n_42),
+        .\FSM_onehot_state_write_reg[2]_1 (my_oscope_slave_lite_v1_0_S00_AXI_inst_n_43),
         .LRCLK_reg(LRCLK_reg),
         .ac_adc_sdata(ac_adc_sdata),
         .ac_dac_sdata(ac_dac_sdata),
@@ -13463,6 +13467,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope
         .axi_wready(axi_wready),
         .axi_wready_reg_0(axi_wready_i_1_n_0),
         .btn(btn),
+        .flagQ(flagQ),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -13495,6 +13500,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_slave_lite_v1_0_S00_A
     axi_wready,
     state_read,
     s00_axi_rdata,
+    flagQ,
     \FSM_onehot_state_write_reg[2]_1 ,
     tmds,
     tmdsb,
@@ -13532,6 +13538,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_slave_lite_v1_0_S00_A
   output axi_wready;
   output [1:0]state_read;
   output [31:0]s00_axi_rdata;
+  output flagQ;
   output \FSM_onehot_state_write_reg[2]_1 ;
   output [3:0]tmds;
   output [3:0]tmdsb;
@@ -13601,7 +13608,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_slave_lite_v1_0_S00_A
   wire datapath_n_40;
   wire datapath_n_56;
   wire datapath_n_57;
-  wire flagQ_s;
+  wire flagQ;
   wire [5:2]mem_logic;
   wire \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_10_n_0 ;
   wire \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11_n_0 ;
@@ -14385,8 +14392,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_slave_lite_v1_0_S00_A
         .\ch1_reg[incoming_sample][15]_0 ({datapath_n_24,Lbus_out}),
         .\ch2_reg[incoming_sample][15]_0 ({datapath_n_40,Rbus_out}),
         .cw_write_en(cw_write_en),
+        .flagQ(flagQ),
         .flagQ_reg_0(slv_reg7),
-        .flagQ_s(flagQ_s),
         .\processQ_reg[0] (cw),
         .\process_q_reg[10] (\trigger_out[v] ),
         .\process_q_reg[10]_0 (datapath_n_57),
@@ -14430,7 +14437,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_my_oscope_slave_lite_v1_0_S00_A
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11 
        (.I0(slv_reg7),
-        .I1(flagQ_s),
+        .I1(flagQ),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(slv_reg5[0]),
         .I4(\axi_araddr_reg[2]_rep_n_0 ),

@@ -92,3 +92,27 @@ timestamp=[2026-04-02 07:42:50], mode=WORKBENCH_START, duration=0:00:14.183, dur
 timestamp=[2026-04-02 07:42:51], mode=WORKBENCH_UI_INIT, duration=0:00:01.392, duration_ms=1392, data={editors_count=6, platform_editors_count=2, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,lab3,lab3_platform,lab3_system}
 timestamp=[2026-04-02 07:42:52], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.345, duration_ms=345, data={}
 timestamp=[2026-04-02 08:04:37], mode=BUILD, duration=0:00:05.083, duration_ms=5083, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 08:40:46], mode=BUILD, duration=0:00:02.261, duration_ms=2261, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 08:41:39], mode=BUILD, duration=0:00:00.568, duration_ms=568, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 08:46:38], mode=BUILD, duration=0:00:02.676, duration_ms=2676, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 08:48:27], mode=BUILD, duration=0:00:02.659, duration_ms=2659, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 08:51:53], mode=BUILD, duration=0:00:00.550, duration_ms=550, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 08:52:32], mode=BUILD, duration=0:00:01.485, duration_ms=1485, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 09:02:22], mode=BUILD, duration=0:00:02.391, duration_ms=2391, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 09:04:52], mode=BUILD, duration=0:00:00.766, duration_ms=766, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 09:06:51], mode=BUILD, duration=0:00:02.663, duration_ms=2663, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 09:16:07], mode=WORKBENCH_START, duration=0:00:13.406, duration_ms=13406, data={}
+timestamp=[2026-04-02 09:16:08], mode=WORKBENCH_UI_INIT, duration=0:00:01.070, duration_ms=1070, data={editors_count=6, platform_editors_count=2, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,lab3,lab3_platform,lab3_system}
+timestamp=[2026-04-02 09:16:08], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.280, duration_ms=280, data={}
+timestamp=[2026-04-02 09:22:14], mode=BUILD, duration=0:00:04.757, duration_ms=4757, data={name=lab3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 13:53:20], mode=APP_CREATION, duration=0:00:12.856, duration_ms=12856, data={name=lab3_3, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper_fixed, application_type=application}
+timestamp=[2026-04-02 13:59:46], mode=PLATFORM_GENERATION, duration=0:00:20.411, duration_ms=20411, data={name=design_1_wrapper_fixed}
+timestamp=[2026-04-02 13:59:49], mode=BUILD, duration=0:00:03.550, duration_ms=3550, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 14:18:11], mode=BUILD, duration=0:00:04.988, duration_ms=4988, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 16:23:22], mode=BUILD, duration=0:00:05.675, duration_ms=5675, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 16:32:07], mode=BUILD, duration=0:00:05.343, duration_ms=5343, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 16:37:37], mode=BUILD, duration=0:00:01.639, duration_ms=1639, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 16:40:52], mode=BUILD, duration=0:00:01.583, duration_ms=1583, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 16:42:40], mode=BUILD, duration=0:00:01.600, duration_ms=1600, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 16:42:59], mode=BUILD, duration=0:00:00.298, duration_ms=298, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-02 17:00:53], mode=BUILD, duration=0:00:04.240, duration_ms=4240, data={name=lab3_3, configuration=Debug, clean_build=false}

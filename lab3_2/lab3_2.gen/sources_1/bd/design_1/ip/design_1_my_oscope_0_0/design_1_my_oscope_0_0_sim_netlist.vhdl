@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Fri Mar 20 08:05:06 2026
+-- Date        : Thu Apr  2 09:30:56 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_2.gen/sources_1/bd/design_1/ip/design_1_my_oscope_0_0/design_1_my_oscope_0_0_sim_netlist.vhdl
@@ -16803,7 +16803,7 @@ entity design_1_my_oscope_0_0_Audio_Codec_Wrapper is
     s00_axi_aresetn : in STD_LOGIC;
     switch : in STD_LOGIC_VECTOR ( 0 to 0 );
     flagQ_reg : in STD_LOGIC_VECTOR ( 0 to 0 );
-    flagQ_s : in STD_LOGIC;
+    flagQ : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     ac_adc_sdata : in STD_LOGIC;
     \Data_Out_int_reg[13]\ : in STD_LOGIC;
@@ -17145,7 +17145,7 @@ flagQ_i_1: unisim.vcomponents.LUT3
         port map (
       I0 => \^e\(0),
       I1 => flagQ_reg(0),
-      I2 => flagQ_s,
+      I2 => flagQ,
       O => ready_sig_reg_1
     );
 initialize_audio: entity work.design_1_my_oscope_0_0_audio_init
@@ -19026,7 +19026,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_my_oscope_0_0_lab2_datapath is
   port (
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
-    flagQ_s : out STD_LOGIC;
+    flagQ : out STD_LOGIC;
     \^q\ : out STD_LOGIC_VECTOR ( 9 downto 0 );
     sw : out STD_LOGIC_VECTOR ( 0 to 0 );
     \process_q_reg[10]\ : out STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -19112,7 +19112,7 @@ architecture STRUCTURE of design_1_my_oscope_0_0_lab2_datapath is
   signal \ch2_reg[to_ac_n_0_][7]\ : STD_LOGIC;
   signal \ch2_reg[to_ac_n_0_][8]\ : STD_LOGIC;
   signal \ch2_reg[to_ac_n_0_][9]\ : STD_LOGIC;
-  signal \^flagq_s\ : STD_LOGIC;
+  signal \^flagq\ : STD_LOGIC;
   signal input_vector : STD_LOGIC_VECTOR ( 15 downto 8 );
   signal leftChannelMemory_n_1 : STD_LOGIC;
   signal lopt : STD_LOGIC;
@@ -19135,7 +19135,7 @@ begin
   \^q\(9 downto 0) <= \^q_1\(9 downto 0);
   \ch1_reg[incoming_sample][15]_0\(15 downto 0) <= \^ch1_reg[incoming_sample][15]_0\(15 downto 0);
   \ch2_reg[incoming_sample][15]_0\(15 downto 0) <= \^ch2_reg[incoming_sample][15]_0\(15 downto 0);
-  flagQ_s <= \^flagq_s\;
+  flagQ <= \^flagq\;
   \process_q_reg[10]\(9 downto 0) <= \^process_q_reg[10]\(9 downto 0);
   sw(0) <= \^sw\(0);
 Audio_Codec: entity work.design_1_my_oscope_0_0_Audio_Codec_Wrapper
@@ -19187,8 +19187,8 @@ Audio_Codec: entity work.design_1_my_oscope_0_0_Audio_Codec_Wrapper
       ac_dac_sdata => ac_dac_sdata,
       ac_mclk => ac_mclk,
       \ch1[to_ac]\ => \ch1[to_ac]\,
+      flagQ => \^flagq\,
       flagQ_reg(0) => flagQ_reg_0(0),
-      flagQ_s => \^flagq_s\,
       lopt => lopt,
       ready_sig_reg_0 => Audio_Codec_n_0,
       ready_sig_reg_1 => Audio_Codec_n_3,
@@ -19769,7 +19769,7 @@ flagQ_reg: unisim.vcomponents.FDRE
       C => s00_axi_aclk,
       CE => '1',
       D => Audio_Codec_n_3,
-      Q => \^flagq_s\,
+      Q => \^flagq\,
       R => \^sr\(0)
     );
 leftChannelMemory: entity work.\design_1_my_oscope_0_0_unimacro_BRAM_SDP_MACRO__parameterized1\
@@ -19887,6 +19887,7 @@ entity design_1_my_oscope_0_0_my_oscope_slave_lite_v1_0_S00_AXI is
     axi_wready : out STD_LOGIC;
     state_read : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    flagQ : out STD_LOGIC;
     \FSM_onehot_state_write_reg[2]_1\ : out STD_LOGIC;
     tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
     tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -19949,7 +19950,7 @@ architecture STRUCTURE of design_1_my_oscope_0_0_my_oscope_slave_lite_v1_0_S00_A
   signal datapath_n_40 : STD_LOGIC;
   signal datapath_n_56 : STD_LOGIC;
   signal datapath_n_57 : STD_LOGIC;
-  signal flagQ_s : STD_LOGIC;
+  signal \^flagq\ : STD_LOGIC;
   signal mem_logic : STD_LOGIC_VECTOR ( 5 downto 2 );
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_10_n_0\ : STD_LOGIC;
   signal \p_0_out_inferred__0/s00_axi_rdata[0]_INST_0_i_11_n_0\ : STD_LOGIC;
@@ -20500,6 +20501,7 @@ begin
   axi_awready_reg_0 <= \^axi_awready_reg_0\;
   axi_rvalid_reg_0 <= \^axi_rvalid_reg_0\;
   axi_wready <= \^axi_wready\;
+  flagQ <= \^flagq\;
   state_read(1 downto 0) <= \^state_read\(1 downto 0);
 \FSM_onehot_state_write[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -20804,8 +20806,8 @@ datapath: entity work.design_1_my_oscope_0_0_lab2_datapath
       \ch2_reg[incoming_sample][15]_0\(15) => datapath_n_40,
       \ch2_reg[incoming_sample][15]_0\(14 downto 0) => Rbus_out(14 downto 0),
       cw_write_en => cw_write_en,
+      flagQ => \^flagq\,
       flagQ_reg_0(0) => slv_reg7(0),
-      flagQ_s => flagQ_s,
       \processQ_reg[0]\(1 downto 0) => cw(2 downto 1),
       \process_q_reg[10]\(9 downto 0) => \trigger_out[v]\(10 downto 1),
       \process_q_reg[10]_0\(0) => datapath_n_57,
@@ -20860,7 +20862,7 @@ datapath: entity work.design_1_my_oscope_0_0_lab2_datapath
     )
         port map (
       I0 => slv_reg7(0),
-      I1 => flagQ_s,
+      I1 => \^flagq\,
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => slv_reg5(0),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
@@ -33665,6 +33667,7 @@ entity design_1_my_oscope_0_0_my_oscope is
     ac_dac_sdata : out STD_LOGIC;
     LRCLK_reg : out STD_LOGIC;
     BCLK_int_reg : out STD_LOGIC;
+    flagQ : out STD_LOGIC;
     axi_awready_reg : out STD_LOGIC;
     axi_rvalid_reg : out STD_LOGIC;
     axi_arready_reg : out STD_LOGIC;
@@ -33702,7 +33705,7 @@ architecture STRUCTURE of design_1_my_oscope_0_0_my_oscope is
   signal \^axi_rvalid_reg\ : STD_LOGIC;
   signal axi_wready : STD_LOGIC;
   signal axi_wready_i_1_n_0 : STD_LOGIC;
-  signal my_oscope_slave_lite_v1_0_S00_AXI_inst_n_42 : STD_LOGIC;
+  signal my_oscope_slave_lite_v1_0_S00_AXI_inst_n_43 : STD_LOGIC;
   signal my_oscope_slave_lite_v1_0_S00_AXI_inst_n_5 : STD_LOGIC;
   signal my_oscope_slave_lite_v1_0_S00_AXI_inst_n_6 : STD_LOGIC;
   signal \^s00_axi_bvalid\ : STD_LOGIC;
@@ -33750,7 +33753,7 @@ axi_bvalid_i_1: unisim.vcomponents.LUT6
       I2 => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_5,
       I3 => s00_axi_bready,
       I4 => \^s00_axi_bvalid\,
-      I5 => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_42,
+      I5 => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_43,
       O => axi_bvalid_i_1_n_0
     );
 axi_rvalid_i_1: unisim.vcomponents.LUT6
@@ -33780,7 +33783,7 @@ my_oscope_slave_lite_v1_0_S00_AXI_inst: entity work.design_1_my_oscope_0_0_my_os
       BCLK_int_reg => BCLK_int_reg,
       \FSM_onehot_state_write_reg[1]_0\ => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_5,
       \FSM_onehot_state_write_reg[2]_0\ => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_6,
-      \FSM_onehot_state_write_reg[2]_1\ => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_42,
+      \FSM_onehot_state_write_reg[2]_1\ => my_oscope_slave_lite_v1_0_S00_AXI_inst_n_43,
       LRCLK_reg => LRCLK_reg,
       ac_adc_sdata => ac_adc_sdata,
       ac_dac_sdata => ac_dac_sdata,
@@ -33795,6 +33798,7 @@ my_oscope_slave_lite_v1_0_S00_AXI_inst: entity work.design_1_my_oscope_0_0_my_os
       axi_wready => axi_wready,
       axi_wready_reg_0 => axi_wready_i_1_n_0,
       btn(3 downto 0) => btn(3 downto 0),
+      flagQ => flagQ,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(4 downto 0) => s00_axi_araddr(4 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
@@ -33899,7 +33903,6 @@ architecture STRUCTURE of design_1_my_oscope_0_0 is
   attribute x_interface_info of s00_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WDATA";
   attribute x_interface_info of s00_axi_wstrb : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB";
 begin
-  flagQ <= \<const0>\;
   s00_axi_bresp(1) <= \<const0>\;
   s00_axi_bresp(0) <= \<const0>\;
   s00_axi_rresp(1) <= \<const0>\;
@@ -33919,6 +33922,7 @@ U0: entity work.design_1_my_oscope_0_0_my_oscope
       axi_awready_reg => s00_axi_awready,
       axi_rvalid_reg => s00_axi_rvalid,
       btn(3 downto 0) => btn(3 downto 0),
+      flagQ => flagQ,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(4 downto 0) => s00_axi_araddr(6 downto 2),
       s00_axi_aresetn => s00_axi_aresetn,
