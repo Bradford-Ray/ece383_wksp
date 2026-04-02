@@ -16,3 +16,4 @@ platform write
 platform generate -domains 
 platform active {lab3_platform}
 platform generate
+platform generate
