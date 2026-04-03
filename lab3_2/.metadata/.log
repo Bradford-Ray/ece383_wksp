@@ -5615,3 +5615,240 @@ Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.]. Thread: 
 
 !ENTRY com.xilinx.sdk.utils 1 0 2026-04-02 17:01:27.939
 !MESSAGE Tool usage for 'TCF_APP_DEBUG' updated to '11'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:34.077
+!MESSAGE XSCT Command: [disconnect tcfchan#12], Thread: Thread-922
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:34.102
+!MESSAGE XSCT command with result: [disconnect tcfchan#12], Result: [null, ]. Thread: Thread-922
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.109
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.117
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#13]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.117
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.177
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB (closed)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.177
+!MESSAGE XSCT Command: [version -server], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.183
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2024.2]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.183
+!MESSAGE XSCT Command: [version], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.186
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2024.2.0
+SW Build 5239620 on Sun Nov 10 09:56:12 MST 2024
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.188
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.194
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB (closed)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:35.194
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB (closed)" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:38.214
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB (closed)" && level==1}], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:41.215
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB (closed)" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:44.234
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB (closed)" && level==1}], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.327
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.329
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#13]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.332
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.338
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.339
+!MESSAGE XSCT Command: [version -server], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.351
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2024.2]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.351
+!MESSAGE XSCT Command: [version], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.351
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2024.2.0
+SW Build 5239620 on Sun Nov 10 09:56:12 MST 2024
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.351
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.360
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.360
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.370
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Result: [null,      4  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.381
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.388
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.388
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.406
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Result: [null,      4  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.406
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.414
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.414
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.431
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Result: [null,      4  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.431
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.441
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.441
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.461
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Result: [null,      4  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.461
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.464
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.471
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.487
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Result: [null,      4  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.488
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Nexys Video 210276B7D0EDB" && level == 0}], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.504
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Nexys Video 210276B7D0EDB" && level == 0}], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.514
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.521
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.562
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.573
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   3* Digilent Nexys Video 210276B7D0EDB]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.573
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.593
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==1}], Result: [null,      4  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.593
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276B7D0EDB-13636093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.634
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276B7D0EDB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276B7D0EDB-13636093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:21:56.634
+!MESSAGE XSCT Command: [fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_3/_ide/bitstream/design_1_wrapper_fixed.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.191
+!MESSAGE XSCT command with result: [fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_3/_ide/bitstream/design_1_wrapper_fixed.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.238
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.260
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.262
+!MESSAGE XSCT Command: [loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper_fixed/export/design_1_wrapper_fixed/hw/design_1_wrapper_fixed.xsa -regs], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.270
+!MESSAGE XSCT command with result: [loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/design_1_wrapper_fixed/export/design_1_wrapper_fixed/hw/design_1_wrapper_fixed.xsa -regs], Result: [null, design_1_wrapper_3]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.272
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.273
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.276
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.303
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.304
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.307
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:02.307
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.322
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.323
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.343
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.353
+!MESSAGE XSCT Command: [dow C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_3/Debug/lab3_3.elf], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.453
+!MESSAGE XSCT command with result: [dow C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/lab3_3/Debug/lab3_3.elf], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.558
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.576
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.576
+!MESSAGE XSCT Command: [con], Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-04-02 18:22:05.586
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-42: Launching Debugger_lab3_3-Default
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-04-02 18:22:05.586
+!MESSAGE Tool usage for 'TCF_APP_DEBUG' updated to '12'
