@@ -2546,3 +2546,22 @@ con
 ----------------End of Script----------------
 
 18:22:05 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\lab3_2\lab3_3_system\_ide\scripts\debugger_lab3_3-default.tcl'
+19:17:14 INFO  : Disconnected from the channel tcfchan#13.
+00:49:28 DEBUG : Logs will be stored at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/IDE.log'.
+00:49:29 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\C27Bradford.Hurt\ece383_wksp\lab3_2\temp_xsdb_launch_script.tcl
+00:49:36 INFO  : Platform repository initialization has completed.
+00:49:37 INFO  : Registering command handlers for Vitis TCF services
+00:49:38 INFO  : XSCT server has started successfully.
+00:49:38 INFO  : Successfully done setting XSCT server connection channel  
+00:49:48 INFO  : plnx-install-location is set to ''
+00:49:48 INFO  : Successfully done setting workspace for the tool. 
+00:49:48 INFO  : Successfully done query RDI_DATADIR 
+08:49:27 DEBUG : Logs will be stored at 'C:/Users/C27Bradford.Hurt/ece383_wksp/lab3_2/IDE.log'.
+08:49:28 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\C27Bradford.Hurt\ece383_wksp\lab3_2\temp_xsdb_launch_script.tcl
+08:49:36 INFO  : Platform repository initialization has completed.
+08:49:36 INFO  : Registering command handlers for Vitis TCF services
+08:49:37 INFO  : XSCT server has started successfully.
+08:49:49 INFO  : Successfully done setting XSCT server connection channel  
+08:49:49 INFO  : plnx-install-location is set to ''
+08:49:49 INFO  : Successfully done query RDI_DATADIR 
+08:49:49 INFO  : Successfully done setting workspace for the tool. 

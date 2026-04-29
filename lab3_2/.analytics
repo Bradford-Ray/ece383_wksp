@@ -116,3 +116,9 @@ timestamp=[2026-04-02 16:40:52], mode=BUILD, duration=0:00:01.583, duration_ms=1
 timestamp=[2026-04-02 16:42:40], mode=BUILD, duration=0:00:01.600, duration_ms=1600, data={name=lab3_3, configuration=Debug, clean_build=false}
 timestamp=[2026-04-02 16:42:59], mode=BUILD, duration=0:00:00.298, duration_ms=298, data={name=lab3_3, configuration=Debug, clean_build=false}
 timestamp=[2026-04-02 17:00:53], mode=BUILD, duration=0:00:04.240, duration_ms=4240, data={name=lab3_3, configuration=Debug, clean_build=false}
+timestamp=[2026-04-10 00:49:34], mode=WORKBENCH_START, duration=0:00:13.194, duration_ms=13194, data={}
+timestamp=[2026-04-10 00:49:35], mode=WORKBENCH_UI_INIT, duration=0:00:01.290, duration_ms=1290, data={editors_count=10, platform_editors_count=3, projects_count=7, platform_projects_count=2, active_platform_editor=false, projects=RemoteSystemsTempFiles,design_1_wrapper_fixed,lab3,lab3_3,lab3_3_system,lab3_platform,lab3_system}
+timestamp=[2026-04-10 00:49:36], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.359, duration_ms=359, data={}
+timestamp=[2026-04-22 08:49:34], mode=WORKBENCH_START, duration=0:00:14.775, duration_ms=14775, data={}
+timestamp=[2026-04-22 08:49:35], mode=WORKBENCH_UI_INIT, duration=0:00:00.993, duration_ms=993, data={editors_count=10, platform_editors_count=3, projects_count=7, platform_projects_count=2, active_platform_editor=false, projects=RemoteSystemsTempFiles,design_1_wrapper_fixed,lab3,lab3_3,lab3_3_system,lab3_platform,lab3_system}
+timestamp=[2026-04-22 08:49:36], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.375, duration_ms=375, data={}

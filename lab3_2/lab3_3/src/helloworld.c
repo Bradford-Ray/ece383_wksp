@@ -209,22 +209,27 @@ int main(void) {
 void myISR(void){
 	Xil_Out8(flagClear, 0x01);					// Clear the flag
 	Xil_Out8(flagClear, 0x00);
+	// if array is not full, load the current audio sample to the buffers
 	if(array_full == 0){
 		bufferL[isr_count] = Xil_In16(Lbus_out_s);
 		bufferR[isr_count] = Xil_In16(Rbus_out_s);
 		isr_count++;
 	}
+	// when the ISR count is greater than 1023, it has reached the end of recorded values
+	// roll ISR count over and set Array full flag
 	if(isr_count >= 1023){
 		array_full = 1;
-//		printf("Array full\r\n");
 		isr_count = 0;
 	}
 }
 
 uint16_t triggerSearch(void){
+	// load trigger v value
 	uint16_t trig_v = Xil_In16(trigger_v);
+	// load trigger t value, start search at index (i) of trigger t
 	uint16_t i = Xil_In16(trigger_t);
 
+	// iterate through buffer until values cross the trigger v value.
 	while((((trig_v <= ((bufferL[i] >> 7) - 36)))||(trig_v > ((bufferL[i+1] >> 7) - 36)))){
 		i++;
 	}
@@ -232,11 +237,17 @@ uint16_t triggerSearch(void){
 }
 
 void triggerAlign(uint16_t i){
+	// load trigger t value
 	uint16_t trig_t = Xil_In16(trigger_t);
+
+	// check if the intersection index is larger than buffer length
+	// this prevents updating the BRAM if the waveform fails to intersect the trigger v
 	if((i >= 1023)){
 		return;
 	}
-	for (int j = 20; j < 620; j++){
+
+	// use i as an offset to align the values in the buffer with the trigger on screen
+	for (int j = 20; j < 620; j++){ // indexes 20 through 620 are the only values needed to fill the grid
 		Xil_Out16(exWrAddr, j);	// set BRAM address
 		Xil_Out16(exLbus, bufferL[j+(i-trig_t)]); // left buffer
 		Xil_Out16(exRbus, bufferR[j+(i-trig_t)]); // right buffer

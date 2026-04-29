@@ -1,0 +1,171 @@
+----------------------------------------------------------------------------------
+-- Title: Look Up Table
+-- Engineer: 
+-- Date:   
+-- Description: Contains a BRAM with a lookup table.  When the cw bit is 1 it outputs the
+--  value in the lookup table at index+1, otherwise it outputs the value at index.
+----------------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+Library UNISIM;
+use UNISIM.vcomponents.all;
+
+Library UNIMACRO;
+use UNIMACRO.vcomponents.all;
+
+entity LookupTable is
+    generic (
+        whole_bits : integer := 4;
+        frac_bits : integer := 4);
+    port ( index : in std_logic_vector (whole_bits - 1 downto 0);
+           cw : in STD_LOGIC;
+           data_out : out std_logic_vector (15 downto 0);
+           clk : in std_logic;
+           reset_n : in std_logic);
+end LookupTable;
+
+architecture LookupTable_arch of LookupTable is
+    signal LUT_output : STD_LOGIC_VECTOR (15 downto 0);
+    signal reset : std_logic;
+    signal read_address : std_logic_vector (9 downto 0) := (others => '0');
+    signal zero_data : std_logic_vector(15 downto 0) := (others => '0');
+    
+    function pad_to_nbits(
+        value : std_logic_vector;
+        n     : natural) return std_logic_vector is
+        variable result     : std_logic_vector(n - 1 downto 0) := (others => '0');
+        constant val_len    : natural := value'length;
+        variable truncated  : std_logic_vector(n - 1 downto 0);
+    begin
+        if val_len >= n then
+            -- Truncate: take n MSBs starting from value'high
+            result := value(value'low + n - 1 downto value'low);
+        else
+            -- Pad: right-align value in result
+            result(val_len - 1 downto 0) := value(value'range);
+        end if;
+        return result;
+    end function;
+    
+    function base_address(index : std_logic_vector) return std_logic_vector is
+    begin
+        return pad_to_nbits(index,10);
+    end function;
+    
+    function next_address(index : std_logic_vector) return std_logic_vector is
+    begin
+        return pad_to_nbits(std_logic_vector(unsigned(index)+1),10);
+    end function;
+
+    signal is_base : boolean;                
+begin
+
+   reset <= not reset_n; -- Create active high reset signal
+   is_base <= cw = '0'; -- True when the cw is set to return the read the base value from BRAM
+
+   read_address <= base_address(index) when is_base else 
+                   next_address(index); -- Create 10-bit index or index+1 as the read address, depending on the cw
+
+   -- BRAM_SDP_MACRO: Simple Dual Port RAM for Artix-7.  Further details can be found in the
+   --  language templates or on the resources page on the course website. 
+   LookupTableBRAM : BRAM_SDP_MACRO
+   generic map (
+      BRAM_SIZE => "18Kb", -- Target BRAM, "18Kb" or "36Kb" 
+      DEVICE => "7SERIES", -- Target device: "VIRTEX5", "VIRTEX6", "7SERIES", "SPARTAN6" 
+      WRITE_WIDTH => 16,    -- Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
+      READ_WIDTH => 16,     -- Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
+      DO_REG => 0, -- Optional output register (0 or 1)
+      INIT_FILE => "NONE",
+      SIM_COLLISION_CHECK => "NONE", -- Collision check enable "ALL", "WARNING_ONLY", 
+                                    -- "GENERATE_X_ONLY" or "NONE"       
+      SRVAL => X"00000000000000000000000000000000",
+      INIT  => X"00000000000000000000000000000000",
+      -- TODO: Replace the LUT data with the appropriate data for your sine wave lookup function
+    
+        INIT_00 => X"AE10AB1FA826A527A2239F199C0B98F895E192C78FAB8C8B896A864783248000",
+        INIT_01 => X"D842D5F5D39AD133CEBFCC3FC9B3C71CC47AC1CDBF17BC56B98CB6B9B3DEB0FB",
+        INIT_02 => X"F504F3B5F254F0E2EF5EEDC9EC23EA6DE8A6E6CFE4E8E2F1E0EBDED7DCB3DA82",
+        INIT_03 => X"FFF5FFD8FFA6FF61FF09FE9CFE1DFD89FCE3FC29FB5CFA7CF989F884F76BF641",
+        INIT_04 => X"F76BF884F989FA7CFB5CFC29FCE3FD89FE1DFE9CFF09FF61FFA6FFD8FFF5FFFF",
+        INIT_05 => X"DCB3DED7E0EBE2F1E4E8E6CFE8A6EA6DEC23EDC9EF5EF0E2F254F3B5F504F641",
+        INIT_06 => X"B3DEB6B9B98CBC56BF17C1CDC47AC71CC9B3CC3FCEBFD133D39AD5F5D842DA82",
+        INIT_07 => X"83248647896A8C8B8FAB92C795E198F89C0B9F19A223A527A826AB1FAE10B0FB",
+        INIT_08 => X"51EF54E057D95AD85DDC60E663F467076A1E6D3870547374769579B87CDB7FFF",
+        INIT_09 => X"27BD2A0A2C652ECC314033C0364C38E33B853E3240E843A9467349464C214F04",
+        INIT_0A => X"0AFB0C4A0DAB0F1D10A1123613DC1592175919301B171D0E1F142128234C257D",
+        INIT_0B => X"000A00270059009E00F6016301E20276031C03D604A305830676077B089409BE",
+        INIT_0C => X"0894077B0676058304A303D6031C027601E2016300F6009E00590027000A0000",
+        INIT_0D => X"234C21281F141D0E1B1719301759159213DC123610A10F1D0DAB0C4A0AFB09BE",
+        INIT_0E => X"4C214946467343A940E83E323B8538E3364C33C031402ECC2C652A0A27BD257D",
+        INIT_0F => X"7CDB79B87695737470546D386A1E670763F460E65DDC5AD857D954E051EF4F04",
+        INIT_10 => X"AE10AB1FA826A527A2239F199C0B98F895E192C78FAB8C8B896A864783247FFF",
+        INIT_11 => X"D842D5F5D39AD133CEBFCC3FC9B3C71CC47AC1CDBF17BC56B98CB6B9B3DEB0FB",
+        INIT_12 => X"F504F3B5F254F0E2EF5EEDC9EC23EA6DE8A6E6CFE4E8E2F1E0EBDED7DCB3DA82",
+        INIT_13 => X"FFF5FFD8FFA6FF61FF09FE9CFE1DFD89FCE3FC29FB5CFA7CF989F884F76BF641",
+        INIT_14 => X"F76BF884F989FA7CFB5CFC29FCE3FD89FE1DFE9CFF09FF61FFA6FFD8FFF5FFFF",
+        INIT_15 => X"DCB3DED7E0EBE2F1E4E8E6CFE8A6EA6DEC23EDC9EF5EF0E2F254F3B5F504F641",
+        INIT_16 => X"B3DEB6B9B98CBC56BF17C1CDC47AC71CC9B3CC3FCEBFD133D39AD5F5D842DA82",
+        INIT_17 => X"83248647896A8C8B8FAB92C795E198F89C0B9F19A223A527A826AB1FAE10B0FB",
+        INIT_18 => X"51EF54E057D95AD85DDC60E663F467076A1E6D3870547374769579B87CDB8000",
+        INIT_19 => X"27BD2A0A2C652ECC314033C0364C38E33B853E3240E843A9467349464C214F04",
+        INIT_1A => X"0AFB0C4A0DAB0F1D10A1123613DC1592175919301B171D0E1F142128234C257D",
+        INIT_1B => X"000A00270059009E00F6016301E20276031C03D604A305830676077B089409BE",
+        INIT_1C => X"0894077B0676058304A303D6031C027601E2016300F6009E00590027000A0000",
+        INIT_1D => X"234C21281F141D0E1B1719301759159213DC123610A10F1D0DAB0C4A0AFB09BE",
+        INIT_1E => X"4C214946467343A940E83E323B8538E3364C33C031402ECC2C652A0A27BD257D",
+        INIT_1F => X"7CDB79B87695737470546D386A1E670763F460E65DDC5AD857D954E051EF4F04",
+        INIT_20 => X"AE10AB1FA826A527A2239F199C0B98F895E192C78FAB8C8B896A864783247FFF",
+        INIT_21 => X"D842D5F5D39AD133CEBFCC3FC9B3C71CC47AC1CDBF17BC56B98CB6B9B3DEB0FB",
+        INIT_22 => X"F504F3B5F254F0E2EF5EEDC9EC23EA6DE8A6E6CFE4E8E2F1E0EBDED7DCB3DA82",
+        INIT_23 => X"FFF5FFD8FFA6FF61FF09FE9CFE1DFD89FCE3FC29FB5CFA7CF989F884F76BF641",
+        INIT_24 => X"F76BF884F989FA7CFB5CFC29FCE3FD89FE1DFE9CFF09FF61FFA6FFD8FFF5FFFF",
+        INIT_25 => X"DCB3DED7E0EBE2F1E4E8E6CFE8A6EA6DEC23EDC9EF5EF0E2F254F3B5F504F641",
+        INIT_26 => X"B3DEB6B9B98CBC56BF17C1CDC47AC71CC9B3CC3FCEBFD133D39AD5F5D842DA82",
+        INIT_27 => X"83248647896A8C8B8FAB92C795E198F89C0B9F19A223A527A826AB1FAE10B0FB",
+        INIT_28 => X"51EF54E057D95AD85DDC60E663F467076A1E6D3870547374769579B87CDB8000",
+        INIT_29 => X"27BD2A0A2C652ECC314033C0364C38E33B853E3240E843A9467349464C214F04",
+        INIT_2A => X"0AFB0C4A0DAB0F1D10A1123613DC1592175919301B171D0E1F142128234C257D",
+        INIT_2B => X"000A00270059009E00F6016301E20276031C03D604A305830676077B089409BE",
+        INIT_2C => X"0894077B0676058304A303D6031C027601E2016300F6009E00590027000A0000",
+        INIT_2D => X"234C21281F141D0E1B1719301759159213DC123610A10F1D0DAB0C4A0AFB09BE",
+        INIT_2E => X"4C214946467343A940E83E323B8538E3364C33C031402ECC2C652A0A27BD257D",
+        INIT_2F => X"7CDB79B87695737470546D386A1E670763F460E65DDC5AD857D954E051EF4F04",
+        INIT_30 => X"AE10AB1FA826A527A2239F199C0B98F895E192C78FAB8C8B896A864783247FFF",
+        INIT_31 => X"D842D5F5D39AD133CEBFCC3FC9B3C71CC47AC1CDBF17BC56B98CB6B9B3DEB0FB",
+        INIT_32 => X"F504F3B5F254F0E2EF5EEDC9EC23EA6DE8A6E6CFE4E8E2F1E0EBDED7DCB3DA82",
+        INIT_33 => X"FFF5FFD8FFA6FF61FF09FE9CFE1DFD89FCE3FC29FB5CFA7CF989F884F76BF641",
+        INIT_34 => X"F76BF884F989FA7CFB5CFC29FCE3FD89FE1DFE9CFF09FF61FFA6FFD8FFF5FFFF",
+        INIT_35 => X"DCB3DED7E0EBE2F1E4E8E6CFE8A6EA6DEC23EDC9EF5EF0E2F254F3B5F504F641",
+        INIT_36 => X"B3DEB6B9B98CBC56BF17C1CDC47AC71CC9B3CC3FCEBFD133D39AD5F5D842DA82",
+        INIT_37 => X"83248647896A8C8B8FAB92C795E198F89C0B9F19A223A527A826AB1FAE10B0FB",
+        INIT_38 => X"51EF54E057D95AD85DDC60E663F467076A1E6D3870547374769579B87CDB8000",
+        INIT_39 => X"27BD2A0A2C652ECC314033C0364C38E33B853E3240E843A9467349464C214F04",
+        INIT_3A => X"0AFB0C4A0DAB0F1D10A1123613DC1592175919301B171D0E1F142128234C257D",
+        INIT_3B => X"000A00270059009E00F6016301E20276031C03D604A305830676077B089409BE",
+        INIT_3C => X"0894077B0676058304A303D6031C027601E2016300F6009E00590027000A0000",
+        INIT_3D => X"234C21281F141D0E1B1719301759159213DC123610A10F1D0DAB0C4A0AFB09BE",
+        INIT_3E => X"4C214946467343A940E83E323B8538E3364C33C031402ECC2C652A0A27BD257D",
+        INIT_3F => X"7CDB79B87695737470546D386A1E670763F460E65DDC5AD857D954E051EF4F04")
+
+
+
+     
+      port map (
+        DO => data_out,   -- Output read data port, width defined by READ_WIDTH parameter
+        DI => x"0000",      -- Input write data port, width defined by WRITE_WIDTH parameter
+        RDADDR => read_address,  -- Input read address, width defined by read port depth
+        RDCLK => clk,     -- 1-bit input read clock
+        RDEN => '1',      -- 1-bit input read port enable
+        REGCE => '1',     -- 1-bit input read output register enable
+        RST => reset,     -- 1-bit input reset 
+        WE => "00",       -- Input write enable, width defined by write port depth
+        WRADDR => "00"&x"00",  -- Input write address, width defined by write port depth
+        WRCLK => clk,     -- 1-bit input write clock
+        WREN => '0'       -- 1-bit input write port enable
+      );
+    -- End of BRAM_SDP_MACRO_inst instantiation
+
+
+end LookupTable_arch;
