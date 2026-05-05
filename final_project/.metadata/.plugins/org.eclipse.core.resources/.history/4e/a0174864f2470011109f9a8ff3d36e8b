@@ -1,0 +1,129 @@
+/*--------------------------------------------------------------------
+-- Name:	Maj Jeff Falkinburg
+-- Date:	Feb 19, 2017
+-- File:	lec19.c
+-- Event:	Lecture 19
+-- Crs:		ECE 383
+--
+-- Purp:	MicroBlaze Tutorial that implements a custom IP with interrupt
+--			to MicroBlaze.
+--
+-- Documentation:	MicroBlaze Tutorial
+--
+-- Academic Integrity Statement: I certify that, while others may have
+-- assisted me in brain storming, debugging and validating this program,
+-- the program itself is my own work. I understand that submitting code
+-- which is the work of other individuals is a violation of the honor
+-- code.  I also understand that if I knowingly give my original work to
+-- another individual is also a violation of the honor code.
+-------------------------------------------------------------------------*/
+/***************************** Include Files ********************************/
+
+#include "xparameters.h"
+#include "stdio.h"
+#include "xstatus.h"
+
+#include "platform.h"
+#include "xil_printf.h"						// Contains xil_printf
+#include <xuartlite_l.h>					// Contains XUartLite_RecvByte
+#include <xil_io.h>							// Contains Xil_Out8 and its variations
+#include <xil_exception.h>
+#include <sleep.h>
+
+/************************** Constant Definitions ****************************/
+
+#define bramBase			XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR		// redefines the BRAM base address from xparameters.h
+
+#define printf xil_printf			/* A smaller footprint printf */
+
+#define	uartRegAddr			0x40600000		// read <= RX, write => TX
+
+/************************** Variable Definitions **************************/
+/*
+ * The following are declared globally so they are zeroed and so they are
+ * easily accessible from a debugger
+ */
+
+volatile u32 *bram_ptr = (volatile u32 *)bramBase;
+
+int main(void) {
+
+	unsigned char c;
+
+	init_platform();
+
+	print("Welcome to Bradford's Super Cool Final Project\n\r");
+
+    while(1) {
+
+    	c=XUartLite_RecvByte(uartRegAddr);
+
+		switch(c) {
+
+    		/*-------------------------------------------------
+    		 * Reply with the help menu
+    		 *-------------------------------------------------
+			 */
+    		case '?':
+    			printf("--------------------------\r\n");
+    			printf("	MENU\r\n");
+    			printf("--------------------------\r\n");
+    			printf("?: help menu\r\n");
+    			printf("o: print 'k'\r\n");
+    			printf("t: read first value in BRAM (two pixels)\r\n");
+    			break;
+
+			/*-------------------------------------------------
+			 * Basic I/O loopback
+			 *-------------------------------------------------
+			 */
+    		case 'o':
+    			printf("k \r\n");
+    			break;
+
+			/*-------------------------------------------------
+			 * read first value in BRAM (two pixels)
+			 *-------------------------------------------------
+			 */
+    		case 't':
+    		    u32 pixel_RGB;	// reads raw RGB565 data from BRAM
+    		    u8 R0;			// Red channel
+    		    u8 G0;			// Green Channel
+    		    u8 B0;			// Blue Channel
+    		    u8 R1;			// Red channel
+				u8 G1;			// Green Channel
+				u8 B1;			// Blue Channel
+
+    		    pixel_RGB = bram_ptr[0];
+
+    		    // Grab pixel 0
+    		    R0 = (pixel_RGB >> 11) & 0x1F;
+				G0 = (pixel_RGB >> 5)  & 0x3F;
+				B0 = (pixel_RGB)	   & 0x1F;
+
+    		    // Grab pixel 1
+    		    R1 = (pixel_RGB >> 27) & 0x1F;
+    		    G1 = (pixel_RGB >> 21) & 0x3F;
+    		    B1 = (pixel_RGB >> 16) & 0x1F;
+
+    		    // Print Pixels
+    		    printf("Pixel 0 - R: %d, G: %d, B: %d\r\n", R0, G0, B0);
+    		    printf("Pixel 1 - R: %d, G: %d, B: %d\r\n", R1, G1, B1);
+
+    		    break;
+
+			/*-------------------------------------------------
+			 * Unknown character was
+			 *-------------------------------------------------
+			 */
+    		default:
+    			printf("unrecognized character: %c\r\n",c);
+    			break;
+    	} // end case
+
+    } // end while 1
+
+    cleanup_platform();
+
+    return 0;
+} // end main

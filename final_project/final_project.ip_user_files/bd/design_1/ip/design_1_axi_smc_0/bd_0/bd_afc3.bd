@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x21A55C04FD3BA517",
+      "boundary_crc": "0xE8C82BCA320196A8",
       "design_src": "SBD",
       "device": "xc7a200tsbg484-1",
       "name": "bd_afc3",
@@ -14,7 +14,9 @@
     "design_tree": {
       "clk_map": {
         "one": "",
-        "psr_aclk": ""
+        "psr0": "",
+        "psr_aclk": "",
+        "psr_aclk1": ""
       },
       "switchboards": {
         "ar_la_in_swbd": "",
@@ -339,7 +341,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "7",
+            "value": "4",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -363,7 +365,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "200000000",
             "value_src": "ip_prop"
           },
           "HAS_BRESP": {
@@ -466,7 +468,40 @@
         "direction": "I",
         "parameters": {
           "ASSOCIATED_BUSIF": {
-            "value": "M00_AXI:M01_AXI:S00_AXI"
+            "value": "M00_AXI:S00_AXI"
+          },
+          "ASSOCIATED_CLKEN": {
+            "value": "m_sc_aclken",
+            "value_src": "constant"
+          },
+          "CLK_DOMAIN": {
+            "value": "/clk_wiz_1_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "ip_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "aclk1": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "M01_AXI"
           },
           "ASSOCIATED_CLKEN": {
             "value": "s_sc_aclken",
@@ -477,7 +512,7 @@
             "value_src": "ip_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "200000000",
             "value_src": "ip_prop"
           },
           "FREQ_TOLERANCE_HZ": {
@@ -562,6 +597,10 @@
           "aclk": {
             "type": "clk",
             "direction": "I"
+          },
+          "aclk1": {
+            "type": "clk",
+            "direction": "I"
           }
         },
         "components": {
@@ -572,12 +611,42 @@
             "xci_path": "ip\\ip_0\\bd_afc3_one_0.xci",
             "inst_hier_path": "clk_map/one"
           },
+          "psr0": {
+            "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+            "ip_revision": "16",
+            "xci_name": "bd_afc3_psr0_0",
+            "xci_path": "ip\\ip_1\\bd_afc3_psr0_0.xci",
+            "inst_hier_path": "clk_map/psr0",
+            "parameters": {
+              "C_AUX_RESET_HIGH": {
+                "value": "0"
+              },
+              "C_AUX_RST_WIDTH": {
+                "value": "1"
+              }
+            }
+          },
           "psr_aclk": {
             "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
             "ip_revision": "16",
             "xci_name": "bd_afc3_psr_aclk_0",
-            "xci_path": "ip\\ip_1\\bd_afc3_psr_aclk_0.xci",
+            "xci_path": "ip\\ip_2\\bd_afc3_psr_aclk_0.xci",
             "inst_hier_path": "clk_map/psr_aclk",
+            "parameters": {
+              "C_AUX_RESET_HIGH": {
+                "value": "0"
+              },
+              "C_AUX_RST_WIDTH": {
+                "value": "1"
+              }
+            }
+          },
+          "psr_aclk1": {
+            "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+            "ip_revision": "16",
+            "xci_name": "bd_afc3_psr_aclk1_0",
+            "xci_path": "ip\\ip_3\\bd_afc3_psr_aclk1_0.xci",
+            "inst_hier_path": "clk_map/psr_aclk1",
             "parameters": {
               "C_AUX_RESET_HIGH": {
                 "value": "0"
@@ -589,26 +658,48 @@
           }
         },
         "nets": {
+          "clk_map_aclk1_net": {
+            "ports": [
+              "aclk1",
+              "M01_ACLK",
+              "psr_aclk1/slowest_sync_clk"
+            ]
+          },
           "clk_map_aclk_net": {
             "ports": [
               "aclk",
               "S00_ACLK",
               "M00_ACLK",
-              "M01_ACLK",
               "swbd_aclk",
+              "psr0/slowest_sync_clk",
               "psr_aclk/slowest_sync_clk"
             ]
           },
           "clk_map_aresetn_net": {
             "ports": [
               "aresetn",
-              "psr_aclk/aux_reset_in"
+              "psr0/aux_reset_in",
+              "psr_aclk/aux_reset_in",
+              "psr_aclk1/aux_reset_in"
             ]
           },
           "one_dout": {
             "ports": [
               "one/dout",
-              "psr_aclk/ext_reset_in"
+              "psr0/ext_reset_in"
+            ]
+          },
+          "psr0_interconnect_aresetn": {
+            "ports": [
+              "psr0/interconnect_aresetn",
+              "psr_aclk/ext_reset_in",
+              "psr_aclk1/ext_reset_in"
+            ]
+          },
+          "psr_aclk1_interconnect_aresetn": {
+            "ports": [
+              "psr_aclk1/interconnect_aresetn",
+              "M01_ARESETN"
             ]
           },
           "psr_aclk_interconnect_aresetn": {
@@ -616,7 +707,6 @@
               "psr_aclk/interconnect_aresetn",
               "S00_ARESETN",
               "M00_ARESETN",
-              "M01_ARESETN",
               "swbd_aresetn"
             ]
           }
@@ -723,7 +813,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_arinsw_0",
-            "xci_path": "ip\\ip_2\\bd_afc3_arinsw_0.xci",
+            "xci_path": "ip\\ip_4\\bd_afc3_arinsw_0.xci",
             "inst_hier_path": "switchboards/ar_la_in_swbd",
             "parameters": {
               "NUM_MI": {
@@ -750,7 +840,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_rinsw_0",
-            "xci_path": "ip\\ip_3\\bd_afc3_rinsw_0.xci",
+            "xci_path": "ip\\ip_5\\bd_afc3_rinsw_0.xci",
             "inst_hier_path": "switchboards/r_la_in_swbd",
             "parameters": {
               "NUM_MI": {
@@ -777,7 +867,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_awinsw_0",
-            "xci_path": "ip\\ip_4\\bd_afc3_awinsw_0.xci",
+            "xci_path": "ip\\ip_6\\bd_afc3_awinsw_0.xci",
             "inst_hier_path": "switchboards/aw_la_in_swbd",
             "parameters": {
               "NUM_MI": {
@@ -804,7 +894,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_winsw_0",
-            "xci_path": "ip\\ip_5\\bd_afc3_winsw_0.xci",
+            "xci_path": "ip\\ip_7\\bd_afc3_winsw_0.xci",
             "inst_hier_path": "switchboards/w_la_in_swbd",
             "parameters": {
               "NUM_MI": {
@@ -831,7 +921,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_binsw_0",
-            "xci_path": "ip\\ip_6\\bd_afc3_binsw_0.xci",
+            "xci_path": "ip\\ip_8\\bd_afc3_binsw_0.xci",
             "inst_hier_path": "switchboards/b_la_in_swbd",
             "parameters": {
               "NUM_MI": {
@@ -858,7 +948,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_aroutsw_0",
-            "xci_path": "ip\\ip_7\\bd_afc3_aroutsw_0.xci",
+            "xci_path": "ip\\ip_9\\bd_afc3_aroutsw_0.xci",
             "inst_hier_path": "switchboards/ar_la_out_swbd",
             "parameters": {
               "NUM_MI": {
@@ -886,7 +976,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_routsw_0",
-            "xci_path": "ip\\ip_8\\bd_afc3_routsw_0.xci",
+            "xci_path": "ip\\ip_10\\bd_afc3_routsw_0.xci",
             "inst_hier_path": "switchboards/r_la_out_swbd",
             "parameters": {
               "NUM_MI": {
@@ -920,7 +1010,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_awoutsw_0",
-            "xci_path": "ip\\ip_9\\bd_afc3_awoutsw_0.xci",
+            "xci_path": "ip\\ip_11\\bd_afc3_awoutsw_0.xci",
             "inst_hier_path": "switchboards/aw_la_out_swbd",
             "parameters": {
               "NUM_MI": {
@@ -948,7 +1038,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_woutsw_0",
-            "xci_path": "ip\\ip_10\\bd_afc3_woutsw_0.xci",
+            "xci_path": "ip\\ip_12\\bd_afc3_woutsw_0.xci",
             "inst_hier_path": "switchboards/w_la_out_swbd",
             "parameters": {
               "NUM_MI": {
@@ -976,7 +1066,7 @@
             "vlnv": "xilinx.com:ip:sc_switchboard:1.0",
             "ip_revision": "8",
             "xci_name": "bd_afc3_boutsw_0",
-            "xci_path": "ip\\ip_11\\bd_afc3_boutsw_0.xci",
+            "xci_path": "ip\\ip_13\\bd_afc3_boutsw_0.xci",
             "inst_hier_path": "switchboards/b_la_out_swbd",
             "parameters": {
               "NUM_MI": {
@@ -1082,7 +1172,7 @@
                 "vlnv": "xilinx.com:ip:sc_node:1.0",
                 "ip_revision": "17",
                 "xci_name": "bd_afc3_arni_0",
-                "xci_path": "ip\\ip_12\\bd_afc3_arni_0.xci",
+                "xci_path": "ip\\ip_14\\bd_afc3_arni_0.xci",
                 "inst_hier_path": "switchboards/i_nodes/i_ar_node",
                 "parameters": {
                   "ACLKEN_CONVERSION": {
@@ -1241,7 +1331,7 @@
                 "vlnv": "xilinx.com:ip:sc_node:1.0",
                 "ip_revision": "17",
                 "xci_name": "bd_afc3_rni_0",
-                "xci_path": "ip\\ip_13\\bd_afc3_rni_0.xci",
+                "xci_path": "ip\\ip_15\\bd_afc3_rni_0.xci",
                 "inst_hier_path": "switchboards/i_nodes/i_r_node",
                 "parameters": {
                   "ACLKEN_CONVERSION": {
@@ -1400,7 +1490,7 @@
                 "vlnv": "xilinx.com:ip:sc_node:1.0",
                 "ip_revision": "17",
                 "xci_name": "bd_afc3_awni_0",
-                "xci_path": "ip\\ip_14\\bd_afc3_awni_0.xci",
+                "xci_path": "ip\\ip_16\\bd_afc3_awni_0.xci",
                 "inst_hier_path": "switchboards/i_nodes/i_aw_node",
                 "parameters": {
                   "ACLKEN_CONVERSION": {
@@ -1559,7 +1649,7 @@
                 "vlnv": "xilinx.com:ip:sc_node:1.0",
                 "ip_revision": "17",
                 "xci_name": "bd_afc3_wni_0",
-                "xci_path": "ip\\ip_15\\bd_afc3_wni_0.xci",
+                "xci_path": "ip\\ip_17\\bd_afc3_wni_0.xci",
                 "inst_hier_path": "switchboards/i_nodes/i_w_node",
                 "parameters": {
                   "ACLKEN_CONVERSION": {
@@ -1718,7 +1808,7 @@
                 "vlnv": "xilinx.com:ip:sc_node:1.0",
                 "ip_revision": "17",
                 "xci_name": "bd_afc3_bni_0",
-                "xci_path": "ip\\ip_16\\bd_afc3_bni_0.xci",
+                "xci_path": "ip\\ip_18\\bd_afc3_bni_0.xci",
                 "inst_hier_path": "switchboards/i_nodes/i_b_node",
                 "parameters": {
                   "ACLKEN_CONVERSION": {
@@ -2197,7 +2287,7 @@
             "vlnv": "xilinx.com:ip:sc_mmu:1.0",
             "ip_revision": "14",
             "xci_name": "bd_afc3_s00mmu_0",
-            "xci_path": "ip\\ip_17\\bd_afc3_s00mmu_0.xci",
+            "xci_path": "ip\\ip_19\\bd_afc3_s00mmu_0.xci",
             "inst_hier_path": "s00_entry_pipeline/s00_mmu",
             "parameters": {
               "ADDR_WIDTH": {
@@ -2308,7 +2398,7 @@
             "vlnv": "xilinx.com:ip:sc_transaction_regulator:1.0",
             "ip_revision": "11",
             "xci_name": "bd_afc3_s00tr_0",
-            "xci_path": "ip\\ip_18\\bd_afc3_s00tr_0.xci",
+            "xci_path": "ip\\ip_20\\bd_afc3_s00tr_0.xci",
             "inst_hier_path": "s00_entry_pipeline/s00_transaction_regulator",
             "parameters": {
               "ADDR_WIDTH": {
@@ -2374,7 +2464,7 @@
             "vlnv": "xilinx.com:ip:sc_si_converter:1.0",
             "ip_revision": "14",
             "xci_name": "bd_afc3_s00sic_0",
-            "xci_path": "ip\\ip_19\\bd_afc3_s00sic_0.xci",
+            "xci_path": "ip\\ip_21\\bd_afc3_s00sic_0.xci",
             "inst_hier_path": "s00_entry_pipeline/s00_si_converter",
             "parameters": {
               "ADDR_WIDTH": {
@@ -2543,7 +2633,7 @@
         "vlnv": "xilinx.com:ip:sc_axi2sc:1.0",
         "ip_revision": "10",
         "xci_name": "bd_afc3_s00a2s_0",
-        "xci_path": "ip\\ip_20\\bd_afc3_s00a2s_0.xci",
+        "xci_path": "ip\\ip_22\\bd_afc3_s00a2s_0.xci",
         "inst_hier_path": "s00_axi2sc",
         "parameters": {
           "AXI_ADDR_WIDTH": {
@@ -2682,7 +2772,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_sarn_0",
-            "xci_path": "ip\\ip_21\\bd_afc3_sarn_0.xci",
+            "xci_path": "ip\\ip_23\\bd_afc3_sarn_0.xci",
             "inst_hier_path": "s00_nodes/s00_ar_node",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -2835,7 +2925,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_srn_0",
-            "xci_path": "ip\\ip_22\\bd_afc3_srn_0.xci",
+            "xci_path": "ip\\ip_24\\bd_afc3_srn_0.xci",
             "inst_hier_path": "s00_nodes/s00_r_node",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -2991,7 +3081,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_sawn_0",
-            "xci_path": "ip\\ip_23\\bd_afc3_sawn_0.xci",
+            "xci_path": "ip\\ip_25\\bd_afc3_sawn_0.xci",
             "inst_hier_path": "s00_nodes/s00_aw_node",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -3144,7 +3234,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_swn_0",
-            "xci_path": "ip\\ip_24\\bd_afc3_swn_0.xci",
+            "xci_path": "ip\\ip_26\\bd_afc3_swn_0.xci",
             "inst_hier_path": "s00_nodes/s00_w_node",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -3297,7 +3387,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_sbn_0",
-            "xci_path": "ip\\ip_25\\bd_afc3_sbn_0.xci",
+            "xci_path": "ip\\ip_27\\bd_afc3_sbn_0.xci",
             "inst_hier_path": "s00_nodes/s00_b_node",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -3559,7 +3649,7 @@
         "vlnv": "xilinx.com:ip:sc_sc2axi:1.0",
         "ip_revision": "10",
         "xci_name": "bd_afc3_m00s2a_0",
-        "xci_path": "ip\\ip_26\\bd_afc3_m00s2a_0.xci",
+        "xci_path": "ip\\ip_28\\bd_afc3_m00s2a_0.xci",
         "inst_hier_path": "m00_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
@@ -3697,7 +3787,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m00arn_0",
-            "xci_path": "ip\\ip_27\\bd_afc3_m00arn_0.xci",
+            "xci_path": "ip\\ip_29\\bd_afc3_m00arn_0.xci",
             "inst_hier_path": "m00_nodes/m00_ar_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
@@ -3850,7 +3940,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m00rn_0",
-            "xci_path": "ip\\ip_28\\bd_afc3_m00rn_0.xci",
+            "xci_path": "ip\\ip_30\\bd_afc3_m00rn_0.xci",
             "inst_hier_path": "m00_nodes/m00_r_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
@@ -4003,7 +4093,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m00awn_0",
-            "xci_path": "ip\\ip_29\\bd_afc3_m00awn_0.xci",
+            "xci_path": "ip\\ip_31\\bd_afc3_m00awn_0.xci",
             "inst_hier_path": "m00_nodes/m00_aw_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
@@ -4156,7 +4246,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m00wn_0",
-            "xci_path": "ip\\ip_30\\bd_afc3_m00wn_0.xci",
+            "xci_path": "ip\\ip_32\\bd_afc3_m00wn_0.xci",
             "inst_hier_path": "m00_nodes/m00_w_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
@@ -4312,7 +4402,7 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m00bn_0",
-            "xci_path": "ip\\ip_31\\bd_afc3_m00bn_0.xci",
+            "xci_path": "ip\\ip_33\\bd_afc3_m00bn_0.xci",
             "inst_hier_path": "m00_nodes/m00_b_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
@@ -4592,7 +4682,7 @@
             "vlnv": "xilinx.com:ip:sc_exit:1.0",
             "ip_revision": "16",
             "xci_name": "bd_afc3_m00e_0",
-            "xci_path": "ip\\ip_32\\bd_afc3_m00e_0.xci",
+            "xci_path": "ip\\ip_34\\bd_afc3_m00e_0.xci",
             "inst_hier_path": "m00_exit_pipeline/m00_exit",
             "parameters": {
               "ADDR_WIDTH": {
@@ -4694,11 +4784,11 @@
         "vlnv": "xilinx.com:ip:sc_sc2axi:1.0",
         "ip_revision": "10",
         "xci_name": "bd_afc3_m01s2a_0",
-        "xci_path": "ip\\ip_33\\bd_afc3_m01s2a_0.xci",
+        "xci_path": "ip\\ip_35\\bd_afc3_m01s2a_0.xci",
         "inst_hier_path": "m01_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "7"
+            "value": "4"
           },
           "AXI_ID_WIDTH": {
             "value": "1"
@@ -4832,11 +4922,11 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m01arn_0",
-            "xci_path": "ip\\ip_34\\bd_afc3_m01arn_0.xci",
+            "xci_path": "ip\\ip_36\\bd_afc3_m01arn_0.xci",
             "inst_hier_path": "m01_nodes/m01_ar_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
-                "value": "1"
+                "value": "0"
               },
               "ADDR_WIDTH": {
                 "value": "32"
@@ -4844,8 +4934,11 @@
               "CHANNEL": {
                 "value": "2"
               },
+              "FIFO_SIZE": {
+                "value": "0"
+              },
               "FIFO_TYPE": {
-                "value": "2"
+                "value": "0"
               },
               "ID_WIDTH": {
                 "value": "1"
@@ -4985,11 +5078,11 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m01rn_0",
-            "xci_path": "ip\\ip_35\\bd_afc3_m01rn_0.xci",
+            "xci_path": "ip\\ip_37\\bd_afc3_m01rn_0.xci",
             "inst_hier_path": "m01_nodes/m01_r_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
-                "value": "1"
+                "value": "0"
               },
               "ADDR_WIDTH": {
                 "value": "32"
@@ -4997,8 +5090,11 @@
               "CHANNEL": {
                 "value": "0"
               },
+              "FIFO_SIZE": {
+                "value": "0"
+              },
               "FIFO_TYPE": {
-                "value": "2"
+                "value": "0"
               },
               "ID_WIDTH": {
                 "value": "1"
@@ -5138,11 +5234,11 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m01awn_0",
-            "xci_path": "ip\\ip_36\\bd_afc3_m01awn_0.xci",
+            "xci_path": "ip\\ip_38\\bd_afc3_m01awn_0.xci",
             "inst_hier_path": "m01_nodes/m01_aw_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
-                "value": "1"
+                "value": "0"
               },
               "ADDR_WIDTH": {
                 "value": "32"
@@ -5150,8 +5246,11 @@
               "CHANNEL": {
                 "value": "3"
               },
+              "FIFO_SIZE": {
+                "value": "0"
+              },
               "FIFO_TYPE": {
-                "value": "2"
+                "value": "0"
               },
               "ID_WIDTH": {
                 "value": "1"
@@ -5291,11 +5390,11 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m01wn_0",
-            "xci_path": "ip\\ip_37\\bd_afc3_m01wn_0.xci",
+            "xci_path": "ip\\ip_39\\bd_afc3_m01wn_0.xci",
             "inst_hier_path": "m01_nodes/m01_w_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
-                "value": "1"
+                "value": "0"
               },
               "ADDR_WIDTH": {
                 "value": "32"
@@ -5303,8 +5402,11 @@
               "CHANNEL": {
                 "value": "1"
               },
+              "FIFO_SIZE": {
+                "value": "0"
+              },
               "FIFO_TYPE": {
-                "value": "2"
+                "value": "0"
               },
               "ID_WIDTH": {
                 "value": "1"
@@ -5447,11 +5549,11 @@
             "vlnv": "xilinx.com:ip:sc_node:1.0",
             "ip_revision": "17",
             "xci_name": "bd_afc3_m01bn_0",
-            "xci_path": "ip\\ip_38\\bd_afc3_m01bn_0.xci",
+            "xci_path": "ip\\ip_40\\bd_afc3_m01bn_0.xci",
             "inst_hier_path": "m01_nodes/m01_b_node",
             "parameters": {
               "ACLK_RELATIONSHIP": {
-                "value": "1"
+                "value": "0"
               },
               "ADDR_WIDTH": {
                 "value": "32"
@@ -5459,8 +5561,11 @@
               "CHANNEL": {
                 "value": "4"
               },
+              "FIFO_SIZE": {
+                "value": "0"
+              },
               "FIFO_TYPE": {
-                "value": "2"
+                "value": "0"
               },
               "ID_WIDTH": {
                 "value": "1"
@@ -5727,11 +5832,11 @@
             "vlnv": "xilinx.com:ip:sc_exit:1.0",
             "ip_revision": "16",
             "xci_name": "bd_afc3_m01e_0",
-            "xci_path": "ip\\ip_39\\bd_afc3_m01e_0.xci",
+            "xci_path": "ip\\ip_41\\bd_afc3_m01e_0.xci",
             "inst_hier_path": "m01_exit_pipeline/m01_exit",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "7"
+                "value": "4"
               },
               "ENABLE_PIPELINING": {
                 "value": "0"
@@ -6045,6 +6150,12 @@
       }
     },
     "nets": {
+      "aclk1_1": {
+        "ports": [
+          "aclk1",
+          "clk_map/aclk1"
+        ]
+      },
       "aclk_net": {
         "ports": [
           "aclk",

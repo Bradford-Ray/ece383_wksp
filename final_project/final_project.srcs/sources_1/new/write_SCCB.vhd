@@ -38,8 +38,8 @@ entity write_SCCB is
            en : in STD_LOGIC;
            sio_c : out STD_LOGIC;
            sio_d : inout STD_LOGIC;
-           data: in STD_LOGIC_VECTOR (7 downto 0); -- sent during phase 3
-           sub_address : in std_logic_vector (7 downto 0); -- sent during phase 2
+           data: in STD_LOGIC_VECTOR (7 downto 0); -- from ublaze, sent during phase 3
+           sub_address : in std_logic_vector (7 downto 0); -- from ublaze, sent during phase 2
            ready : out std_logic);  -- flag to indicate idle state
 end write_SCCB;
 

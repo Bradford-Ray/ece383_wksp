@@ -24,17 +24,11 @@ module design_1 (
   DDR3_0_odt,
   sys_clock,
   reset,
-  ac_adc_sdata,
-  btn,
-  switch,
-  ac_mclk,
-  ac_dac_sdata,
-  ac_bclk,
-  ac_lrclk,
-  scl,
-  sda,
-  tmds,
-  tmdsb
+  pclk,
+  vs,
+  hs,
+  data_in,
+  xclk
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *)
@@ -81,27 +75,15 @@ module design_1 (
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
   input reset;
   (* X_INTERFACE_IGNORE = "true" *)
-  input ac_adc_sdata;
+  input pclk;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [4:0]btn;
+  input vs;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [3:0]switch;
+  input hs;
   (* X_INTERFACE_IGNORE = "true" *)
-  output ac_mclk;
+  input [7:0]data_in;
   (* X_INTERFACE_IGNORE = "true" *)
-  output ac_dac_sdata;
-  (* X_INTERFACE_IGNORE = "true" *)
-  output ac_bclk;
-  (* X_INTERFACE_IGNORE = "true" *)
-  output ac_lrclk;
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout scl;
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout sda;
-  (* X_INTERFACE_IGNORE = "true" *)
-  output [3:0]tmds;
-  (* X_INTERFACE_IGNORE = "true" *)
-  output [3:0]tmdsb;
+  output xclk;
 
   // stub module has no contents
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Thu Apr  2 09:38:02 2026
+| Date             : Mon May  4 16:59:48 2026
 | Host             : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.212        |
+| Total On-Chip Power (W)  | 0.853        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.059        |
-| Device Static (W)        | 0.153        |
+| Dynamic (W)              | 0.702        |
+| Device Static (W)        | 0.150        |
 | Effective TJA (C/W)      | 3.3          |
-| Max Ambient (C)          | 81.0         |
-| Junction Temperature (C) | 29.0         |
+| Max Ambient (C)          | 82.2         |
+| Junction Temperature (C) | 27.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,26 +52,27 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.036 |       15 |       --- |             --- |
-| Slice Logic              |     0.044 |    30052 |       --- |             --- |
-|   LUT as Logic           |     0.038 |    10440 |    133800 |            7.80 |
-|   LUT as Distributed RAM |     0.003 |      924 |     46200 |            2.00 |
-|   Register               |     0.002 |    12426 |    267600 |            4.64 |
-|   CARRY4                 |    <0.001 |      255 |     33450 |            0.76 |
-|   LUT as Shift Register  |    <0.001 |      466 |     46200 |            1.01 |
-|   F7/F8 Muxes            |    <0.001 |      265 |    133800 |            0.20 |
-|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Others                 |    <0.001 |     1432 |       --- |             --- |
+| Clocks                   |     0.034 |        8 |       --- |             --- |
+| Slice Logic              |     0.048 |    31580 |       --- |             --- |
+|   LUT as Logic           |     0.042 |    10944 |    133800 |            8.18 |
+|   LUT as Distributed RAM |     0.003 |     1050 |     46200 |            2.27 |
+|   Register               |     0.002 |    12814 |    267600 |            4.79 |
+|   CARRY4                 |    <0.001 |      346 |     33450 |            1.03 |
+|   LUT as Shift Register  |    <0.001 |      480 |     46200 |            1.04 |
+|   F7/F8 Muxes            |    <0.001 |      174 |    133800 |            0.13 |
+|   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
+|   Others                 |    <0.001 |     1549 |       --- |             --- |
 |   BUFR                   |     0.000 |        1 |       160 |            0.63 |
-| Signals                  |     0.052 |    21925 |       --- |             --- |
-| Block RAM                |     0.038 |       20 |       365 |            5.48 |
-| MMCM                     |     0.392 |        4 |        10 |           40.00 |
+| Signals                  |     0.056 |    22654 |       --- |             --- |
+| Block RAM                |     0.035 |       20 |       365 |            5.48 |
+| MMCM                     |     0.164 |        2 |        10 |           20.00 |
 | PLL                      |     0.086 |        1 |        10 |           10.00 |
-| I/O                      |     0.398 |       75 |       285 |           26.32 |
+| DSPs                     |     0.002 |        4 |       740 |            0.54 |
+| I/O                      |     0.263 |       64 |       285 |           22.46 |
 | PHASER                   |     0.010 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.153 |          |           |                 |
-| Total                    |     1.212 |          |           |                 |
+| Static Power             |     0.150 |          |           |                 |
+| Total                    |     0.853 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -81,9 +82,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.215 |       0.179 |      0.035 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.341 |       0.310 |      0.031 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.046 |       0.041 |      0.005 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.218 |       0.184 |      0.034 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.215 |       0.184 |      0.031 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.126 |       0.121 |      0.005 |       NA    | Unspecified | NA         |
@@ -134,22 +135,16 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-| Clock                                                      | Domain                                                                                                                                    | Constraint (ns) |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-| clk_out1_clk_wiz_0_1                                       | design_1_i/my_oscope_0/U0/my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/video_inst/mmcm_adv_inst_display_clocks/inst/clk_out1_clk_wiz_0 |            40.0 |
-| clk_out1_clk_wiz_1_1                                       | design_1_i/my_oscope_0/U0/my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/Audio_Codec/audiocodec_master_clock/inst/clk_out1_clk_wiz_1     |            81.4 |
-| clk_out1_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clk_out1                                                                                                        |            10.0 |
-| clk_out1_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clk_out1_design_1_clk_wiz_1_0                                                                                   |            10.0 |
-| clk_out2_clk_wiz_0_1                                       | design_1_i/my_oscope_0/U0/my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/video_inst/mmcm_adv_inst_display_clocks/inst/clk_out2_clk_wiz_0 |             8.0 |
-| clk_out2_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clk_out2_design_1_clk_wiz_1_0                                                                                   |             5.0 |
-| clkfbout_clk_wiz_0_1                                       | design_1_i/my_oscope_0/U0/my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/video_inst/mmcm_adv_inst_display_clocks/inst/clkfbout_clk_wiz_0 |            10.0 |
-| clkfbout_clk_wiz_1_1                                       | design_1_i/my_oscope_0/U0/my_oscope_slave_lite_v1_0_S00_AXI_inst/datapath/Audio_Codec/audiocodec_master_clock/inst/clkfbout_clk_wiz_1     |            10.0 |
-| clkfbout_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clkfbout_design_1_clk_wiz_1_0                                                                                   |            10.0 |
-| design_1_i/clk_wiz_1/inst/clk_in1                          | design_1_i/util_ds_buf_0/U0/BUFG_O[0]                                                                                                     |            10.0 |
-| design_1_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK   | design_1_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK                                                                                                   |            33.3 |
-| design_1_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE | design_1_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0                                                                                           |            33.3 |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
++------------------------------------------------------------+---------------------------------------------------------+-----------------+
+| Clock                                                      | Domain                                                  | Constraint (ns) |
++------------------------------------------------------------+---------------------------------------------------------+-----------------+
+| clk_out1_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clk_out1_design_1_clk_wiz_1_0 |            10.0 |
+| clk_out2_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clk_out2_design_1_clk_wiz_1_0 |             5.0 |
+| clkfbout_design_1_clk_wiz_1_0                              | design_1_i/clk_wiz_1/inst/clkfbout_design_1_clk_wiz_1_0 |            10.0 |
+| design_1_i/clk_wiz_1/inst/clk_in1                          | design_1_i/util_ds_buf_0/U0/BUFG_O[0]                   |            10.0 |
+| design_1_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK   | design_1_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK                 |            33.3 |
+| design_1_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE | design_1_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0         |            33.3 |
++------------------------------------------------------------+---------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -161,22 +156,26 @@ Table of Contents
 +--------------------------------------+-----------+
 | Name                                 | Power (W) |
 +--------------------------------------+-----------+
-| design_1_wrapper                     |     1.059 |
-|   design_1_i                         |     1.057 |
-|     axi_smc                          |     0.003 |
-|       inst                           |     0.003 |
-|     axi_smc_1                        |     0.034 |
-|       inst                           |     0.034 |
+| design_1_wrapper                     |     0.702 |
+|   design_1_i                         |     0.702 |
+|     OV7675_capture_0                 |     0.010 |
+|       U0                             |     0.010 |
+|     axi_bram_ctrl_0                  |     0.001 |
+|       U0                             |     0.001 |
+|     axi_bram_ctrl_0_bram             |     0.004 |
+|       U0                             |     0.004 |
+|     axi_smc                          |     0.002 |
+|       inst                           |     0.002 |
+|     axi_smc_1                        |     0.049 |
+|       inst                           |     0.049 |
 |     clk_wiz_1                        |     0.108 |
 |       inst                           |     0.108 |
-|     microblaze_0                     |     0.052 |
-|       U0                             |     0.052 |
+|     microblaze_0                     |     0.047 |
+|       U0                             |     0.047 |
 |     microblaze_0_local_memory        |     0.003 |
 |       lmb_bram                       |     0.003 |
-|     mig_7series_0                    |     0.481 |
-|       u_design_1_mig_7series_0_0_mig |     0.481 |
-|     my_oscope_0                      |     0.375 |
-|       U0                             |     0.375 |
+|     mig_7series_0                    |     0.476 |
+|       u_design_1_mig_7series_0_0_mig |     0.476 |
 +--------------------------------------+-----------+
 
 

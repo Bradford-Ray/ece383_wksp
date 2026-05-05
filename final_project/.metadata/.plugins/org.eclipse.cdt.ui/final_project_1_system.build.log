@@ -1,0 +1,6 @@
+11:38:20 **** Build of configuration Debug for project final_project_1_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
+
+11:38:20 Build Finished (took 374ms)
+

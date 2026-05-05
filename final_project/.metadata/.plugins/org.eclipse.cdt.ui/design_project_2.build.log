@@ -1,0 +1,26 @@
+18:45:29 **** Build of configuration Debug for project design_project_2 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/sw/design_1_wrapper_1/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -IC:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/sw/design_1_wrapper_1/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: design_project_2.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/sw/design_1_wrapper_1/standalone_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "design_project_2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: design_project_2.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size design_project_2.elf  |tee "design_project_2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   7764	     28	   3432	  11224	   2bd8	design_project_2.elf
+'Finished building: design_project_2.elf.size'
+' '
+
+18:45:33 Build Finished (took 3s.714ms)
+
