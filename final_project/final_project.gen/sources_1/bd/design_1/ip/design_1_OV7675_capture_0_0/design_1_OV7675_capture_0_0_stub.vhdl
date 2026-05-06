@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Mon May  4 16:52:19 2026
+-- Date        : Tue May  5 23:05:46 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0_stub.vhdl
@@ -25,7 +25,9 @@ entity design_1_OV7675_capture_0_0 is
     data_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    bram_en : out STD_LOGIC
+    bram_en : out STD_LOGIC;
+    pen : out STD_LOGIC;
+    pdn : out STD_LOGIC
   );
 
   attribute CHECK_LICENSE_TYPE : string;
@@ -42,7 +44,7 @@ architecture stub of design_1_OV7675_capture_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clk,reset_n,pclk,vs,hs,data_in[7:0],xclk,data_out[31:0],bram_addr[31:0],bram_we[3:0],bram_en";
+  attribute black_box_pad_pin of stub : architecture is "clk,reset_n,pclk,vs,hs,data_in[7:0],xclk,data_out[31:0],bram_addr[31:0],bram_we[3:0],bram_en,pen,pdn";
   attribute x_interface_info : string;
   attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute x_interface_mode : string;

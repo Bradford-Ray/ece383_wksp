@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Mon May  4 16:49:38 2026
+--Date        : Tue May  5 23:03:21 2026
 --Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -547,6 +547,8 @@ entity design_1 is
     data_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
     hs : in STD_LOGIC;
     pclk : in STD_LOGIC;
+    pdn : out STD_LOGIC;
+    pen : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -1120,7 +1122,9 @@ architecture STRUCTURE of design_1 is
     data_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    bram_en : out STD_LOGIC
+    bram_en : out STD_LOGIC;
+    pen : out STD_LOGIC;
+    pdn : out STD_LOGIC
   );
   end component design_1_OV7675_capture_0_0;
   signal OV7675_capture_0_bram_addr : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1425,6 +1429,8 @@ OV7675_capture_0: component design_1_OV7675_capture_0_0
       data_out(31 downto 0) => OV7675_capture_0_data_out(31 downto 0),
       hs => hs,
       pclk => pclk,
+      pdn => pdn,
+      pen => pen,
       reset_n => rst_mig_7series_0_100M_peripheral_aresetn(0),
       vs => vs,
       xclk => xclk

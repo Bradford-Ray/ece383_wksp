@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon May  4 16:50:09 2026" VIVADOVERSION="2024.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue May  5 23:03:46 2026" VIVADOVERSION="2024.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys_video:part0:1.2" DEVICE="7a200t" NAME="design_1" PACKAGE="sbg484" SPEEDGRADE="-1"/>
 
@@ -87,6 +87,16 @@
     <PORT DIR="I" NAME="pclk" SIGIS="undef" SIGNAME="External_Ports_pclk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="OV7675_capture_0" PORT="pclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="pdn" SIGIS="undef" SIGNAME="OV7675_capture_0_pdn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OV7675_capture_0" PORT="pdn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="pen" SIGIS="undef" SIGNAME="OV7675_capture_0_pen">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OV7675_capture_0" PORT="pen"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
@@ -211,6 +221,16 @@
         <PORT DIR="I" NAME="pclk" SIGIS="undef" SIGNAME="External_Ports_pclk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="pclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pdn" SIGIS="undef" SIGNAME="OV7675_capture_0_pdn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="pdn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pen" SIGIS="undef" SIGNAME="OV7675_capture_0_pen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="pen"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="rst_mig_7series_0_100M_peripheral_aresetn">

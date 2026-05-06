@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDBAB007BD5BBECD2",
+      "boundary_crc": "0x8F8D55952A464C07",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../final_project.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -236,6 +236,12 @@
         "right": "0"
       },
       "xclk": {
+        "direction": "O"
+      },
+      "pen": {
+        "direction": "O"
+      },
+      "pdn": {
         "direction": "O"
       }
     },
@@ -947,6 +953,12 @@
           },
           "bram_en": {
             "direction": "O"
+          },
+          "pen": {
+            "direction": "O"
+          },
+          "pdn": {
+            "direction": "O"
           }
         }
       }
@@ -1054,6 +1066,18 @@
         "ports": [
           "OV7675_capture_0/data_out",
           "axi_bram_ctrl_0_bram/dinb"
+        ]
+      },
+      "OV7675_capture_0_pdn": {
+        "ports": [
+          "OV7675_capture_0/pdn",
+          "pdn"
+        ]
+      },
+      "OV7675_capture_0_pen": {
+        "ports": [
+          "OV7675_capture_0/pen",
+          "pen"
         ]
       },
       "OV7675_capture_0_xclk": {

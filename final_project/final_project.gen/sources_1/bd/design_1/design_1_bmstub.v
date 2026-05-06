@@ -28,7 +28,9 @@ module design_1 (
   vs,
   hs,
   data_in,
-  xclk
+  xclk,
+  pen,
+  pdn
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *)
@@ -84,6 +86,10 @@ module design_1 (
   input [7:0]data_in;
   (* X_INTERFACE_IGNORE = "true" *)
   output xclk;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pen;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pdn;
 
   // stub module has no contents
 

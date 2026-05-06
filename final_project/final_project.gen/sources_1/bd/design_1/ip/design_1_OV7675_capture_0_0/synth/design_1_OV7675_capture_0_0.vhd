@@ -65,7 +65,9 @@ ENTITY design_1_OV7675_capture_0_0 IS
     data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     bram_addr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     bram_we : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    bram_en : OUT STD_LOGIC
+    bram_en : OUT STD_LOGIC;
+    pen : OUT STD_LOGIC;
+    pdn : OUT STD_LOGIC
   );
 END design_1_OV7675_capture_0_0;
 
@@ -84,7 +86,9 @@ ARCHITECTURE design_1_OV7675_capture_0_0_arch OF design_1_OV7675_capture_0_0 IS
       data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       bram_addr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       bram_we : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      bram_en : OUT STD_LOGIC
+      bram_en : OUT STD_LOGIC;
+      pen : OUT STD_LOGIC;
+      pdn : OUT STD_LOGIC
     );
   END COMPONENT OV7675_capture;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -117,6 +121,8 @@ BEGIN
       data_out => data_out,
       bram_addr => bram_addr,
       bram_we => bram_we,
-      bram_en => bram_en
+      bram_en => bram_en,
+      pen => pen,
+      pdn => pdn
     );
 END design_1_OV7675_capture_0_0_arch;

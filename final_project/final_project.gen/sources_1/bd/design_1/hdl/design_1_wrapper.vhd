@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Mon May  4 16:49:38 2026
+--Date        : Tue May  5 23:03:21 2026
 --Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -31,6 +31,8 @@ entity design_1_wrapper is
     data_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
     hs : in STD_LOGIC;
     pclk : in STD_LOGIC;
+    pdn : out STD_LOGIC;
+    pen : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -65,7 +67,9 @@ architecture STRUCTURE of design_1_wrapper is
     vs : in STD_LOGIC;
     hs : in STD_LOGIC;
     data_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    xclk : out STD_LOGIC
+    xclk : out STD_LOGIC;
+    pen : out STD_LOGIC;
+    pdn : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -88,6 +92,8 @@ design_1_i: component design_1
       data_in(7 downto 0) => data_in(7 downto 0),
       hs => hs,
       pclk => pclk,
+      pdn => pdn,
+      pen => pen,
       reset => reset,
       sys_clock => sys_clock,
       usb_uart_rxd => usb_uart_rxd,

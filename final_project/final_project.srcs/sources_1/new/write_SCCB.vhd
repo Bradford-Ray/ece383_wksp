@@ -34,7 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity write_SCCB is
     generic (
         write_address : std_logic_vector(7 downto 0) := x"60"); -- value sent during phase 1
-    Port ( clk : in STD_LOGIC;
+    Port ( pclk : in STD_LOGIC;
+           reset_n : in STD_LOGIC;
            en : in STD_LOGIC;
            sio_c : out STD_LOGIC;
            sio_d : inout STD_LOGIC;

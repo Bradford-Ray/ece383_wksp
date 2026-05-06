@@ -19,15 +19,3 @@ platform active {design_1_wrapper_1}
 platform generate -quick
 catch {platform remove design_1_wrapper}
 platform generate
-platform write
-platform create -name {design_1_wrapper_1}\
--hw {C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\design_1_wrapper.xsa}\
--out {C:/Users/C27Bradford.Hurt/ece383_wksp/final_project}
-
-platform write
-domain create -name {standalone_microblaze_0} -display-name {standalone_microblaze_0} -os {standalone} -proc {microblaze_0} -runtime {cpp} -arch {32-bit} -support-app {hello_world}
-platform generate -domains 
-platform active {design_1_wrapper_1}
-platform generate -quick
-catch {platform remove design_1_wrapper}
-platform generate
