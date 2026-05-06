@@ -45,8 +45,14 @@ set_property src_info {type:XDC file:1 line:135 export:INPUT save:INPUT read:REA
 set_property -dict { PACKAGE_PIN R6    IOSTANDARD LVCMOS33 } [get_ports { pdn }]; #IO_L17P_T2_34 Sch=jc_p[3]
 set_property src_info {type:XDC file:1 line:136 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T6    IOSTANDARD LVCMOS33 } [get_ports { pen }]; #IO_L17N_T2_34 Sch=jc_n[3]
+set_property src_info {type:XDC file:1 line:137 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN AB7   IOSTANDARD LVCMOS33 } [get_ports { sio_d }]; #IO_L20P_T3_34 Sch=jc_p[4]
+set_property src_info {type:XDC file:1 line:138 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN AB6   IOSTANDARD LVCMOS33 } [get_ports { sio_c }]; #IO_L20N_T3_34 Sch=jc_n[4]
 set_property src_info {type:XDC file:1 line:139 export:INPUT save:INPUT read:READ} [current_design]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets pclk_IBUF]
+set_property src_info {type:XDC file:1 line:140 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN AB7 IOSTANDARD LVCMOS33 PULLTYPE PULLUP } [get_ports { sio_d }];
 set_property src_info {type:XDC file:1 line:213 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33} [get_ports { scl }];
 set_property src_info {type:XDC file:1 line:214 export:INPUT save:INPUT read:READ} [current_design]

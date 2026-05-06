@@ -63,4 +63,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ax
 # IP: bd/design_1/ip/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_OV7675_capture_0_0 || ORIG_REF_NAME==design_1_OV7675_capture_0_0} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_myip_write_SCCB_0_0/design_1_myip_write_SCCB_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_myip_write_SCCB_0_0 || ORIG_REF_NAME==design_1_myip_write_SCCB_0_0} -quiet] -quiet
+
 # XDC: c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/design_1_ooc.xdc

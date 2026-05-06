@@ -2315,3 +2315,541 @@ con
 ----------------End of Script----------------
 
 23:18:21 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_4_system\_ide\scripts\debugger_final_project_4-default.tcl'
+00:57:17 INFO  : Checking for BSP changes to sync application flags for project 'final_project_4'...
+00:58:57 INFO  : Checking for BSP changes to sync application flags for project 'final_project_4'...
+01:11:11 INFO  : Result from executing command 'getProjects': design_1_wrapper;design_1_wrapper_1
+01:11:11 INFO  : Result from executing command 'getPlatforms': design_1_wrapper_1|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/design_1_wrapper_1.xpfm
+01:11:12 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+01:11:14 ERROR : 
+java.lang.NullPointerException: null
+	at com.xilinx.sdk.sw.internal.SwDb.getComponentAppCompilerFlags(SwDb.java:761) ~[?:?]
+	at com.xilinx.sdx.sw.internal.SDxSwPlatform.getSwPlatformCompilerFlags(SDxSwPlatform.java:1177) ~[?:?]
+	at com.xilinx.sdx.sdk.core.build.AppSwBuildOptionsHelper.inferSwPlatformFlags(AppSwBuildOptionsHelper.java:54) ~[?:?]
+	at com.xilinx.sdx.sdk.core.build.AppSwBuildOptionsHelper.updateBuildOptions(AppSwBuildOptionsHelper.java:46) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.ManagedAppCreator.updateSwBuildOptions(ManagedAppCreator.java:82) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.ManagedAppCreator.create(ManagedAppCreator.java:54) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.StandaloneProjectHandler.createCoreApp(StandaloneProjectHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.createApplication(AppCreationHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.execute(AppCreationHandler.java:69) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.executeInternal(SdkAppCreationHandler.java:75) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.lambda$1(SdkAppCreationHandler.java:67) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2312) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.execute(SdkAppCreationHandler.java:66) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.createApplicationProject(NewProjectCreationHandler.java:237) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.internalExecute(NewProjectCreationHandler.java:385) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler$1.execute(NewProjectCreationHandler.java:100) ~[?:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+01:11:14 ERROR : Failed to create application project
+org.eclipse.core.runtime.CoreException: Unexpected error occurred. Please check log for further details.
+	at com.xilinx.sdx.sdk.core.gen.StandaloneProjectHandler.createCoreApp(StandaloneProjectHandler.java:150) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.createApplication(AppCreationHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.execute(AppCreationHandler.java:69) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.executeInternal(SdkAppCreationHandler.java:75) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.lambda$1(SdkAppCreationHandler.java:67) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2312) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.execute(SdkAppCreationHandler.java:66) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.createApplicationProject(NewProjectCreationHandler.java:237) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.internalExecute(NewProjectCreationHandler.java:385) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler$1.execute(NewProjectCreationHandler.java:100) ~[?:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+01:12:27 INFO  : Result from executing command 'getProjects': design_1_wrapper;design_1_wrapper_1
+01:12:27 INFO  : Result from executing command 'getPlatforms': design_1_wrapper_1|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/design_1_wrapper_1.xpfm
+01:12:27 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+01:12:28 ERROR : 
+java.lang.NullPointerException: null
+	at com.xilinx.sdk.sw.internal.SwDb.getComponentAppCompilerFlags(SwDb.java:761) ~[?:?]
+	at com.xilinx.sdx.sw.internal.SDxSwPlatform.getSwPlatformCompilerFlags(SDxSwPlatform.java:1177) ~[?:?]
+	at com.xilinx.sdx.sdk.core.build.AppSwBuildOptionsHelper.inferSwPlatformFlags(AppSwBuildOptionsHelper.java:54) ~[?:?]
+	at com.xilinx.sdx.sdk.core.build.AppSwBuildOptionsHelper.updateBuildOptions(AppSwBuildOptionsHelper.java:46) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.ManagedAppCreator.updateSwBuildOptions(ManagedAppCreator.java:82) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.ManagedAppCreator.create(ManagedAppCreator.java:54) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.StandaloneProjectHandler.createCoreApp(StandaloneProjectHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.createApplication(AppCreationHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.execute(AppCreationHandler.java:69) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.executeInternal(SdkAppCreationHandler.java:75) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.lambda$1(SdkAppCreationHandler.java:67) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2312) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.execute(SdkAppCreationHandler.java:66) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.createApplicationProject(NewProjectCreationHandler.java:237) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.internalExecute(NewProjectCreationHandler.java:385) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler$1.execute(NewProjectCreationHandler.java:100) ~[?:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+01:12:28 ERROR : Failed to create application project
+org.eclipse.core.runtime.CoreException: Unexpected error occurred. Please check log for further details.
+	at com.xilinx.sdx.sdk.core.gen.StandaloneProjectHandler.createCoreApp(StandaloneProjectHandler.java:150) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.createApplication(AppCreationHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.execute(AppCreationHandler.java:69) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.executeInternal(SdkAppCreationHandler.java:75) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.lambda$1(SdkAppCreationHandler.java:67) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2312) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.execute(SdkAppCreationHandler.java:66) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.createApplicationProject(NewProjectCreationHandler.java:237) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.internalExecute(NewProjectCreationHandler.java:385) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler$1.execute(NewProjectCreationHandler.java:100) ~[?:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+01:41:29 ERROR : An unexpected exception occurred in the module 'platform project logging'
+01:43:15 INFO  : Result from executing command 'getProjects': design_1_wrapper
+01:43:15 INFO  : Result from executing command 'getPlatforms': 
+01:43:16 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+01:43:18 ERROR : 
+java.lang.NullPointerException: null
+	at com.xilinx.sdk.sw.internal.SwDb.getComponentAppCompilerFlags(SwDb.java:761) ~[?:?]
+	at com.xilinx.sdx.sw.internal.SDxSwPlatform.getSwPlatformCompilerFlags(SDxSwPlatform.java:1177) ~[?:?]
+	at com.xilinx.sdx.sdk.core.build.AppSwBuildOptionsHelper.inferSwPlatformFlags(AppSwBuildOptionsHelper.java:54) ~[?:?]
+	at com.xilinx.sdx.sdk.core.build.AppSwBuildOptionsHelper.updateBuildOptions(AppSwBuildOptionsHelper.java:46) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.ManagedAppCreator.updateSwBuildOptions(ManagedAppCreator.java:82) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.ManagedAppCreator.create(ManagedAppCreator.java:54) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.StandaloneProjectHandler.createCoreApp(StandaloneProjectHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.createApplication(AppCreationHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.execute(AppCreationHandler.java:69) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.executeInternal(SdkAppCreationHandler.java:75) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.lambda$1(SdkAppCreationHandler.java:67) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2312) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.execute(SdkAppCreationHandler.java:66) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.createApplicationProject(NewProjectCreationHandler.java:237) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.internalExecute(NewProjectCreationHandler.java:385) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler$1.execute(NewProjectCreationHandler.java:100) ~[?:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+01:43:18 ERROR : Failed to create application project
+org.eclipse.core.runtime.CoreException: Unexpected error occurred. Please check log for further details.
+	at com.xilinx.sdx.sdk.core.gen.StandaloneProjectHandler.createCoreApp(StandaloneProjectHandler.java:150) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.createApplication(AppCreationHandler.java:79) ~[?:?]
+	at com.xilinx.sdx.sdk.core.gen.AppCreationHandler.execute(AppCreationHandler.java:69) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.executeInternal(SdkAppCreationHandler.java:75) ~[?:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.lambda$1(SdkAppCreationHandler.java:67) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2312) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.sdx.sdk.core.SdkAppCreationHandler.execute(SdkAppCreationHandler.java:66) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.createApplicationProject(NewProjectCreationHandler.java:237) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler.internalExecute(NewProjectCreationHandler.java:385) ~[?:?]
+	at com.xilinx.sdx.npw.NewProjectCreationHandler$1.execute(NewProjectCreationHandler.java:100) ~[?:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110) ~[?:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+01:48:20 ERROR : (XSDB Server)ERROR: [Hsi 55-1562] Source directory C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/hw/drivers\myip_write_SCCB_v1_0/src does not exist or is not a directory.
+
+01:48:22 ERROR : (XSDB Server)ERROR: [Hsi 55-1433] Error boost::filesystem::current_path: The system cannot find the path specified: "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/hw/drivers\myip_write_SCCB_v1_0/data"
+
+01:48:22 ERROR : (XSDB Server)ERROR: [Hsi 55-1442] Error(s) while running TCL procedure generate()
+
+01:48:22 ERROR : Failed to create platform for application project
+Reason: An exception occurred while trying to add domain.
+01:48:22 INFO  : Platform creation cancelled by the user.
+02:03:35 ERROR : (XSDB Server)ERROR: [Hsi 55-1562] Source directory C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/hw/drivers\myip_write_SCCB_v1_0/src does not exist or is not a directory.
+
+02:03:40 ERROR : (XSDB Server)ERROR: [Hsi 55-1433] Error boost::filesystem::current_path: The system cannot find the path specified: "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/hw/drivers\myip_write_SCCB_v1_0/data"
+ERROR: [Hsi 55-1442] Error(s) while running TCL procedure generate()
+
+02:03:40 ERROR : Failed to create platform for application project
+Reason: An exception occurred while trying to add domain.
+02:03:40 INFO  : Platform creation cancelled by the user.
+02:14:46 ERROR : (XSDB Server)ERROR: [Hsi 55-1562] Source directory C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/hw/drivers\myip_write_SCCB_v1_0/src does not exist or is not a directory.
+
+02:14:47 ERROR : (XSDB Server)ERROR: [Hsi 55-1433] Error boost::filesystem::current_path: The system cannot find the path specified: "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/hw/drivers\myip_write_SCCB_v1_0/data"
+
+02:14:47 ERROR : (XSDB Server)ERROR: [Hsi 55-1442] Error(s) while running TCL procedure generate()
+
+02:14:48 ERROR : Failed to create platform.
+02:14:48 ERROR : An unexpected exception occurred in the module 'platform project logging'
+02:15:38 WARN  : channel "tcfchan#8" closed
+02:15:38 WARN  : channel "tcfchan#8" closed
+02:15:38 WARN  : channel "tcfchan#8" closed
+02:15:38 WARN  : channel "tcfchan#5" closed
+02:15:38 INFO  : Disconnected from the channel tcfchan#13.
+02:15:38 WARN  : channel "tcfchan#13" closed
+02:19:33 DEBUG : Logs will be stored at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/IDE.log'.
+02:19:39 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\temp_xsdb_launch_script.tcl
+02:19:39 INFO  : Platform repository initialization has completed.
+02:19:39 INFO  : Registering command handlers for Vitis TCF services
+02:19:46 INFO  : XSCT server has started successfully.
+02:19:57 INFO  : plnx-install-location is set to ''
+02:19:57 INFO  : Successfully done setting XSCT server connection channel  
+02:19:57 INFO  : Successfully done query RDI_DATADIR 
+02:19:57 INFO  : Successfully done setting workspace for the tool. 
+02:28:03 INFO  : Result from executing command 'getProjects': design_1_wrapper
+02:28:03 INFO  : Result from executing command 'getPlatforms': 
+02:28:03 WARN  : An unexpected exception occurred in the module 'platform project logging'
+02:28:03 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+02:28:07 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+02:29:01 INFO  : Result from executing command 'getProjects': design_1_wrapper
+02:29:01 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+02:29:01 INFO  : Checking for BSP changes to sync application flags for project 'final_project_5'...
+02:29:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:29:28 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+02:29:30 INFO  : 'jtag frequency' command is executed.
+02:29:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+02:29:36 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit"
+02:29:36 INFO  : Context for processor 'microblaze_0' is selected.
+02:29:36 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+02:29:36 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:29:36 INFO  : Context for processor 'microblaze_0' is selected.
+02:29:36 INFO  : System reset is completed.
+02:29:39 INFO  : 'after 3000' command is executed.
+02:29:39 INFO  : Context for processor 'microblaze_0' is selected.
+02:29:39 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf' is downloaded to processor 'microblaze_0'.
+02:29:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf
+----------------End of Script----------------
+
+02:29:39 INFO  : Context for processor 'microblaze_0' is selected.
+02:29:39 INFO  : 'con' command is executed.
+02:29:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+02:29:39 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_5_system\_ide\scripts\debugger_final_project_5-default.tcl'
+02:34:36 INFO  : Disconnected from the channel tcfchan#2.
+02:34:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:34:40 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+02:34:40 INFO  : 'jtag frequency' command is executed.
+02:34:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+02:34:55 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit"
+02:34:55 INFO  : Context for processor 'microblaze_0' is selected.
+02:34:55 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+02:34:55 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:34:55 INFO  : Context for processor 'microblaze_0' is selected.
+02:34:55 INFO  : System reset is completed.
+02:34:58 INFO  : 'after 3000' command is executed.
+02:34:58 INFO  : Context for processor 'microblaze_0' is selected.
+02:34:58 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf' is downloaded to processor 'microblaze_0'.
+02:34:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf
+----------------End of Script----------------
+
+02:34:59 INFO  : Context for processor 'microblaze_0' is selected.
+02:34:59 INFO  : 'con' command is executed.
+02:34:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+02:34:59 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_5_system\_ide\scripts\debugger_final_project_5-default.tcl'
+03:09:48 INFO  : Result from executing command 'getProjects': design_1_wrapper;design_1_wrapper_1
+03:09:48 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+03:09:49 INFO  : Platform 'design_1_wrapper_1' is added to custom repositories.
+03:09:52 INFO  : Platform 'design_1_wrapper_1' is added to custom repositories.
+03:11:22 INFO  : Result from executing command 'getProjects': design_1_wrapper_1
+03:11:22 INFO  : Result from executing command 'getPlatforms': design_1_wrapper_1|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/design_1_wrapper_1.xpfm
+03:11:22 INFO  : Checking for BSP changes to sync application flags for project 'final_project_6'...
+03:11:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:11:37 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+03:11:37 INFO  : 'jtag frequency' command is executed.
+03:11:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+03:11:43 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/_ide/bitstream/design_1_wrapper.bit"
+03:11:43 INFO  : Context for processor 'microblaze_0' is selected.
+03:11:43 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+03:11:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:11:43 INFO  : Context for processor 'microblaze_0' is selected.
+03:11:43 INFO  : System reset is completed.
+03:11:46 INFO  : 'after 3000' command is executed.
+03:11:46 INFO  : Context for processor 'microblaze_0' is selected.
+03:11:46 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/Debug/final_project_6.elf' is downloaded to processor 'microblaze_0'.
+03:11:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/Debug/final_project_6.elf
+----------------End of Script----------------
+
+03:11:46 INFO  : Context for processor 'microblaze_0' is selected.
+03:11:46 INFO  : 'con' command is executed.
+03:11:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:11:46 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_6_system\_ide\scripts\debugger_final_project_6-default.tcl'
+03:33:22 INFO  : Result from executing command 'getProjects': design_1_wrapper;design_1_wrapper_1
+03:33:23 INFO  : Result from executing command 'getPlatforms': design_1_wrapper_1|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/design_1_wrapper_1.xpfm
+03:33:23 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+03:33:26 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+03:35:29 INFO  : Result from executing command 'getProjects': design_1_wrapper
+03:35:29 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+03:35:30 INFO  : Checking for BSP changes to sync application flags for project 'final_project_5'...
+03:36:01 INFO  : Checking for BSP changes to sync application flags for project 'final_project_5'...
+03:36:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:31 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+03:36:33 INFO  : 'jtag frequency' command is executed.
+03:36:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+03:36:43 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit"
+03:36:43 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:43 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+03:36:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:36:43 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:43 INFO  : System reset is completed.
+03:36:46 INFO  : 'after 3000' command is executed.
+03:36:46 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:47 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf' is downloaded to processor 'microblaze_0'.
+03:36:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf
+----------------End of Script----------------
+
+03:36:47 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:47 INFO  : 'con' command is executed.
+03:36:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:36:47 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_5_system\_ide\scripts\debugger_final_project_5-default.tcl'
+03:42:00 INFO  : Checking for BSP changes to sync application flags for project 'final_project_5'...
+03:42:42 INFO  : Checking for BSP changes to sync application flags for project 'final_project_5'...
+03:43:09 INFO  : Disconnected from the channel tcfchan#3.
+03:43:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:43:16 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+03:43:16 INFO  : 'jtag frequency' command is executed.
+03:43:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+03:43:21 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit"
+03:43:22 INFO  : Context for processor 'microblaze_0' is selected.
+03:43:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+03:43:22 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:43:22 INFO  : Context for processor 'microblaze_0' is selected.
+03:43:22 INFO  : System reset is completed.
+03:43:25 INFO  : 'after 3000' command is executed.
+03:43:25 INFO  : Context for processor 'microblaze_0' is selected.
+03:43:25 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf' is downloaded to processor 'microblaze_0'.
+03:43:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf
+----------------End of Script----------------
+
+03:43:25 INFO  : Context for processor 'microblaze_0' is selected.
+03:43:25 INFO  : 'con' command is executed.
+03:43:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:43:25 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_5_system\_ide\scripts\debugger_final_project_5-default.tcl'
+03:46:16 INFO  : Disconnected from the channel tcfchan#6.
+03:46:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:46:23 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+03:46:25 INFO  : 'jtag frequency' command is executed.
+03:46:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+03:46:31 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit"
+03:46:31 INFO  : Context for processor 'microblaze_0' is selected.
+03:46:31 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+03:46:31 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:46:31 INFO  : Context for processor 'microblaze_0' is selected.
+03:46:31 INFO  : System reset is completed.
+03:46:34 INFO  : 'after 3000' command is executed.
+03:46:34 INFO  : Context for processor 'microblaze_0' is selected.
+03:46:34 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf' is downloaded to processor 'microblaze_0'.
+03:46:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf
+----------------End of Script----------------
+
+03:46:34 INFO  : Context for processor 'microblaze_0' is selected.
+03:46:34 INFO  : 'con' command is executed.
+03:46:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:46:34 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_5_system\_ide\scripts\debugger_final_project_5-default.tcl'
+03:48:18 INFO  : Disconnected from the channel tcfchan#7.
+03:48:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:48:19 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+03:48:19 INFO  : 'jtag frequency' command is executed.
+03:48:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+03:48:24 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit"
+03:48:24 INFO  : Context for processor 'microblaze_0' is selected.
+03:48:24 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+03:48:25 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:48:25 INFO  : Context for processor 'microblaze_0' is selected.
+03:48:25 INFO  : System reset is completed.
+03:48:28 INFO  : 'after 3000' command is executed.
+03:48:28 INFO  : Context for processor 'microblaze_0' is selected.
+03:48:28 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf' is downloaded to processor 'microblaze_0'.
+03:48:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_5/Debug/final_project_5.elf
+----------------End of Script----------------
+
+03:48:28 INFO  : Context for processor 'microblaze_0' is selected.
+03:48:28 INFO  : 'con' command is executed.
+03:48:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:48:28 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_5_system\_ide\scripts\debugger_final_project_5-default.tcl'
+04:26:52 INFO  : Result from executing command 'getProjects': design_1_wrapper;design_1_wrapper_1
+04:26:52 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+04:26:53 INFO  : Platform 'design_1_wrapper_1' is added to custom repositories.
+04:26:53 WARN  : Failed to closehw "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa"
+Reason: Cannot close hw design 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+Design is not opened in the current session.
+
+04:26:56 INFO  : Platform 'design_1_wrapper_1' is added to custom repositories.
+04:28:06 INFO  : Result from executing command 'getProjects': design_1_wrapper_1
+04:28:06 INFO  : Result from executing command 'getPlatforms': design_1_wrapper_1|C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/design_1_wrapper_1.xpfm
+04:28:06 INFO  : Checking for BSP changes to sync application flags for project 'final_project_6'...
+04:28:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:28:12 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+04:28:12 INFO  : 'jtag frequency' command is executed.
+04:28:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+04:28:17 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/_ide/bitstream/design_1_wrapper.bit"
+04:28:17 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+04:28:17 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+04:28:17 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:17 INFO  : System reset is completed.
+04:28:20 INFO  : 'after 3000' command is executed.
+04:28:20 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:20 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/Debug/final_project_6.elf' is downloaded to processor 'microblaze_0'.
+04:28:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/Debug/final_project_6.elf
+----------------End of Script----------------
+
+04:28:21 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:21 INFO  : 'con' command is executed.
+04:28:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+04:28:21 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_6_system\_ide\scripts\debugger_final_project_6-default.tcl'
+04:28:41 INFO  : Disconnected from the channel tcfchan#8.
+04:28:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:28:43 INFO  : Jtag cable 'Digilent Nexys Video 210276BA015EB' is selected.
+04:28:43 INFO  : 'jtag frequency' command is executed.
+04:28:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}' command is executed.
+04:28:48 INFO  : Device configured successfully with "C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/_ide/bitstream/design_1_wrapper.bit"
+04:28:48 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:48 INFO  : Hardware design and registers information is loaded from 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+04:28:48 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+04:28:48 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:48 INFO  : System reset is completed.
+04:28:51 INFO  : 'after 3000' command is executed.
+04:28:51 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:51 INFO  : The application 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/Debug/final_project_6.elf' is downloaded to processor 'microblaze_0'.
+04:28:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276BA015EB" && level==0 && jtag_device_ctx=="jsn-Nexys Video-210276BA015EB-13636093-0"}
+fpga -file C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project_6/Debug/final_project_6.elf
+----------------End of Script----------------
+
+04:28:52 INFO  : Context for processor 'microblaze_0' is selected.
+04:28:52 INFO  : 'con' command is executed.
+04:28:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+04:28:52 INFO  : Launch script is exported to file 'C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project_6_system\_ide\scripts\debugger_final_project_6-default.tcl'
+05:37:44 WARN  : channel "tcfchan#3" closed
+05:37:44 WARN  : channel "tcfchan#3" closed
+05:37:44 WARN  : channel "tcfchan#8" closed
+05:37:44 INFO  : Disconnected from the channel tcfchan#10.

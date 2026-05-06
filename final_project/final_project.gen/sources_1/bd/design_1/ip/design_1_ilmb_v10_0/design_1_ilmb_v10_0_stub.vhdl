@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Mon Mar  2 08:15:38 2026
+-- Date        : Wed May  6 01:23:29 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/C27Bradford.Hurt/ece383_wksp/ice1/ublaze1.gen/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_ilmb_v10_0 -prefix
+--               design_1_ilmb_v10_0_ design_1_ilmb_v10_0_stub.vhdl
 -- Design      : design_1_ilmb_v10_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tsbg484-1

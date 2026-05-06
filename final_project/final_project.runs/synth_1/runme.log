@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue May  5 23:05:51 2026
+  **** Start of session at: Wed May  6 04:18:53 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -19,7 +19,7 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/C27Bradford.Hurt/ece
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/C27Bradford.Hurt/ece383_wksp/ip_repo/my_oscope_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/C27Bradford.Hurt/ece383_wksp/ip_repo/My_Counter_IP_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 367.430 ; gain = 72.145
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 369.723 ; gain = 74.258
 Command: read_checkpoint -auto_incremental -incremental C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -32,84 +32,87 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 36180
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 40304
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.371 ; gain = 468.324
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1106.746 ; gain = 468.996
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:45]
-INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:531' bound to instance 'design_1_i' of component 'design_1' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:76]
-INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:565]
-INFO: [Synth 8-3491] module 'design_1_OV7675_capture_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_OV7675_capture_0_0_stub.vhdl:6' bound to instance 'OV7675_capture_0' of component 'design_1_OV7675_capture_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1422]
-INFO: [Synth 8-638] synthesizing module 'design_1_OV7675_capture_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_OV7675_capture_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_0_stub.vhdl:6' bound to instance 'axi_bram_ctrl_0' of component 'design_1_axi_bram_ctrl_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1438]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_0_stub.vhdl:65]
-INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_bram_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.vhdl:6' bound to instance 'axi_bram_ctrl_0_bram' of component 'design_1_axi_bram_ctrl_0_bram_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1488]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.vhdl:34]
-INFO: [Synth 8-3491] module 'design_1_axi_smc_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'design_1_axi_smc_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1508]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_smc_0_stub.vhdl:78]
-INFO: [Synth 8-3491] module 'design_1_axi_smc_1_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_smc_1_0_stub.vhdl:6' bound to instance 'axi_smc_1' of component 'design_1_axi_smc_1_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1571]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_1_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_smc_1_0_stub.vhdl:135]
-INFO: [Synth 8-3491] module 'design_1_axi_uartlite_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'design_1_axi_uartlite_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1691]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_uartlite_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_axi_uartlite_0_0_stub.vhdl:40]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_1_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_clk_wiz_1_0_stub.vhdl:6' bound to instance 'clk_wiz_1' of component 'design_1_clk_wiz_1_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1716]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_1_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_clk_wiz_1_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_mdm_1_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_mdm_1_0_stub.vhdl:6' bound to instance 'mdm_1' of component 'design_1_mdm_1_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1724]
-INFO: [Synth 8-638] synthesizing module 'design_1_mdm_1_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_mdm_1_0_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'design_1_microblaze_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_microblaze_0_0_stub.vhdl:6' bound to instance 'microblaze_0' of component 'design_1_microblaze_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1737]
-INFO: [Synth 8-638] synthesizing module 'design_1_microblaze_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_microblaze_0_0_stub.vhdl:144]
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:47]
+INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:531' bound to instance 'design_1_i' of component 'design_1' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:567]
+INFO: [Synth 8-3491] module 'design_1_OV7675_capture_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_OV7675_capture_0_0_stub.vhdl:6' bound to instance 'OV7675_capture_0' of component 'design_1_OV7675_capture_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1460]
+INFO: [Synth 8-638] synthesizing module 'design_1_OV7675_capture_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_OV7675_capture_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_0_stub.vhdl:6' bound to instance 'axi_bram_ctrl_0' of component 'design_1_axi_bram_ctrl_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1476]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_0_stub.vhdl:65]
+INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_bram_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.vhdl:6' bound to instance 'axi_bram_ctrl_0_bram' of component 'design_1_axi_bram_ctrl_0_bram_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1526]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.vhdl:34]
+INFO: [Synth 8-3491] module 'design_1_axi_smc_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'design_1_axi_smc_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1546]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_smc_0_stub.vhdl:78]
+INFO: [Synth 8-3491] module 'design_1_axi_smc_1_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_smc_1_0_stub.vhdl:6' bound to instance 'axi_smc_1' of component 'design_1_axi_smc_1_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1609]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_1_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_smc_1_0_stub.vhdl:135]
+INFO: [Synth 8-3491] module 'design_1_axi_uartlite_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'design_1_axi_uartlite_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1729]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_uartlite_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_axi_uartlite_0_0_stub.vhdl:40]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_1_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_clk_wiz_1_0_stub.vhdl:6' bound to instance 'clk_wiz_1' of component 'design_1_clk_wiz_1_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1754]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_1_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_clk_wiz_1_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_mdm_1_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_mdm_1_0_stub.vhdl:6' bound to instance 'mdm_1' of component 'design_1_mdm_1_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1762]
+INFO: [Synth 8-638] synthesizing module 'design_1_mdm_1_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_mdm_1_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'design_1_microblaze_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_microblaze_0_0_stub.vhdl:6' bound to instance 'microblaze_0' of component 'design_1_microblaze_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'design_1_microblaze_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_microblaze_0_0_stub.vhdl:144]
 INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:41]
-INFO: [Synth 8-3491] module 'design_1_dlmb_bram_if_cntlr_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_dlmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'design_1_dlmb_bram_if_cntlr_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:213]
-INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_bram_if_cntlr_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_dlmb_bram_if_cntlr_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_dlmb_v10_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_dlmb_v10_0_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'design_1_dlmb_v10_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:267]
-INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_v10_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_dlmb_v10_0_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'design_1_ilmb_bram_if_cntlr_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_ilmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'design_1_ilmb_bram_if_cntlr_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:295]
-INFO: [Synth 8-638] synthesizing module 'design_1_ilmb_bram_if_cntlr_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_ilmb_bram_if_cntlr_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_ilmb_v10_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_ilmb_v10_0_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'design_1_ilmb_v10_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:349]
-INFO: [Synth 8-638] synthesizing module 'design_1_ilmb_v10_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_ilmb_v10_0_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'design_1_lmb_bram_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_lmb_bram_0_stub.vhdl:6' bound to instance 'lmb_bram' of component 'design_1_lmb_bram_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:377]
-INFO: [Synth 8-638] synthesizing module 'design_1_lmb_bram_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_lmb_bram_0_stub.vhdl:34]
+INFO: [Synth 8-3491] module 'design_1_dlmb_bram_if_cntlr_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_dlmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'design_1_dlmb_bram_if_cntlr_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:213]
+INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_bram_if_cntlr_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_dlmb_bram_if_cntlr_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_dlmb_v10_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_dlmb_v10_0_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'design_1_dlmb_v10_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:267]
+INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_v10_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_dlmb_v10_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'design_1_ilmb_bram_if_cntlr_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_ilmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'design_1_ilmb_bram_if_cntlr_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:295]
+INFO: [Synth 8-638] synthesizing module 'design_1_ilmb_bram_if_cntlr_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_ilmb_bram_if_cntlr_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_ilmb_v10_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_ilmb_v10_0_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'design_1_ilmb_v10_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:349]
+INFO: [Synth 8-638] synthesizing module 'design_1_ilmb_v10_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_ilmb_v10_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'design_1_lmb_bram_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_lmb_bram_0_stub.vhdl:6' bound to instance 'lmb_bram' of component 'design_1_lmb_bram_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:377]
+INFO: [Synth 8-638] synthesizing module 'design_1_lmb_bram_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_lmb_bram_0_stub.vhdl:34]
 INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' (0#1) [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:41]
-WARNING: [Synth 8-5640] Port 'ui_addn_clk_1' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'ui_addn_clk_2' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'ui_addn_clk_3' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'ui_addn_clk_4' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'app_sr_active' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'app_ref_ack' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'app_zq_ack' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-WARNING: [Synth 8-5640] Port 'device_temp' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:733]
-INFO: [Synth 8-3491] module 'design_1_mig_7series_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_mig_7series_0_0_stub.vhdl:6' bound to instance 'mig_7series_0' of component 'design_1_mig_7series_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1890]
-INFO: [Synth 8-638] synthesizing module 'design_1_mig_7series_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_mig_7series_0_0_stub.vhdl:80]
-INFO: [Synth 8-3491] module 'design_1_rst_clk_wiz_1_100M_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_100M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_100M' of component 'design_1_rst_clk_wiz_1_100M_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1953]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_clk_wiz_1_100M_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_100M_0_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'design_1_rst_clk_wiz_1_200M_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_200M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_200M' of component 'design_1_rst_clk_wiz_1_200M_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1966]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_clk_wiz_1_200M_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_200M_0_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'design_1_rst_mig_7series_0_100M_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_rst_mig_7series_0_100M_0_stub.vhdl:6' bound to instance 'rst_mig_7series_0_100M' of component 'design_1_rst_mig_7series_0_100M_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1979]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_mig_7series_0_100M_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_rst_mig_7series_0_100M_0_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'design_1_util_ds_buf_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_util_ds_buf_0_0_stub.vhdl:6' bound to instance 'util_ds_buf_0' of component 'design_1_util_ds_buf_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1992]
-INFO: [Synth 8-638] synthesizing module 'design_1_util_ds_buf_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-36664-C27-5CG3121FGH/realtime/design_1_util_ds_buf_0_0_stub.vhdl:20]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:565]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:45]
+WARNING: [Synth 8-5640] Port 'ui_addn_clk_1' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'ui_addn_clk_2' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'ui_addn_clk_3' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'ui_addn_clk_4' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'app_sr_active' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'app_ref_ack' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'app_zq_ack' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+WARNING: [Synth 8-5640] Port 'device_temp' is missing in component declaration [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:735]
+INFO: [Synth 8-3491] module 'design_1_mig_7series_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_mig_7series_0_0_stub.vhdl:6' bound to instance 'mig_7series_0' of component 'design_1_mig_7series_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1928]
+INFO: [Synth 8-638] synthesizing module 'design_1_mig_7series_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_mig_7series_0_0_stub.vhdl:80]
+INFO: [Synth 8-3491] module 'design_1_myip_write_SCCB_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_myip_write_SCCB_0_0_stub.vhdl:6' bound to instance 'myip_write_SCCB_0' of component 'design_1_myip_write_SCCB_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:1991]
+INFO: [Synth 8-638] synthesizing module 'design_1_myip_write_SCCB_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_myip_write_SCCB_0_0_stub.vhdl:42]
+INFO: [Synth 8-3491] module 'design_1_rst_clk_wiz_1_100M_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_100M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_100M' of component 'design_1_rst_clk_wiz_1_100M_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:2018]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_clk_wiz_1_100M_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_100M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'design_1_rst_clk_wiz_1_200M_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_200M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_200M' of component 'design_1_rst_clk_wiz_1_200M_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:2031]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_clk_wiz_1_200M_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_rst_clk_wiz_1_200M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'design_1_rst_mig_7series_0_100M_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_rst_mig_7series_0_100M_0_stub.vhdl:6' bound to instance 'rst_mig_7series_0_100M' of component 'design_1_rst_mig_7series_0_100M_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:2044]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_mig_7series_0_100M_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_rst_mig_7series_0_100M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'design_1_util_ds_buf_0_0' declared at 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_util_ds_buf_0_0_stub.vhdl:6' bound to instance 'util_ds_buf_0' of component 'design_1_util_ds_buf_0_0' [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:2057]
+INFO: [Synth 8-638] synthesizing module 'design_1_util_ds_buf_0_0' [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/.Xil/Vivado-39824-C27-5CG3121FGH/realtime/design_1_util_ds_buf_0_0_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/synth/design_1.vhd:567]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:47]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1224.695 ; gain = 587.648
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1226.246 ; gain = 588.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1224.695 ; gain = 587.648
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1226.246 ; gain = 588.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1224.695 ; gain = 587.648
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1226.246 ; gain = 588.496
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1224.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1226.246 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_i/microblaze_0'
 Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_i/microblaze_0'
-Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
-Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0/design_1_dlmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0/design_1_dlmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
 Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_v10'
 Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_v10'
 Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
@@ -144,6 +147,8 @@ Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_proj
 Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0_in_context.xdc] for cell 'design_1_i/axi_bram_ctrl_0_bram'
 Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0_in_context.xdc] for cell 'design_1_i/OV7675_capture_0'
 Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0_in_context.xdc] for cell 'design_1_i/OV7675_capture_0'
+Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_myip_write_SCCB_0_0/design_1_myip_write_SCCB_0_0/design_1_myip_write_SCCB_0_0_in_context.xdc] for cell 'design_1_i/myip_write_SCCB_0'
+Finished Parsing XDC File [c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_myip_write_SCCB_0_0/design_1_myip_write_SCCB_0_0/design_1_myip_write_SCCB_0_0_in_context.xdc] for cell 'design_1_i/myip_write_SCCB_0'
 Parsing XDC File [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/constrs_1/imports/lab2_code_for_cadets_2026/Lab2.xdc]
 WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/constrs_1/imports/lab2_code_for_cadets_2026/Lab2.xdc:8]
 WARNING: [Vivado 12-584] No ports matched 'tmdsb[3]'. [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/constrs_1/imports/lab2_code_for_cadets_2026/Lab2.xdc:79]
@@ -165,24 +170,24 @@ Parsing XDC File [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_proj
 Finished Parsing XDC File [C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1228.449 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1230.984 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1228.449 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1230.984 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/axi_bram_ctrl_0_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1228.754 ; gain = 591.707
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1231.156 ; gain = 593.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1228.754 ; gain = 591.707
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1231.156 ; gain = 593.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -303,11 +308,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/rst_clk_wiz_1_200M. (c
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_bram_ctrl_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_bram_ctrl_0_bram. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/OV7675_capture_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/myip_write_SCCB_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1228.754 ; gain = 591.707
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1231.156 ; gain = 593.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1228.754 ; gain = 591.707
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1231.156 ; gain = 593.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -330,25 +336,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1228.754 ; gain = 591.707
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1231.156 ; gain = 593.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1395.266 ; gain = 758.219
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1384.676 ; gain = 746.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1395.492 ; gain = 758.445
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1384.902 ; gain = 747.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1407.508 ; gain = 770.461
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1396.789 ; gain = 759.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -366,37 +372,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -416,15 +422,16 @@ Report BlackBoxes:
 |8     |design_1_mdm_1_0                  |         1|
 |9     |design_1_microblaze_0_0           |         1|
 |10    |design_1_mig_7series_0_0          |         1|
-|11    |design_1_rst_clk_wiz_1_100M_0     |         1|
-|12    |design_1_rst_clk_wiz_1_200M_0     |         1|
-|13    |design_1_rst_mig_7series_0_100M_0 |         1|
-|14    |design_1_util_ds_buf_0_0          |         1|
-|15    |design_1_dlmb_bram_if_cntlr_0     |         1|
-|16    |design_1_dlmb_v10_0               |         1|
-|17    |design_1_ilmb_bram_if_cntlr_0     |         1|
-|18    |design_1_ilmb_v10_0               |         1|
-|19    |design_1_lmb_bram_0               |         1|
+|11    |design_1_myip_write_SCCB_0_0      |         1|
+|12    |design_1_rst_clk_wiz_1_100M_0     |         1|
+|13    |design_1_rst_clk_wiz_1_200M_0     |         1|
+|14    |design_1_rst_mig_7series_0_100M_0 |         1|
+|15    |design_1_util_ds_buf_0_0          |         1|
+|16    |design_1_dlmb_bram_if_cntlr_0     |         1|
+|17    |design_1_dlmb_v10_0               |         1|
+|18    |design_1_ilmb_bram_if_cntlr_0     |         1|
+|19    |design_1_ilmb_v10_0               |         1|
+|20    |design_1_lmb_bram_0               |         1|
 +------+----------------------------------+----------+
 
 Report Cell Usage: 
@@ -446,33 +453,34 @@ Report Cell Usage:
 |13    |design_1_mdm_1_0_bbox                  |     1|
 |14    |design_1_microblaze_0_0_bbox           |     1|
 |15    |design_1_mig_7series_0_0_bbox          |     1|
-|16    |design_1_rst_clk_wiz_1_100M_0_bbox     |     1|
-|17    |design_1_rst_clk_wiz_1_200M_0_bbox     |     1|
-|18    |design_1_rst_mig_7series_0_100M_0_bbox |     1|
-|19    |design_1_util_ds_buf_0_0_bbox          |     1|
-|20    |IBUF                                   |    14|
-|21    |OBUF                                   |     4|
+|16    |design_1_myip_write_SCCB_0_0_bbox      |     1|
+|17    |design_1_rst_clk_wiz_1_100M_0_bbox     |     1|
+|18    |design_1_rst_clk_wiz_1_200M_0_bbox     |     1|
+|19    |design_1_rst_mig_7series_0_100M_0_bbox |     1|
+|20    |design_1_util_ds_buf_0_0_bbox          |     1|
+|21    |IBUF                                   |    14|
+|22    |OBUF                                   |     6|
 +------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1612.180 ; gain = 974.430
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:33 . Memory (MB): peak = 1622.289 ; gain = 981.184
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.289 ; gain = 985.242
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 1612.180 ; gain = 969.520
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1612.180 ; gain = 974.430
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1631.430 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1621.316 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1637.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1627.547 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4633109b
+Synth Design complete | Checksum: 64eea56e
 INFO: [Common 17-83] Releasing license: Synthesis
-70 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+72 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:49 . Memory (MB): peak = 1637.680 ; gain = 1242.051
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1637.680 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1627.547 ; gain = 1229.859
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1627.547 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May  5 23:07:05 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed May  6 04:20:03 2026...

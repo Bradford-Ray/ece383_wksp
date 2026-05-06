@@ -605,6 +605,19 @@
 
 /******************************************************************/
 
+
+/* Peripheral Definitions for peripheral MYIP_WRITE_SCCB_0 */
+#define XPAR_MYIP_WRITE_SCCB_0_S00_AXI_BASEADDR 0x44A00000
+#define XPAR_MYIP_WRITE_SCCB_0_S00_AXI_HIGHADDR 0x44A0FFFF
+
+
+/******************************************************************/
+
+
+
+
+/******************************************************************/
+
 /* Definitions for driver MIG_7SERIES */
 #define XPAR_XMIG7SERIES_NUM_INSTANCES 1U
 

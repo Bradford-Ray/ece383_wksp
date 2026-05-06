@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date                      : Tue May  5 23:09:56 2026
+| Date                      : Wed May  6 04:22:25 2026
 | Host                      : C27-5CG3121FGH running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            66 |
+|            68 |
 +---------------+
 
 
@@ -84,8 +84,8 @@ Table of Contents
 | AB3        |                 | High Range | IO_L8P_T1_34                 | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | AB4        |                 | High Range | VCCO_34                      | VCCO          |             |      34 |            |      |                     |                      |    3.30 |            |           |          |          |                  |              |                   |              |
 | AB5        |                 | High Range | IO_L10N_T1_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| AB6        |                 | High Range | IO_L20N_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| AB7        |                 | High Range | IO_L20P_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
+| AB6        | sio_c           | High Range | IO_L20N_T3_34                | OUTPUT        | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| AB7        | sio_d           | High Range | IO_L20P_T3_34                | OUTPUT        | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      | PULLUP    |          |          | NONE             |              |                   |              |
 | AB8        | xclk            | High Range | IO_L22N_T3_34                | OUTPUT        | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | AB9        |                 |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |          |                  |              |                   |              |
 | AB10       |                 | High Range | IO_L8N_T1_13                 | User IO       |             |      13 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |

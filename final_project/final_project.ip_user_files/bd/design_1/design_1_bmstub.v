@@ -23,7 +23,16 @@ module design_1 (
   DDR3_0_dm,
   DDR3_0_odt,
   sys_clock,
-  reset
+  reset,
+  pclk,
+  vs,
+  hs,
+  data_in,
+  xclk,
+  pen,
+  pdn,
+  sio_c,
+  sio_d
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *)
@@ -69,6 +78,24 @@ module design_1 (
   (* X_INTERFACE_MODE = "slave RST.RESET" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
   input reset;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input pclk;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input vs;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input hs;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [7:0]data_in;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output xclk;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pen;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pdn;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output sio_c;
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout sio_d;
 
   // stub module has no contents
 
