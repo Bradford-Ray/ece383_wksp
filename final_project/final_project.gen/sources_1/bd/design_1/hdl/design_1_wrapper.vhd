@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Wed May  6 04:16:35 2026
+--Date        : Wed May  6 15:00:36 2026
 --Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -37,6 +37,8 @@ entity design_1_wrapper is
     sio_c : out STD_LOGIC;
     sio_d : out STD_LOGIC;
     sys_clock : in STD_LOGIC;
+    tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
     vs : in STD_LOGIC;
@@ -73,7 +75,9 @@ architecture STRUCTURE of design_1_wrapper is
     pen : out STD_LOGIC;
     pdn : out STD_LOGIC;
     sio_c : out STD_LOGIC;
-    sio_d : out STD_LOGIC
+    sio_d : out STD_LOGIC;
+    tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1;
 begin
@@ -102,6 +106,8 @@ design_1_i: component design_1
       sio_c => sio_c,
       sio_d => sio_d,
       sys_clock => sys_clock,
+      tmds(3 downto 0) => tmds(3 downto 0),
+      tmdsb(3 downto 0) => tmdsb(3 downto 0),
       usb_uart_rxd => usb_uart_rxd,
       usb_uart_txd => usb_uart_txd,
       vs => vs,

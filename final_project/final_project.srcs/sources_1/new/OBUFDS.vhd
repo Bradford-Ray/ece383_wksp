@@ -34,16 +34,16 @@ use UNISIM.VComponents.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity OBUFDS is
+entity HDMI_output is
     Port ( tmds : out STD_LOGIC_VECTOR (3 downto 0);
            tmdsb : out STD_LOGIC_VECTOR (3 downto 0);
            red : in STD_LOGIC;
            green : in STD_LOGIC;
            blue : in STD_LOGIC;
            clock : in STD_LOGIC);
-end OBUFDS;
+end HDMI_output;
 
-architecture Behavioral of OBUFDS is
+architecture Behavioral of HDMI_output is
 
 begin
 
@@ -51,12 +51,12 @@ begin
 -- This HDMI signals are high speed so buffer to ensure signal integrity.
 ------------------------------------------------------------------------------
 OBUFDS_blue  : OBUFDS port map
-    ( O  => TMDS(0), OB => TMDSB(0), I  => blue_s  );
+    ( O  => TMDS(0), OB => TMDSB(0), I  => blue  );
 OBUFDS_red   : OBUFDS port map
-    ( O  => TMDS(1), OB => TMDSB(1), I  => green_s );
+    ( O  => TMDS(1), OB => TMDSB(1), I  => green );
 OBUFDS_green : OBUFDS port map
-    ( O  => TMDS(2), OB => TMDSB(2), I  => red_s   );
+    ( O  => TMDS(2), OB => TMDSB(2), I  => red   );
 OBUFDS_clock : OBUFDS port map
-    ( O  => TMDS(3), OB => TMDSB(3), I  => clock_s );
+    ( O  => TMDS(3), OB => TMDSB(3), I  => clock );
 
 end Behavioral;

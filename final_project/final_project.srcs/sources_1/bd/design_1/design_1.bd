@@ -1,13 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD093467E46B2977B",
+      "boundary_crc": "0x32AF48D295FA9F86",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../final_project.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.2"
+      "tool_version": "2024.2",
+      "validated": "true"
     },
     "design_tree": {
       "microblaze_0": "",
@@ -33,7 +34,9 @@
       "OV7675_capture_0": "",
       "myip_write_SCCB_0": "",
       "dvid_0": "",
-      "clk_wiz_0": ""
+      "HDMI_output_0": "",
+      "clk_wiz_2": "",
+      "vga_signal_generator_0": ""
     },
     "interface_ports": {
       "usb_uart": {
@@ -190,8 +193,20 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
@@ -202,6 +217,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_LOW"
           }
@@ -235,6 +254,16 @@
       },
       "sio_d": {
         "direction": "O"
+      },
+      "tmds": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "tmdsb": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -885,11 +914,31 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_1_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "reset_n": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
           },
           "pclk": {
             "direction": "I"
@@ -959,8 +1008,8 @@
       "dvid_0": {
         "vlnv": "xilinx.com:module_ref:dvid:1.0",
         "ip_revision": "1",
-        "xci_name": "design_1_dvid_0_0",
-        "xci_path": "ip\\design_1_dvid_0_0\\design_1_dvid_0_0.xci",
+        "xci_name": "design_1_dvid_0_1",
+        "xci_path": "ip\\design_1_dvid_0_1\\design_1_dvid_0_1.xci",
         "inst_hier_path": "dvid_0",
         "reference_info": {
           "ref_type": "hdl",
@@ -970,14 +1019,56 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "125000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_2_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "clk_n": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "125000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "180.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_2_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "clk_pixel": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_2_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "red_p": {
             "direction": "I",
@@ -1018,12 +1109,55 @@
           }
         }
       },
-      "clk_wiz_0": {
+      "HDMI_output_0": {
+        "vlnv": "xilinx.com:module_ref:HDMI_output:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_HDMI_output_0_1",
+        "xci_path": "ip\\design_1_HDMI_output_0_1\\design_1_HDMI_output_0_1.xci",
+        "inst_hier_path": "HDMI_output_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "HDMI_output",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "tmds": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "tmdsb": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "red": {
+            "direction": "I"
+          },
+          "green": {
+            "direction": "I"
+          },
+          "blue": {
+            "direction": "I"
+          },
+          "clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_dvid_0_1_clock_s",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "clk_wiz_2": {
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
         "ip_revision": "15",
-        "xci_name": "design_1_clk_wiz_0_0",
-        "xci_path": "ip\\design_1_clk_wiz_0_0\\design_1_clk_wiz_0_0.xci",
-        "inst_hier_path": "clk_wiz_0",
+        "xci_name": "design_1_clk_wiz_2_0",
+        "xci_path": "ip\\design_1_clk_wiz_2_0\\design_1_clk_wiz_2_0.xci",
+        "inst_hier_path": "clk_wiz_2",
         "parameters": {
           "CLKOUT1_JITTER": {
             "value": "175.402"
@@ -1073,9 +1207,6 @@
           "NUM_OUT_CLKS": {
             "value": "3"
           },
-          "RESET_BOARD_INTERFACE": {
-            "value": "Custom"
-          },
           "RESET_PORT": {
             "value": "resetn"
           },
@@ -1084,6 +1215,67 @@
           },
           "USE_LOCKED": {
             "value": "false"
+          }
+        }
+      },
+      "vga_signal_generator_0": {
+        "vlnv": "xilinx.com:module_ref:vga_signal_generator:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_vga_signal_generator_0_0",
+        "xci_path": "ip\\design_1_vga_signal_generator_0_0\\design_1_vga_signal_generator_0_0.xci",
+        "inst_hier_path": "vga_signal_generator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "vga_signal_generator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_2_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "position_row": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "position_col": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "vga_hsync": {
+            "direction": "O"
+          },
+          "vga_vsync": {
+            "direction": "O"
+          },
+          "vga_blank": {
+            "direction": "O"
           }
         }
       }
@@ -1175,6 +1367,18 @@
       }
     },
     "nets": {
+      "HDMI_output_0_tmds": {
+        "ports": [
+          "HDMI_output_0/tmds",
+          "tmds"
+        ]
+      },
+      "HDMI_output_0_tmdsb": {
+        "ports": [
+          "HDMI_output_0/tmdsb",
+          "tmdsb"
+        ]
+      },
       "OV7675_capture_0_Blue": {
         "ports": [
           "OV7675_capture_0/Blue",
@@ -1235,24 +1439,6 @@
           "xclk"
         ]
       },
-      "clk_wiz_0_clk_out1": {
-        "ports": [
-          "clk_wiz_0/clk_out1",
-          "dvid_0/clk_pixel"
-        ]
-      },
-      "clk_wiz_0_clk_out2": {
-        "ports": [
-          "clk_wiz_0/clk_out2",
-          "dvid_0/clk"
-        ]
-      },
-      "clk_wiz_0_clk_out3": {
-        "ports": [
-          "clk_wiz_0/clk_out3",
-          "dvid_0/clk_n"
-        ]
-      },
       "clk_wiz_1_clk_out2": {
         "ports": [
           "clk_wiz_1/clk_out2",
@@ -1268,16 +1454,58 @@
           "rst_clk_wiz_1_200M/dcm_locked"
         ]
       },
+      "clk_wiz_2_clk_out1": {
+        "ports": [
+          "clk_wiz_2/clk_out1",
+          "dvid_0/clk_pixel",
+          "vga_signal_generator_0/clk"
+        ]
+      },
+      "clk_wiz_2_clk_out2": {
+        "ports": [
+          "clk_wiz_2/clk_out2",
+          "dvid_0/clk"
+        ]
+      },
+      "clk_wiz_2_clk_out3": {
+        "ports": [
+          "clk_wiz_2/clk_out3",
+          "dvid_0/clk_n"
+        ]
+      },
       "data_in_0_1": {
         "ports": [
           "data_in",
           "OV7675_capture_0/data_in"
         ]
       },
+      "dvid_0_blue_s": {
+        "ports": [
+          "dvid_0/blue_s",
+          "HDMI_output_0/blue"
+        ]
+      },
+      "dvid_0_clock_s": {
+        "ports": [
+          "dvid_0/clock_s",
+          "HDMI_output_0/clock"
+        ]
+      },
+      "dvid_0_green_s": {
+        "ports": [
+          "dvid_0/green_s",
+          "HDMI_output_0/green"
+        ]
+      },
+      "dvid_0_red_s": {
+        "ports": [
+          "dvid_0/red_s",
+          "HDMI_output_0/red"
+        ]
+      },
       "hs_0_1": {
         "ports": [
           "hs",
-          "dvid_0/hsync",
           "OV7675_capture_0/hs"
         ]
       },
@@ -1346,7 +1574,8 @@
           "rst_clk_wiz_1_100M/ext_reset_in",
           "mig_7series_0/sys_rst",
           "rst_clk_wiz_1_200M/ext_reset_in",
-          "clk_wiz_0/resetn"
+          "clk_wiz_2/resetn",
+          "vga_signal_generator_0/reset_n"
         ]
       },
       "rst_clk_wiz_1_100M_bus_struct_reset": {
@@ -1388,21 +1617,38 @@
       "sys_clock_1": {
         "ports": [
           "sys_clock",
-          "util_ds_buf_0/BUFG_I"
+          "util_ds_buf_0/BUFG_I",
+          "clk_wiz_2/clk_in1"
         ]
       },
       "util_ds_buf_0_BUFG_O": {
         "ports": [
           "util_ds_buf_0/BUFG_O",
           "mig_7series_0/sys_clk_i",
-          "clk_wiz_1/clk_in1",
-          "clk_wiz_0/clk_in1"
+          "clk_wiz_1/clk_in1"
+        ]
+      },
+      "vga_signal_generator_0_vga_blank": {
+        "ports": [
+          "vga_signal_generator_0/vga_blank",
+          "dvid_0/blank"
+        ]
+      },
+      "vga_signal_generator_0_vga_hsync": {
+        "ports": [
+          "vga_signal_generator_0/vga_hsync",
+          "dvid_0/hsync"
+        ]
+      },
+      "vga_signal_generator_0_vga_vsync": {
+        "ports": [
+          "vga_signal_generator_0/vga_vsync",
+          "dvid_0/vsync"
         ]
       },
       "vs_0_1": {
         "ports": [
           "vs",
-          "dvid_0/vsync",
           "OV7675_capture_0/vs"
         ]
       }

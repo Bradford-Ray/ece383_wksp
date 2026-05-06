@@ -66,4 +66,16 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_OV
 # IP: bd/design_1/ip/design_1_myip_write_SCCB_0_0/design_1_myip_write_SCCB_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_myip_write_SCCB_0_0 || ORIG_REF_NAME==design_1_myip_write_SCCB_0_0} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_dvid_0_1/design_1_dvid_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_dvid_0_1 || ORIG_REF_NAME==design_1_dvid_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_HDMI_output_0_1/design_1_HDMI_output_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_HDMI_output_0_1 || ORIG_REF_NAME==design_1_HDMI_output_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_clk_wiz_2_0/design_1_clk_wiz_2_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_clk_wiz_2_0 || ORIG_REF_NAME==design_1_clk_wiz_2_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_vga_signal_generator_0_0/design_1_vga_signal_generator_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_vga_signal_generator_0_0 || ORIG_REF_NAME==design_1_vga_signal_generator_0_0} -quiet] -quiet
+
 # XDC: c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/design_1_ooc.xdc

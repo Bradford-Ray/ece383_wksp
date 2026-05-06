@@ -59,6 +59,7 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
 set_param bd.open.in_stealth_mode 2
 set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -189,6 +190,9 @@ set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.H
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_200M_0/design_1_rst_clk_wiz_1_200M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_2_0/design_1_clk_wiz_2_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_2_0/design_1_clk_wiz_2_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_2_0/design_1_clk_wiz_2_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
 

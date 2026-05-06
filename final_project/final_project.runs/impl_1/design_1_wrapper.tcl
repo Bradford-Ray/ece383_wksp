@@ -98,6 +98,7 @@ OPTRACE "impl_1" END { }
 }
 
 set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
