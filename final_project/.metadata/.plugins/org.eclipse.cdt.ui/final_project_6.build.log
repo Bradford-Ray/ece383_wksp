@@ -1,4 +1,4 @@
-15:12:55 **** Build of configuration Debug for project final_project_6 ****
+03:13:55 **** Build of configuration Debug for project final_project_6 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -18,9 +18,9 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/fina
 'Invoking: MicroBlaze Print Size'
 mb-size final_project_6.elf  |tee "final_project_6.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   9116	     32	   3428	  12576	   3120	final_project_6.elf
+   9108	     32	   3428	  12568	   3118	final_project_6.elf
 'Finished building: final_project_6.elf.size'
 ' '
 
-15:12:59 Build Finished (took 3s.596ms)
+03:13:59 Build Finished (took 3s.878ms)
 

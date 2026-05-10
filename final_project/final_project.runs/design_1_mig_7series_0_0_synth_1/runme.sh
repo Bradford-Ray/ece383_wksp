@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log design_1_mig_7series_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mig_7series_0_0.tcl
+# EAStep vivado -log design_1_mig_7series_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mig_7series_0_0.tcl

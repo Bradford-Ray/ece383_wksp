@@ -14512,7 +14512,7 @@
         <spirit:addressBlock>
           <spirit:name>microblaze_2</spirit:name>
           <spirit:baseAddress spirit:format="long">3221225472</spirit:baseAddress>
-          <spirit:range spirit:format="long">8192</spirit:range>
+          <spirit:range spirit:format="long">1048576</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
             <spirit:parameter>
@@ -14556,7 +14556,7 @@
         <spirit:addressBlock>
           <spirit:name>microblaze_3</spirit:name>
           <spirit:baseAddress spirit:format="long">3221225472</spirit:baseAddress>
-          <spirit:range spirit:format="long">8192</spirit:range>
+          <spirit:range spirit:format="long">1048576</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
             <spirit:parameter>
@@ -14630,7 +14630,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e4f07049</spirit:value>
+            <spirit:value>9:36799561</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14644,11 +14644,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 07:20:55 UTC 2026</spirit:value>
+            <spirit:value>Sun May 10 06:30:35 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e4f07049</spirit:value>
+            <spirit:value>9:36799561</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14662,11 +14662,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 07:19:35 UTC 2026</spirit:value>
+            <spirit:value>Sat May 09 19:55:32 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e4f07049</spirit:value>
+            <spirit:value>9:36799561</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14686,7 +14686,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9deac059</spirit:value>
+            <spirit:value>9:3bb58362</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14702,11 +14702,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 07:19:35 UTC 2026</spirit:value>
+            <spirit:value>Sat May 09 19:55:32 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9deac059</spirit:value>
+            <spirit:value>9:3bb58362</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14726,7 +14726,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e4f07049</spirit:value>
+            <spirit:value>9:36799561</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14742,11 +14742,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 07:19:35 UTC 2026</spirit:value>
+            <spirit:value>Sat May 09 19:55:32 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e4f07049</spirit:value>
+            <spirit:value>9:36799561</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -26442,12 +26442,6 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>data/mb_bootloop_le.elf</spirit:name>
-        <spirit:userFileType>elf</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>design_1_microblaze_0_0.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
@@ -27043,7 +27037,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_ENABLE_CONVERSION</spirit:name>
       <spirit:displayName>Enable Block Automation Conversion to RISC-V</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ENABLE_CONVERSION" spirit:choiceRef="choice_pairs_4873554b" spirit:order="48" spirit:configGroups="8 NoDisplay">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ENABLE_CONVERSION" spirit:choiceRef="choice_pairs_4873554b" spirit:order="48" spirit:configGroups="8 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -29096,6 +29090,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_D_LMB" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_D_LMB_PROTOCOL" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_EDGE_IS_POSITIVE" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ENABLE_CONVERSION" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_FAULT_TOLERANT" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_FREQ" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ICACHE_ALWAYS_USED" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>

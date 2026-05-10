@@ -289,6 +289,9 @@
           "C_D_LMB": {
             "value": "1"
           },
+          "C_ENABLE_CONVERSION": {
+            "value": "0"
+          },
           "C_I_LMB": {
             "value": "1"
           },
@@ -877,6 +880,11 @@
         "xci_name": "design_1_axi_bram_ctrl_0_0",
         "xci_path": "ip\\design_1_axi_bram_ctrl_0_0\\design_1_axi_bram_ctrl_0_0.xci",
         "inst_hier_path": "axi_bram_ctrl_0",
+        "parameters": {
+          "DATA_WIDTH": {
+            "value": "32"
+          }
+        },
         "hdl_attributes": {
           "BMM_INFO_ADDRESS_SPACE": {
             "value": "byte  0xC0000000 32 > design_1 axi_bram_ctrl_0_bram",
@@ -1092,7 +1100,13 @@
             "direction": "I"
           },
           "vsync": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
           },
           "red_s": {
             "direction": "O"
@@ -1272,7 +1286,13 @@
             "direction": "O"
           },
           "vga_vsync": {
-            "direction": "O"
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
           },
           "vga_blank": {
             "direction": "O"
@@ -1661,7 +1681,7 @@
               "SEG_axi_bram_ctrl_0_Mem0": {
                 "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
                 "offset": "0xC0000000",
-                "range": "8K"
+                "range": "1M"
               },
               "SEG_axi_uartlite_0_Reg": {
                 "address_block": "/axi_uartlite_0/S_AXI/Reg",
@@ -1693,7 +1713,7 @@
               "SEG_axi_bram_ctrl_0_Mem0": {
                 "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
                 "offset": "0xC0000000",
-                "range": "8K"
+                "range": "1M"
               },
               "SEG_ilmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem",

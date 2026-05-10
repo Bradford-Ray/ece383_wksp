@@ -32,7 +32,9 @@ module design_1 (
   pen,
   pdn,
   sio_c,
-  sio_d
+  sio_d,
+  tmds,
+  tmdsb
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *)
@@ -95,7 +97,11 @@ module design_1 (
   (* X_INTERFACE_IGNORE = "true" *)
   output sio_c;
   (* X_INTERFACE_IGNORE = "true" *)
-  inout sio_d;
+  output sio_d;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output [3:0]tmds;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output [3:0]tmdsb;
 
   // stub module has no contents
 

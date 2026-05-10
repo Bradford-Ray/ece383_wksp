@@ -82,8 +82,10 @@ architecture Behavioral of OV7675_capture is
     signal camera_ready_pclk_s2 : std_logic := '0';
 
     -- Vsync debounce
-    signal vs_timer      : integer range 0 to 25000 := 0;
-    signal vs_prev       : std_logic := '0';
+--    signal vs_timer      : integer range 0 to 25000 := 0;
+--    signal vs_prev       : std_logic := '0';
+    signal hs_prev     : std_logic := '0';
+    signal line_count  : integer range 0 to 511 := 0;
     signal frame_reset   : std_logic := '0';
 
     -- Internal output signals
@@ -196,59 +198,54 @@ begin
     YUV_proc : process(pclk)
     begin
         if rising_edge(pclk) then
-
-            -- Default: clear frame_reset pulse every cycle
-            frame_reset <= '0';
-
-            -- Synchronize camera_ready into pclk domain
+    
+            frame_reset <= '0';  -- default: pulse low every cycle
+    
             camera_ready_pclk_s1 <= camera_ready;
             camera_ready_pclk_s2 <= camera_ready_pclk_s1;
-
-            -- Track previous vsync for edge detection
-            vs_prev <= vs;
-
-            -- Free-running vsync timer (counts up to 15000)
-            if vs_timer < 15000 then
-                vs_timer <= vs_timer + 1;
-            end if;
-
+   
+            hs_prev <= hs;
+    
             if reset_n = '0' or camera_ready_pclk_s2 = '0' then
-                YUV_state   <= S0;
-                YUV_ready   <= '0';
+                YUV_state  <= S0;
+                YUV_ready  <= '0';
                 frame_reset <= '0';
-                vs_timer    <= 0;
-                vs_prev     <= '0';
-
-            elsif vs = '1' and vs_prev = '0' then
-                -- Rising edge of vsync detected
-                if vs_timer >= 15000 then
-                    -- Valid vsync - reset capture and signal RGB domain
-                    YUV_state   <= S0;
-                    YUV_ready   <= '0';
-                    frame_reset <= '1';
-                end if;
-                vs_timer <= 0;
-
-            elsif hs = '1' then
-                case YUV_state is
-                    when S0 =>
-                        YUV_ready <= '0';
-                        U         <= signed(resize(unsigned(data_in), 9));
-                        YUV_state <= S1;
-                    when S1 =>
-                        Y0        <= signed(resize(unsigned(data_in), 9));
-                        YUV_state <= S2;
-                    when S2 =>
-                        V         <= signed(resize(unsigned(data_in), 9));
-                        YUV_state <= S3;
-                    when S3 =>
-                        Y1        <= signed(resize(unsigned(data_in), 9));
-                        YUV_ready <= '1';
-                        YUV_state <= S0;
-                end case;
-
+                line_count <= 0;
+                hs_prev    <= '0';
+    
             else
-                YUV_ready <= '0';
+                -- Detect falling edge of hsync (end of active line)
+                if hs = '0' and hs_prev = '1' then
+                    if line_count = 491 then
+                        line_count  <= 0;
+                        frame_reset <= '1';  -- pulse reset every 492 lines
+                    else
+                        line_count <= line_count + 1;
+                    end if;
+                end if;
+    
+                -- YUV capture (active when hs is high)
+                if hs = '1' then
+                    case YUV_state is
+                        when S0 =>
+                            YUV_ready <= '0';
+                            U         <= signed(resize(unsigned(data_in), 9));
+                            YUV_state <= S1;
+                        when S1 =>
+                            Y0        <= signed(resize(unsigned(data_in), 9));
+                            YUV_state <= S2;
+                        when S2 =>
+                            V         <= signed(resize(unsigned(data_in), 9));
+                            YUV_state <= S3;
+                        when S3 =>
+                            Y1        <= signed(resize(unsigned(data_in), 9));
+                            YUV_ready <= '1';
+                            YUV_state <= S0;
+                    end case;
+                else
+                    YUV_state <= S0;
+                    YUV_ready <= '0';
+                end if;
             end if;
         end if;
     end process;
@@ -361,3 +358,322 @@ begin
     end process;
 
 end Behavioral;
+
+-- Claude wrote all of the code below. I used it to test piping the cam outputs directly to HDMI under the assumption
+-- that the output was RGB 565. That did not work, but I'm leaving the code here.
+
+--library IEEE;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use ieee.numeric_std.all;
+
+--entity OV7675_capture is
+--    Port ( clk      : in  STD_LOGIC;
+--           reset_n  : in  STD_LOGIC;
+--           pclk     : in  STD_LOGIC;
+--           vs       : in  STD_LOGIC;
+--           hs       : in  STD_LOGIC;
+--           data_in  : in  STD_LOGIC_VECTOR (7 downto 0);
+--           xclk     : out STD_LOGIC;
+--           data_out : out STD_LOGIC_VECTOR (31 downto 0);
+--           bram_addr: out STD_LOGIC_VECTOR (31 downto 0);
+--           bram_we  : out STD_LOGIC_VECTOR (3 downto 0);
+--           bram_en  : out STD_LOGIC;
+--           pen      : out STD_LOGIC;
+--           pdn      : out STD_LOGIC;
+--           Red      : out STD_LOGIC_VECTOR (7 downto 0);
+--           Green    : out STD_LOGIC_VECTOR (7 downto 0);
+--           Blue     : out STD_LOGIC_VECTOR (7 downto 0);
+--           blank    : out STD_LOGIC;
+--           frame_rst: out STD_LOGIC);
+--end OV7675_capture;
+
+--architecture Behavioral of OV7675_capture is
+
+--    -- -------------------------------------------------------
+--    -- RGB565 capture state machine (pclk domain)
+--    -- Each pixel = 2 bytes: high byte first, then low byte
+--    -- Two pixels packed per 32-bit BRAM word:
+--    --   [31:16] = pixel 1 (second pixel)
+--    --   [15:0]  = pixel 0 (first pixel)
+--    -- -------------------------------------------------------
+--    type RGB_capture_state_t is (BYTE0, BYTE1, BYTE2, BYTE3);
+--    signal RGB_capture_state : RGB_capture_state_t := BYTE0;
+
+--    -- Pixel byte latches (pclk domain)
+--    signal pix0_hi : std_logic_vector(7 downto 0) := (others => '0');
+--    signal pix0_lo : std_logic_vector(7 downto 0) := (others => '0');
+--    signal pix1_hi : std_logic_vector(7 downto 0) := (others => '0');
+--    signal pix1_lo : std_logic_vector(7 downto 0) := (others => '0');
+
+--    -- Packed word ready strobe (pclk domain, crosses to clk domain)
+--    signal word_ready : std_logic := '0';
+
+--    -- Packed word (written in pclk domain, read in clk domain)
+--    -- Safe to read after CDC because it is stable well before word_ready pulses
+--    signal packed_word : std_logic_vector(31 downto 0) := (others => '0');
+
+--    -- Clock domain crossing synchronizers for word_ready
+--    signal wr_sync1, wr_sync2, wr_prev : std_logic := '0';
+
+--    -- Clock domain crossing synchronizers for frame_reset
+--    signal frame_reset         : std_logic := '0';
+--    signal frame_reset_sync1   : std_logic := '0';
+--    signal frame_reset_sync2   : std_logic := '0';
+--    signal frame_reset_prev    : std_logic := '0';
+
+--    -- BRAM write state machine (clk domain)
+--    type BRAM_state_t is (IDLE, WRITE_BRAM);
+--    signal BRAM_state : BRAM_state_t := IDLE;
+
+--    -- BRAM address counter (clk domain)
+--    signal pix_count : unsigned(31 downto 0) := (others => '0');
+
+--    -- Internal output signals
+--    signal bram_we_s  : std_logic_vector(3 downto 0) := "0000";
+--    signal data_out_s : std_logic_vector(31 downto 0) := (others => '0');
+
+--    -- Clock Divider for XCLK
+--    constant XCLK_COUNT_MAX : integer := 4;
+--    signal xclk_counter : integer := 0;
+--    signal xclk_s       : std_logic := '0';
+
+--    -- Startup sequence
+--    type startup_state_t is (S_INIT, S_POWER_ON, S_WAKE_SENSOR, S_STABILIZE, S_RUN);
+--    signal startup_state   : startup_state_t := S_INIT;
+--    signal startup_counter : integer := 0;
+--    signal camera_ready    : std_logic := '0';
+
+--    constant DELAY_5MS   : integer := 500_000;
+--    constant DELAY_100MS : integer := 10_000_000;
+
+--    -- camera_ready synchronizer for pclk domain
+--    signal camera_ready_pclk_s1 : std_logic := '0';
+--    signal camera_ready_pclk_s2 : std_logic := '0';
+
+--    -- Hsync edge detection and line counter (pclk domain)
+--    signal hs_prev    : std_logic := '0';
+--    signal line_count : integer range 0 to 511 := 0;
+
+--begin
+
+--    bram_en   <= '1';
+--    xclk      <= xclk_s;
+--    bram_we   <= bram_we_s;
+--    data_out  <= data_out_s;
+--    frame_rst <= frame_reset;
+
+--    -- Expose pixel 0 RGB channels for debug monitoring
+--    -- RGB565: [15:11]=R5, [10:5]=G6, [4:0]=B5 -> scale to 8-bit
+--    Red   <= pix0_hi(7 downto 3) & "000";
+--    Green <= pix0_hi(2 downto 0) & pix0_lo(7 downto 5) & "00";
+--    Blue  <= pix0_lo(4 downto 0) & "000";
+
+--    -- -------------------------------------------------------
+--    -- Clock Divider for XCLK
+--    -- -------------------------------------------------------
+--    xclk_div : process(clk)
+--    begin
+--        if rising_edge(clk) then
+--            if reset_n = '0' or camera_ready = '0' then
+--                xclk_counter <= 0;
+--                xclk_s <= '0';
+--            elsif xclk_counter = XCLK_COUNT_MAX then
+--                xclk_s <= not xclk_s;
+--                xclk_counter <= 0;
+--            else
+--                xclk_counter <= xclk_counter + 1;
+--            end if;
+--        end if;
+--    end process;
+
+--    -- -------------------------------------------------------
+--    -- Startup Sequence
+--    -- -------------------------------------------------------
+--    startup_proc : process(clk)
+--    begin
+--        if rising_edge(clk) then
+--            if reset_n = '0' then
+--                startup_state   <= S_INIT;
+--                startup_counter <= 0;
+--                camera_ready    <= '0';
+--                pen <= '0';
+--                pdn <= '1';
+--            else
+--                case startup_state is
+--                    when S_INIT =>
+--                        pen <= '0';
+--                        pdn <= '1';
+--                        camera_ready <= '0';
+--                        startup_counter <= startup_counter + 1;
+--                        if startup_counter = 1000 then
+--                            startup_counter <= 0;
+--                            startup_state   <= S_POWER_ON;
+--                        end if;
+--                    when S_POWER_ON =>
+--                        pen <= '1';
+--                        pdn <= '1';
+--                        startup_counter <= startup_counter + 1;
+--                        if startup_counter = DELAY_5MS then
+--                            startup_counter <= 0;
+--                            startup_state   <= S_WAKE_SENSOR;
+--                        end if;
+--                    when S_WAKE_SENSOR =>
+--                        pen <= '1';
+--                        pdn <= '0';
+--                        startup_counter <= startup_counter + 1;
+--                        if startup_counter = DELAY_100MS then
+--                            startup_counter <= 0;
+--                            startup_state   <= S_STABILIZE;
+--                        end if;
+--                    when S_STABILIZE =>
+--                        pen <= '1';
+--                        pdn <= '0';
+--                        startup_counter <= startup_counter + 1;
+--                        if startup_counter = DELAY_100MS then
+--                            startup_counter <= 0;
+--                            camera_ready    <= '1';
+--                            startup_state   <= S_RUN;
+--                        end if;
+--                    when S_RUN =>
+--                        pen          <= '1';
+--                        pdn          <= '0';
+--                        camera_ready <= '1';
+--                end case;
+--            end if;
+--        end if;
+--    end process;
+
+--    -- -------------------------------------------------------
+--    -- RGB565 Capture Process (pclk domain)
+--    --
+--    -- Byte order expected from camera (RGB565, big-endian):
+--    --   BYTE0: high byte of pixel 0  [15:8]
+--    --   BYTE1: low  byte of pixel 0  [7:0]
+--    --   BYTE2: high byte of pixel 1  [15:8]
+--    --   BYTE3: low  byte of pixel 1  [7:0]  -> assert word_ready
+--    --
+--    -- packed_word layout:
+--    --   [31:16] = pixel 1 = pix1_hi & pix1_lo
+--    --   [15:0]  = pixel 0 = pix0_hi & pix0_lo
+--    -- -------------------------------------------------------
+--    RGB_capture_proc : process(pclk)
+--    begin
+--        if rising_edge(pclk) then
+
+--            word_ready  <= '0';   -- default: no pulse
+--            frame_reset <= '0';
+--            blank       <= '0';
+
+--            camera_ready_pclk_s1 <= camera_ready;
+--            camera_ready_pclk_s2 <= camera_ready_pclk_s1;
+
+--            hs_prev <= hs;
+
+--            if reset_n = '0' or camera_ready_pclk_s2 = '0' then
+--                RGB_capture_state <= BYTE0;
+--                word_ready        <= '0';
+--                frame_reset       <= '0';
+--                line_count        <= 0;
+--                hs_prev           <= '0';
+
+--            else
+--                -- HS falling edge: count lines, detect frame boundary and blanking
+--                if hs = '0' and hs_prev = '1' then
+--                    if line_count = 491 then
+--                        line_count  <= 0;
+--                        frame_reset <= '1';
+--                    else
+--                        line_count <= line_count + 1;
+--                    end if;
+
+--                    -- Assert blank for vertical overscan lines
+--                    -- First 6 lines and last 6 lines of 492-line frame
+--                    if line_count < 6 or line_count >= 486 then
+--                        blank <= '1';
+--                    end if;
+
+--                    -- Reset byte counter at end of every line to stay aligned
+--                    RGB_capture_state <= BYTE0;
+--                end if;
+
+--                -- Capture bytes while HS is high (active video)
+--                if hs = '1' then
+--                    case RGB_capture_state is
+--                        when BYTE0 =>
+--                            pix0_hi           <= data_in;
+--                            RGB_capture_state <= BYTE1;
+--                        when BYTE1 =>
+--                            pix0_lo           <= data_in;
+--                            RGB_capture_state <= BYTE2;
+--                        when BYTE2 =>
+--                            pix1_hi           <= data_in;
+--                            RGB_capture_state <= BYTE3;
+--                        when BYTE3 =>
+--                            pix1_lo           <= data_in;
+--                            -- Pack both pixels into one 32-bit word
+--                            -- Use data_in directly for pix1_lo to save one cycle
+--                            packed_word       <= pix1_hi & data_in &
+--                                                 pix0_hi & pix0_lo;
+--                            word_ready        <= '1';
+--                            RGB_capture_state <= BYTE0;
+--                    end case;
+--                end if;
+
+--            end if;
+--        end if;
+--    end process;
+
+--    -- -------------------------------------------------------
+--    -- BRAM Write Process (clk domain)
+--    -- Waits for word_ready pulse (after CDC), then writes
+--    -- packed_word to BRAM at the current pix_count address.
+--    -- -------------------------------------------------------
+--    BRAM_proc : process(clk)
+--    begin
+--        if rising_edge(clk) then
+--            if reset_n = '0' or camera_ready = '0' then
+--                BRAM_state        <= IDLE;
+--                bram_we_s         <= "0000";
+--                pix_count         <= (others => '0');
+--            else
+--                -- Synchronize word_ready into clk domain
+--                wr_sync1 <= word_ready;
+--                wr_sync2 <= wr_sync1;
+--                wr_prev  <= wr_sync2;
+
+--                -- Synchronize frame_reset into clk domain
+--                frame_reset_sync1 <= frame_reset;
+--                frame_reset_sync2 <= frame_reset_sync1;
+--                frame_reset_prev  <= frame_reset_sync2;
+
+--                -- Default: no write
+--                bram_we_s <= "0000";
+
+--                -- Frame reset takes priority
+--                if frame_reset_sync2 = '1' and frame_reset_prev = '0' then
+--                    BRAM_state <= IDLE;
+--                    pix_count  <= (others => '0');
+
+--                else
+--                    case BRAM_state is
+
+--                        when IDLE =>
+--                            if wr_sync2 = '1' and wr_prev = '0' then
+--                                bram_addr  <= std_logic_vector(pix_count(29 downto 0)) & "00";
+--                                data_out_s <= packed_word;
+--                                BRAM_state <= WRITE_BRAM;
+--                            end if;
+
+--                        when WRITE_BRAM =>
+--                            bram_we_s  <= "1111";
+--                            pix_count  <= pix_count + 1;
+--                            BRAM_state <= IDLE;
+
+--                    end case;
+--                end if;
+--            end if;
+--        end if;
+--    end process;
+
+--end Behavioral;
+

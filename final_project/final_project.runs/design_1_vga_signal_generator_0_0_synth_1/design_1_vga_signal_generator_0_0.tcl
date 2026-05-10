@@ -56,8 +56,10 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "design_1_vga_signal_generator_0_0_synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 set_param bd.open.in_stealth_mode 2
+set_param xicom.use_bs_reader 1
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_param project.vivado.isBlockSynthRun true
@@ -92,7 +94,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sources_1/imports/Downloads/counter.vhd
   C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sources_1/imports/Downloads/vga_signal_generator.vhd
 }
-read_ip -quiet c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sources_1/bd/design_1/ip/design_1_vga_signal_generator_0_0/design_1_vga_signal_generator_0_0.xci
+read_ip -quiet C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sources_1/bd/design_1/ip/design_1_vga_signal_generator_0_0/design_1_vga_signal_generator_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

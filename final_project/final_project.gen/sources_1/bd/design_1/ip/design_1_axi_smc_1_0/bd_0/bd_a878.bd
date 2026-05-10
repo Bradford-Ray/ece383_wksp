@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x2B5CF71D3407D5E",
+      "boundary_crc": "0x95482BFF4337EFB8",
       "design_src": "SBD",
       "device": "xc7a200tsbg484-1",
       "name": "bd_a878",
@@ -472,7 +472,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "13",
+            "value": "20",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -1489,7 +1489,7 @@
                 "value": "0b0000000000000000000000000000000000000000000000000000000000000001"
               },
               "SEG001_SIZE": {
-                "value": "13"
+                "value": "20"
               },
               "SEG001_SUPPORTS_READ": {
                 "value": "1"
@@ -2863,7 +2863,7 @@
                 "value": "0b0000000000000000000000000000000000000000000000000000000000000001"
               },
               "SEG001_SIZE": {
-                "value": "13"
+                "value": "20"
               },
               "SEG001_SUPPORTS_READ": {
                 "value": "1"
@@ -4771,7 +4771,7 @@
         "inst_hier_path": "m01_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "13"
+            "value": "20"
           },
           "AXI_ID_WIDTH": {
             "value": "2"
@@ -5810,7 +5810,7 @@
             "inst_hier_path": "m01_exit_pipeline/m01_exit",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "13"
+                "value": "20"
               },
               "HAS_BURST": {
                 "value": "1"

@@ -142,3 +142,30 @@ timestamp=[2026-05-06 15:12:59], mode=BUILD, duration=0:00:03.623, duration_ms=3
 timestamp=[2026-05-06 15:18:35], mode=WORKBENCH_START, duration=0:00:12.597, duration_ms=12597, data={}
 timestamp=[2026-05-06 15:18:36], mode=WORKBENCH_UI_INIT, duration=0:00:01.413, duration_ms=1413, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=RemoteSystemsTempFiles,design_1_wrapper_1,final_project_6,final_project_6_system}
 timestamp=[2026-05-06 15:18:36], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.119, duration_ms=119, data={}
+timestamp=[2026-05-06 19:10:34], mode=WORKBENCH_START, duration=0:00:10.752, duration_ms=10752, data={}
+timestamp=[2026-05-06 19:10:36], mode=WORKBENCH_UI_INIT, duration=0:00:01.236, duration_ms=1236, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=RemoteSystemsTempFiles,design_1_wrapper_1,final_project_6,final_project_6_system}
+timestamp=[2026-05-06 19:10:36], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.167, duration_ms=167, data={}
+timestamp=[2026-05-06 19:15:29], mode=PLATFORM_GENERATION, duration=0:00:10.761, duration_ms=10761, data={name=design_1_wrapper_1}
+timestamp=[2026-05-06 19:15:33], mode=BUILD, duration=0:00:03.912, duration_ms=3912, data={name=final_project_6, configuration=Debug, clean_build=false}
+timestamp=[2026-05-06 21:20:38], mode=APP_CREATION, duration=0:00:12.121, duration_ms=12121, data={name=final_project_5, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2026-05-06 21:21:53], mode=PLATFORM_GENERATION, duration=0:00:13.890, duration_ms=13890, data={name=design_1_wrapper}
+timestamp=[2026-05-06 21:21:57], mode=BUILD, duration=0:00:03.163, duration_ms=3163, data={name=final_project_5, configuration=Debug, clean_build=false}
+timestamp=[2026-05-09 15:02:41], mode=WORKBENCH_START, duration=0:00:12.719, duration_ms=12719, data={}
+timestamp=[2026-05-09 15:02:42], mode=WORKBENCH_UI_INIT, duration=0:00:01.412, duration_ms=1412, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=RemoteSystemsTempFiles,design_1_wrapper,final_project_5,final_project_5_system}
+timestamp=[2026-05-09 15:02:43], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.174, duration_ms=174, data={}
+timestamp=[2026-05-09 15:04:18], mode=APP_CREATION, duration=0:00:15.787, duration_ms=15787, data={name=final_project_6, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper_1, application_type=application}
+timestamp=[2026-05-09 15:06:05], mode=PLATFORM_GENERATION, duration=0:00:10.278, duration_ms=10278, data={name=design_1_wrapper_1}
+timestamp=[2026-05-09 15:06:09], mode=BUILD, duration=0:00:03.576, duration_ms=3576, data={name=final_project_6, configuration=Debug, clean_build=false}
+timestamp=[2026-05-09 15:24:03], mode=BUILD, duration=0:00:04.265, duration_ms=4265, data={name=final_project_6, configuration=Debug, clean_build=false}
+timestamp=[2026-05-09 16:34:19], mode=APP_CREATION, duration=0:00:10.435, duration_ms=10435, data={name=final_project_5, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2026-05-09 16:35:36], mode=PLATFORM_GENERATION, duration=0:00:14.098, duration_ms=14098, data={name=design_1_wrapper}
+timestamp=[2026-05-09 16:35:39], mode=BUILD, duration=0:00:03.115, duration_ms=3115, data={name=final_project_5, configuration=Debug, clean_build=false}
+timestamp=[2026-05-09 17:33:21], mode=APP_CREATION, duration=0:00:12.143, duration_ms=12143, data={name=final_project_6, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper_1, application_type=application}
+timestamp=[2026-05-09 17:34:24], mode=PLATFORM_GENERATION, duration=0:00:17.821, duration_ms=17821, data={name=design_1_wrapper_1}
+timestamp=[2026-05-09 17:34:27], mode=BUILD, duration=0:00:03.321, duration_ms=3321, data={name=final_project_6, configuration=Debug, clean_build=false}
+timestamp=[2026-05-09 18:00:08], mode=APP_CREATION, duration=0:00:11.366, duration_ms=11366, data={name=final_project_5, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2026-05-09 18:01:18], mode=PLATFORM_GENERATION, duration=0:00:19.210, duration_ms=19210, data={name=design_1_wrapper}
+timestamp=[2026-05-09 18:01:22], mode=BUILD, duration=0:00:03.437, duration_ms=3437, data={name=final_project_5, configuration=Debug, clean_build=false}
+timestamp=[2026-05-10 03:11:45], mode=APP_CREATION, duration=0:00:13.833, duration_ms=13833, data={name=final_project_6, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper_1, application_type=application}
+timestamp=[2026-05-10 03:13:55], mode=PLATFORM_GENERATION, duration=0:00:18.648, duration_ms=18648, data={name=design_1_wrapper_1}
+timestamp=[2026-05-10 03:13:59], mode=BUILD, duration=0:00:03.887, duration_ms=3887, data={name=final_project_6, configuration=Debug, clean_build=false}

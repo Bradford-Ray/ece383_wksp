@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Wed May  6 01:19:34 2026
+--Date        : Wed May  6 19:42:17 2026
 --Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -551,15 +551,17 @@ entity design_1 is
     pen : out STD_LOGIC;
     reset : in STD_LOGIC;
     sio_c : out STD_LOGIC;
-    sio_d : inout STD_LOGIC;
+    sio_d : out STD_LOGIC;
     sys_clock : in STD_LOGIC;
+    tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
     vs : in STD_LOGIC;
     xclk : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=21,numReposBlks=20,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=5,da_bram_cntlr_cnt=2,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=5,da_bram_cntlr_cnt=2,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1126,13 +1128,16 @@ architecture STRUCTURE of design_1 is
     bram_we : out STD_LOGIC_VECTOR ( 3 downto 0 );
     bram_en : out STD_LOGIC;
     pen : out STD_LOGIC;
-    pdn : out STD_LOGIC
+    pdn : out STD_LOGIC;
+    Red : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    Green : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    Blue : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_OV7675_capture_0_0;
   component design_1_myip_write_SCCB_0_0 is
   port (
     sio_c : out STD_LOGIC;
-    sio_d : inout STD_LOGIC;
+    sio_d : out STD_LOGIC;
     reset_n : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
@@ -1157,6 +1162,56 @@ architecture STRUCTURE of design_1 is
     s00_axi_rready : in STD_LOGIC
   );
   end component design_1_myip_write_SCCB_0_0;
+  component design_1_dvid_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    clk_n : in STD_LOGIC;
+    clk_pixel : in STD_LOGIC;
+    red_p : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    green_p : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    blue_p : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    blank : in STD_LOGIC;
+    hsync : in STD_LOGIC;
+    vsync : in STD_LOGIC;
+    red_s : out STD_LOGIC;
+    green_s : out STD_LOGIC;
+    blue_s : out STD_LOGIC;
+    clock_s : out STD_LOGIC
+  );
+  end component design_1_dvid_0_1;
+  component design_1_HDMI_output_0_1 is
+  port (
+    tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    red : in STD_LOGIC;
+    green : in STD_LOGIC;
+    blue : in STD_LOGIC;
+    clock : in STD_LOGIC
+  );
+  end component design_1_HDMI_output_0_1;
+  component design_1_clk_wiz_2_0 is
+  port (
+    resetn : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
+    clk_out3 : out STD_LOGIC
+  );
+  end component design_1_clk_wiz_2_0;
+  component design_1_vga_signal_generator_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset_n : in STD_LOGIC;
+    position_row : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    position_col : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    vga_hsync : out STD_LOGIC;
+    vga_vsync : out STD_LOGIC;
+    vga_blank : out STD_LOGIC
+  );
+  end component design_1_vga_signal_generator_0_0;
+  signal OV7675_capture_0_Blue : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal OV7675_capture_0_Green : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal OV7675_capture_0_Red : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal OV7675_capture_0_bram_addr : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal OV7675_capture_0_bram_en : STD_LOGIC;
   signal OV7675_capture_0_bram_we : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1271,6 +1326,13 @@ architecture STRUCTURE of design_1 is
   signal axi_smc_M01_AXI_WVALID : STD_LOGIC;
   signal clk_wiz_1_clk_out2 : STD_LOGIC;
   signal clk_wiz_1_locked : STD_LOGIC;
+  signal clk_wiz_2_clk_out1 : STD_LOGIC;
+  signal clk_wiz_2_clk_out2 : STD_LOGIC;
+  signal clk_wiz_2_clk_out3 : STD_LOGIC;
+  signal dvid_0_blue_s : STD_LOGIC;
+  signal dvid_0_clock_s : STD_LOGIC;
+  signal dvid_0_green_s : STD_LOGIC;
+  signal dvid_0_red_s : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_0_Clk : STD_LOGIC;
   signal microblaze_0_M_AXI_DC_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1377,6 +1439,9 @@ architecture STRUCTURE of design_1 is
   signal rst_mig_7series_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_mig_7series_0_100M_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal util_ds_buf_0_BUFG_O : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal vga_signal_generator_0_vga_blank : STD_LOGIC;
+  signal vga_signal_generator_0_vga_hsync : STD_LOGIC;
+  signal vga_signal_generator_0_vga_vsync : STD_LOGIC;
   signal NLW_axi_bram_ctrl_0_bram_clk_b_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_bram_ctrl_0_bram_en_b_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_bram_ctrl_0_bram_rst_b_UNCONNECTED : STD_LOGIC;
@@ -1423,6 +1488,8 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_mig_7series_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_mig_7series_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_mig_7series_0_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_vga_signal_generator_0_position_col_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal NLW_vga_signal_generator_0_position_row_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
   attribute BMM_INFO_ADDRESS_SPACE : string;
   attribute BMM_INFO_ADDRESS_SPACE of axi_bram_ctrl_0 : label is "byte  0xC0000000 32 > design_1 axi_bram_ctrl_0_bram";
   attribute KEEP_HIERARCHY : string;
@@ -1457,8 +1524,20 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of DDR3_0_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR3_0 DQS_P";
   attribute X_INTERFACE_INFO of DDR3_0_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR3_0 ODT";
 begin
+HDMI_output_0: component design_1_HDMI_output_0_1
+     port map (
+      blue => dvid_0_blue_s,
+      clock => dvid_0_clock_s,
+      green => dvid_0_green_s,
+      red => dvid_0_red_s,
+      tmds(3 downto 0) => tmds(3 downto 0),
+      tmdsb(3 downto 0) => tmdsb(3 downto 0)
+    );
 OV7675_capture_0: component design_1_OV7675_capture_0_0
      port map (
+      Blue(7 downto 0) => OV7675_capture_0_Blue(7 downto 0),
+      Green(7 downto 0) => OV7675_capture_0_Green(7 downto 0),
+      Red(7 downto 0) => OV7675_capture_0_Red(7 downto 0),
       bram_addr(31 downto 0) => OV7675_capture_0_bram_addr(31 downto 0),
       bram_en => OV7675_capture_0_bram_en,
       bram_we(3 downto 0) => OV7675_capture_0_bram_we(3 downto 0),
@@ -1759,6 +1838,30 @@ clk_wiz_1: component design_1_clk_wiz_1_0
       locked => clk_wiz_1_locked,
       resetn => reset
     );
+clk_wiz_2: component design_1_clk_wiz_2_0
+     port map (
+      clk_in1 => sys_clock,
+      clk_out1 => clk_wiz_2_clk_out1,
+      clk_out2 => clk_wiz_2_clk_out2,
+      clk_out3 => clk_wiz_2_clk_out3,
+      resetn => reset
+    );
+dvid_0: component design_1_dvid_0_1
+     port map (
+      blank => vga_signal_generator_0_vga_blank,
+      blue_p(7 downto 0) => OV7675_capture_0_Blue(7 downto 0),
+      blue_s => dvid_0_blue_s,
+      clk => clk_wiz_2_clk_out2,
+      clk_n => clk_wiz_2_clk_out3,
+      clk_pixel => clk_wiz_2_clk_out1,
+      clock_s => dvid_0_clock_s,
+      green_p(7 downto 0) => OV7675_capture_0_Green(7 downto 0),
+      green_s => dvid_0_green_s,
+      hsync => vga_signal_generator_0_vga_hsync,
+      red_p(7 downto 0) => OV7675_capture_0_Red(7 downto 0),
+      red_s => dvid_0_red_s,
+      vsync => vga_signal_generator_0_vga_vsync
+    );
 mdm_1: component design_1_mdm_1_0
      port map (
       Dbg_Capture_0 => microblaze_0_debug_CAPTURE,
@@ -2058,5 +2161,15 @@ util_ds_buf_0: component design_1_util_ds_buf_0_0
      port map (
       BUFG_I(0) => sys_clock,
       BUFG_O(0) => util_ds_buf_0_BUFG_O(0)
+    );
+vga_signal_generator_0: component design_1_vga_signal_generator_0_0
+     port map (
+      clk => clk_wiz_2_clk_out1,
+      position_col(9 downto 0) => NLW_vga_signal_generator_0_position_col_UNCONNECTED(9 downto 0),
+      position_row(9 downto 0) => NLW_vga_signal_generator_0_position_row_UNCONNECTED(9 downto 0),
+      reset_n => reset,
+      vga_blank => vga_signal_generator_0_vga_blank,
+      vga_hsync => vga_signal_generator_0_vga_hsync,
+      vga_vsync => vga_signal_generator_0_vga_vsync
     );
 end STRUCTURE;

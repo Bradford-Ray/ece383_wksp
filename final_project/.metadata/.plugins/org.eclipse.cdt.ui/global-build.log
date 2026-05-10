@@ -1,5 +1,5 @@
-15:12:35 **** Build of project design_1_wrapper_1 ****
-buildplatform.bat 51530 design_1_wrapper_1  
+03:13:36 **** Build of project design_1_wrapper_1 ****
+buildplatform.bat 63619 design_1_wrapper_1  
 
 ****** Software Commandline Tool (XSCT) v2024.2.0
   **** SW Build 5239620 on Sun Nov 10 09:56:12 MST 2024
@@ -11,7 +11,7 @@ Warning: XSCT is deprecated and will be removed in future releases.
 We recommend using the new Python command-line tool for project management and debugging:
 - Run "vitis -i" for interactive mode.
 - Run "vitis -s <script>" for script mode.
-XSDB Server Channel: tcfchan#3
+XSDB Server Channel: tcfchan#8
 Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 make --no-print-directory seq_libs
 
@@ -100,7 +100,7 @@ ite_g.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/xuartlite_l.o microbl
 mb-ar: creating microblaze_0/lib/libxil.a
 'Finished building libraries'
 
-15:12:55 **** Build of configuration Debug for project final_project_6 ****
+03:13:55 **** Build of configuration Debug for project final_project_6 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -120,6 +120,6 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/C27Bradford.Hurt/ece383_wksp/fina
 'Invoking: MicroBlaze Print Size'
 mb-size final_project_6.elf  |tee "final_project_6.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   9116	     32	   3428	  12576	   3120	final_project_6.elf
+   9108	     32	   3428	  12568	   3118	final_project_6.elf
 'Finished building: final_project_6.elf.size'
 ' '

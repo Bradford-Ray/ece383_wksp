@@ -159,7 +159,7 @@ module bd_a878
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M00_AXI WREADY" *) input M00_AXI_wready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M00_AXI WSTRB" *) output [3:0]M00_AXI_wstrb;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M00_AXI WVALID" *) output M00_AXI_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M01_AXI, ADDR_WIDTH 13, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN design_1_mig_7series_0_0_ui_clk, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 1, HAS_CACHE 1, HAS_LOCK 1, HAS_PROT 1, HAS_QOS 1, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 4, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 32, NUM_WRITE_THREADS 1, PHASE 0, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [12:0]M01_AXI_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M01_AXI, ADDR_WIDTH 20, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN design_1_mig_7series_0_0_ui_clk, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 1, HAS_CACHE 1, HAS_LOCK 1, HAS_PROT 1, HAS_QOS 1, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 4, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 32, NUM_WRITE_THREADS 1, PHASE 0, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [19:0]M01_AXI_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARBURST" *) output [1:0]M01_AXI_arburst;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARCACHE" *) output [3:0]M01_AXI_arcache;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARLEN" *) output [7:0]M01_AXI_arlen;
@@ -169,7 +169,7 @@ module bd_a878
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARREADY" *) input M01_AXI_arready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARSIZE" *) output [2:0]M01_AXI_arsize;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI ARVALID" *) output M01_AXI_arvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI AWADDR" *) output [12:0]M01_AXI_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI AWADDR" *) output [19:0]M01_AXI_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI AWBURST" *) output [1:0]M01_AXI_awburst;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI AWCACHE" *) output [3:0]M01_AXI_awcache;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M01_AXI AWLEN" *) output [7:0]M01_AXI_awlen;
@@ -277,7 +277,7 @@ module bd_a878
   wire M00_AXI_wready;
   wire [3:0]M00_AXI_wstrb;
   wire M00_AXI_wvalid;
-  wire [12:0]M01_AXI_araddr;
+  wire [19:0]M01_AXI_araddr;
   wire [1:0]M01_AXI_arburst;
   wire [3:0]M01_AXI_arcache;
   wire [7:0]M01_AXI_arlen;
@@ -287,7 +287,7 @@ module bd_a878
   wire M01_AXI_arready;
   wire [2:0]M01_AXI_arsize;
   wire M01_AXI_arvalid;
-  wire [12:0]M01_AXI_awaddr;
+  wire [19:0]M01_AXI_awaddr;
   wire [1:0]M01_AXI_awburst;
   wire [3:0]M01_AXI_awcache;
   wire [7:0]M01_AXI_awlen;
@@ -541,7 +541,7 @@ module bd_a878
   wire m01_nodes_M_SC_W_RECV;
   wire [0:0]m01_nodes_M_SC_W_REQ;
   wire [0:0]m01_nodes_M_SC_W_SEND;
-  wire [12:0]m01_sc2axi_M_AXI_ARADDR;
+  wire [19:0]m01_sc2axi_M_AXI_ARADDR;
   wire [3:0]m01_sc2axi_M_AXI_ARCACHE;
   wire [1:0]m01_sc2axi_M_AXI_ARID;
   wire [7:0]m01_sc2axi_M_AXI_ARLEN;
@@ -551,7 +551,7 @@ module bd_a878
   wire m01_sc2axi_M_AXI_ARREADY;
   wire [1023:0]m01_sc2axi_M_AXI_ARUSER;
   wire m01_sc2axi_M_AXI_ARVALID;
-  wire [12:0]m01_sc2axi_M_AXI_AWADDR;
+  wire [19:0]m01_sc2axi_M_AXI_AWADDR;
   wire [3:0]m01_sc2axi_M_AXI_AWCACHE;
   wire [1:0]m01_sc2axi_M_AXI_AWID;
   wire [7:0]m01_sc2axi_M_AXI_AWLEN;
@@ -2155,7 +2155,7 @@ module m01_exit_pipeline_imp_1NBUGLH
     s_axi_wvalid);
   input aclk;
   input aresetn;
-  output [12:0]m_axi_araddr;
+  output [19:0]m_axi_araddr;
   output [1:0]m_axi_arburst;
   output [3:0]m_axi_arcache;
   output [7:0]m_axi_arlen;
@@ -2165,7 +2165,7 @@ module m01_exit_pipeline_imp_1NBUGLH
   input m_axi_arready;
   output [2:0]m_axi_arsize;
   output m_axi_arvalid;
-  output [12:0]m_axi_awaddr;
+  output [19:0]m_axi_awaddr;
   output [1:0]m_axi_awburst;
   output [3:0]m_axi_awcache;
   output [7:0]m_axi_awlen;
@@ -2188,7 +2188,7 @@ module m01_exit_pipeline_imp_1NBUGLH
   input m_axi_wready;
   output [3:0]m_axi_wstrb;
   output m_axi_wvalid;
-  input [12:0]s_axi_araddr;
+  input [19:0]s_axi_araddr;
   input [3:0]s_axi_arcache;
   input [1:0]s_axi_arid;
   input [7:0]s_axi_arlen;
@@ -2198,7 +2198,7 @@ module m01_exit_pipeline_imp_1NBUGLH
   output s_axi_arready;
   input [1023:0]s_axi_aruser;
   input s_axi_arvalid;
-  input [12:0]s_axi_awaddr;
+  input [19:0]s_axi_awaddr;
   input [3:0]s_axi_awcache;
   input [1:0]s_axi_awid;
   input [7:0]s_axi_awlen;
@@ -2229,7 +2229,7 @@ module m01_exit_pipeline_imp_1NBUGLH
 
   wire aclk;
   wire aresetn;
-  wire [12:0]m_axi_araddr;
+  wire [19:0]m_axi_araddr;
   wire [1:0]m_axi_arburst;
   wire [3:0]m_axi_arcache;
   wire [7:0]m_axi_arlen;
@@ -2239,7 +2239,7 @@ module m01_exit_pipeline_imp_1NBUGLH
   wire m_axi_arready;
   wire [2:0]m_axi_arsize;
   wire m_axi_arvalid;
-  wire [12:0]m_axi_awaddr;
+  wire [19:0]m_axi_awaddr;
   wire [1:0]m_axi_awburst;
   wire [3:0]m_axi_awcache;
   wire [7:0]m_axi_awlen;
@@ -2262,7 +2262,7 @@ module m01_exit_pipeline_imp_1NBUGLH
   wire m_axi_wready;
   wire [3:0]m_axi_wstrb;
   wire m_axi_wvalid;
-  wire [12:0]s_axi_araddr;
+  wire [19:0]s_axi_araddr;
   wire [3:0]s_axi_arcache;
   wire [1:0]s_axi_arid;
   wire [7:0]s_axi_arlen;
@@ -2272,7 +2272,7 @@ module m01_exit_pipeline_imp_1NBUGLH
   wire s_axi_arready;
   wire [1023:0]s_axi_aruser;
   wire s_axi_arvalid;
-  wire [12:0]s_axi_awaddr;
+  wire [19:0]s_axi_awaddr;
   wire [3:0]s_axi_awcache;
   wire [1:0]s_axi_awid;
   wire [7:0]s_axi_awlen;

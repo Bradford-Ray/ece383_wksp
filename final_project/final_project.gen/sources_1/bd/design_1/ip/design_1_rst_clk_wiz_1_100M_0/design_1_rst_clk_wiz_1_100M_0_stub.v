@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Wed May  6 01:24:59 2026
+// Date        : Wed May  6 01:24:58 2026
 // Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_rst_clk_wiz_1_100M_0 -prefix
+//               design_1_rst_clk_wiz_1_100M_0_ design_1_rst_clk_wiz_1_100M_0_stub.v
 // Design      : design_1_rst_clk_wiz_1_100M_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbg484-1

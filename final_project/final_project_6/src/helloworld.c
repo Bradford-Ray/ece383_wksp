@@ -48,16 +48,24 @@
 
 #define	uartRegAddr			0x40600000		// read <= RX, write => TX
 
-// resolution definitions
-#define IMG_WIDTH  640
-#define IMG_HEIGHT 480
+// Physical frame dimensions written to BRAM (includes overscan)
+#define IMG_WIDTH      656
+#define IMG_HEIGHT     492
 
-// Downsample factor (3 means 1/3 resolution: 213 x 160)
+// Active image dimensions (cropped, no overscan)
+#define ACTIVE_WIDTH   640
+#define ACTIVE_HEIGHT  480
+
+// Overscan offsets
+#define COL_OFFSET     8
+#define ROW_OFFSET     6
+
+// Downsample factor
 #define DOWNSAMPLE_FACTOR 10
 
-// Calculate new dimensions (integer division drops the remainder)
-#define NEW_WIDTH  (IMG_WIDTH / DOWNSAMPLE_FACTOR)
-#define NEW_HEIGHT (IMG_HEIGHT / DOWNSAMPLE_FACTOR)
+// Output dimensions based on active area
+#define NEW_WIDTH  (ACTIVE_WIDTH  / DOWNSAMPLE_FACTOR)  // 64
+#define NEW_HEIGHT (ACTIVE_HEIGHT / DOWNSAMPLE_FACTOR)  // 48
 
 /************************** Variable Definitions **************************/
 /*
@@ -272,61 +280,53 @@ void printFrame(void){
 }
 
 void printFrameDownsample() {
-	volatile u32 *bram_ptr = (volatile u32 *)XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR;
+    volatile u32 *bram_ptr = (volatile u32 *)XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR;
+    u32 packed_word;
+    u16 pixel_rgb565;
+    u8 r, g, b;
+    int linear_pixel_index;
+    int word_index;
+    int is_upper_pixel;
 
-	u32 packed_word;
-	u16 pixel_rgb565;
-	u8 r, g, b;
+    // Print the PPM header with the downsampled active dimensions
+    xil_printf("P3\r\n");
+    xil_printf("%d %d\r\n", NEW_WIDTH, NEW_HEIGHT);
+    xil_printf("255\r\n");
 
-	int linear_pixel_index;
-	int word_index;
-	int is_upper_pixel;
+    // Loop over the active image area only, stepping by DOWNSAMPLE_FACTOR
+    for (int y = 0; y < ACTIVE_HEIGHT; y += DOWNSAMPLE_FACTOR) {
+        for (int x = 0; x < ACTIVE_WIDTH; x += DOWNSAMPLE_FACTOR) {
 
-	// 1. Print the PPM Header with the NEW smaller dimensions
-	xil_printf("P3\r\n");
-	xil_printf("%d %d\r\n", NEW_WIDTH, NEW_HEIGHT);
-	xil_printf("255\r\n");
+            // Shift into the active window by skipping overscan border
+            int src_x = x + COL_OFFSET;
+            int src_y = y + ROW_OFFSET;
 
-	// 2. Loop through the image, skipping rows and columns by the downsample factor
-	for (int y = 0; y < (NEW_HEIGHT * DOWNSAMPLE_FACTOR); y += DOWNSAMPLE_FACTOR) {
-		for (int x = 0; x < (NEW_WIDTH * DOWNSAMPLE_FACTOR); x += DOWNSAMPLE_FACTOR) {
+            // Compute linear pixel index using full overscan stride (IMG_WIDTH = 656)
+            linear_pixel_index = (src_y * IMG_WIDTH) + src_x;
 
-			// Calculate exactly where this specific pixel lives in the linear sequence
-			linear_pixel_index = (y * IMG_WIDTH) + x;
+            // Two pixels packed per 32-bit word
+            word_index     = linear_pixel_index / 2;
+            is_upper_pixel = linear_pixel_index % 2;
 
-			// Since we packed 2 pixels per 32-bit word, divide by 2 to get the BRAM address
-			word_index = linear_pixel_index / 2;
+            // Fetch the 32-bit word from BRAM
+            packed_word = bram_ptr[word_index];
 
-			// If the linear index is odd, it's the 2nd pixel in the word (upper 16 bits)
-			// If even, it's the 1st pixel in the word (lower 16 bits)
-			is_upper_pixel = linear_pixel_index % 2;
+            // Extract the correct 16-bit RGB565 pixel
+            if (is_upper_pixel) {
+                pixel_rgb565 = (u16)((packed_word >> 16) & 0xFFFF);
+            } else {
+                pixel_rgb565 = (u16)(packed_word & 0xFFFF);
+            }
 
-			// Fetch the 32-bit word from BRAM
-			packed_word = bram_ptr[word_index];
+            // Unpack RGB565 and scale to 8-bit
+            r = ((pixel_rgb565 >> 11) & 0x1F) << 3;
+            g = ((pixel_rgb565 >> 5)  & 0x3F) << 2;
+            b = ((pixel_rgb565 >> 0)  & 0x1F) << 3;
 
-			// Extract the correct 16-bit pixel
-			if (is_upper_pixel) {
-				pixel_rgb565 = (u16)((packed_word >> 16) & 0xFFFF);
-			} else {
-				pixel_rgb565 = (u16)(packed_word & 0xFFFF);
-			}
-
-			// Extract color channels (5-bit R, 6-bit G, 5-bit B)
-			r = (pixel_rgb565 >> 11) & 0x1F;
-			g = (pixel_rgb565 >> 5)  & 0x3F;
-			b = (pixel_rgb565 >> 0)  & 0x1F;
-
-			// Scale them to standard 8-bit (0-255) space
-			r = r << 3;
-			g = g << 2;
-			b = b << 3;
-
-			// Print the single scaled pixel
-			xil_printf("%d %d %d ", r, g, b);
-		}
-		// Newline at the end of every row
-		xil_printf("\r\n");
-	}
+            xil_printf("%d %d %d ", r, g, b);
+        }
+        xil_printf("\r\n");
+    }
 }
 
 void write_SCCB(uint32_t sub_addr, uint32_t data) {

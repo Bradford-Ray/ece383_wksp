@@ -1,5 +1,5 @@
-15:12:35 **** Build of project design_1_wrapper_1 ****
-buildplatform.bat 51530 design_1_wrapper_1  
+03:13:36 **** Build of project design_1_wrapper_1 ****
+buildplatform.bat 63619 design_1_wrapper_1  
 
 ****** Software Commandline Tool (XSCT) v2024.2.0
   **** SW Build 5239620 on Sun Nov 10 09:56:12 MST 2024
@@ -11,7 +11,7 @@ Warning: XSCT is deprecated and will be removed in future releases.
 We recommend using the new Python command-line tool for project management and debugging:
 - Run "vitis -i" for interactive mode.
 - Run "vitis -s <script>" for script mode.
-XSDB Server Channel: tcfchan#3
+XSDB Server Channel: tcfchan#8
 Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 make --no-print-directory seq_libs
 
@@ -101,5 +101,5 @@ mb-ar: creating microblaze_0/lib/libxil.a
 'Finished building libraries'
 
 
-15:12:55 Build Finished (took 19s.869ms)
+03:13:55 Build Finished (took 18s.530ms)
 

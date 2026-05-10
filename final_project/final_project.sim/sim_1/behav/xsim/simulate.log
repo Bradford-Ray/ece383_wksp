@@ -1,0 +1,54 @@
+Time resolution is 1 ps
+Note: TC1: Assert reset
+Time: 0 ps  Iteration: 0  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC1: Reset released, waiting for startup (~20501010 clk cycles)
+Time: 195 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC1: Startup sequence complete
+Time: 205010295 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC2: Single grey macropixel conversion
+Time: 205010295 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Error: TC2 FAIL: expected exactly 1 BRAM write, got 0
+Time: 205010845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Error: TC2 FAIL: packed RGB565 mismatch. Expected=1248414313 Got=0
+Time: 205010845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC2 PASS: grey macropixel correct
+Time: 205010845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC3: BRAM address increment
+Time: 205010845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Error: TC3 FAIL: bram_mem(3) was never written
+Time: 205012345 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC3 PASS: 4 consecutive BRAM locations written
+Time: 205012345 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC4: WE pulse width (monitored continuously)
+Time: 205012345 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC4 PASS: bram_we is single-cycle
+Time: 205012395 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC5: Frame reset after 492 lines
+Time: 205012395 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Error: TC5 FAIL: pix_count did not reset to 0 after frame_reset
+Time: 205455845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC5 PASS: pix_count resets after 492 lines
+Time: 205455845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC6: Clamp / saturation check
+Time: 205455845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC6 INFO: white pixel check (manual inspection recommended)
+Time: 205456345 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Error: TC6 FAIL: Red channel not saturated for extreme chroma
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Error: TC6 FAIL: Blue channel not clamped to 0 for extreme negative chroma
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC6 PASS: clamp working for saturated colours
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC7: bram_en always asserted
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: TC7 PASS: bram_en = '1'
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: ==============================
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: All test cases completed.
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: Total BRAM writes observed: 498
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+Note: ==============================
+Time: 205456845 ns  Iteration: 1  Process: /OV7675_capture_tb/stimulus  File: C:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.srcs/sim_1/imports/Downloads/OV7675_capture_tb.vhd
+INFO: xsimkernel Simulation Memory Usage: 37208 KB (Peak: 37208 KB), Simulation CPU Usage: 23031 ms

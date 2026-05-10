@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Wed May  6 15:00:36 2026
+--Date        : Sun May 10 00:29:50 2026
 --Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -561,7 +561,7 @@ entity design_1 is
     xclk : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=5,da_bram_cntlr_cnt=2,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=5,da_bram_cntlr_cnt=2,da_clkrst_cnt=1,da_mb_cnt=2,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -980,7 +980,7 @@ architecture STRUCTURE of design_1 is
     M00_AXI_rlast : in STD_LOGIC;
     M00_AXI_rvalid : in STD_LOGIC;
     M00_AXI_rready : out STD_LOGIC;
-    M01_AXI_awaddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    M01_AXI_awaddr : out STD_LOGIC_VECTOR ( 19 downto 0 );
     M01_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
     M01_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
     M01_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -998,7 +998,7 @@ architecture STRUCTURE of design_1 is
     M01_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M01_AXI_bvalid : in STD_LOGIC;
     M01_AXI_bready : out STD_LOGIC;
-    M01_AXI_araddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    M01_AXI_araddr : out STD_LOGIC_VECTOR ( 19 downto 0 );
     M01_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
     M01_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
     M01_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -1047,7 +1047,7 @@ architecture STRUCTURE of design_1 is
   port (
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC;
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 19 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -1064,7 +1064,7 @@ architecture STRUCTURE of design_1 is
     s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_bvalid : out STD_LOGIC;
     s_axi_bready : in STD_LOGIC;
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 19 downto 0 );
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -1082,14 +1082,14 @@ architecture STRUCTURE of design_1 is
     bram_clk_a : out STD_LOGIC;
     bram_en_a : out STD_LOGIC;
     bram_we_a : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    bram_addr_a : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    bram_addr_a : out STD_LOGIC_VECTOR ( 19 downto 0 );
     bram_wrdata_a : out STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_rst_b : out STD_LOGIC;
     bram_clk_b : out STD_LOGIC;
     bram_en_b : out STD_LOGIC;
     bram_we_b : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    bram_addr_b : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    bram_addr_b : out STD_LOGIC_VECTOR ( 19 downto 0 );
     bram_wrdata_b : out STD_LOGIC_VECTOR ( 31 downto 0 );
     bram_rddata_b : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
@@ -1216,7 +1216,7 @@ architecture STRUCTURE of design_1 is
   signal OV7675_capture_0_bram_en : STD_LOGIC;
   signal OV7675_capture_0_bram_we : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal OV7675_capture_0_data_out : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 19 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1257,7 +1257,7 @@ architecture STRUCTURE of design_1 is
   signal axi_smc_1_M00_AXI_WREADY : STD_LOGIC;
   signal axi_smc_1_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_1_M00_AXI_WVALID : STD_LOGIC;
-  signal axi_smc_1_M01_AXI_ARADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal axi_smc_1_M01_AXI_ARADDR : STD_LOGIC_VECTOR ( 19 downto 0 );
   signal axi_smc_1_M01_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_smc_1_M01_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_1_M01_AXI_ARLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -1266,7 +1266,7 @@ architecture STRUCTURE of design_1 is
   signal axi_smc_1_M01_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_1_M01_AXI_ARSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal axi_smc_1_M01_AXI_ARVALID : STD_LOGIC;
-  signal axi_smc_1_M01_AXI_AWADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal axi_smc_1_M01_AXI_AWADDR : STD_LOGIC_VECTOR ( 19 downto 0 );
   signal axi_smc_1_M01_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_smc_1_M01_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_1_M01_AXI_AWLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -1445,7 +1445,7 @@ architecture STRUCTURE of design_1 is
   signal NLW_axi_bram_ctrl_0_bram_clk_b_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_bram_ctrl_0_bram_en_b_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_bram_ctrl_0_bram_rst_b_UNCONNECTED : STD_LOGIC;
-  signal NLW_axi_bram_ctrl_0_bram_addr_b_UNCONNECTED : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal NLW_axi_bram_ctrl_0_bram_addr_b_UNCONNECTED : STD_LOGIC_VECTOR ( 19 downto 0 );
   signal NLW_axi_bram_ctrl_0_bram_we_b_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_bram_ctrl_0_bram_wrdata_b_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_axi_bram_ctrl_0_bram_rsta_busy_UNCONNECTED : STD_LOGIC;
@@ -1554,8 +1554,8 @@ OV7675_capture_0: component design_1_OV7675_capture_0_0
     );
 axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_0
      port map (
-      bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
-      bram_addr_b(12 downto 0) => NLW_axi_bram_ctrl_0_bram_addr_b_UNCONNECTED(12 downto 0),
+      bram_addr_a(19 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(19 downto 0),
+      bram_addr_b(19 downto 0) => NLW_axi_bram_ctrl_0_bram_addr_b_UNCONNECTED(19 downto 0),
       bram_clk_a => axi_bram_ctrl_0_BRAM_PORTA_CLK,
       bram_clk_b => NLW_axi_bram_ctrl_0_bram_clk_b_UNCONNECTED,
       bram_en_a => axi_bram_ctrl_0_BRAM_PORTA_EN,
@@ -1569,7 +1569,7 @@ axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_0
       bram_wrdata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
       bram_wrdata_b(31 downto 0) => NLW_axi_bram_ctrl_0_bram_wrdata_b_UNCONNECTED(31 downto 0),
       s_axi_aclk => mig_7series_0_ui_clk,
-      s_axi_araddr(12 downto 0) => axi_smc_1_M01_AXI_ARADDR(12 downto 0),
+      s_axi_araddr(19 downto 0) => axi_smc_1_M01_AXI_ARADDR(19 downto 0),
       s_axi_arburst(1 downto 0) => axi_smc_1_M01_AXI_ARBURST(1 downto 0),
       s_axi_arcache(3 downto 0) => axi_smc_1_M01_AXI_ARCACHE(3 downto 0),
       s_axi_aresetn => rst_mig_7series_0_100M_peripheral_aresetn(0),
@@ -1579,7 +1579,7 @@ axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_0
       s_axi_arready => axi_smc_1_M01_AXI_ARREADY,
       s_axi_arsize(2 downto 0) => axi_smc_1_M01_AXI_ARSIZE(2 downto 0),
       s_axi_arvalid => axi_smc_1_M01_AXI_ARVALID,
-      s_axi_awaddr(12 downto 0) => axi_smc_1_M01_AXI_AWADDR(12 downto 0),
+      s_axi_awaddr(19 downto 0) => axi_smc_1_M01_AXI_AWADDR(19 downto 0),
       s_axi_awburst(1 downto 0) => axi_smc_1_M01_AXI_AWBURST(1 downto 0),
       s_axi_awcache(3 downto 0) => axi_smc_1_M01_AXI_AWCACHE(3 downto 0),
       s_axi_awlen(7 downto 0) => axi_smc_1_M01_AXI_AWLEN(7 downto 0),
@@ -1604,8 +1604,8 @@ axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_0
     );
 axi_bram_ctrl_0_bram: component design_1_axi_bram_ctrl_0_bram_0
      port map (
-      addra(31 downto 13) => B"0000000000000000000",
-      addra(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
+      addra(31 downto 20) => B"000000000000",
+      addra(19 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(19 downto 0),
       addrb(31 downto 0) => OV7675_capture_0_bram_addr(31 downto 0),
       clka => axi_bram_ctrl_0_BRAM_PORTA_CLK,
       clkb => microblaze_0_Clk,
@@ -1720,7 +1720,7 @@ axi_smc_1: component design_1_axi_smc_1_0
       M00_AXI_wready => axi_smc_1_M00_AXI_WREADY,
       M00_AXI_wstrb(3 downto 0) => axi_smc_1_M00_AXI_WSTRB(3 downto 0),
       M00_AXI_wvalid => axi_smc_1_M00_AXI_WVALID,
-      M01_AXI_araddr(12 downto 0) => axi_smc_1_M01_AXI_ARADDR(12 downto 0),
+      M01_AXI_araddr(19 downto 0) => axi_smc_1_M01_AXI_ARADDR(19 downto 0),
       M01_AXI_arburst(1 downto 0) => axi_smc_1_M01_AXI_ARBURST(1 downto 0),
       M01_AXI_arcache(3 downto 0) => axi_smc_1_M01_AXI_ARCACHE(3 downto 0),
       M01_AXI_arlen(7 downto 0) => axi_smc_1_M01_AXI_ARLEN(7 downto 0),
@@ -1730,7 +1730,7 @@ axi_smc_1: component design_1_axi_smc_1_0
       M01_AXI_arready => axi_smc_1_M01_AXI_ARREADY,
       M01_AXI_arsize(2 downto 0) => axi_smc_1_M01_AXI_ARSIZE(2 downto 0),
       M01_AXI_arvalid => axi_smc_1_M01_AXI_ARVALID,
-      M01_AXI_awaddr(12 downto 0) => axi_smc_1_M01_AXI_AWADDR(12 downto 0),
+      M01_AXI_awaddr(19 downto 0) => axi_smc_1_M01_AXI_AWADDR(19 downto 0),
       M01_AXI_awburst(1 downto 0) => axi_smc_1_M01_AXI_AWBURST(1 downto 0),
       M01_AXI_awcache(3 downto 0) => axi_smc_1_M01_AXI_AWCACHE(3 downto 0),
       M01_AXI_awlen(7 downto 0) => axi_smc_1_M01_AXI_AWLEN(7 downto 0),

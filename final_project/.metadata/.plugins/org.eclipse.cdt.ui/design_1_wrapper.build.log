@@ -1,5 +1,5 @@
-08:19:44 **** Build of project design_1_wrapper ****
-buildplatform.bat 51530 design_1_wrapper  
+18:00:59 **** Build of project design_1_wrapper ****
+buildplatform.bat 63619 design_1_wrapper  
 
 ****** Software Commandline Tool (XSCT) v2024.2.0
   **** SW Build 5239620 on Sun Nov 10 09:56:12 MST 2024
@@ -11,7 +11,7 @@ Warning: XSCT is deprecated and will be removed in future releases.
 We recommend using the new Python command-line tool for project management and debugging:
 - Run "vitis -i" for interactive mode.
 - Run "vitis -s <script>" for script mode.
-XSDB Server Channel: tcfchan#1
+XSDB Server Channel: tcfchan#7
 Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 make --no-print-directory seq_libs
 
@@ -21,11 +21,11 @@ make -j 14 --no-print-directory par_libs
 
 "Running Make include in microblaze_0/libsrc/bram_v4_11/src"
 
+"Running Make include in microblaze_0/libsrc/cpu_v2_18/src"
+
 make -C microblaze_0/libsrc/bram_v4_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
 ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
  -Wextra -fno-tree-loop-distribute-patterns"
-
-"Running Make include in microblaze_0/libsrc/cpu_v2_18/src"
 
 make -C microblaze_0/libsrc/cpu_v2_18/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
 R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
@@ -101,5 +101,5 @@ mb-ar: creating microblaze_0/lib/libxil.a
 'Finished building libraries'
 
 
-08:19:55 Build Finished (took 11s.687ms)
+18:01:18 Build Finished (took 19s.76ms)
 

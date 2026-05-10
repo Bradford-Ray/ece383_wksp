@@ -67,7 +67,10 @@ ENTITY design_1_OV7675_capture_0_0 IS
     bram_we : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     bram_en : OUT STD_LOGIC;
     pen : OUT STD_LOGIC;
-    pdn : OUT STD_LOGIC
+    pdn : OUT STD_LOGIC;
+    Red : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    Green : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    Blue : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END design_1_OV7675_capture_0_0;
 
@@ -88,7 +91,10 @@ ARCHITECTURE design_1_OV7675_capture_0_0_arch OF design_1_OV7675_capture_0_0 IS
       bram_we : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       bram_en : OUT STD_LOGIC;
       pen : OUT STD_LOGIC;
-      pdn : OUT STD_LOGIC
+      pdn : OUT STD_LOGIC;
+      Red : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      Green : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      Blue : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT OV7675_capture;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -115,6 +121,9 @@ BEGIN
       bram_we => bram_we,
       bram_en => bram_en,
       pen => pen,
-      pdn => pdn
+      pdn => pdn,
+      Red => Red,
+      Green => Green,
+      Blue => Blue
     );
 END design_1_OV7675_capture_0_0_arch;

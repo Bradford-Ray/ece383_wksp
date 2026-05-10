@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file C:\Users\C27Bradford.Hurt\ece383_wksp\final_project\final_project.runs\design_1_OV7675_capture_0_0_synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Permission denied

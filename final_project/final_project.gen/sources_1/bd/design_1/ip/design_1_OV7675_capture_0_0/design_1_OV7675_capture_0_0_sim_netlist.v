@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Wed May  6 08:06:38 2026
+// Date        : Sun May 10 00:32:46 2026
 // Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0_sim_netlist.v
@@ -65,7 +65,6 @@ module design_1_OV7675_capture_0_0
   wire pdn;
   wire pen;
   wire reset_n;
-  wire vs;
   wire xclk;
 
   assign bram_addr[31:2] = \^bram_addr [31:2];
@@ -93,7 +92,6 @@ module design_1_OV7675_capture_0_0
         .pdn(pdn),
         .pen(pen),
         .reset_n(reset_n),
-        .vs(vs),
         .xclk(xclk));
   VCC VCC
        (.P(\<const1> ));
@@ -115,8 +113,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
     pclk,
     data_in,
     reset_n,
-    hs,
-    vs);
+    hs);
   output [15:0]D;
   output [2:0]Blue;
   output [1:0]Green;
@@ -132,7 +129,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   input [7:0]data_in;
   input reset_n;
   input hs;
-  input vs;
 
   wire [8:8]A;
   wire \B0[3]_i_2_n_0 ;
@@ -192,8 +188,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire \FSM_onehot_RGB_state[4]_i_3_n_0 ;
   wire \FSM_onehot_RGB_state_reg_n_0_[0] ;
   wire \FSM_onehot_YUV_state[3]_i_1_n_0 ;
-  wire \FSM_onehot_YUV_state[3]_i_3_n_0 ;
-  wire \FSM_onehot_YUV_state[3]_i_4_n_0 ;
   wire \FSM_sequential_startup_state[0]_i_1_n_0 ;
   wire \FSM_sequential_startup_state[1]_i_10_n_0 ;
   wire \FSM_sequential_startup_state[1]_i_11_n_0 ;
@@ -290,9 +284,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire [7:0]Y1_s;
   wire YUV_ready__0;
   wire YUV_ready_i_1_n_0;
-  wire YUV_ready_i_2_n_0;
-  wire YUV_ready_i_3_n_0;
-  wire YUV_state;
   wire [29:0]bram_addr;
   wire [0:0]bram_we;
   wire \bram_we_s[3]_i_1_n_0 ;
@@ -629,12 +620,17 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire [7:0]data_in;
   wire [31:0]data_out;
   wire \data_out_s[31]_i_1_n_0 ;
-  wire frame_reset;
+  wire frame_reset0;
+  wire frame_reset1;
   wire frame_reset_i_1_n_0;
+  wire frame_reset_i_2_n_0;
   wire frame_reset_prev;
+  wire frame_reset_reg_n_0;
   wire frame_reset_sync1;
   wire frame_reset_sync2;
   wire hs;
+  wire hs_prev;
+  wire hs_prev_i_1_n_0;
   wire i___0_carry__0_i_1__0_n_0;
   wire i___0_carry__0_i_1_n_0;
   wire i___0_carry__0_i_2__0_n_0;
@@ -667,6 +663,21 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire i___0_carry_i_6_n_0;
   wire i___0_carry_i_7__0_n_0;
   wire i___0_carry_i_7_n_0;
+  wire [8:0]line_count;
+  wire \line_count[3]_i_2_n_0 ;
+  wire \line_count[7]_i_2_n_0 ;
+  wire \line_count[7]_i_3_n_0 ;
+  wire \line_count[8]_i_4_n_0 ;
+  wire \line_count[8]_i_5_n_0 ;
+  wire \line_count_reg_n_0_[0] ;
+  wire \line_count_reg_n_0_[1] ;
+  wire \line_count_reg_n_0_[2] ;
+  wire \line_count_reg_n_0_[3] ;
+  wire \line_count_reg_n_0_[4] ;
+  wire \line_count_reg_n_0_[5] ;
+  wire \line_count_reg_n_0_[6] ;
+  wire \line_count_reg_n_0_[7] ;
+  wire \line_count_reg_n_0_[8] ;
   wire pclk;
   wire pdn;
   wire pdn_i_2_n_0;
@@ -735,7 +746,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire \pix_count_reg[8]_i_1_n_6 ;
   wire \pix_count_reg[8]_i_1_n_7 ;
   wire reset_n;
-  wire sel;
   wire startup_counter;
   wire startup_counter0_carry__0_n_0;
   wire startup_counter0_carry__0_n_1;
@@ -876,43 +886,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire \val0_inferred__3/i___0_carry_n_3 ;
   wire \val0_inferred__3/i___0_carry_n_4 ;
   wire \val0_inferred__3/i___0_carry_n_5 ;
-  wire vs;
-  wire vs_prev;
-  wire vs_prev_i_1_n_0;
-  wire \vs_timer[0]_i_1_n_0 ;
-  wire \vs_timer[0]_i_4_n_0 ;
-  wire \vs_timer[0]_i_5_n_0 ;
-  wire [13:3]vs_timer_reg;
-  wire \vs_timer_reg[0]_i_3_n_0 ;
-  wire \vs_timer_reg[0]_i_3_n_1 ;
-  wire \vs_timer_reg[0]_i_3_n_2 ;
-  wire \vs_timer_reg[0]_i_3_n_3 ;
-  wire \vs_timer_reg[0]_i_3_n_4 ;
-  wire \vs_timer_reg[0]_i_3_n_5 ;
-  wire \vs_timer_reg[0]_i_3_n_6 ;
-  wire \vs_timer_reg[0]_i_3_n_7 ;
-  wire \vs_timer_reg[12]_i_1_n_3 ;
-  wire \vs_timer_reg[12]_i_1_n_6 ;
-  wire \vs_timer_reg[12]_i_1_n_7 ;
-  wire \vs_timer_reg[4]_i_1_n_0 ;
-  wire \vs_timer_reg[4]_i_1_n_1 ;
-  wire \vs_timer_reg[4]_i_1_n_2 ;
-  wire \vs_timer_reg[4]_i_1_n_3 ;
-  wire \vs_timer_reg[4]_i_1_n_4 ;
-  wire \vs_timer_reg[4]_i_1_n_5 ;
-  wire \vs_timer_reg[4]_i_1_n_6 ;
-  wire \vs_timer_reg[4]_i_1_n_7 ;
-  wire \vs_timer_reg[8]_i_1_n_0 ;
-  wire \vs_timer_reg[8]_i_1_n_1 ;
-  wire \vs_timer_reg[8]_i_1_n_2 ;
-  wire \vs_timer_reg[8]_i_1_n_3 ;
-  wire \vs_timer_reg[8]_i_1_n_4 ;
-  wire \vs_timer_reg[8]_i_1_n_5 ;
-  wire \vs_timer_reg[8]_i_1_n_6 ;
-  wire \vs_timer_reg[8]_i_1_n_7 ;
-  wire \vs_timer_reg_n_0_[0] ;
-  wire \vs_timer_reg_n_0_[1] ;
-  wire \vs_timer_reg_n_0_[2] ;
   wire xclk;
   wire xclk_counter1;
   wire \xclk_counter[0]_i_1_n_0 ;
@@ -976,8 +949,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
   wire [1:0]\NLW_val0_inferred__3/i___0_carry_O_UNCONNECTED ;
   wire [3:0]\NLW_val0_inferred__3/i___0_carry__1_CO_UNCONNECTED ;
   wire [3:1]\NLW_val0_inferred__3/i___0_carry__1_O_UNCONNECTED ;
-  wire [3:1]\NLW_vs_timer_reg[12]_i_1_CO_UNCONNECTED ;
-  wire [3:2]\NLW_vs_timer_reg[12]_i_1_O_UNCONNECTED ;
   wire [3:2]\NLW_xclk_counter_reg[0]_i_2_CO_UNCONNECTED ;
   wire [3:3]\NLW_xclk_counter_reg[0]_i_2_O_UNCONNECTED ;
 
@@ -1292,45 +1263,19 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .D(R0),
         .Q(pix_count),
         .R(\FSM_onehot_RGB_state[4]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0020FFFFFFFFFFFF)) 
-    \FSM_onehot_YUV_state[3]_i_1 
-       (.I0(\FSM_onehot_YUV_state[3]_i_3_n_0 ),
-        .I1(\FSM_onehot_YUV_state[3]_i_4_n_0 ),
-        .I2(vs),
-        .I3(vs_prev),
-        .I4(camera_ready_pclk_s2),
-        .I5(reset_n),
-        .O(\FSM_onehot_YUV_state[3]_i_1_n_0 ));
-  LUT3 #(
-    .INIT(8'hD0)) 
-    \FSM_onehot_YUV_state[3]_i_2 
-       (.I0(vs),
-        .I1(vs_prev),
-        .I2(hs),
-        .O(YUV_state));
-  LUT5 #(
-    .INIT(32'hFFFFAA80)) 
-    \FSM_onehot_YUV_state[3]_i_3 
-       (.I0(vs_timer_reg[9]),
-        .I1(vs_timer_reg[7]),
-        .I2(\vs_timer[0]_i_4_n_0 ),
-        .I3(vs_timer_reg[8]),
-        .I4(vs_timer_reg[10]),
-        .O(\FSM_onehot_YUV_state[3]_i_3_n_0 ));
   LUT3 #(
     .INIT(8'h7F)) 
-    \FSM_onehot_YUV_state[3]_i_4 
-       (.I0(vs_timer_reg[13]),
-        .I1(vs_timer_reg[12]),
-        .I2(vs_timer_reg[11]),
-        .O(\FSM_onehot_YUV_state[3]_i_4_n_0 ));
+    \FSM_onehot_YUV_state[3]_i_1 
+       (.I0(camera_ready_pclk_s2),
+        .I1(reset_n),
+        .I2(hs),
+        .O(\FSM_onehot_YUV_state[3]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "s0:0001,s1:0010,s2:0100,s3:1000" *) 
   FDSE #(
     .INIT(1'b1)) 
     \FSM_onehot_YUV_state_reg[0] 
        (.C(pclk),
-        .CE(YUV_state),
+        .CE(1'b1),
         .D(Y1),
         .Q(U),
         .S(\FSM_onehot_YUV_state[3]_i_1_n_0 ));
@@ -1339,7 +1284,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
     .INIT(1'b0)) 
     \FSM_onehot_YUV_state_reg[1] 
        (.C(pclk),
-        .CE(YUV_state),
+        .CE(1'b1),
         .D(U),
         .Q(Y0),
         .R(\FSM_onehot_YUV_state[3]_i_1_n_0 ));
@@ -1348,7 +1293,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
     .INIT(1'b0)) 
     \FSM_onehot_YUV_state_reg[2] 
        (.C(pclk),
-        .CE(YUV_state),
+        .CE(1'b1),
         .D(Y0),
         .Q(V),
         .R(\FSM_onehot_YUV_state[3]_i_1_n_0 ));
@@ -1357,11 +1302,11 @@ module design_1_OV7675_capture_0_0_OV7675_capture
     .INIT(1'b0)) 
     \FSM_onehot_YUV_state_reg[3] 
        (.C(pclk),
-        .CE(YUV_state),
+        .CE(1'b1),
         .D(V),
         .Q(Y1),
         .R(\FSM_onehot_YUV_state[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h38)) 
     \FSM_sequential_startup_state[0]_i_1 
@@ -1369,7 +1314,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I1(\FSM_sequential_startup_state[1]_i_2_n_0 ),
         .I2(startup_state__0[0]),
         .O(\FSM_sequential_startup_state[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h4F80)) 
     \FSM_sequential_startup_state[1]_i_1 
@@ -1394,7 +1339,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I4(\startup_counter_reg_n_0_[18] ),
         .I5(\startup_counter_reg_n_0_[17] ),
         .O(\FSM_sequential_startup_state[1]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h2000)) 
     \FSM_sequential_startup_state[1]_i_12 
@@ -1423,7 +1368,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I4(\startup_counter_reg_n_0_[19] ),
         .I5(\startup_counter_reg_n_0_[18] ),
         .O(\FSM_sequential_startup_state[1]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \FSM_sequential_startup_state[1]_i_15 
@@ -1518,7 +1463,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I1(\startup_counter_reg_n_0_[3] ),
         .I2(startup_counter),
         .O(\FSM_sequential_startup_state[1]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
     .INIT(16'h7FF0)) 
     \FSM_sequential_startup_state[2]_inv_i_1 
@@ -1901,15 +1846,13 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\NLW_R1_reg[7]_i_3_O_UNCONNECTED [3:1],\R1_reg[7]_i_3_n_7 }),
         .S({1'b0,1'b0,1'b0,RESIZE[8]}));
-  LUT6 #(
-    .INIT(64'h8808000000000000)) 
+  LUT4 #(
+    .INIT(16'h8000)) 
     \U[7]_i_1 
-       (.I0(camera_ready_pclk_s2),
-        .I1(reset_n),
-        .I2(vs),
-        .I3(vs_prev),
-        .I4(hs),
-        .I5(U),
+       (.I0(U),
+        .I1(hs),
+        .I2(reset_n),
+        .I3(camera_ready_pclk_s2),
         .O(\U[7]_i_1_n_0 ));
   FDRE \U_reg[0] 
        (.C(pclk),
@@ -2016,15 +1959,13 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .D(U__0[7]),
         .Q(U_s[7]),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h8808000000000000)) 
+  LUT4 #(
+    .INIT(16'h8000)) 
     \V[7]_i_1 
-       (.I0(camera_ready_pclk_s2),
-        .I1(reset_n),
-        .I2(vs),
-        .I3(vs_prev),
-        .I4(hs),
-        .I5(V),
+       (.I0(V),
+        .I1(hs),
+        .I2(reset_n),
+        .I3(camera_ready_pclk_s2),
         .O(\V[7]_i_1_n_0 ));
   FDRE \V_reg[0] 
        (.C(pclk),
@@ -2122,15 +2063,13 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .D(V__0[7]),
         .Q(V_s[7]),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h8808000000000000)) 
+  LUT4 #(
+    .INIT(16'h8000)) 
     \Y0[7]_i_1 
-       (.I0(camera_ready_pclk_s2),
-        .I1(reset_n),
-        .I2(vs),
-        .I3(vs_prev),
-        .I4(hs),
-        .I5(Y0),
+       (.I0(Y0),
+        .I1(hs),
+        .I2(reset_n),
+        .I3(camera_ready_pclk_s2),
         .O(\Y0[7]_i_1_n_0 ));
   FDRE \Y0_reg[0] 
        (.C(pclk),
@@ -2228,15 +2167,13 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .D(Y0__0[7]),
         .Q(Y0_s__0[7]),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h8808000000000000)) 
+  LUT4 #(
+    .INIT(16'h8000)) 
     \Y1[7]_i_1 
-       (.I0(camera_ready_pclk_s2),
-        .I1(reset_n),
-        .I2(vs),
-        .I3(vs_prev),
-        .I4(hs),
-        .I5(Y1),
+       (.I0(Y1),
+        .I1(hs),
+        .I2(reset_n),
+        .I3(camera_ready_pclk_s2),
         .O(\Y1[7]_i_1_n_0 ));
   FDRE \Y1_reg[0] 
        (.C(pclk),
@@ -2335,32 +2272,15 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .Q(Y1_s[7]),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hAC00000000000000)) 
+    .INIT(64'hCE00000000000000)) 
     YUV_ready_i_1
-       (.I0(hs),
-        .I1(sel),
-        .I2(YUV_ready_i_2_n_0),
-        .I3(YUV_ready_i_3_n_0),
-        .I4(camera_ready_pclk_s2),
-        .I5(reset_n),
-        .O(YUV_ready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'hB)) 
-    YUV_ready_i_2
-       (.I0(vs_prev),
-        .I1(vs),
-        .O(YUV_ready_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT5 #(
-    .INIT(32'hDFDDC0CC)) 
-    YUV_ready_i_3
-       (.I0(U),
+       (.I0(YUV_ready__0),
         .I1(Y1),
-        .I2(vs_prev),
-        .I3(vs),
-        .I4(YUV_ready__0),
-        .O(YUV_ready_i_3_n_0));
+        .I2(U),
+        .I3(hs),
+        .I4(reset_n),
+        .I5(camera_ready_pclk_s2),
+        .O(YUV_ready_i_1_n_0));
   FDRE #(
     .INIT(1'b0)) 
     YUV_ready_reg
@@ -2963,7 +2883,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
        (.I0(U_s[3]),
         .I1(cgu0_carry__0_n_5),
         .O(cgu0__20_carry__0_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     cgu0__20_carry__0_i_9
@@ -3022,7 +2942,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I3(cgu0__20_carry__1_i_6_n_0),
         .I4(U_s[7]),
         .O(cgu0__20_carry__1_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     cgu0__20_carry__1_i_6
@@ -3373,7 +3293,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I4(cgv0__49_carry__1_i_10_n_0),
         .I5(cgv0__19_carry__1_n_6),
         .O(cgv0__49_carry__1_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     cgv0__49_carry__1_i_10
@@ -3383,7 +3303,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I3(V_s[3]),
         .I4(V_s[5]),
         .O(cgv0__49_carry__1_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     cgv0__49_carry__1_i_11
@@ -3392,7 +3312,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I2(V_s[2]),
         .I3(V_s[4]),
         .O(cgv0__49_carry__1_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     cgv0__49_carry__1_i_12
@@ -3407,7 +3327,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I1(cgv0__19_carry__1_n_7),
         .I2(cgv0__49_carry__1_i_9_n_3),
         .O(cgv0__49_carry__1_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT2 #(
     .INIT(4'hE)) 
     cgv0__49_carry__1_i_14
@@ -3420,14 +3340,14 @@ module design_1_OV7675_capture_0_0_OV7675_capture
        (.I0(cgv0_carry__1_n_4),
         .I1(cgv0__19_carry__0_n_4),
         .O(cgv0__49_carry__1_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT2 #(
     .INIT(4'h9)) 
     cgv0__49_carry__1_i_16
        (.I0(cgv0__19_carry__1_n_1),
         .I1(V_s[7]),
         .O(cgv0__49_carry__1_i_16_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h9)) 
     cgv0__49_carry__1_i_17
@@ -3795,7 +3715,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I4(cr0__19_carry__0_n_7),
         .I5(V_s[6]),
         .O(cr0__47_carry__0_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'h69)) 
     cr0__47_carry__0_i_10
@@ -3865,7 +3785,7 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I4(cr0__19_carry_n_6),
         .I5(V_s[3]),
         .O(cr0__47_carry__0_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'h69)) 
     cr0__47_carry__0_i_9
@@ -4416,15 +4336,23 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .Q(data_out[9]),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'h0000400000000000)) 
+    .INIT(64'h0000000000000010)) 
     frame_reset_i_1
-       (.I0(\FSM_onehot_YUV_state[3]_i_4_n_0 ),
-        .I1(camera_ready_pclk_s2),
-        .I2(reset_n),
-        .I3(vs),
-        .I4(vs_prev),
-        .I5(\FSM_onehot_YUV_state[3]_i_3_n_0 ),
+       (.I0(\line_count[3]_i_2_n_0 ),
+        .I1(\line_count_reg_n_0_[2] ),
+        .I2(hs_prev),
+        .I3(hs),
+        .I4(frame_reset_i_2_n_0),
+        .I5(frame_reset0),
         .O(frame_reset_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    frame_reset_i_2
+       (.I0(\line_count_reg_n_0_[1] ),
+        .I1(\line_count_reg_n_0_[0] ),
+        .I2(\line_count_reg_n_0_[3] ),
+        .O(frame_reset_i_2_n_0));
   FDRE #(
     .INIT(1'b0)) 
     frame_reset_prev_reg
@@ -4439,14 +4367,14 @@ module design_1_OV7675_capture_0_0_OV7675_capture
        (.C(pclk),
         .CE(1'b1),
         .D(frame_reset_i_1_n_0),
-        .Q(frame_reset),
+        .Q(frame_reset_reg_n_0),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     frame_reset_sync1_reg
        (.C(clk),
         .CE(yuv_rdy_sync1_i_1_n_0),
-        .D(frame_reset),
+        .D(frame_reset_reg_n_0),
         .Q(frame_reset_sync1),
         .R(1'b0));
   FDRE #(
@@ -4456,6 +4384,21 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .CE(yuv_rdy_sync1_i_1_n_0),
         .D(frame_reset_sync1),
         .Q(frame_reset_sync2),
+        .R(1'b0));
+  LUT3 #(
+    .INIT(8'h80)) 
+    hs_prev_i_1
+       (.I0(hs),
+        .I1(reset_n),
+        .I2(camera_ready_pclk_s2),
+        .O(hs_prev_i_1_n_0));
+  FDRE #(
+    .INIT(1'b0)) 
+    hs_prev_reg
+       (.C(pclk),
+        .CE(1'b1),
+        .D(hs_prev_i_1_n_0),
+        .Q(hs_prev),
         .R(1'b0));
   (* HLUTNM = "lutpair5" *) 
   LUT3 #(
@@ -4727,12 +4670,223 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .I1(cgv[8]),
         .I2(Y1_s[0]),
         .O(i___0_carry_i_7__0_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \line_count[0]_i_1 
+       (.I0(\line_count_reg_n_0_[0] ),
+        .O(line_count[0]));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \line_count[1]_i_1 
+       (.I0(\line_count_reg_n_0_[0] ),
+        .I1(\line_count_reg_n_0_[1] ),
+        .O(line_count[1]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'h0FFFB000)) 
+    \line_count[2]_i_1 
+       (.I0(\line_count[3]_i_2_n_0 ),
+        .I1(\line_count_reg_n_0_[3] ),
+        .I2(\line_count_reg_n_0_[1] ),
+        .I3(\line_count_reg_n_0_[0] ),
+        .I4(\line_count_reg_n_0_[2] ),
+        .O(line_count[2]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'h4AF0F0F0)) 
+    \line_count[3]_i_1 
+       (.I0(\line_count_reg_n_0_[2] ),
+        .I1(\line_count[3]_i_2_n_0 ),
+        .I2(\line_count_reg_n_0_[3] ),
+        .I3(\line_count_reg_n_0_[0] ),
+        .I4(\line_count_reg_n_0_[1] ),
+        .O(line_count[3]));
+  LUT5 #(
+    .INIT(32'hFFFF7FFF)) 
+    \line_count[3]_i_2 
+       (.I0(\line_count_reg_n_0_[5] ),
+        .I1(\line_count_reg_n_0_[6] ),
+        .I2(\line_count_reg_n_0_[7] ),
+        .I3(\line_count_reg_n_0_[8] ),
+        .I4(\line_count_reg_n_0_[4] ),
+        .O(\line_count[3]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'h7FFF8000)) 
+    \line_count[4]_i_1 
+       (.I0(\line_count_reg_n_0_[2] ),
+        .I1(\line_count_reg_n_0_[1] ),
+        .I2(\line_count_reg_n_0_[0] ),
+        .I3(\line_count_reg_n_0_[3] ),
+        .I4(\line_count_reg_n_0_[4] ),
+        .O(line_count[4]));
+  LUT6 #(
+    .INIT(64'hFF15FFFFFF150000)) 
+    \line_count[5]_i_1 
+       (.I0(\line_count_reg_n_0_[2] ),
+        .I1(\line_count_reg_n_0_[7] ),
+        .I2(\line_count_reg_n_0_[6] ),
+        .I3(\line_count[7]_i_3_n_0 ),
+        .I4(\line_count_reg_n_0_[5] ),
+        .I5(\line_count[7]_i_2_n_0 ),
+        .O(line_count[5]));
+  LUT6 #(
+    .INIT(64'hFFF011F0FF00FF00)) 
+    \line_count[6]_i_1 
+       (.I0(\line_count_reg_n_0_[7] ),
+        .I1(\line_count_reg_n_0_[2] ),
+        .I2(\line_count[7]_i_2_n_0 ),
+        .I3(\line_count_reg_n_0_[6] ),
+        .I4(\line_count[7]_i_3_n_0 ),
+        .I5(\line_count_reg_n_0_[5] ),
+        .O(line_count[6]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'hF858F0F0)) 
+    \line_count[7]_i_1 
+       (.I0(\line_count_reg_n_0_[6] ),
+        .I1(\line_count[7]_i_2_n_0 ),
+        .I2(\line_count_reg_n_0_[7] ),
+        .I3(\line_count[7]_i_3_n_0 ),
+        .I4(\line_count_reg_n_0_[5] ),
+        .O(line_count[7]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'h80000000)) 
+    \line_count[7]_i_2 
+       (.I0(\line_count_reg_n_0_[4] ),
+        .I1(\line_count_reg_n_0_[2] ),
+        .I2(\line_count_reg_n_0_[1] ),
+        .I3(\line_count_reg_n_0_[0] ),
+        .I4(\line_count_reg_n_0_[3] ),
+        .O(\line_count[7]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h3DFFFFFFFFFFFFFF)) 
+    \line_count[7]_i_3 
+       (.I0(\line_count_reg_n_0_[8] ),
+        .I1(\line_count_reg_n_0_[4] ),
+        .I2(\line_count_reg_n_0_[2] ),
+        .I3(\line_count_reg_n_0_[3] ),
+        .I4(\line_count_reg_n_0_[0] ),
+        .I5(\line_count_reg_n_0_[1] ),
+        .O(\line_count[7]_i_3_n_0 ));
+  LUT2 #(
+    .INIT(4'h7)) 
+    \line_count[8]_i_1 
+       (.I0(reset_n),
+        .I1(camera_ready_pclk_s2),
+        .O(frame_reset0));
+  LUT2 #(
+    .INIT(4'h2)) 
+    \line_count[8]_i_2 
+       (.I0(hs_prev),
+        .I1(hs),
+        .O(frame_reset1));
+  LUT6 #(
+    .INIT(64'hFFFFF6FF00000800)) 
+    \line_count[8]_i_3 
+       (.I0(\line_count_reg_n_0_[4] ),
+        .I1(\line_count_reg_n_0_[2] ),
+        .I2(\line_count[8]_i_4_n_0 ),
+        .I3(\line_count_reg_n_0_[3] ),
+        .I4(\line_count[8]_i_5_n_0 ),
+        .I5(\line_count_reg_n_0_[8] ),
+        .O(line_count[8]));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \line_count[8]_i_4 
+       (.I0(\line_count_reg_n_0_[0] ),
+        .I1(\line_count_reg_n_0_[1] ),
+        .O(\line_count[8]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \line_count[8]_i_5 
+       (.I0(\line_count_reg_n_0_[7] ),
+        .I1(\line_count_reg_n_0_[6] ),
+        .I2(\line_count_reg_n_0_[5] ),
+        .O(\line_count[8]_i_5_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[0] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[0]),
+        .Q(\line_count_reg_n_0_[0] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[1] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[1]),
+        .Q(\line_count_reg_n_0_[1] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[2] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[2]),
+        .Q(\line_count_reg_n_0_[2] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[3] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[3]),
+        .Q(\line_count_reg_n_0_[3] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[4] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[4]),
+        .Q(\line_count_reg_n_0_[4] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[5] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[5]),
+        .Q(\line_count_reg_n_0_[5] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[6] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[6]),
+        .Q(\line_count_reg_n_0_[6] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[7] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[7]),
+        .Q(\line_count_reg_n_0_[7] ),
+        .R(frame_reset0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \line_count_reg[8] 
+       (.C(pclk),
+        .CE(frame_reset1),
+        .D(line_count[8]),
+        .Q(\line_count_reg_n_0_[8] ),
+        .R(frame_reset0));
   LUT1 #(
     .INIT(2'h1)) 
     pdn_i_1
        (.I0(reset_n),
         .O(xclk_counter1));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'h4)) 
     pdn_i_2
@@ -5859,196 +6013,6 @@ module design_1_OV7675_capture_0_0_OV7675_capture
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\NLW_val0_inferred__3/i___0_carry__1_O_UNCONNECTED [3:1],\val0_inferred__3/i___0_carry__1_n_7 }),
         .S({1'b0,1'b0,1'b0,i___0_carry__1_i_1__0_n_0}));
-  LUT3 #(
-    .INIT(8'h80)) 
-    vs_prev_i_1
-       (.I0(vs),
-        .I1(camera_ready_pclk_s2),
-        .I2(reset_n),
-        .O(vs_prev_i_1_n_0));
-  FDRE #(
-    .INIT(1'b0)) 
-    vs_prev_reg
-       (.C(pclk),
-        .CE(1'b1),
-        .D(vs_prev_i_1_n_0),
-        .Q(vs_prev),
-        .R(1'b0));
-  LUT4 #(
-    .INIT(16'h77F7)) 
-    \vs_timer[0]_i_1 
-       (.I0(camera_ready_pclk_s2),
-        .I1(reset_n),
-        .I2(vs),
-        .I3(vs_prev),
-        .O(\vs_timer[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF01115555)) 
-    \vs_timer[0]_i_2 
-       (.I0(vs_timer_reg[10]),
-        .I1(vs_timer_reg[8]),
-        .I2(\vs_timer[0]_i_4_n_0 ),
-        .I3(vs_timer_reg[7]),
-        .I4(vs_timer_reg[9]),
-        .I5(\FSM_onehot_YUV_state[3]_i_4_n_0 ),
-        .O(sel));
-  LUT4 #(
-    .INIT(16'hFFF8)) 
-    \vs_timer[0]_i_4 
-       (.I0(vs_timer_reg[4]),
-        .I1(vs_timer_reg[3]),
-        .I2(vs_timer_reg[6]),
-        .I3(vs_timer_reg[5]),
-        .O(\vs_timer[0]_i_4_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \vs_timer[0]_i_5 
-       (.I0(\vs_timer_reg_n_0_[0] ),
-        .O(\vs_timer[0]_i_5_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[0] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[0]_i_3_n_7 ),
-        .Q(\vs_timer_reg_n_0_[0] ),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \vs_timer_reg[0]_i_3 
-       (.CI(1'b0),
-        .CO({\vs_timer_reg[0]_i_3_n_0 ,\vs_timer_reg[0]_i_3_n_1 ,\vs_timer_reg[0]_i_3_n_2 ,\vs_timer_reg[0]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\vs_timer_reg[0]_i_3_n_4 ,\vs_timer_reg[0]_i_3_n_5 ,\vs_timer_reg[0]_i_3_n_6 ,\vs_timer_reg[0]_i_3_n_7 }),
-        .S({vs_timer_reg[3],\vs_timer_reg_n_0_[2] ,\vs_timer_reg_n_0_[1] ,\vs_timer[0]_i_5_n_0 }));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[10] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[8]_i_1_n_5 ),
-        .Q(vs_timer_reg[10]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[11] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[8]_i_1_n_4 ),
-        .Q(vs_timer_reg[11]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[12] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[12]_i_1_n_7 ),
-        .Q(vs_timer_reg[12]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \vs_timer_reg[12]_i_1 
-       (.CI(\vs_timer_reg[8]_i_1_n_0 ),
-        .CO({\NLW_vs_timer_reg[12]_i_1_CO_UNCONNECTED [3:1],\vs_timer_reg[12]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_vs_timer_reg[12]_i_1_O_UNCONNECTED [3:2],\vs_timer_reg[12]_i_1_n_6 ,\vs_timer_reg[12]_i_1_n_7 }),
-        .S({1'b0,1'b0,vs_timer_reg[13:12]}));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[13] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[12]_i_1_n_6 ),
-        .Q(vs_timer_reg[13]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[1] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[0]_i_3_n_6 ),
-        .Q(\vs_timer_reg_n_0_[1] ),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[2] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[0]_i_3_n_5 ),
-        .Q(\vs_timer_reg_n_0_[2] ),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[3] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[0]_i_3_n_4 ),
-        .Q(vs_timer_reg[3]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[4] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[4]_i_1_n_7 ),
-        .Q(vs_timer_reg[4]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \vs_timer_reg[4]_i_1 
-       (.CI(\vs_timer_reg[0]_i_3_n_0 ),
-        .CO({\vs_timer_reg[4]_i_1_n_0 ,\vs_timer_reg[4]_i_1_n_1 ,\vs_timer_reg[4]_i_1_n_2 ,\vs_timer_reg[4]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\vs_timer_reg[4]_i_1_n_4 ,\vs_timer_reg[4]_i_1_n_5 ,\vs_timer_reg[4]_i_1_n_6 ,\vs_timer_reg[4]_i_1_n_7 }),
-        .S(vs_timer_reg[7:4]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[5] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[4]_i_1_n_6 ),
-        .Q(vs_timer_reg[5]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[6] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[4]_i_1_n_5 ),
-        .Q(vs_timer_reg[6]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[7] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[4]_i_1_n_4 ),
-        .Q(vs_timer_reg[7]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[8] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[8]_i_1_n_7 ),
-        .Q(vs_timer_reg[8]),
-        .R(\vs_timer[0]_i_1_n_0 ));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \vs_timer_reg[8]_i_1 
-       (.CI(\vs_timer_reg[4]_i_1_n_0 ),
-        .CO({\vs_timer_reg[8]_i_1_n_0 ,\vs_timer_reg[8]_i_1_n_1 ,\vs_timer_reg[8]_i_1_n_2 ,\vs_timer_reg[8]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\vs_timer_reg[8]_i_1_n_4 ,\vs_timer_reg[8]_i_1_n_5 ,\vs_timer_reg[8]_i_1_n_6 ,\vs_timer_reg[8]_i_1_n_7 }),
-        .S(vs_timer_reg[11:8]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \vs_timer_reg[9] 
-       (.C(pclk),
-        .CE(sel),
-        .D(\vs_timer_reg[8]_i_1_n_6 ),
-        .Q(vs_timer_reg[9]),
-        .R(\vs_timer[0]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h04FFFFFF)) 
     \xclk_counter[0]_i_1 

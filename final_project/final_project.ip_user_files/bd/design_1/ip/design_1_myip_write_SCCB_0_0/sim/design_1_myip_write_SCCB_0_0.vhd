@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:myip_write_SCCB:1.0
--- IP Revision: 9
+-- IP Revision: 13
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_myip_write_SCCB_0_0 IS
   PORT (
     sio_c : OUT STD_LOGIC;
-    sio_d : INOUT STD_LOGIC;
+    sio_d : OUT STD_LOGIC;
     reset_n : IN STD_LOGIC;
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC;
@@ -92,7 +92,7 @@ ARCHITECTURE design_1_myip_write_SCCB_0_0_arch OF design_1_myip_write_SCCB_0_0 I
     );
     PORT (
       sio_c : OUT STD_LOGIC;
-      sio_d : INOUT STD_LOGIC;
+      sio_d : OUT STD_LOGIC;
       reset_n : IN STD_LOGIC;
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC;

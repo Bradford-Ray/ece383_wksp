@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Wed May  6 08:06:38 2026
+-- Date        : Sun May 10 00:32:46 2026
 -- Host        : C27-5CG3121FGH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/C27Bradford.Hurt/ece383_wksp/final_project/final_project.gen/sources_1/bd/design_1/ip/design_1_OV7675_capture_0_0/design_1_OV7675_capture_0_0_sim_netlist.vhdl
@@ -31,8 +31,7 @@ entity design_1_OV7675_capture_0_0_OV7675_capture is
     pclk : in STD_LOGIC;
     data_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
     reset_n : in STD_LOGIC;
-    hs : in STD_LOGIC;
-    vs : in STD_LOGIC
+    hs : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of design_1_OV7675_capture_0_0_OV7675_capture : entity is "OV7675_capture";
@@ -96,8 +95,6 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal \FSM_onehot_RGB_state[4]_i_3_n_0\ : STD_LOGIC;
   signal \FSM_onehot_RGB_state_reg_n_0_[0]\ : STD_LOGIC;
   signal \FSM_onehot_YUV_state[3]_i_1_n_0\ : STD_LOGIC;
-  signal \FSM_onehot_YUV_state[3]_i_3_n_0\ : STD_LOGIC;
-  signal \FSM_onehot_YUV_state[3]_i_4_n_0\ : STD_LOGIC;
   signal \FSM_sequential_startup_state[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_startup_state[1]_i_10_n_0\ : STD_LOGIC;
   signal \FSM_sequential_startup_state[1]_i_11_n_0\ : STD_LOGIC;
@@ -192,9 +189,6 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal Y1_s : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \YUV_ready__0\ : STD_LOGIC;
   signal YUV_ready_i_1_n_0 : STD_LOGIC;
-  signal YUV_ready_i_2_n_0 : STD_LOGIC;
-  signal YUV_ready_i_3_n_0 : STD_LOGIC;
-  signal YUV_state : STD_LOGIC;
   signal \bram_we_s[3]_i_1_n_0\ : STD_LOGIC;
   signal camera_ready : STD_LOGIC;
   signal camera_ready_i_1_n_0 : STD_LOGIC;
@@ -526,11 +520,16 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal cr0_carry_n_3 : STD_LOGIC;
   signal data0 : STD_LOGIC_VECTOR ( 31 downto 1 );
   signal \data_out_s[31]_i_1_n_0\ : STD_LOGIC;
-  signal frame_reset : STD_LOGIC;
+  signal frame_reset0 : STD_LOGIC;
+  signal frame_reset1 : STD_LOGIC;
   signal frame_reset_i_1_n_0 : STD_LOGIC;
+  signal frame_reset_i_2_n_0 : STD_LOGIC;
   signal frame_reset_prev : STD_LOGIC;
+  signal frame_reset_reg_n_0 : STD_LOGIC;
   signal frame_reset_sync1 : STD_LOGIC;
   signal frame_reset_sync2 : STD_LOGIC;
+  signal hs_prev : STD_LOGIC;
+  signal hs_prev_i_1_n_0 : STD_LOGIC;
   signal \i___0_carry__0_i_1__0_n_0\ : STD_LOGIC;
   signal \i___0_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \i___0_carry__0_i_2__0_n_0\ : STD_LOGIC;
@@ -563,6 +562,21 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal \i___0_carry_i_6_n_0\ : STD_LOGIC;
   signal \i___0_carry_i_7__0_n_0\ : STD_LOGIC;
   signal \i___0_carry_i_7_n_0\ : STD_LOGIC;
+  signal line_count : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal \line_count[3]_i_2_n_0\ : STD_LOGIC;
+  signal \line_count[7]_i_2_n_0\ : STD_LOGIC;
+  signal \line_count[7]_i_3_n_0\ : STD_LOGIC;
+  signal \line_count[8]_i_4_n_0\ : STD_LOGIC;
+  signal \line_count[8]_i_5_n_0\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[0]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[1]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[2]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[3]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[4]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[5]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[6]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[7]\ : STD_LOGIC;
+  signal \line_count_reg_n_0_[8]\ : STD_LOGIC;
   signal pdn_i_2_n_0 : STD_LOGIC;
   signal pen_i_1_n_0 : STD_LOGIC;
   signal pix_count : STD_LOGIC;
@@ -627,7 +641,6 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal \pix_count_reg[8]_i_1_n_5\ : STD_LOGIC;
   signal \pix_count_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \pix_count_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal sel : STD_LOGIC;
   signal startup_counter : STD_LOGIC;
   signal \startup_counter0_carry__0_n_0\ : STD_LOGIC;
   signal \startup_counter0_carry__0_n_1\ : STD_LOGIC;
@@ -768,42 +781,6 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal \val0_inferred__3/i___0_carry_n_3\ : STD_LOGIC;
   signal \val0_inferred__3/i___0_carry_n_4\ : STD_LOGIC;
   signal \val0_inferred__3/i___0_carry_n_5\ : STD_LOGIC;
-  signal vs_prev : STD_LOGIC;
-  signal vs_prev_i_1_n_0 : STD_LOGIC;
-  signal \vs_timer[0]_i_1_n_0\ : STD_LOGIC;
-  signal \vs_timer[0]_i_4_n_0\ : STD_LOGIC;
-  signal \vs_timer[0]_i_5_n_0\ : STD_LOGIC;
-  signal vs_timer_reg : STD_LOGIC_VECTOR ( 13 downto 3 );
-  signal \vs_timer_reg[0]_i_3_n_0\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_1\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_2\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_3\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_4\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_5\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_6\ : STD_LOGIC;
-  signal \vs_timer_reg[0]_i_3_n_7\ : STD_LOGIC;
-  signal \vs_timer_reg[12]_i_1_n_3\ : STD_LOGIC;
-  signal \vs_timer_reg[12]_i_1_n_6\ : STD_LOGIC;
-  signal \vs_timer_reg[12]_i_1_n_7\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_0\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_1\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_2\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_3\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_4\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_5\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_6\ : STD_LOGIC;
-  signal \vs_timer_reg[4]_i_1_n_7\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_0\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_1\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_2\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_3\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_4\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_5\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_6\ : STD_LOGIC;
-  signal \vs_timer_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal \vs_timer_reg_n_0_[0]\ : STD_LOGIC;
-  signal \vs_timer_reg_n_0_[1]\ : STD_LOGIC;
-  signal \vs_timer_reg_n_0_[2]\ : STD_LOGIC;
   signal \^xclk\ : STD_LOGIC;
   signal xclk_counter1 : STD_LOGIC;
   signal \xclk_counter[0]_i_1_n_0\ : STD_LOGIC;
@@ -867,8 +844,6 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   signal \NLW_val0_inferred__3/i___0_carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \NLW_val0_inferred__3/i___0_carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_val0_inferred__3/i___0_carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_vs_timer_reg[12]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_vs_timer_reg[12]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_xclk_counter_reg[0]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_xclk_counter_reg[0]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute ADDER_THRESHOLD : integer;
@@ -889,14 +864,14 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   attribute FSM_ENCODED_STATES of \FSM_onehot_YUV_state_reg[2]\ : label is "s0:0001,s1:0010,s2:0100,s3:1000";
   attribute FSM_ENCODED_STATES of \FSM_onehot_YUV_state_reg[3]\ : label is "s0:0001,s1:0010,s2:0100,s3:1000";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[0]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_12\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_15\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[0]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_12\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_15\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_4\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_6\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \FSM_sequential_startup_state[1]_i_9\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[2]_inv_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \FSM_sequential_startup_state[2]_inv_i_1\ : label is "soft_lutpair7";
   attribute FSM_ENCODED_STATES of \FSM_sequential_startup_state_reg[0]\ : label is "s_init:000,s_power_on:001,s_wake_sensor:010,s_stabilize:011,s_run:100,";
   attribute FSM_ENCODED_STATES of \FSM_sequential_startup_state_reg[1]\ : label is "s_init:000,s_power_on:001,s_wake_sensor:010,s_stabilize:011,s_run:100,";
   attribute FSM_ENCODED_STATES of \FSM_sequential_startup_state_reg[2]_inv\ : label is "s_init:000,s_power_on:001,s_wake_sensor:010,s_stabilize:011,s_run:100,";
@@ -908,18 +883,17 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   attribute ADDER_THRESHOLD of \R1_reg[3]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \R1_reg[7]_i_2\ : label is 35;
   attribute ADDER_THRESHOLD of \R1_reg[7]_i_3\ : label is 35;
-  attribute SOFT_HLUTNM of YUV_ready_i_2 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of YUV_ready_i_3 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \cgu0__20_carry__0_i_9\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \cgu0__20_carry__1_i_6\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_10\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_11\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_12\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_14\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_16\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_17\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \cr0__47_carry__0_i_10\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \cr0__47_carry__0_i_9\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \cgu0__20_carry__0_i_9\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \cgu0__20_carry__1_i_6\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_10\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_11\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_12\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_14\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_16\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \cgv0__49_carry__1_i_17\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \cr0__47_carry__0_i_10\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \cr0__47_carry__0_i_9\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of frame_reset_i_2 : label is "soft_lutpair11";
   attribute HLUTNM : string;
   attribute HLUTNM of \i___0_carry__0_i_1\ : label is "lutpair5";
   attribute HLUTNM of \i___0_carry__0_i_1__0\ : label is "lutpair11";
@@ -949,7 +923,16 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   attribute HLUTNM of \i___0_carry_i_6__0\ : label is "lutpair6";
   attribute HLUTNM of \i___0_carry_i_7\ : label is "lutpair12";
   attribute HLUTNM of \i___0_carry_i_7__0\ : label is "lutpair13";
-  attribute SOFT_HLUTNM of pdn_i_2 : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \line_count[0]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \line_count[1]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \line_count[2]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \line_count[3]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \line_count[4]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \line_count[7]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \line_count[7]_i_2\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \line_count[8]_i_4\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \line_count[8]_i_5\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of pdn_i_2 : label is "soft_lutpair9";
   attribute ADDER_THRESHOLD of startup_counter0_carry : label is 35;
   attribute ADDER_THRESHOLD of \startup_counter0_carry__0\ : label is 35;
   attribute ADDER_THRESHOLD of \startup_counter0_carry__1\ : label is 35;
@@ -967,10 +950,6 @@ architecture STRUCTURE of design_1_OV7675_capture_0_0_OV7675_capture is
   attribute ADDER_THRESHOLD of \val0_inferred__3/i___0_carry\ : label is 35;
   attribute ADDER_THRESHOLD of \val0_inferred__3/i___0_carry__0\ : label is 35;
   attribute ADDER_THRESHOLD of \val0_inferred__3/i___0_carry__1\ : label is 35;
-  attribute ADDER_THRESHOLD of \vs_timer_reg[0]_i_3\ : label is 11;
-  attribute ADDER_THRESHOLD of \vs_timer_reg[12]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \vs_timer_reg[4]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \vs_timer_reg[8]_i_1\ : label is 11;
 begin
   D(15 downto 0) <= \^d\(15 downto 0);
   xclk <= \^xclk\;
@@ -1430,50 +1409,15 @@ begin
       Q => pix_count,
       R => \FSM_onehot_RGB_state[4]_i_1_n_0\
     );
-\FSM_onehot_YUV_state[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0020FFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \FSM_onehot_YUV_state[3]_i_3_n_0\,
-      I1 => \FSM_onehot_YUV_state[3]_i_4_n_0\,
-      I2 => vs,
-      I3 => vs_prev,
-      I4 => camera_ready_pclk_s2,
-      I5 => reset_n,
-      O => \FSM_onehot_YUV_state[3]_i_1_n_0\
-    );
-\FSM_onehot_YUV_state[3]_i_2\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"D0"
-    )
-        port map (
-      I0 => vs,
-      I1 => vs_prev,
-      I2 => hs,
-      O => YUV_state
-    );
-\FSM_onehot_YUV_state[3]_i_3\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFFAA80"
-    )
-        port map (
-      I0 => vs_timer_reg(9),
-      I1 => vs_timer_reg(7),
-      I2 => \vs_timer[0]_i_4_n_0\,
-      I3 => vs_timer_reg(8),
-      I4 => vs_timer_reg(10),
-      O => \FSM_onehot_YUV_state[3]_i_3_n_0\
-    );
-\FSM_onehot_YUV_state[3]_i_4\: unisim.vcomponents.LUT3
+\FSM_onehot_YUV_state[3]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"7F"
     )
         port map (
-      I0 => vs_timer_reg(13),
-      I1 => vs_timer_reg(12),
-      I2 => vs_timer_reg(11),
-      O => \FSM_onehot_YUV_state[3]_i_4_n_0\
+      I0 => camera_ready_pclk_s2,
+      I1 => reset_n,
+      I2 => hs,
+      O => \FSM_onehot_YUV_state[3]_i_1_n_0\
     );
 \FSM_onehot_YUV_state_reg[0]\: unisim.vcomponents.FDSE
     generic map(
@@ -1481,7 +1425,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => YUV_state,
+      CE => '1',
       D => Y1,
       Q => U,
       S => \FSM_onehot_YUV_state[3]_i_1_n_0\
@@ -1492,7 +1436,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => YUV_state,
+      CE => '1',
       D => U,
       Q => Y0,
       R => \FSM_onehot_YUV_state[3]_i_1_n_0\
@@ -1503,7 +1447,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => YUV_state,
+      CE => '1',
       D => Y0,
       Q => V,
       R => \FSM_onehot_YUV_state[3]_i_1_n_0\
@@ -1514,7 +1458,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => YUV_state,
+      CE => '1',
       D => V,
       Q => Y1,
       R => \FSM_onehot_YUV_state[3]_i_1_n_0\
@@ -2268,17 +2212,15 @@ begin
       S(3 downto 1) => B"000",
       S(0) => RESIZE(8)
     );
-\U[7]_i_1\: unisim.vcomponents.LUT6
+\U[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8808000000000000"
+      INIT => X"8000"
     )
         port map (
-      I0 => camera_ready_pclk_s2,
-      I1 => reset_n,
-      I2 => vs,
-      I3 => vs_prev,
-      I4 => hs,
-      I5 => U,
+      I0 => U,
+      I1 => hs,
+      I2 => reset_n,
+      I3 => camera_ready_pclk_s2,
       O => \U[7]_i_1_n_0\
     );
 \U_reg[0]\: unisim.vcomponents.FDRE
@@ -2421,17 +2363,15 @@ begin
       Q => U_s(7),
       R => '0'
     );
-\V[7]_i_1\: unisim.vcomponents.LUT6
+\V[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8808000000000000"
+      INIT => X"8000"
     )
         port map (
-      I0 => camera_ready_pclk_s2,
-      I1 => reset_n,
-      I2 => vs,
-      I3 => vs_prev,
-      I4 => hs,
-      I5 => V,
+      I0 => V,
+      I1 => hs,
+      I2 => reset_n,
+      I3 => camera_ready_pclk_s2,
       O => \V[7]_i_1_n_0\
     );
 \V_reg[0]\: unisim.vcomponents.FDRE
@@ -2562,17 +2502,15 @@ begin
       Q => V_s(7),
       R => '0'
     );
-\Y0[7]_i_1\: unisim.vcomponents.LUT6
+\Y0[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8808000000000000"
+      INIT => X"8000"
     )
         port map (
-      I0 => camera_ready_pclk_s2,
-      I1 => reset_n,
-      I2 => vs,
-      I3 => vs_prev,
-      I4 => hs,
-      I5 => Y0,
+      I0 => Y0,
+      I1 => hs,
+      I2 => reset_n,
+      I3 => camera_ready_pclk_s2,
       O => \Y0[7]_i_1_n_0\
     );
 \Y0_reg[0]\: unisim.vcomponents.FDRE
@@ -2703,17 +2641,15 @@ begin
       Q => \Y0_s__0\(7),
       R => '0'
     );
-\Y1[7]_i_1\: unisim.vcomponents.LUT6
+\Y1[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8808000000000000"
+      INIT => X"8000"
     )
         port map (
-      I0 => camera_ready_pclk_s2,
-      I1 => reset_n,
-      I2 => vs,
-      I3 => vs_prev,
-      I4 => hs,
-      I5 => Y1,
+      I0 => Y1,
+      I1 => hs,
+      I2 => reset_n,
+      I3 => camera_ready_pclk_s2,
       O => \Y1[7]_i_1_n_0\
     );
 \Y1_reg[0]\: unisim.vcomponents.FDRE
@@ -2846,37 +2782,16 @@ begin
     );
 YUV_ready_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AC00000000000000"
+      INIT => X"CE00000000000000"
     )
         port map (
-      I0 => hs,
-      I1 => sel,
-      I2 => YUV_ready_i_2_n_0,
-      I3 => YUV_ready_i_3_n_0,
-      I4 => camera_ready_pclk_s2,
-      I5 => reset_n,
-      O => YUV_ready_i_1_n_0
-    );
-YUV_ready_i_2: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => vs_prev,
-      I1 => vs,
-      O => YUV_ready_i_2_n_0
-    );
-YUV_ready_i_3: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"DFDDC0CC"
-    )
-        port map (
-      I0 => U,
+      I0 => \YUV_ready__0\,
       I1 => Y1,
-      I2 => vs_prev,
-      I3 => vs,
-      I4 => \YUV_ready__0\,
-      O => YUV_ready_i_3_n_0
+      I2 => U,
+      I3 => hs,
+      I4 => reset_n,
+      I5 => camera_ready_pclk_s2,
+      O => YUV_ready_i_1_n_0
     );
 YUV_ready_reg: unisim.vcomponents.FDRE
     generic map(
@@ -5976,16 +5891,26 @@ cr0_carry_i_3: unisim.vcomponents.LUT1
     );
 frame_reset_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000400000000000"
+      INIT => X"0000000000000010"
     )
         port map (
-      I0 => \FSM_onehot_YUV_state[3]_i_4_n_0\,
-      I1 => camera_ready_pclk_s2,
-      I2 => reset_n,
-      I3 => vs,
-      I4 => vs_prev,
-      I5 => \FSM_onehot_YUV_state[3]_i_3_n_0\,
+      I0 => \line_count[3]_i_2_n_0\,
+      I1 => \line_count_reg_n_0_[2]\,
+      I2 => hs_prev,
+      I3 => hs,
+      I4 => frame_reset_i_2_n_0,
+      I5 => frame_reset0,
       O => frame_reset_i_1_n_0
+    );
+frame_reset_i_2: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[1]\,
+      I1 => \line_count_reg_n_0_[0]\,
+      I2 => \line_count_reg_n_0_[3]\,
+      O => frame_reset_i_2_n_0
     );
 frame_reset_prev_reg: unisim.vcomponents.FDRE
     generic map(
@@ -6006,7 +5931,7 @@ frame_reset_reg: unisim.vcomponents.FDRE
       C => pclk,
       CE => '1',
       D => frame_reset_i_1_n_0,
-      Q => frame_reset,
+      Q => frame_reset_reg_n_0,
       R => '0'
     );
 frame_reset_sync1_reg: unisim.vcomponents.FDRE
@@ -6016,7 +5941,7 @@ frame_reset_sync1_reg: unisim.vcomponents.FDRE
         port map (
       C => clk,
       CE => yuv_rdy_sync1_i_1_n_0,
-      D => frame_reset,
+      D => frame_reset_reg_n_0,
       Q => frame_reset_sync1,
       R => '0'
     );
@@ -6029,6 +5954,27 @@ frame_reset_sync2_reg: unisim.vcomponents.FDRE
       CE => yuv_rdy_sync1_i_1_n_0,
       D => frame_reset_sync1,
       Q => frame_reset_sync2,
+      R => '0'
+    );
+hs_prev_i_1: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => hs,
+      I1 => reset_n,
+      I2 => camera_ready_pclk_s2,
+      O => hs_prev_i_1_n_0
+    );
+hs_prev_reg: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => '1',
+      D => hs_prev_i_1_n_0,
+      Q => hs_prev,
       R => '0'
     );
 \i___0_carry__0_i_1\: unisim.vcomponents.LUT3
@@ -6368,6 +6314,283 @@ frame_reset_sync2_reg: unisim.vcomponents.FDRE
       I1 => cgv(8),
       I2 => Y1_s(0),
       O => \i___0_carry_i_7__0_n_0\
+    );
+\line_count[0]_i_1\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[0]\,
+      O => line_count(0)
+    );
+\line_count[1]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[0]\,
+      I1 => \line_count_reg_n_0_[1]\,
+      O => line_count(1)
+    );
+\line_count[2]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"0FFFB000"
+    )
+        port map (
+      I0 => \line_count[3]_i_2_n_0\,
+      I1 => \line_count_reg_n_0_[3]\,
+      I2 => \line_count_reg_n_0_[1]\,
+      I3 => \line_count_reg_n_0_[0]\,
+      I4 => \line_count_reg_n_0_[2]\,
+      O => line_count(2)
+    );
+\line_count[3]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"4AF0F0F0"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[2]\,
+      I1 => \line_count[3]_i_2_n_0\,
+      I2 => \line_count_reg_n_0_[3]\,
+      I3 => \line_count_reg_n_0_[0]\,
+      I4 => \line_count_reg_n_0_[1]\,
+      O => line_count(3)
+    );
+\line_count[3]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFF7FFF"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[5]\,
+      I1 => \line_count_reg_n_0_[6]\,
+      I2 => \line_count_reg_n_0_[7]\,
+      I3 => \line_count_reg_n_0_[8]\,
+      I4 => \line_count_reg_n_0_[4]\,
+      O => \line_count[3]_i_2_n_0\
+    );
+\line_count[4]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFF8000"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[2]\,
+      I1 => \line_count_reg_n_0_[1]\,
+      I2 => \line_count_reg_n_0_[0]\,
+      I3 => \line_count_reg_n_0_[3]\,
+      I4 => \line_count_reg_n_0_[4]\,
+      O => line_count(4)
+    );
+\line_count[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF15FFFFFF150000"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[2]\,
+      I1 => \line_count_reg_n_0_[7]\,
+      I2 => \line_count_reg_n_0_[6]\,
+      I3 => \line_count[7]_i_3_n_0\,
+      I4 => \line_count_reg_n_0_[5]\,
+      I5 => \line_count[7]_i_2_n_0\,
+      O => line_count(5)
+    );
+\line_count[6]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF011F0FF00FF00"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[7]\,
+      I1 => \line_count_reg_n_0_[2]\,
+      I2 => \line_count[7]_i_2_n_0\,
+      I3 => \line_count_reg_n_0_[6]\,
+      I4 => \line_count[7]_i_3_n_0\,
+      I5 => \line_count_reg_n_0_[5]\,
+      O => line_count(6)
+    );
+\line_count[7]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"F858F0F0"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[6]\,
+      I1 => \line_count[7]_i_2_n_0\,
+      I2 => \line_count_reg_n_0_[7]\,
+      I3 => \line_count[7]_i_3_n_0\,
+      I4 => \line_count_reg_n_0_[5]\,
+      O => line_count(7)
+    );
+\line_count[7]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"80000000"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[4]\,
+      I1 => \line_count_reg_n_0_[2]\,
+      I2 => \line_count_reg_n_0_[1]\,
+      I3 => \line_count_reg_n_0_[0]\,
+      I4 => \line_count_reg_n_0_[3]\,
+      O => \line_count[7]_i_2_n_0\
+    );
+\line_count[7]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"3DFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[8]\,
+      I1 => \line_count_reg_n_0_[4]\,
+      I2 => \line_count_reg_n_0_[2]\,
+      I3 => \line_count_reg_n_0_[3]\,
+      I4 => \line_count_reg_n_0_[0]\,
+      I5 => \line_count_reg_n_0_[1]\,
+      O => \line_count[7]_i_3_n_0\
+    );
+\line_count[8]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => reset_n,
+      I1 => camera_ready_pclk_s2,
+      O => frame_reset0
+    );
+\line_count[8]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => hs_prev,
+      I1 => hs,
+      O => frame_reset1
+    );
+\line_count[8]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFF6FF00000800"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[4]\,
+      I1 => \line_count_reg_n_0_[2]\,
+      I2 => \line_count[8]_i_4_n_0\,
+      I3 => \line_count_reg_n_0_[3]\,
+      I4 => \line_count[8]_i_5_n_0\,
+      I5 => \line_count_reg_n_0_[8]\,
+      O => line_count(8)
+    );
+\line_count[8]_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[0]\,
+      I1 => \line_count_reg_n_0_[1]\,
+      O => \line_count[8]_i_4_n_0\
+    );
+\line_count[8]_i_5\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => \line_count_reg_n_0_[7]\,
+      I1 => \line_count_reg_n_0_[6]\,
+      I2 => \line_count_reg_n_0_[5]\,
+      O => \line_count[8]_i_5_n_0\
+    );
+\line_count_reg[0]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(0),
+      Q => \line_count_reg_n_0_[0]\,
+      R => frame_reset0
+    );
+\line_count_reg[1]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(1),
+      Q => \line_count_reg_n_0_[1]\,
+      R => frame_reset0
+    );
+\line_count_reg[2]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(2),
+      Q => \line_count_reg_n_0_[2]\,
+      R => frame_reset0
+    );
+\line_count_reg[3]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(3),
+      Q => \line_count_reg_n_0_[3]\,
+      R => frame_reset0
+    );
+\line_count_reg[4]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(4),
+      Q => \line_count_reg_n_0_[4]\,
+      R => frame_reset0
+    );
+\line_count_reg[5]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(5),
+      Q => \line_count_reg_n_0_[5]\,
+      R => frame_reset0
+    );
+\line_count_reg[6]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(6),
+      Q => \line_count_reg_n_0_[6]\,
+      R => frame_reset0
+    );
+\line_count_reg[7]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(7),
+      Q => \line_count_reg_n_0_[7]\,
+      R => frame_reset0
+    );
+\line_count_reg[8]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => frame_reset1,
+      D => line_count(8),
+      Q => \line_count_reg_n_0_[8]\,
+      R => frame_reset0
     );
 pdn_i_1: unisim.vcomponents.LUT1
     generic map(
@@ -8007,285 +8230,6 @@ startup_counter0_carry: unisim.vcomponents.CARRY4
       S(3 downto 1) => B"000",
       S(0) => \i___0_carry__1_i_1__0_n_0\
     );
-vs_prev_i_1: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => vs,
-      I1 => camera_ready_pclk_s2,
-      I2 => reset_n,
-      O => vs_prev_i_1_n_0
-    );
-vs_prev_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => '1',
-      D => vs_prev_i_1_n_0,
-      Q => vs_prev,
-      R => '0'
-    );
-\vs_timer[0]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"77F7"
-    )
-        port map (
-      I0 => camera_ready_pclk_s2,
-      I1 => reset_n,
-      I2 => vs,
-      I3 => vs_prev,
-      O => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer[0]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFF01115555"
-    )
-        port map (
-      I0 => vs_timer_reg(10),
-      I1 => vs_timer_reg(8),
-      I2 => \vs_timer[0]_i_4_n_0\,
-      I3 => vs_timer_reg(7),
-      I4 => vs_timer_reg(9),
-      I5 => \FSM_onehot_YUV_state[3]_i_4_n_0\,
-      O => sel
-    );
-\vs_timer[0]_i_4\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFF8"
-    )
-        port map (
-      I0 => vs_timer_reg(4),
-      I1 => vs_timer_reg(3),
-      I2 => vs_timer_reg(6),
-      I3 => vs_timer_reg(5),
-      O => \vs_timer[0]_i_4_n_0\
-    );
-\vs_timer[0]_i_5\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \vs_timer_reg_n_0_[0]\,
-      O => \vs_timer[0]_i_5_n_0\
-    );
-\vs_timer_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[0]_i_3_n_7\,
-      Q => \vs_timer_reg_n_0_[0]\,
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[0]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \vs_timer_reg[0]_i_3_n_0\,
-      CO(2) => \vs_timer_reg[0]_i_3_n_1\,
-      CO(1) => \vs_timer_reg[0]_i_3_n_2\,
-      CO(0) => \vs_timer_reg[0]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0001",
-      O(3) => \vs_timer_reg[0]_i_3_n_4\,
-      O(2) => \vs_timer_reg[0]_i_3_n_5\,
-      O(1) => \vs_timer_reg[0]_i_3_n_6\,
-      O(0) => \vs_timer_reg[0]_i_3_n_7\,
-      S(3) => vs_timer_reg(3),
-      S(2) => \vs_timer_reg_n_0_[2]\,
-      S(1) => \vs_timer_reg_n_0_[1]\,
-      S(0) => \vs_timer[0]_i_5_n_0\
-    );
-\vs_timer_reg[10]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[8]_i_1_n_5\,
-      Q => vs_timer_reg(10),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[8]_i_1_n_4\,
-      Q => vs_timer_reg(11),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[12]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[12]_i_1_n_7\,
-      Q => vs_timer_reg(12),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[12]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \vs_timer_reg[8]_i_1_n_0\,
-      CO(3 downto 1) => \NLW_vs_timer_reg[12]_i_1_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => \vs_timer_reg[12]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 2) => \NLW_vs_timer_reg[12]_i_1_O_UNCONNECTED\(3 downto 2),
-      O(1) => \vs_timer_reg[12]_i_1_n_6\,
-      O(0) => \vs_timer_reg[12]_i_1_n_7\,
-      S(3 downto 2) => B"00",
-      S(1 downto 0) => vs_timer_reg(13 downto 12)
-    );
-\vs_timer_reg[13]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[12]_i_1_n_6\,
-      Q => vs_timer_reg(13),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[0]_i_3_n_6\,
-      Q => \vs_timer_reg_n_0_[1]\,
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[0]_i_3_n_5\,
-      Q => \vs_timer_reg_n_0_[2]\,
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[0]_i_3_n_4\,
-      Q => vs_timer_reg(3),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[4]_i_1_n_7\,
-      Q => vs_timer_reg(4),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[4]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \vs_timer_reg[0]_i_3_n_0\,
-      CO(3) => \vs_timer_reg[4]_i_1_n_0\,
-      CO(2) => \vs_timer_reg[4]_i_1_n_1\,
-      CO(1) => \vs_timer_reg[4]_i_1_n_2\,
-      CO(0) => \vs_timer_reg[4]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \vs_timer_reg[4]_i_1_n_4\,
-      O(2) => \vs_timer_reg[4]_i_1_n_5\,
-      O(1) => \vs_timer_reg[4]_i_1_n_6\,
-      O(0) => \vs_timer_reg[4]_i_1_n_7\,
-      S(3 downto 0) => vs_timer_reg(7 downto 4)
-    );
-\vs_timer_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[4]_i_1_n_6\,
-      Q => vs_timer_reg(5),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[4]_i_1_n_5\,
-      Q => vs_timer_reg(6),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[4]_i_1_n_4\,
-      Q => vs_timer_reg(7),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[8]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[8]_i_1_n_7\,
-      Q => vs_timer_reg(8),
-      R => \vs_timer[0]_i_1_n_0\
-    );
-\vs_timer_reg[8]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \vs_timer_reg[4]_i_1_n_0\,
-      CO(3) => \vs_timer_reg[8]_i_1_n_0\,
-      CO(2) => \vs_timer_reg[8]_i_1_n_1\,
-      CO(1) => \vs_timer_reg[8]_i_1_n_2\,
-      CO(0) => \vs_timer_reg[8]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \vs_timer_reg[8]_i_1_n_4\,
-      O(2) => \vs_timer_reg[8]_i_1_n_5\,
-      O(1) => \vs_timer_reg[8]_i_1_n_6\,
-      O(0) => \vs_timer_reg[8]_i_1_n_7\,
-      S(3 downto 0) => vs_timer_reg(11 downto 8)
-    );
-\vs_timer_reg[9]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pclk,
-      CE => sel,
-      D => \vs_timer_reg[8]_i_1_n_6\,
-      Q => vs_timer_reg(9),
-      R => \vs_timer[0]_i_1_n_0\
-    );
 \xclk_counter[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"04FFFFFF"
@@ -8502,7 +8446,6 @@ U0: entity work.design_1_OV7675_capture_0_0_OV7675_capture
       pdn => pdn,
       pen => pen,
       reset_n => reset_n,
-      vs => vs,
       xclk => xclk
     );
 VCC: unisim.vcomponents.VCC
